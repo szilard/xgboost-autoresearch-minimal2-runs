@@ -20,6 +20,10 @@ ENV PATH=/home/ubuntu/.npm-global/bin:/home/ubuntu/.local/bin:$PATH
 
 RUN npm install -g --prefix /home/ubuntu/.npm-global @openai/codex && codex --version
 
+# Python packages from minimal2's quick start (--user: the image is PEP 668)
+RUN pip install --break-system-packages --user --no-cache-dir \
+        pandas xgboost scikit-learn cloudpickle matplotlib
+
 # identity for the initial commit below and for the agent's experiment commits
 RUN git config --global user.name agent && git config --global user.email agent@localhost
 
@@ -33,5 +37,8 @@ RUN git clone --depth 1 https://github.com/szilard/xgboost-autoresearch-minimal2
     && git init -q -b main \
     && git add -A \
     && git commit -q -m "xgboost-autoresearch-minimal2 @ $upstream"
+
+# Build data/train.csv, eval.csv and holdout.csv from the S3 source (data/ is gitignored)
+RUN cd xgboost-autoresearch-minimal2 && python3 prepare.py && ls -l data/
 
 CMD ["/bin/bash"]

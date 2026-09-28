@@ -14,11 +14,12 @@ setup/Dockerfile), named CONTAINER_NAME. Run it detached with a TTY, as user
 `ubuntu`, workdir `/home/ubuntu`.
 
 In the container, go to `~/xgboost-autoresearch-minimal2` and read
-`README-autoresearch.md`. Then:
+`README-autoresearch.md`. The image already has the Python packages installed
+and the data prepared. Then:
 
-1. Install the Python packages its quick start lists.
-2. Run `python3 prepare.py` and confirm `data/` has train.csv, eval.csv and
-   holdout.csv.
+1. Confirm `data/` has train.csv, eval.csv and holdout.csv.
+2. Run `python3 train.py` once to check the setup works (the README's quick
+   start step 3), then `rm -rf artifacts` so the run starts clean.
 
 Next, start codex inside that folder:
 
@@ -98,8 +99,6 @@ Notes:
   stays resumable. Expect the in-flight experiment to be committed but missing
   from results.tsv - the ground truth script reads results.tsv, so that's the
   right set to evaluate.
-- `pip install` in this image hits PEP 668. Use
-  `pip install --break-system-packages --user <pkgs>`.
 - Before writing the run up, check that it is valid:
   - Eval AUC is optimistic (it is what the agent selects on), so a Holdout
     AUC slightly below it is normal (~0.005 in the minimal2 test run). A gap
