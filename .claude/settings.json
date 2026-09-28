@@ -10,8 +10,7 @@
       "Bash(docker volume ls:*)",
       "Bash(docker volume inspect:*)",
       "Bash(mkdir -p runs/:*)",
-      "Edit(/runs/**)",
-      "Edit(/results_summary.md)"
+      "Edit(/runs/**)"
     ],
     "deny": [
       "Bash(docker volume rm:*)"

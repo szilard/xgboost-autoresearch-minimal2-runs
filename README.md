@@ -20,7 +20,7 @@ Another follow-up project is [identical-runs-different-results](https://github.c
   `train.py` changed, no access to the holdout data).
 - All of this is orchestrated by Claude Code with the project skill
   `/xgb-run`. Results go to `runs/<run>/`, one row per run in
-  `results_summary.md`.
+  [`runs/results_summary.md`](runs/results_summary.md).
 
 Setup and usage: [setup/README.md](setup/README.md).
 

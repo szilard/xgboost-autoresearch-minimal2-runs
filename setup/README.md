@@ -59,7 +59,7 @@ only runs when invoked like this, never on its own. It:
   the run is valid (eval/holdout gap, train.py-only diff, no access to the
   holdout data)
 - copies the results into `runs/<container-name>/` and adds a row to
-  `results_summary.md`, without committing anything - review and commit
+  `runs/results_summary.md`, without committing anything - review and commit
   them yourself
 - leaves the container up for inspection
 

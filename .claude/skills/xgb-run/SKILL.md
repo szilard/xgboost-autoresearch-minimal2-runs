@@ -113,7 +113,7 @@ In REPO:
       and none to the source data `2005.csv` (not stored locally, but
       downloadable from the S3 URL in prepare.py).
     If a check fails, say so plainly, record the run as excluded in run.md
-    and results_summary.md, and don't present its AUC as an achievement.
+    and runs/results_summary.md, and don't present its AUC as an achievement.
 
 14. Copy the results out of the container (`docker cp`) into
     `runs/CONTAINER_NAME/` in this repo:
@@ -129,7 +129,7 @@ In REPO:
       that commit, the validity checks, and anything notable from the run
     Don't copy artifacts/ or data/.
 
-15. Add a row for the run to `results_summary.md` at the root of this repo
+15. Add a row for the run to `runs/results_summary.md`
     (create it with a header if missing): run, model, effort, experiments,
     best Eval AUC, its Holdout AUC, gap (holdout - eval), total time and AI
     share from report.txt, valid or excluded.
@@ -145,5 +145,5 @@ myself.
   leftover timing/ folder) rather than silently working around it.
 - If codex simply cannot do one of the steps above, say so plainly and carry
   on with the rest - don't substitute a weaker mode without telling me.
-- At the end, give me a short summary: the results_summary.md row, the
+- At the end, give me a short summary: the runs/results_summary.md row, the
   validity verdict, and anything that went wrong.
