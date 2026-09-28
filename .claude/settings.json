@@ -14,11 +14,6 @@
       "Edit(/results_summary.md)"
     ],
     "deny": [
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(docker rm:*)",
-      "Bash(docker stop:*)",
-      "Bash(docker kill:*)",
       "Bash(docker volume rm:*)"
     ]
   }
