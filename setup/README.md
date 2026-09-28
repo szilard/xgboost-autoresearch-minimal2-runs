@@ -63,6 +63,30 @@ only runs when invoked like this, never on its own. It:
   them yourself
 - leaves the container up for inspection
 
+### Several runs: /xgb-multi
+
+`.claude/skills/xgb-multi/SKILL.md` runs the same experiment N times in a
+row, e.g. to see how much the result varies between runs:
+
+```
+/xgb-multi <run-group> <model> <n-runs> [effort]
+```
+
+e.g. `/xgb-multi luna-max gpt-5.6-luna 10` (~2.5-3 hours per run,
+sequential). Differences from `/xgb-run`:
+
+- each run is driven by the script `.claude/skills/xgb-multi/run_one.sh`, so
+  every run gets exactly the same messages under the same rules; Claude
+  reviews each finished run (validity checks, `run.md`) while the next one
+  runs
+- `leak_check.py` checks each session log for the content of the holdout
+  data and the human-only scripts, not just their names
+- results go to `run-multi/<run-group>/<run-group>-<i>/`, plus a group
+  `results_summary.md` (with mean/sd/min/median/max over the valid runs) and
+  `holdout_auc.tsv` (one line per run, for plots)
+- each container is deleted once its results are copied out, to save disk
+- nothing is committed
+
 `.claude/settings.json` pre-approves the docker commands and file writes a
 run needs, so it can run unattended (also in auto mode), and denies
 `docker volume rm` to protect the login.

@@ -10,7 +10,9 @@
       "Bash(docker volume ls:*)",
       "Bash(docker volume inspect:*)",
       "Bash(mkdir -p runs/:*)",
-      "Edit(/runs/**)"
+      "Edit(/runs/**)",
+      "Bash(.claude/skills/xgb-multi/run_one.sh:*)",
+      "Edit(/run-multi/**)"
     ],
     "deny": [
       "Bash(docker volume rm:*)"
