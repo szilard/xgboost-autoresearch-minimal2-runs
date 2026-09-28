@@ -1,16 +1,7 @@
 # syntax=docker/dockerfile:1
 # Ubuntu 26.04 + codex (as the unprivileged user `ubuntu`, nothing AI as root)
 # + a copy of szilard/xgboost-autoresearch-minimal2 with fresh git history
-#
-# Build:  docker build -t agents2 setup/
-# Login (once; the credentials go into the docker volume codex-auth):
-#         docker run -it --rm -e CODEX_HOME=/home/ubuntu/.codex-auth \
-#           -v codex-auth:/home/ubuntu/.codex-auth agents2 bash -c \
-#           'codex login --device-auth && find "$CODEX_HOME" -mindepth 1 ! -name auth.json -exec rm -rf {} +'
-#         (CODEX_HOME, because login first deletes ~/.codex/auth.json, i.e. the symlink;
-#         the find leaves only auth.json in the volume)
-# Run:    docker run -dit --name <run> -v codex-auth:/home/ubuntu/.codex-auth agents2
-#         (only auth.json is shared; sessions/history/config stay in the container)
+# Build, login and run: see README.md in this folder.
 FROM ubuntu:26.04
 
 ENV DEBIAN_FRONTEND=noninteractive
