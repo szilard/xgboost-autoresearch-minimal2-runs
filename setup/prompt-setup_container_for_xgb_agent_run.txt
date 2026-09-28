@@ -2,16 +2,22 @@ CONTAINER_NAME: <container-name>
 MODEL: <OpenAI model, e.g. gpt-5.6-luna>
 REASONING_EFFORT: max
 
-The agent is codex, on my ChatGPT Plus/Pro subscription: OpenAI models only,
-authenticated by device-code login. No API keys anywhere.
+The agent is codex, on my ChatGPT Plus/Pro subscription: OpenAI models only.
+I have already logged in once; the credentials are in
+~/.codex-agents2/auth.json on the host. No API keys anywhere.
 
 "max" means the level literally named max. It is not the same as "xhigh" or
 "extra high", which sit below it. If codex has no level called max for MODEL,
 tell me what it does have and stop rather than picking the nearest one.
 
 Spin up a Docker container from the `agents2` image (built from
-setup/Dockerfile), named CONTAINER_NAME. Run it detached with a TTY, as user
-`ubuntu`, workdir `/home/ubuntu`.
+setup/Dockerfile), with only the credentials file mounted:
+
+  docker run -dit --name CONTAINER_NAME \
+    -v ~/.codex-agents2/auth.json:/home/ubuntu/.codex/auth.json agents2
+
+It runs as user `ubuntu`, workdir `/home/ubuntu`. Mount nothing else from
+~/.codex-agents2: codex must start without any earlier sessions or config.
 
 In the container, go to `~/xgboost-autoresearch-minimal2` and read
 `README-autoresearch.md`. The image already has the Python packages installed
@@ -23,14 +29,16 @@ and the data prepared. Then:
 
 Next, start codex inside that folder:
 
-3. Launch it with `--dangerously-bypass-approvals-and-sandbox`.
-4. Log in with `codex login --device-auth`. Stop and show me the URL and the
-   one-time code, then wait for me to complete it before continuing. Never
-   fall back to an API key: if codex cannot reach the subscription, stop and
-   tell me.
-5. Set the model to MODEL at REASONING_EFFORT reasoning effort, e.g. with
-   `-m MODEL -c model_reasoning_effort=REASONING_EFFORT` on the command line,
-   or `/model` in the TUI (max is under "More reasoning...").
+3. Check `codex login status` reports a ChatGPT login. If it doesn't, stop
+   and tell me (I will redo the one-time login on the host). Never fall back
+   to an API key, and don't run `codex logout` in the container.
+4. Launch it with the bypass flag, the model and the effort:
+
+     codex --dangerously-bypass-approvals-and-sandbox \
+       -m MODEL -c model_reasoning_effort="REASONING_EFFORT"
+
+5. Check `/status` reads e.g. "gpt-5.6-luna (reasoning max, ...)" and quote
+   it back to me.
 6. Send it the agent prompt quoted in the README, verbatim (apostrophes
    included). Confirm it started working.
 
@@ -86,14 +94,11 @@ Notes:
   container to drive the codex TUI, that's fine, but kill it before handing
   back and never give me a `tmux attach` command - I want to reach the agent
   through its own resume command only.
-- The resume command is `codex resume <session-id> -C <dir>` plus
-  `--dangerously-bypass-approvals-and-sandbox` (it is per invocation and does
-  not persist). Session ids are in ~/.codex/sessions/. Actually run it from a
-  fresh shell and confirm it lands back in the session, with the same model
-  and effort, before you hand it to me.
-- Confirm the model and effort actually took effect in the running session:
-  `/status` should read e.g. "gpt-5.6-luna (reasoning max, ...)". Quote that
-  back to me rather than just the keystrokes you sent.
+- The resume command is `codex resume <session-id> -C <dir>` plus the same
+  bypass, `-m` and `-c model_reasoning_effort=...` flags as in step 4 (none
+  of them persist). Session ids are in ~/.codex/sessions/. Actually run it
+  from a fresh shell and confirm with `/status` that it lands back in the
+  session with the same model and effort before you hand it to me.
 - The documented interrupt key does not always reach the TUI through a
   multiplexer. If it doesn't, exit codex outright to stop it; the session
   stays resumable. Expect the in-flight experiment to be committed but missing

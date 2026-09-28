@@ -3,7 +3,12 @@
 # + a copy of szilard/xgboost-autoresearch-minimal2 with fresh git history
 #
 # Build:  docker build -t agents2 setup/
-# Run:    docker run -it --rm agents2
+# Login (once, on the host; saves ~/.codex-agents2/auth.json):
+#         mkdir -p ~/.codex-agents2
+#         docker run -it --rm -v ~/.codex-agents2:/home/ubuntu/.codex agents2 codex login --device-auth
+# Run:    docker run -dit --name <run> \
+#           -v ~/.codex-agents2/auth.json:/home/ubuntu/.codex/auth.json agents2
+#         (only auth.json is shared; sessions/history/config stay in the container)
 FROM ubuntu:26.04
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -18,7 +23,11 @@ USER ubuntu
 WORKDIR /home/ubuntu
 ENV PATH=/home/ubuntu/.npm-global/bin:/home/ubuntu/.local/bin:$PATH
 
-RUN npm install -g --prefix /home/ubuntu/.npm-global @openai/codex && codex --version
+# codex starts fresh: `codex --version` leaves ~/.codex/tmp behind, so reset it.
+# The empty ~/.codex must exist (owned by ubuntu) for the auth.json mount, else
+# docker creates it as root and codex cannot write its sessions there.
+RUN npm install -g --prefix /home/ubuntu/.npm-global @openai/codex && codex --version \
+    && rm -rf /home/ubuntu/.codex && mkdir /home/ubuntu/.codex
 
 # Python packages from minimal2's quick start (--user: the image is PEP 668)
 RUN pip install --break-system-packages --user --no-cache-dir \
