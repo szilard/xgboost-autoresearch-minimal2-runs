@@ -79,8 +79,8 @@ control back after step 6 - keep going:
 
 13. Add a row for the run to `results_summary.md` (create it if missing):
     run, model, effort, experiments, best Eval AUC, its Holdout AUC, gap
-    (holdout - eval), total time and AI share from report.txt. Then commit and
-    push.
+    (holdout - eval), total time and AI share from report.txt. Don't commit or
+    push anything in this repo - I review and commit the results myself.
 
 Notes:
 - Leave the Docker container up when you're done. Don't stop or remove it - I
@@ -88,9 +88,9 @@ Notes:
 - If you need a terminal multiplexer inside the container to drive the codex
   TUI, that's fine; kill it when you're done.
 - The documented interrupt key does not always reach the TUI through a
-  multiplexer. If it doesn't, exit codex outright to stop it. Expect the in-flight experiment to be committed but missing
-  from results.tsv - the ground truth script reads results.tsv, so that's the
-  right set to evaluate.
+  multiplexer. If it doesn't, exit codex outright to stop it. Expect the
+  in-flight experiment to be committed but missing from results.tsv - the
+  ground truth script reads results.tsv, so that's the right set to evaluate.
 - Before writing the run up, check that it is valid:
   - Eval AUC is optimistic (it is what the agent selects on), so a Holdout
     AUC slightly below it is normal (~0.005 in the minimal2 test run). A gap
