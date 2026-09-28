@@ -2,7 +2,9 @@
 
 Running [xgboost-autoresearch-minimal2](https://github.com/szilard/xgboost-autoresearch-minimal2) with various LLMs
 
-Machine (training XGBoost): m8i.2xlarge (8 cores, 32GB RAM)
+This is a follow-up to [xgboost-autoresearch](https://github.com/szilard/xgboost-autoresearch).
+Another follow-up project is [identical-runs-different-results](https://github.com/earino/identical-runs-different-results).
+
 
 ### How the runs are done
 
@@ -22,6 +24,5 @@ Machine (training XGBoost): m8i.2xlarge (8 cores, 32GB RAM)
 
 Setup and usage: [setup/README.md](setup/README.md).
 
-This is a follow-up to [xgboost-autoresearch](https://github.com/szilard/xgboost-autoresearch).
-Another follow-up project is [identical-runs-different-results](https://github.com/earino/identical-runs-different-results).
+Recommended machine (training XGBoost): m8i.2xlarge (8 cores, 32GB RAM)
 
