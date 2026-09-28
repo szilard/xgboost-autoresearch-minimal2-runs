@@ -3,21 +3,21 @@ MODEL: <OpenAI model, e.g. gpt-5.6-luna>
 REASONING_EFFORT: max
 
 The agent is codex, on my ChatGPT Plus/Pro subscription: OpenAI models only.
-I have already logged in once; the credentials are in
-~/.codex-agents2/auth.json on the host. No API keys anywhere.
+I have already logged in once; the credentials are in the docker volume
+`codex-auth`. No API keys anywhere.
 
 "max" means the level literally named max. It is not the same as "xhigh" or
 "extra high", which sit below it. If codex has no level called max for MODEL,
 tell me what it does have and stop rather than picking the nearest one.
 
 Spin up a Docker container from the `agents2` image (built from
-setup/Dockerfile), with only the credentials file mounted:
+setup/Dockerfile), with only the credentials volume mounted:
 
-  docker run -dit --name CONTAINER_NAME \
-    -v ~/.codex-agents2/auth.json:/home/ubuntu/.codex/auth.json agents2
+  docker run -dit --name CONTAINER_NAME -v codex-auth:/home/ubuntu/.codex-auth agents2
 
-It runs as user `ubuntu`, workdir `/home/ubuntu`. Mount nothing else from
-~/.codex-agents2: codex must start without any earlier sessions or config.
+It runs as user `ubuntu`, workdir `/home/ubuntu`. Mount nothing else: codex
+must start without any earlier sessions or config (~/.codex holds only the
+auth.json symlink into the volume).
 
 In the container, go to `~/xgboost-autoresearch-minimal2` and read
 `README-autoresearch.md`. The image already has the Python packages installed
