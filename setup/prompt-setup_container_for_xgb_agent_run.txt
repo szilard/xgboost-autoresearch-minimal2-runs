@@ -98,8 +98,9 @@ Notes:
     suspicious.
   - `git diff <first commit> <best commit> --stat` should touch train.py only.
   - The codex session log (~/.codex/sessions/) should show no access to
-    holdout.csv, 2005.csv, prepare.py, check_groundtruth.py,
-    run_groundtruth_all.sh or plot_auc_history.py.
+    holdout.csv, prepare.py, check_groundtruth.py, run_groundtruth_all.sh or
+    plot_auc_history.py, and none to the source data `2005.csv` (not stored
+    locally, but downloadable from the S3 URL in prepare.py).
   If a check fails, say so plainly, record the run as excluded in run.md and
   results_summary.md, and don't present its AUC as an achievement.
 - Report anything surprising about the repo state (e.g. detached HEAD, a
