@@ -1,166 +1,117 @@
-AGENT: <codex | pi | opencode | hermes>
 CONTAINER_NAME: <container-name>
 MODEL: <OpenAI model, e.g. gpt-5.6-luna>
 REASONING_EFFORT: max
 
-Everything here runs on my ChatGPT Plus/Pro subscription: OpenAI models only,
-authenticated by device-code / headless login. No API keys anywhere.
+The agent is codex, on my ChatGPT Plus/Pro subscription: OpenAI models only,
+authenticated by device-code login. No API keys anywhere.
 
 "max" means the level literally named max. It is not the same as "xhigh" or
-"extra high", which sit below it, and not "ultra", which hermes offers above it
-- I do not want ultra. If AGENT has no level called max, tell me what it does
-have and stop rather than picking the nearest one.
+"extra high", which sit below it. If codex has no level called max for MODEL,
+tell me what it does have and stop rather than picking the nearest one.
 
-Spin up a Docker container from the `agents` image, named CONTAINER_NAME.
-Run it detached with a TTY, as user `ubuntu`, workdir `/home/ubuntu`.
+Spin up a Docker container from the `agents2` image (built from
+setup/Dockerfile), named CONTAINER_NAME. Run it detached with a TTY, as user
+`ubuntu`, workdir `/home/ubuntu`.
 
-In the container, find the xgboost autoresearch folder under `~` and read its
-README. Then, following the README's quick start:
+In the container, go to `~/xgboost-autoresearch-minimal2` and read
+`README-autoresearch.md`. Then:
 
-1. Install the Python packages it lists.
-2. Run the data download script and confirm the data files landed.
+1. Install the Python packages its quick start lists.
+2. Run `python3 prepare.py` and confirm `data/` has train.csv, eval.csv and
+   holdout.csv.
 
-Next, start AGENT inside that folder:
+Next, start codex inside that folder:
 
-3. Launch it in its most permissive mode: bypass every approval prompt and any
-   sandbox. The flag differs per agent - find the one AGENT actually has
-   rather than assuming.
-4. Authenticate it against my ChatGPT subscription using the device-code or
-   headless login flow - the container has no browser, so a localhost callback
-   URL is useless to me. Stop and show me the URL and the one-time code, then
-   wait for me to complete it before continuing. Never fall back to an API key:
-   if AGENT cannot reach the subscription, stop and tell me.
-5. Set the model to MODEL at REASONING_EFFORT reasoning effort. MODEL is the
-   exact OpenAI slug; AGENT may need a provider prefix in front of it, so match
-   it against what AGENT actually offers once logged in - its model picker or
-   its list-models command - rather than assuming. If AGENT exposes no
-   reasoning-effort control, tell me that instead of quietly skipping it.
+3. Launch it with `--dangerously-bypass-approvals-and-sandbox`.
+4. Log in with `codex login --device-auth`. Stop and show me the URL and the
+   one-time code, then wait for me to complete it before continuing. Never
+   fall back to an API key: if codex cannot reach the subscription, stop and
+   tell me.
+5. Set the model to MODEL at REASONING_EFFORT reasoning effort, e.g. with
+   `-m MODEL -c model_reasoning_effort=REASONING_EFFORT` on the command line,
+   or `/model` in the TUI (max is under "More reasoning...").
 6. Send it the agent prompt quoted in the README, verbatim (apostrophes
    included). Confirm it started working.
 
 Then run the whole thing through to published results. Don't stop and hand
 control back after step 6 - keep going:
 
-7. Tell the agent "go". Several of these agents do the setup, report, and stop
-   again without starting any experiments. If it goes idle before it is
-   committing experiments, nudge it with another "go" until it actually is.
+7. The agent does the setup, proposes a run tag and waits. Accept its tag and
+   tell it "go". It should then run `python3 harness.py start` and begin
+   committing experiments. If it goes idle before that, nudge it with another
+   "go" until it actually is.
 
-8. Monitor it, and stop it after 2.5 hours of experimenting, timed from the
-   first experiment commit. If it stops earlier on its own that is fine - just
-   carry on to the next step. Don't wait on me to confirm any of this.
+8. Monitor it. The time budget is 2 hours, kept by the harness clock; check it
+   with `python3 harness.py status`. If the agent goes idle while the clock
+   still has time left, nudge it with "keep going" (program.md tells it to use
+   the whole budget, but the minimal2 test run still stopped at 1h40m). Once
+   it prints TIME IS UP, give it ~15 minutes to wrap up and run
+   `python3 harness.py stop`; if it hasn't by then, exit codex and run
+   `python3 harness.py stop` yourself. Don't wait on me to confirm any of
+   this.
 
-9. Run the ground truth script: `./run_groundtruth_all.sh`. Budget ~30 min.
+9. Run `python3 harness.py report > report.txt`.
 
-10. Install matplotlib, then run `plot_auc_history.py`.
+10. Run `./run_groundtruth_all.sh`. Budget ~30-60 min.
 
-11. Grab the results out of the container into a new run directory in this
-    repo, matching the naming and the file set of the existing run dirs.
+11. Run `python3 plot_auc_history.py`.
 
-12. Update `results_luna_by_harness.md` with the new run - or
-    `results_summary.md` if MODEL isn't Luna - then commit and push.
+12. Copy the results out of the container into `runs/CONTAINER_NAME/` in this
+    repo:
+    - results.tsv, research-log.md, groundtruth_all.tsv, auc_history.png,
+      report.txt, timing/
+    - train.py at the best kept commit
+    - git-log.txt: `git log --stat` of the run branch
+    - run.md: codex version, MODEL, REASONING_EFFORT, the upstream minimal2
+      commit (in the message of the repo's first commit), run tag, date,
+      number of experiments, best Eval AUC and its commit, Holdout AUC of that
+      commit, and anything notable from the run
+    Don't copy artifacts/ or data/.
+
+13. Add a row for the run to `results_summary.md` (create it if missing):
+    run, model, effort, experiments, best Eval AUC, its Holdout AUC, gap
+    (holdout - eval), total time and AI share from report.txt. Then commit and
+    push.
 
 At the very end, hand me back:
 
 - the `docker exec -it` command to get a shell in the container
-- the command to rejoin the session you started
+- the command to resume the codex session
 
 Notes:
 - Leave the Docker container up when you're done. Don't stop or remove it - I
   want to be able to go in afterwards and check anything by hand.
 - I'm already in tmux on my host. If you need a terminal multiplexer inside the
-  container to drive AGENT's TUI, that's fine, but kill it before handing back
-  and never give me a `tmux attach` command - I want to reach the agent through
-  its own resume command only.
-- Actually run the resume command from a fresh shell and confirm it lands back
-  in the session before you hand it to me. Two things usually break it: the
-  permissive mode is a per-invocation flag that does not persist, and
-  "resume the last session" flags are often scoped to the current working
-  directory. Pass the explicit session id, and pin the working directory too if
-  AGENT supports it.
-- Confirm the model and effort actually took effect in the running session -
-  most of these agents have a status command that prints both - and quote that
+  container to drive the codex TUI, that's fine, but kill it before handing
+  back and never give me a `tmux attach` command - I want to reach the agent
+  through its own resume command only.
+- The resume command is `codex resume <session-id> -C <dir>` plus
+  `--dangerously-bypass-approvals-and-sandbox` (it is per invocation and does
+  not persist). Session ids are in ~/.codex/sessions/. Actually run it from a
+  fresh shell and confirm it lands back in the session, with the same model
+  and effort, before you hand it to me.
+- Confirm the model and effort actually took effect in the running session:
+  `/status` should read e.g. "gpt-5.6-luna (reasoning max, ...)". Quote that
   back to me rather than just the keystrokes you sent.
 - The documented interrupt key does not always reach the TUI through a
-  multiplexer. If it doesn't, exit the agent outright to stop it; the session
+  multiplexer. If it doesn't, exit codex outright to stop it; the session
   stays resumable. Expect the in-flight experiment to be committed but missing
   from results.tsv - the ground truth script reads results.tsv, so that's the
   right set to evaluate.
 - `pip install` in this image hits PEP 668. Use
   `pip install --break-system-packages --user <pkgs>`.
-- Before writing the run up, check the ground-truth gap: a healthy run scores
-  above its own CV AUC on `2005s2 full`. A negative gap means the run is
-  invalid - say so plainly, record it as excluded, and don't present its CV as
-  an achievement.
-- Report anything surprising about the repo state (e.g. detached HEAD) rather
-  than silently working around it.
-- If AGENT simply cannot do one of the steps above, say so plainly and carry on
-  with the rest - don't substitute a different agent or a weaker mode without
-  telling me.
-
-
-Per-agent starting points. Verified 2026-09-17 against the `agents` image;
-treat as a hint, not gospel - check `--help` first, versions move. All four do
-support the ChatGPT Plus/Pro subscription, each under its own name for it.
-
-codex (0.154.0)
-  bypass:  codex --dangerously-bypass-approvals-and-sandbox
-  auth:    codex login --device-auth       -> prints URL + one-time code
-  model:   /model in the TUI. Slugs have no provider prefix here, e.g.
-           gpt-5.6-luna. Persists to ~/.codex/config.toml as `model` and
-           `model_reasoning_effort`.
-  effort:  the top-level list stops at "Extra high"; max is one level deeper,
-           under "More reasoning...". Config value is "max". /status should
-           read "gpt-5.6-luna (reasoning max, ...)".
-  resume:  codex resume <session-id> -C <dir>
-           ids in ~/.codex/sessions/ and ~/.codex/session_index.jsonl
-
-pi (0.85.1)
-  bypass:  nothing found to bypass - `pi --help` lists no approval or sandbox
-           flags. -a/--approve only trusts project-local files (AGENTS.md and
-           friends). Confirm it really does not prompt before relying on this.
-  auth:    /login inside the TUI, pick "ChatGPT Plus/Pro (Codex)". Tokens land
-           in ~/.pi/agent/auth.json and auto-refresh. `pi auth check
-           --provider <p>` verifies. Note the default provider is google, so
-           the model must be selected explicitly after login.
-  model:   --provider <p> --model <pattern|provider/id>; `pi --list-models
-           [search]` shows real slugs (empty until you are logged in).
-  effort:  --thinking max        (the ladder is off|minimal|low|medium|high|
-                                  xhigh|max - max is the top)
-  resume:  pi -r (picker), pi -c (continue last), pi --session <path|id>
-
-opencode (1.18.30)
-  bypass:  opencode --auto        (auto-approve all not-explicitly-denied)
-  auth:    opencode providers login -> search "openai" -> OpenAI -> pick
-           "ChatGPT Pro/Plus (headless)", NOT the browser option and not the
-           API key one. Creds land in ~/.local/share/opencode/auth.json;
-           `opencode providers list` shows what is stored.
-  model:   -m openai/<model>; `opencode models openai` lists them.
-  effort:  no CLI flag, and it is not in the model picker either. It is a model
-           *variant*: press ctrl+t in the TUI ("Variant cycle") to walk
-           none->low->medium->high->xhigh->max. The status bar then reads
-           "... GPT-5.6 Luna OpenAI - max". It defaults to *none*, so an
-           untouched run does no reasoning at all. Two routes silently do
-           nothing and must not be trusted: `reasoningEffort` under
-           provider.models.<id>.options in opencode.json (`opencode debug
-           config` echoes it back as if applied), and a "#max" suffix on the
-           model string. Verify with `opencode export <sessionID>` - assistant
-           messages carry a `variant` field; "max" is proof, null means it fell
-           back to none. Don't judge it by reasoning-token counts, they are
-           small per turn even at max. The variant does persist across resume.
-  resume:  opencode -s <sessionID>, or -c for the last;
-           `opencode session list` to find the id
-
-hermes (0.21.2)
-  bypass:  hermes --yolo
-  auth:    hermes auth add --type oauth openai-codex --no-browser
-           (`hermes login` is deprecated). `hermes auth list` and
-           `hermes auth status` show what is stored; `hermes model` picks
-           provider + model, `hermes status` shows the active config.
-  model:   -m <provider/model> --provider <p>
-  effort:  --reasoning max       (the ladder is none|minimal|low|medium|high|
-                                  xhigh|max|ultra - stop at max, ultra is
-                                  above it and I do not want it)
-  resume:  hermes -r <id|title|latest>, hermes -c [name], `hermes sessions`
-           to list
-
-Not covered yet: openbclaw, and claude code pointed at a non-Anthropic model.
+- Before writing the run up, check that it is valid:
+  - Eval AUC is optimistic (it is what the agent selects on), so a Holdout
+    AUC slightly below it is normal (~0.005 in the minimal2 test run). A gap
+    below -0.01 means the agent overfit eval; a holdout clearly above eval is
+    suspicious.
+  - `git diff <first commit> <best commit> --stat` should touch train.py only.
+  - The codex session log (~/.codex/sessions/) should show no access to
+    holdout.csv, 2005.csv, prepare.py, check_groundtruth.py,
+    run_groundtruth_all.sh or plot_auc_history.py.
+  If a check fails, say so plainly, record the run as excluded in run.md and
+  results_summary.md, and don't present its AUC as an achievement.
+- Report anything surprising about the repo state (e.g. detached HEAD, a
+  leftover timing/ folder) rather than silently working around it.
+- If codex simply cannot do one of the steps above, say so plainly and carry
+  on with the rest - don't substitute a weaker mode without telling me.
