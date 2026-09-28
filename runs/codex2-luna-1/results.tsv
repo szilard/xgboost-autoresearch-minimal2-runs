@@ -1,0 +1,71 @@
+commit	Eval_AUC	status	description
+c294417	0.7203	keep	baseline
+132b310	0.7195	discard	add departure minutes and sine/cosine time features
+6acec81	0.7306	keep	increase n_estimators from 30 to 100
+b3f2c00	0.7325	keep	use 200 trees with learning rate 0.05
+a1c479d	0.7331	keep	increase max_depth from 6 to 8
+6b108c3	0.7299	discard	decrease max_depth from 8 to 5
+75ea692	0.7339	keep	set min_child_weight to 5
+f8be9f8	0.7327	discard	increase min_child_weight from 5 to 10
+f7f4a02	0.7332	discard	add gamma=0.1 split regularization
+53a349f	0.7067	discard	add Origin-to-Dest route categorical feature
+1687c30	0.7306	discard	set subsample to 0.8
+83e1386	0.7397	keep	set colsample_bytree to 0.8
+0f9df9f	0.7455	keep	set colsample_bytree to 0.6
+2201172	0.7436	discard	set colsample_bytree to 0.4
+126a7da	0.7455	discard	set colsample_bytree to 0.5 (tie)
+be96702	0.7433	discard	add colsample_bylevel=0.8
+c00665f	0.7451	discard	add colsample_bynode=0.8
+11ae0cd	0.7480	keep	extend ensemble to 300 trees
+299a908	0.7479	discard	400 trees with learning rate 0.04
+4582dd9	0.7495	keep	increase max_depth from 8 to 9
+771f646	0.7377	discard	set max_cat_to_onehot to 32
+60b1953	0.7504	keep	increase max_depth from 9 to 10
+7eed099	0.7506	keep	set min_child_weight to 3 at depth 10
+99f1a0e	0.7495	discard	set min_child_weight to 1 at depth 10
+5688075	0.7495	discard	increase max_bin from 256 to 512
+169cc38	0.7511	keep	set reg_lambda to 2
+20901be	0.7510	discard	add reg_alpha=0.1
+b491494	0.7499	discard	increase n_estimators from 300 to 400
+01c296c	0.7494	discard	increase max_depth from 10 to 11
+9a7482d	0.7511	discard	set reg_lambda to 3 (tie)
+c37f5cc	0.7492	discard	add scheduled departure hour
+b60c0da	0.7505	discard	set max_cat_threshold to 32
+fce45dc	0.0000	crash	DART dropout exceeded training timeout
+2e73de1	0.7520	keep	use lossguide growth with 512 leaves
+384ce87	0.7497	discard	increase lossguide max_leaves to 1024
+2e6d4f1	0.7508	discard	decrease lossguide max_leaves to 256
+a811b97	0.7516	discard	set lossguide max_leaves to 384
+b3406a0	0.7517	discard	400 trees with learning rate 0.04 under lossguide
+0d2316e	0.7514	discard	350 trees under lossguide
+b8dd6c7	0.7515	discard	set min_child_weight to 5 under lossguide
+804bfd7	0.7550	keep	add row-local DayOfYear feature
+96ed450	0.7572	keep	add row-local IsWeekend feature
+6e7d82e	0.7558	discard	add row-local log distance feature
+0644000	0.7583	keep	add row-local IsMonthEnd feature
+7b90539	0.7553	discard	add row-local IsMonthStart feature
+4043ed7	0.7559	discard	add exact 2005 federal holiday indicator
+643a9dc	0.7572	discard	widen IsMonthEnd to last five days
+9ed4aea	0.7572	discard	narrow IsMonthEnd to last two days (tie)
+57f1e1c	0.7553	discard	add row-local IsFriday feature
+da686c8	0.7585	keep	add cyclic DayOfYear sine/cosine features
+26e5948	0.7539	discard	add cyclic departure-time sine/cosine features
+5e01c82	0.7606	keep	set colsample_bytree to 0.5 with calendar features
+96f045b	0.7608	keep	set colsample_bytree to 0.4 with calendar features
+1ad37ec	0.7577	discard	set colsample_bytree to 0.3 with calendar features
+43af86d	0.7606	discard	increase lossguide max_leaves to 768
+3e99055	0.7601	discard	set min_child_weight to 2 under calendar model
+662e3ba	0.7608	discard	set reg_lambda to 1 (tie)
+69f7ce6	0.7608	keep	remove redundant default reg_lambda setting
+e2d1d44	0.7600	discard	set reg_lambda to 0.5
+887375a	0.7611	keep	add IsMonthEndWeekend interaction
+1f968f0	0.7599	discard	set colsample_bytree to 0.35
+abc4bf6	0.7594	discard	add WeekendDayOfYear interaction
+e7c7835	0.7605	discard	decrease n_estimators to 250
+acc458d	0.7594	discard	add MonthEndDayOfYear interaction
+2768b71	0.7605	discard	add smoothed carrier origin destination delay priors
+a5e30e8	0.7535	discard	add heavily smoothed route delay prior
+7f9d0e2	0.7598	discard	add row-local WeekOfYear feature
+df10a38	0.7584	discard	remove annual sine cosine features
+7fb174c	0.7592	discard	add route departure time offset lookup
+e510bc0	0.7584	discard	bound lossguide max_depth to 10

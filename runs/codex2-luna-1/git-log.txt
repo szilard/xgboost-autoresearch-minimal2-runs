@@ -1,0 +1,206 @@
+commit 887375a7129ff97fcc75959ffc954fcdc694a011
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 20:28:57 2026 +0000
+
+    Add month end weekend interaction
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 69f7ce667d4aab7c63c43ef9662c64f609340d09
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 20:25:35 2026 +0000
+
+    Remove redundant default L2 setting
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 662e3ba3f7befa918f1ec527090e86a37b903d1e
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 20:23:56 2026 +0000
+
+    Reduce calendar model L2 penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 96f045baf7652b2214f0bdc08f6c1bbc8ae1eed9
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 20:17:46 2026 +0000
+
+    Test stronger calendar feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5e01c821dcb54b79074adfab056f43eb10b51f1a
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 20:16:19 2026 +0000
+
+    Refine calendar model feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit da686c8a1db4dde738a3a19672f9590d41d6746a
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 20:13:04 2026 +0000
+
+    Add cyclic annual features
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 064400091ec93bc5f669b157dc8ce56990911a1b
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 20:03:26 2026 +0000
+
+    Add month end indicator
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 96ed450c03e7d6cafc13be5a84f326db10cc3536
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:59:58 2026 +0000
+
+    Add weekend indicator
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 804bfd76ec2cded19108a245a3e01e595250c024
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:58:30 2026 +0000
+
+    Add day of year feature
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 2e73de1317dd10aec5e511c5d766695baa9f49cc
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:48:42 2026 +0000
+
+    Explore lossguide tree growth
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 169cc382de3cd3fc720b03872634a2610184fb08
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:37:51 2026 +0000
+
+    Tune L2 regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7eed099c194f30b8b1a2aa11c06a51351c04d1e7
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:34:28 2026 +0000
+
+    Relax leaf weight threshold
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 60b1953a0f3c35ebec67f1762868d968ed6ea7ca
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:33:15 2026 +0000
+
+    Test depth ten trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4582dd9a70fd22f5146e791243a2ba48a8481a1b
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:31:00 2026 +0000
+
+    Test depth nine trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 11ae0cd684341e742714b06ee1373ea1934625b8
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:28:43 2026 +0000
+
+    Extend subsampled ensemble
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0f9df9faaa926edb5c6bab795fe627f9ae31bbab
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:23:21 2026 +0000
+
+    Tune feature subsampling rate
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 83e138635fef8f176862285b3c91779d50590a2b
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:22:21 2026 +0000
+
+    Add feature subsampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 75ea6924af4623056f1716eac9d40e8a0c91ff01
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:15:56 2026 +0000
+
+    Regularize tree leaves
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a1c479d3b6060da8441ecf5abfc47bebf78ba2bb
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:13:48 2026 +0000
+
+    Explore deeper boosting trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b3f2c00af28941f1da98e413e1f5b06fd43b4876
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:12:51 2026 +0000
+
+    Use smaller learning rate with more trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 6acec81f9d960b30c25a68c91be3ed85af659918
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 19:11:53 2026 +0000
+
+    Increase baseline tree count
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c2944176b831b726d954873c658e2bc6023d7c33
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 15:43:38 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 10 files changed, 808 insertions(+)

@@ -1,0 +1,71 @@
+commit	status	description	eval_auc	holdout_auc
+c294417	keep	baseline	0.7203	0.7155
+132b310	discard	add departure minutes and sine/cosine time features	0.7195	N/A
+6acec81	keep	increase n_estimators from 30 to 100	0.7306	0.7271
+b3f2c00	keep	use 200 trees with learning rate 0.05	0.7325	0.7282
+a1c479d	keep	increase max_depth from 6 to 8	0.7331	0.7297
+6b108c3	discard	decrease max_depth from 8 to 5	0.7299	N/A
+75ea692	keep	set min_child_weight to 5	0.7339	0.7295
+f8be9f8	discard	increase min_child_weight from 5 to 10	0.7327	N/A
+f7f4a02	discard	add gamma=0.1 split regularization	0.7332	N/A
+53a349f	discard	add Origin-to-Dest route categorical feature	0.7067	N/A
+1687c30	discard	set subsample to 0.8	0.7306	N/A
+83e1386	keep	set colsample_bytree to 0.8	0.7397	0.7371
+0f9df9f	keep	set colsample_bytree to 0.6	0.7455	0.7416
+2201172	discard	set colsample_bytree to 0.4	0.7436	N/A
+126a7da	discard	set colsample_bytree to 0.5 (tie)	0.7455	N/A
+be96702	discard	add colsample_bylevel=0.8	0.7433	N/A
+c00665f	discard	add colsample_bynode=0.8	0.7451	N/A
+11ae0cd	keep	extend ensemble to 300 trees	0.7480	0.7443
+299a908	discard	400 trees with learning rate 0.04	0.7479	N/A
+4582dd9	keep	increase max_depth from 8 to 9	0.7495	0.7461
+771f646	discard	set max_cat_to_onehot to 32	0.7377	N/A
+60b1953	keep	increase max_depth from 9 to 10	0.7504	0.7469
+7eed099	keep	set min_child_weight to 3 at depth 10	0.7506	0.7462
+99f1a0e	discard	set min_child_weight to 1 at depth 10	0.7495	N/A
+5688075	discard	increase max_bin from 256 to 512	0.7495	N/A
+169cc38	keep	set reg_lambda to 2	0.7511	0.7469
+20901be	discard	add reg_alpha=0.1	0.7510	N/A
+b491494	discard	increase n_estimators from 300 to 400	0.7499	N/A
+01c296c	discard	increase max_depth from 10 to 11	0.7494	N/A
+9a7482d	discard	set reg_lambda to 3 (tie)	0.7511	N/A
+c37f5cc	discard	add scheduled departure hour	0.7492	N/A
+b60c0da	discard	set max_cat_threshold to 32	0.7505	N/A
+fce45dc	crash	DART dropout exceeded training timeout	0.0000	N/A
+2e73de1	keep	use lossguide growth with 512 leaves	0.7520	0.7471
+384ce87	discard	increase lossguide max_leaves to 1024	0.7497	N/A
+2e6d4f1	discard	decrease lossguide max_leaves to 256	0.7508	N/A
+a811b97	discard	set lossguide max_leaves to 384	0.7516	N/A
+b3406a0	discard	400 trees with learning rate 0.04 under lossguide	0.7517	N/A
+0d2316e	discard	350 trees under lossguide	0.7514	N/A
+b8dd6c7	discard	set min_child_weight to 5 under lossguide	0.7515	N/A
+804bfd7	keep	add row-local DayOfYear feature	0.7550	0.7521
+96ed450	keep	add row-local IsWeekend feature	0.7572	0.7529
+6e7d82e	discard	add row-local log distance feature	0.7558	N/A
+0644000	keep	add row-local IsMonthEnd feature	0.7583	0.7533
+7b90539	discard	add row-local IsMonthStart feature	0.7553	N/A
+4043ed7	discard	add exact 2005 federal holiday indicator	0.7559	N/A
+643a9dc	discard	widen IsMonthEnd to last five days	0.7572	N/A
+9ed4aea	discard	narrow IsMonthEnd to last two days (tie)	0.7572	N/A
+57f1e1c	discard	add row-local IsFriday feature	0.7553	N/A
+da686c8	keep	add cyclic DayOfYear sine/cosine features	0.7585	0.7544
+26e5948	discard	add cyclic departure-time sine/cosine features	0.7539	N/A
+5e01c82	keep	set colsample_bytree to 0.5 with calendar features	0.7606	0.7574
+96f045b	keep	set colsample_bytree to 0.4 with calendar features	0.7608	0.7572
+1ad37ec	discard	set colsample_bytree to 0.3 with calendar features	0.7577	N/A
+43af86d	discard	increase lossguide max_leaves to 768	0.7606	N/A
+3e99055	discard	set min_child_weight to 2 under calendar model	0.7601	N/A
+662e3ba	discard	set reg_lambda to 1 (tie)	0.7608	N/A
+69f7ce6	keep	remove redundant default reg_lambda setting	0.7608	0.7573
+e2d1d44	discard	set reg_lambda to 0.5	0.7600	N/A
+887375a	keep	add IsMonthEndWeekend interaction	0.7611	0.7567
+1f968f0	discard	set colsample_bytree to 0.35	0.7599	N/A
+abc4bf6	discard	add WeekendDayOfYear interaction	0.7594	N/A
+e7c7835	discard	decrease n_estimators to 250	0.7605	N/A
+acc458d	discard	add MonthEndDayOfYear interaction	0.7594	N/A
+2768b71	discard	add smoothed carrier origin destination delay priors	0.7605	N/A
+a5e30e8	discard	add heavily smoothed route delay prior	0.7535	N/A
+7f9d0e2	discard	add row-local WeekOfYear feature	0.7598	N/A
+df10a38	discard	remove annual sine cosine features	0.7584	N/A
+7fb174c	discard	add route departure time offset lookup	0.7592	N/A
+e510bc0	discard	bound lossguide max_depth to 10	0.7584	N/A
