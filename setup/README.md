@@ -5,8 +5,11 @@
   copy of [xgboost-autoresearch-minimal2](https://github.com/szilard/xgboost-autoresearch-minimal2)
   with fresh git history (no upstream `.git`, no `results/`) and the data
   already prepared.
-- `prompt-setup_container_for_xgb_agent_run.txt` - the prompt that drives a
-  run end to end in a new container.
+
+A run is driven end to end by the Claude Code skill `/xgb-run` in this repo
+(`.claude/skills/xgb-run/SKILL.md`): start `claude` in the repo (inside tmux,
+a run takes ~3 hours) and type e.g. `/xgb-run codex-luna-1 gpt-5.6-luna`.
+It needs the image and the login below.
 
 ### Build
 

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker run -dit --name:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker cp:*)",
+      "Bash(docker ps:*)",
+      "Bash(docker images:*)",
+      "Bash(docker image inspect:*)",
+      "Bash(docker volume ls:*)",
+      "Bash(docker volume inspect:*)",
+      "Bash(mkdir -p runs/:*)",
+      "Edit(/runs/**)",
+      "Edit(/results_summary.md)"
+    ],
+    "deny": [
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(docker rm:*)",
+      "Bash(docker stop:*)",
+      "Bash(docker kill:*)",
+      "Bash(docker volume rm:*)"
+    ]
+  }
+}
