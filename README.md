@@ -10,10 +10,10 @@ Another follow-up project is [identical-runs-different-results](https://github.c
 
 - Each run gets a fresh Docker container (`agents2` image): codex as the
   agent, on a ChatGPT subscription, and a clean copy of
-  xgboost-autoresearch-minimal2 with no history and no earlier results, so
+  `xgboost-autoresearch-minimal2` with no history and no earlier results, so
   the agent cannot see previous runs.
-- The agent gets the prompt from the minimal2 README and then works on its
-  own for 2 hours (enforced by the minimal2 harness): it edits `train.py`,
+- The agent gets the prompt from the `xgboost-autoresearch-minimal2` README and then works on its
+  own for 2 hours (enforced by the `xgboost-autoresearch-minimal2` harness): it edits `train.py`,
   runs experiments and keeps what improves the eval AUC.
 - Afterwards every kept experiment is scored on a holdout set the agent never
   saw, and the run is checked for validity (eval/holdout gap, only
