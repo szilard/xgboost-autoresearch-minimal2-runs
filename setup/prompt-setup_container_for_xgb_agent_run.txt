@@ -82,26 +82,13 @@ control back after step 6 - keep going:
     (holdout - eval), total time and AI share from report.txt. Then commit and
     push.
 
-At the very end, hand me back:
-
-- the `docker exec -it` command to get a shell in the container
-- the command to resume the codex session
-
 Notes:
 - Leave the Docker container up when you're done. Don't stop or remove it - I
   want to be able to go in afterwards and check anything by hand.
-- I'm already in tmux on my host. If you need a terminal multiplexer inside the
-  container to drive the codex TUI, that's fine, but kill it before handing
-  back and never give me a `tmux attach` command - I want to reach the agent
-  through its own resume command only.
-- The resume command is `codex resume <session-id> -C <dir>` plus the same
-  bypass, `-m` and `-c model_reasoning_effort=...` flags as in step 4 (none
-  of them persist). Session ids are in ~/.codex/sessions/. Actually run it
-  from a fresh shell and confirm with `/status` that it lands back in the
-  session with the same model and effort before you hand it to me.
+- If you need a terminal multiplexer inside the container to drive the codex
+  TUI, that's fine; kill it when you're done.
 - The documented interrupt key does not always reach the TUI through a
-  multiplexer. If it doesn't, exit codex outright to stop it; the session
-  stays resumable. Expect the in-flight experiment to be committed but missing
+  multiplexer. If it doesn't, exit codex outright to stop it. Expect the in-flight experiment to be committed but missing
   from results.tsv - the ground truth script reads results.tsv, so that's the
   right set to evaluate.
 - Before writing the run up, check that it is valid:
