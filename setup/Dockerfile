@@ -4,7 +4,11 @@
 #
 # Build:  docker build -t agents2 setup/
 # Login (once; the credentials go into the docker volume codex-auth):
-#         docker run -it --rm -v codex-auth:/home/ubuntu/.codex-auth agents2 codex login --device-auth
+#         docker run -it --rm -e CODEX_HOME=/home/ubuntu/.codex-auth \
+#           -v codex-auth:/home/ubuntu/.codex-auth agents2 bash -c \
+#           'codex login --device-auth && find "$CODEX_HOME" -mindepth 1 ! -name auth.json -exec rm -rf {} +'
+#         (CODEX_HOME, because login first deletes ~/.codex/auth.json, i.e. the symlink;
+#         the find leaves only auth.json in the volume)
 # Run:    docker run -dit --name <run> -v codex-auth:/home/ubuntu/.codex-auth agents2
 #         (only auth.json is shared; sessions/history/config stay in the container)
 FROM ubuntu:26.04
@@ -23,8 +27,8 @@ ENV PATH=/home/ubuntu/.npm-global/bin:/home/ubuntu/.local/bin:$PATH
 
 # codex starts fresh: `codex --version` leaves ~/.codex/tmp behind, so reset it.
 # ~/.codex/auth.json is a symlink into ~/.codex-auth, where the codex-auth
-# volume is mounted; codex writes auth.json in place, so logins and token
-# refreshes land in the volume. A fresh volume takes the owner and mode
+# volume is mounted; codex rewrites auth.json in place, so token refreshes
+# land in the volume. A fresh volume takes the owner and mode
 # (ubuntu, 700) of ~/.codex-auth from the image.
 RUN npm install -g --prefix /home/ubuntu/.npm-global @openai/codex && codex --version \
     && rm -rf /home/ubuntu/.codex && mkdir /home/ubuntu/.codex \
