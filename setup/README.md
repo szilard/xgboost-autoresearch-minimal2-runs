@@ -6,10 +6,9 @@
   with fresh git history (no upstream `.git`, no `results/`) and the data
   already prepared.
 
-A run is driven end to end by the Claude Code skill `/xgb-run` in this repo
-(`.claude/skills/xgb-run/SKILL.md`): start `claude` in the repo (inside tmux,
-a run takes ~3 hours) and type e.g. `/xgb-run codex-luna-1 gpt-5.6-luna`.
-It needs the image and the login below.
+Runs are driven by the Claude Code skill `/xgb-run` (see [Running an
+experiment](#running-an-experiment-xgb-run)), after the one-time build and
+login below.
 
 ### Build
 
@@ -37,7 +36,40 @@ docker run -it --rm -e CODEX_HOME=/home/ubuntu/.codex-auth \
 docker run --rm -v codex-auth:/v agents2 ls -la /v
 ```
 
-### Run
+### Running an experiment: `/xgb-run`
+
+The project skill `.claude/skills/xgb-run/SKILL.md` runs one experiment end
+to end. Start `claude` in this repo (inside tmux: a run takes ~3 hours) and
+type:
+
+```
+/xgb-run <container-name> <model> [effort]
+```
+
+e.g. `/xgb-run codex-luna-1 gpt-5.6-luna` (effort defaults to `max`). It
+only runs when invoked like this, never on its own. It:
+
+- starts a new `agents2` container named `<container-name>`, with the
+  `codex-auth` volume mounted
+- runs codex with `codex exec` / `codex exec resume`, one command per turn:
+  the README prompt, then "go", and "keep going" if it stops early; the
+  harness enforces the 2-hour budget
+- checks from the codex session log that the model and effort took effect
+- runs the harness report, the ground truth scoring and the plot, and checks
+  the run is valid (eval/holdout gap, train.py-only diff, no access to the
+  holdout data)
+- copies the results into `runs/<container-name>/` and adds a row to
+  `results_summary.md`, without committing anything - review and commit
+  them yourself
+- leaves the container up for inspection
+
+`.claude/settings.json` pre-approves the docker commands and file writes a
+run needs, so it can run unattended (also in auto mode), and denies
+`docker volume rm` to protect the login.
+
+### The container
+
+This is what the skill starts:
 
 ```bash
 docker run -dit --name <run> -v codex-auth:/home/ubuntu/.codex-auth agents2
