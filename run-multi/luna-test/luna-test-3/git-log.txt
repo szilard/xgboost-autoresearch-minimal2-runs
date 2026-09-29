@@ -1,0 +1,269 @@
+commit 4c7b3d05abe707ce0967ab9e256f2da81e551516
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:43:54 2026 +0000
+
+    Test intermediate split pruning
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c3f4948c3c1186b6275a77313e5e2fc76e5f0b51
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:33:39 2026 +0000
+
+    Test intermediate L1 with tuned sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 65da8d7cc9043e869e85953c31377604e3735e8e
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:29:47 2026 +0000
+
+    Test slightly more feature coverage
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6b5bb3fa2dee061fff67cc595c3c60d29dbe8237
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:25:47 2026 +0000
+
+    Refine child weight regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e05f2868c458ad2b3c5ab7c030ab34bb7e45599e
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:24:33 2026 +0000
+
+    Test small child weight regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ef49f0fde1c3aff74f77965b5f8da27573970548
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:13:59 2026 +0000
+
+    Ablate tree count at depth sixteen
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 5cb8aef9d406563d6ff9aa3b6fac716069a28a95
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:12:35 2026 +0000
+
+    Test depth sixteen with regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 25a38183695236eb1424d913eec67de6210e3405
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:11:19 2026 +0000
+
+    Retest depth fourteen with regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b2a2bccbf90254e78109f2858cf107d391242763
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:04:12 2026 +0000
+
+    Reduce L2 regularization further
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 11cee69c291388c4f243eebdddf136421f16ad03
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:03:11 2026 +0000
+
+    Test lighter L2 with tuned L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e8f9cd7fbda04516d1d8b5cc98b6315d187915c7
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 04:00:51 2026 +0000
+
+    Continue L1 regularization sweep
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0ee2bc7fc0d979d390b5d35013ad0a7a788a7cae
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:59:36 2026 +0000
+
+    Test stronger L1 with refined schedule
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 33b33a716657fce9b858102cacda8b96fd256f2c
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:58:05 2026 +0000
+
+    Try moderate finer schedule
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit c4ed284c4620ba6801f0620f272600135da2f49c
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:53:17 2026 +0000
+
+    Raise categorical split threshold
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit dcf53c352429cdd349557c867737c167664aee77
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:49:38 2026 +0000
+
+    Test near-full row sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4a5a1c4d31294e6c05e8ae591e62d10a0f05efae
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:48:37 2026 +0000
+
+    Test lighter row subsampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ab271ef8f6d8bd1c5212948c6b6754081fc059c1
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:45:51 2026 +0000
+
+    Test stronger L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fc3974ff7b5f01d4d75299d2cacb675222474072
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:44:47 2026 +0000
+
+    Add small L1 regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 591403f9702c23f8a201d6387813c2c33d7bc624
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:42:38 2026 +0000
+
+    Increase L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 539d2baebfb1ea03edfa5e6d5b71cadb925e8ebd
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:40:26 2026 +0000
+
+    Add small split loss regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 73305e01f39b7c46f1f676520db2e591df6e7148
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:36:55 2026 +0000
+
+    Test depth twelve
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bea6014fb0683c54629c98721086999c3eb7ab28
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:35:49 2026 +0000
+
+    Test depth ten with feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ad804147dbd2adf5e6a71ce5ac453f0139e765d1
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:32:43 2026 +0000
+
+    Test stronger feature subsampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1539a19ee3d4e7941419b74b5703b7d6f4c53c2b
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:31:47 2026 +0000
+
+    Strengthen feature subsampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 662816bd0ea2aff6af82d22b78e1f75212013443
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:27:02 2026 +0000
+
+    Try longer regularized boosting schedule
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b864405bc3444c623495f40daf8e442ea0499531
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:22:30 2026 +0000
+
+    Regularize deep trees with subsampling
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 4cd09c9c243c37c8309cf572f425c05552bbf297
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:21:23 2026 +0000
+
+    Test deeper boosted trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0116998aaf3f8b04406a60ade0a4de82f3b1c037
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 03:12:26 2026 +0000
+
+    Try slower boosting with more trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit c2944176b831b726d954873c658e2bc6023d7c33
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 15:43:38 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 10 files changed, 808 insertions(+)

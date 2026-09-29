@@ -1,0 +1,305 @@
+commit 044cc6306c2d5fb8041c8a437c92d9d6c1986b0f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 02:29:23 2026 +0000
+
+    Increase categorical sampling priority
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a01d410c8f393f1c7e9b58d5df4c4cadf095ba1d
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 02:27:38 2026 +0000
+
+    Weight categorical features in sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5e9808b6e70c64cdbaef964ce78ebf674b4995d0
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 02:21:59 2026 +0000
+
+    Test slower 575-leaf schedule
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 12bf0d9fac62c95045dfe12f894de07713962e06
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 02:18:38 2026 +0000
+
+    Probe 575-leaf cap-3 model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6e075bd12a75fa8479368f1d6b865f29be725fab
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 02:17:06 2026 +0000
+
+    Increase cap-3 leaf budget to 511
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6046cbbfe65e7ba7ebb82ef794ac4ddc161aa19e
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 02:15:39 2026 +0000
+
+    Test intermediate categorical cap
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 56e44b704b20efcc10b22f7934929657a8572834
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 02:13:16 2026 +0000
+
+    Probe 447-leaf cap-4 model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d5271c417aa88e7707d16314c8f0b7200078d958
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 02:11:45 2026 +0000
+
+    Increase cap-4 leaf budget to 383
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3583f8704633e5a038f9dc9ebef7bfb12f404376
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 02:04:13 2026 +0000
+
+    Test milder per-level sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b324f9b2452ee92358895ab2854e1e460819cd32
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:59:45 2026 +0000
+
+    Add per-level feature subsampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ec35dd069487527ee12fc167934f3b94532527c6
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:56:17 2026 +0000
+
+    Increase cap-4 lossguide leaves
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2767866800a74ae262b26b04d0d38eee1b060797
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:53:32 2026 +0000
+
+    Test strict categorical partition cap
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8686d0b87c215066d017f30a2e4a5051cf10bc9f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:52:16 2026 +0000
+
+    Test tighter categorical cap with lossguide
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 21f2cada3c8179c75b0abd2af32254bbfafbe1e4
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:46:33 2026 +0000
+
+    Continue slower boosting schedule
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 05054a0b6d4d91d2fca63d65e64bd24e611c78ec
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:45:19 2026 +0000
+
+    Test slower high-capacity boosting schedule
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit e421b3cbbc036b30fd7f4a7ea1e6a3d9df1ff02b
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:42:15 2026 +0000
+
+    Continue L2 regularization sweep
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2b37301e0d258a87b23693f11a8783a298744ded
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:41:05 2026 +0000
+
+    Tune L2 for high-capacity model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 06eccee25f39a9b5ebe36aca6c043c57cbc2a24f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:39:48 2026 +0000
+
+    Test lower child weight for lossguide
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2a2f11bcf4414084b85095b636e32a8e93623811
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:35:37 2026 +0000
+
+    Probe 255-leaf lossguide model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e6c3d09decefd0fc895258e1a91f517f13a07166
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:34:26 2026 +0000
+
+    Probe larger lossguide leaf budget
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit caf57358fce792c8f0f7898d2551c69436d286a4
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:33:15 2026 +0000
+
+    Increase lossguide leaves to 127
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit efd27b238a8c64e2bdd806e90bb68aba7efc0402
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:32:06 2026 +0000
+
+    Increase lossguide leaves to 95
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3589f1d5e03a6390849aa266df7dbad651a8aa0f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:30:11 2026 +0000
+
+    Increase lossguide leaf budget
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a6f9f1fe15981eafcd3067d3ce13fa6a2281d396
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:29:02 2026 +0000
+
+    Test lossguide tree growth
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit e3f12ac82f1ff9269ba6ada6a78df9f3f37214e4
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:14:57 2026 +0000
+
+    Increase L2 regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4754cf0f4cc19e5a2ff657f98b82f52bab771c48
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:11:28 2026 +0000
+
+    Test mild leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit d897a2a8b04c04660629aada32fcbe8f188bc03a
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:06:47 2026 +0000
+
+    Tighten categorical partition cap
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 73a6d4cd47e03b33610fa3c7bed093c2ea6685e1
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:05:42 2026 +0000
+
+    Cap categorical partition candidates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1700ce82bae9f9c2f658ef87c87df2ae96ace724
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:03:23 2026 +0000
+
+    Add feature subsampling regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c102f10ce891977ebbae520125101e5d7c2f4650
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 01:00:27 2026 +0000
+
+    Use smaller learning rate with more trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 71326e10c680ece34887ead2cf41e8c47a5aca47
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 00:56:02 2026 +0000
+
+    Increase boosting rounds to 200
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c2e7ec82a9fbd4403ffbfd6cbfa9dabd23275a9b
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 00:55:05 2026 +0000
+
+    Increase boosting rounds to 100
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c2944176b831b726d954873c658e2bc6023d7c33
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 15:43:38 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 10 files changed, 808 insertions(+)

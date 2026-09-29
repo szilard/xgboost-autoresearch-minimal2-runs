@@ -1,0 +1,9 @@
+Experiment complete.
+
+- Branch: `sep29`
+- Best commit: `044cc63`
+- Best Eval AUC: `0.7614`
+- Clock stopped after `2h00m38s`
+- Final model preserved in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py)
+
+Records are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).

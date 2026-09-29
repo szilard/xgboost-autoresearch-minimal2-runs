@@ -1,0 +1,278 @@
+commit 7e803318a58c008009bb7420e22cd8bb18272f50
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 00:01:59 2026 +0000
+
+    Tune seasonal model L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3488ee6182d69fa2c78e7a88da5a73e62c16a1ee
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:43:35 2026 +0000
+
+    Add cyclic seasonal features
+
+ train.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 165c83923f3f30dc8975d88146ff45bd97ee0ba2
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:41:11 2026 +0000
+
+    Add day of year feature
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 1f9748951d3c219c6189a5956b508f912f46b9d1
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:35:00 2026 +0000
+
+    Retune slow model L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c17aff8d7619fa84749d30e060d53df7dc8d49a9
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:25:05 2026 +0000
+
+    Tune categorical threshold to 4
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c95874a7f02688374ac2a1d345b48baf09622301
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:23:11 2026 +0000
+
+    Tune categorical threshold to 8
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6a9855ce634478fec570cafab4bb6c32b6bf5219
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:21:19 2026 +0000
+
+    Retune lossguide with slower boosting
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 01c9d347fd9aa73f7fff968254f7f7375b90e2c1
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:19:31 2026 +0000
+
+    Tune categorical split threshold to 16
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e9522d34a86ae970520fa1b8b8c47875dc48274d
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:18:08 2026 +0000
+
+    Limit categorical split candidates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ee1f62b986eb4ccce941fab315eec47220d0c797
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:11:26 2026 +0000
+
+    Probe lossguide leaves to 512
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d76711835adf6eb80af2c76549118fd46d0ce6cd
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:10:09 2026 +0000
+
+    Tune lossguide leaves to 256
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6b1203aaf84efb12f21215d3cc64d69b8cac4e25
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:09:03 2026 +0000
+
+    Tune lossguide leaves to 128
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b60164c4f9a316bcdb3516124d1ad5f2d913a30b
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:06:52 2026 +0000
+
+    Test lossguide tree growth
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit ea235cd37acfe00047f61075e5a7ea6e844fee96
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:05:15 2026 +0000
+
+    Probe stronger L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1142b894a77c08c5b4726bc47af9c52c35f127dc
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:04:12 2026 +0000
+
+    Add light L1 regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b11e222587eca737c4621f11ba3218e6b12f2ecb
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:02:00 2026 +0000
+
+    Probe reg_lambda 100
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9a4cc36d8c3a0a29b4834bdbf4d35a64194b94a6
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 23:00:51 2026 +0000
+
+    Probe reg_lambda 50
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8365a8bd3dad5920d6516085b468a6ecb1479cb4
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:59:48 2026 +0000
+
+    Probe reg_lambda 20
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 360b126559c633750b3b38eadfd3201c3a0327fc
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:58:49 2026 +0000
+
+    Probe reg_lambda 10
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3cea599b77f4890c6558f1a4d19b9184992ca683
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:57:49 2026 +0000
+
+    Probe stronger L2 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9ceeb8b0867b4cbb164f9f35235fb365a6cea644
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:56:49 2026 +0000
+
+    Increase L2 regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2ff4ce2d850b85b70c685f9bfdc3ee3041bd0bcd
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:54:02 2026 +0000
+
+    Tune column subsampling to 0.7
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ede7b4421796318e24ebeaab03050ee5552a0b4c
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:52:47 2026 +0000
+
+    Add column subsampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 869e4347176e54a0916c9ea172e797c867f6166e
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:51:46 2026 +0000
+
+    Test minimal split regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3d97dd57e58c06c020b5feab95f20dde37c3258f
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:49:39 2026 +0000
+
+    Add light split regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e74507dcdf7705f7d3463e82c28ad60d6085e09e
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:39:18 2026 +0000
+
+    Probe 600 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ad8490656c377c0062fe9ce173b7fbd690638803
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:37:13 2026 +0000
+
+    Increase boosting rounds to 400
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 57cd9c098ee37b81a60f8fbd035fcac4d7d8fccb
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:36:16 2026 +0000
+
+    Increase boosting rounds to 200
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 34f7971493e4046260a89be5ded11dccacc69e0b
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 22:35:15 2026 +0000
+
+    Use slower boosting with more trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit c2944176b831b726d954873c658e2bc6023d7c33
+Author: agent <agent@localhost>
+Date:   Mon Sep 28 15:43:38 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 10 files changed, 808 insertions(+)

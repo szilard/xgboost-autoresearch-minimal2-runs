@@ -1,0 +1,41 @@
+2026-09-29T00:47:06Z run luna-test-2: model=gpt-5.6-luna effort=max out=/home/ubuntu/xgboost-autoresearch-minimal2-runs/run-multi/luna-test/luna-test-2
+2026-09-29T00:47:06Z container started
+total 8
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep 28 15:43 .
+drwxr-x--- 1 ubuntu ubuntu 4096 Sep 28 15:43 ..
+lrwxrwxrwx 1 ubuntu ubuntu   34 Sep 28 15:43 auth.json -> /home/ubuntu/.codex-auth/auth.json
+## main
+c294417 xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779
+README-autoresearch.md
+check_groundtruth.py
+data
+harness.py
+plot_auc_history.py
+prepare.py
+program.md
+run_groundtruth_all.sh
+train.py
+2026-09-29T00:47:06Z setup check: python3 train.py
+2026-09-29T00:47:39Z setup check: Eval AUC: 0.7203
+Logged in using ChatGPT
+2026-09-29T00:47:40Z reasoning levels for gpt-5.6-luna: low medium high xhigh max
+2026-09-29T00:47:40Z turn 1 send: Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.
+2026-09-29T00:48:40Z session id: 01a0eaa1-b0fc-74a3-b493-34fef6d4716a
+2026-09-29T00:48:40Z turn 1 done (exit 0): `program.md` specifies a fresh run branch. I propose the tag `sep29` (September 29), and it does not exist yet; the worktree is clean on `main`.  Confirm `sep29`, or provide another tag.
+2026-09-29T00:48:41Z turn_context: [('gpt-5.6-luna', 'max', 'never', 'danger-full-access')]
+2026-09-29T00:48:41Z clock: Clock not started 
+2026-09-29T00:48:41Z turn 2 send: go
+2026-09-29T00:49:42Z turn 2 done (exit 0): Setup is complete:  - Branch: `sep29` - Read: `README-autoresearch.md`, `train.py`, `harness.py` - Verified: `data/train.csv` and `data/eval.csv` - Initialized: [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) - Clock: not started  Everything looks good. Confirm when you want me to start the 2-hour experiment clock.
+2026-09-29T00:49:43Z clock: Clock not started 
+2026-09-29T00:49:43Z turn 3 send: go
+2026-09-29T02:50:49Z turn 3 done (exit 0): Experiment complete.  - Branch: `sep29` - Best commit: `044cc63` - Best Eval AUC: `0.7614` - Clock stopped after `2h00m38s` - Final model preserved in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py)  Records are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).
+2026-09-29T02:50:50Z clock: Elapsed: 2h00m38s, remaining: 0h00m00s Clock stopped 
+2026-09-29T02:50:52Z final clock: Elapsed: 2h00m38s, remaining: 0h00m00s Clock stopped 
+2026-09-29T02:50:53Z report: Clock:        2026-09-29 00:49:50 -> 2026-09-29 02:50:28 Total:        2h00m38s XGBoost runs: 0h50m41s  42.0%   (72 runs: 71 ok, 0 crash, 1 training timeout, 0 eval timeout)   training:   0h13m06s  10.9%   (train.py up to evaluation: startup, data, features, fit)   evaluation: 0h37m35s  31.2%   (saving the artifact + row-by-row scoring of eval.csv) AI:           1h09m57s  58.0%   (everything else: token generation, tool calls, web research, API latency) 
+2026-09-29T02:50:53Z run_groundtruth_all.sh
+eval_auc: max=0.7614 at n=69
+holdout_auc: max=0.7578 at n=69
+2026-09-29T03:07:52Z branch=sep29 first=c2944176b831b726d954873c658e2bc6023d7c33 best=044cc63 upstream: xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779
+2026-09-29T03:07:53Z redacted 2 account id(s) in codex-session.jsonl
+2026-09-29T03:07:53Z summary: {  "container": "luna-test-2",  "status": "ok",  "reason": "",  "model": "gpt-5.6-luna",  "effort": "max",  "codex_version": "codex-cli 0.158.0",  "turn_context": "[('gpt-5.6-luna', 'max', 'never', 'danger-full-access')]",  "session_id": "01a0eaa1-b0fc-74a3-b493-34fef6d4716a",  "turns": [    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",    "go",    "go"  ],  "clock_stopped_by": "agent",  "branch": "sep29",  "first_commit": "c2944176b831b726d954873c658e2bc6023d7c33",  "upstream": "xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779",  "results_rows": 72,  "best_commit": "044cc63",  "best_eval_auc": "0.7614",  "best_holdout_auc": "0.7578"}
+2026-09-29T03:08:03Z container deleted

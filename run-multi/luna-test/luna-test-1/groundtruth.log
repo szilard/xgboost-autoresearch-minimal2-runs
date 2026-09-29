@@ -1,0 +1,134 @@
+=== [2] c294417 | keep | baseline ===
+  holdout=0.7155
+=== [3] 1a73a22 | discard | add native categorical Origin-Dest route interaction ===
+  SKIP: status discard
+=== [4] 0c4faca | discard | add numeric scheduled departure hour ===
+  SKIP: status discard
+=== [5] ecd9236 | discard | encode scheduled departure hour categorically ===
+  SKIP: status discard
+=== [6] 34f7971 | keep | 100 trees at learning rate 0.05 ===
+  holdout=0.7220
+=== [7] 57cd9c0 | keep | 200 trees at learning rate 0.05 ===
+  holdout=0.7282
+=== [8] ad84906 | keep | 400 trees at learning rate 0.05 ===
+  holdout=0.7315
+=== [9] ca9ecaf | discard | 800 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [10] e74507d | keep | 600 trees at learning rate 0.05 ===
+  holdout=0.7320
+=== [11] 77b49c4 | discard | 600 trees at max depth 4 ===
+  SKIP: status discard
+=== [12] 90afb01 | discard | 600 trees at max depth 8 ===
+  SKIP: status discard
+=== [13] bedbdfe | discard | 600 trees at learning rate 0.05 with subsample 0.8 ===
+  SKIP: status discard
+=== [14] 0ca362d | discard | 600 trees with smoothed route delay rate ===
+  SKIP: status discard
+=== [15] 51ccd92 | discard | 600 trees with smoothed origin and destination delay rates ===
+  SKIP: status discard
+=== [16] fbcd811 | discard | 600 trees with native carrier-hour interaction ===
+  SKIP: status discard
+=== [17] c09c3fc | discard | 600 trees with min_child_weight 5 ===
+  SKIP: status discard
+=== [18] 3d97dd5 | keep | 600 trees with gamma 0.1 ===
+  holdout=0.7328
+=== [19] ff4da35 | discard | 600 trees with gamma 0.5 ===
+  SKIP: status discard
+=== [20] 869e434 | keep | 600 trees with gamma 0.01 ===
+  holdout=0.7324
+=== [21] ede7b44 | keep | 600 trees with gamma 0.01 and colsample 0.8 ===
+  holdout=0.7367
+=== [22] 2ff4ce2 | keep | 600 trees with gamma 0.01 and colsample 0.7 ===
+  holdout=0.7393
+=== [23] 9184b10 | discard | 600 trees with gamma 0.01, colsample 0.7, max_bin 512 ===
+  SKIP: status discard
+=== [24] 9ceeb8b | keep | 600 trees with gamma 0.01, colsample 0.7, reg_lambda 2 ===
+  holdout=0.7395
+=== [25] 3cea599 | keep | 600 trees with gamma 0.01, colsample 0.7, reg_lambda 5 ===
+  holdout=0.7401
+=== [26] 360b126 | keep | 600 trees with gamma 0.01, colsample 0.7, reg_lambda 10 ===
+  holdout=0.7411
+=== [27] 8365a8b | keep | 600 trees with gamma 0.01, colsample 0.7, reg_lambda 20 ===
+  holdout=0.7414
+=== [28] 9a4cc36 | keep | 600 trees with gamma 0.01, colsample 0.7, reg_lambda 50 ===
+  holdout=0.7417
+=== [29] b11e222 | keep | 600 trees with gamma 0.01, colsample 0.7, reg_lambda 100 ===
+  holdout=0.7419
+=== [30] 44c99b6 | discard | 600 trees with gamma 0.01, colsample 0.7, reg_lambda 200 ===
+  SKIP: status discard
+=== [31] 1142b89 | keep | 600 trees with gamma 0.01, colsample 0.7, reg_lambda 100, reg_alpha 0.1 ===
+  holdout=0.7418
+=== [32] ea235cd | keep | 600 trees with gamma 0.01, colsample 0.7, reg_lambda 100, reg_alpha 1 ===
+  holdout=0.7419
+=== [33] b60164c | keep | lossguide with max_leaves 64 and max_depth 0 ===
+  holdout=0.7452
+=== [34] d0f88be | discard | lossguide with max_leaves 32 ===
+  SKIP: status discard
+=== [35] 6b1203a | keep | lossguide with max_leaves 128 ===
+  holdout=0.7484
+=== [36] d767118 | keep | lossguide with max_leaves 256 ===
+  holdout=0.7508
+=== [37] ee1f62b | keep | lossguide with max_leaves 512 ===
+  holdout=0.7506
+=== [38] 4d77d02 | discard | lossguide with max_leaves 768 ===
+  SKIP: status discard
+=== [39] 002ab96 | discard | lossguide 512 leaves with max_cat_to_onehot 32 ===
+  SKIP: status discard
+=== [40] e2845ff | crash | DART rate_drop 0.1 timed out during training ===
+  SKIP: status crash
+=== [41] e9522d3 | keep | lossguide 512 leaves with max_cat_threshold 32 ===
+  holdout=0.7523
+=== [42] 01c9d34 | keep | lossguide 512 leaves with max_cat_threshold 16 ===
+  holdout=0.7521
+=== [43] 6a9855c | keep | lossguide 512 leaves, learning rate 0.025, 1200 trees ===
+  holdout=0.7532
+=== [44] c95874a | keep | lossguide 512 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 8 ===
+  holdout=0.7552
+=== [45] c17aff8 | keep | lossguide 512 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 4 ===
+  holdout=0.7561
+=== [46] ada6182 | discard | lossguide 512 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 2 ===
+  SKIP: status discard
+=== [47] 0e7b78d | discard | lossguide 512 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 3 ===
+  SKIP: status discard
+=== [48] 967cf14 | discard | lossguide 576 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 4 ===
+  SKIP: status discard
+=== [49] 6dc3555 | discard | lossguide 512 leaves, learning rate 0.025, reg_lambda 200, max_cat_threshold 4 ===
+  SKIP: status discard
+=== [50] 1f97489 | keep | lossguide 512 leaves, learning rate 0.025, reg_alpha 2, max_cat_threshold 4 ===
+  holdout=0.7566
+=== [51] a84815b | discard | lossguide 512 leaves, learning rate 0.025, reg_alpha 5, max_cat_threshold 4 ===
+  SKIP: status discard
+=== [52] 9ba100f | discard | lossguide 512 leaves, learning rate 0.025, colsample 0.6, max_cat_threshold 4 ===
+  SKIP: status discard
+=== [53] 165c839 | keep | add numeric DayOfYear feature to tuned lossguide model ===
+  holdout=0.7604
+=== [54] 3488ee6 | keep | add cyclic DayOfYear sine and cosine features ===
+  holdout=0.7621
+=== [55] 61e028f | discard | add cyclic scheduled departure-time sine and cosine features ===
+  SKIP: status discard
+=== [56] 0bea429 | discard | add IsWeekend indicator ===
+  SKIP: status discard
+=== [57] 5571f1a | discard | add native Month-DayOfWeek interaction ===
+  SKIP: status discard
+=== [58] e1ad213 | discard | ablate raw DayofMonth while retaining DayOfYear features ===
+  SKIP: status discard
+=== [59] 9dc4923 | discard | ablate raw Month while retaining DayOfYear features ===
+  SKIP: status discard
+=== [60] 2709dce | discard | ablate DayOfYear cosine feature ===
+  SKIP: status discard
+=== [61] 4d4d69b | discard | ablate DayOfYear sine feature ===
+  SKIP: status discard
+=== [62] 7e80331 | keep | seasonal features with reg_alpha 3 ===
+  holdout=0.7622
+=== [63] f797bce | discard | weight seasonal features in column sampling ===
+  SKIP: status discard
+=== [64] f57a6e4 | discard | seasonal model with max_cat_threshold 5 ===
+  SKIP: status discard
+=== [65] 463f470 | discard | seasonal model with reg_alpha 4 ===
+  SKIP: status discard
+=== [66] 94c185b | discard | seasonal model with colsample 0.75 ===
+  SKIP: status discard
+=== [67] 0e901bb | discard | add Quarter categorical feature ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

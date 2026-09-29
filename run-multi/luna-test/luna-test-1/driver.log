@@ -1,0 +1,38 @@
+2026-09-28T22:26:35Z run luna-test-1: model=gpt-5.6-luna effort=max out=/home/ubuntu/xgboost-autoresearch-minimal2-runs/run-multi/luna-test/luna-test-1
+2026-09-28T22:26:35Z container started
+total 8
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep 28 15:43 .
+drwxr-x--- 1 ubuntu ubuntu 4096 Sep 28 15:43 ..
+lrwxrwxrwx 1 ubuntu ubuntu   34 Sep 28 15:43 auth.json -> /home/ubuntu/.codex-auth/auth.json
+## main
+c294417 xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779
+README-autoresearch.md
+check_groundtruth.py
+data
+harness.py
+plot_auc_history.py
+prepare.py
+program.md
+run_groundtruth_all.sh
+train.py
+2026-09-28T22:26:35Z setup check: python3 train.py
+2026-09-28T22:27:07Z setup check: Eval AUC: 0.7203
+Logged in using ChatGPT
+2026-09-28T22:27:08Z reasoning levels for gpt-5.6-luna: low medium high xhigh max
+2026-09-28T22:27:08Z turn 1 send: Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.
+2026-09-28T22:28:08Z session id: 01a0ea21-07e5-7af3-ba33-9cc9b03b071c
+2026-09-28T22:28:09Z turn 1 done (exit 0): Setup is ready:  - Branch: `sep28` - `data/train.csv` and `data/eval.csv` verified - `results.tsv` initialized with the correct header - Experiment clock is not started - Working tree contains only the intended untracked `results.tsv`  Say “go” when you want me to start the 2-hour experiment clock and run the baseline.
+2026-09-28T22:28:09Z turn_context: [('gpt-5.6-luna', 'max', 'never', 'danger-full-access')]
+2026-09-28T22:28:09Z clock: Clock not started 
+2026-09-28T22:28:09Z turn 2 send: go
+2026-09-29T00:30:13Z turn 2 done (exit 0): Experiment complete.  - Branch: `sep28` - Best commit: `7e80331` - Eval AUC: `0.7667` vs baseline `0.7203` (+0.0464) - 65 non-baseline experiments completed - Clock stopped after 2h00m45s  Files: [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py), [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv), [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/researc
+2026-09-29T00:30:14Z clock: Elapsed: 2h00m45s, remaining: 0h00m00s Clock stopped 
+2026-09-29T00:30:16Z final clock: Elapsed: 2h00m45s, remaining: 0h00m00s Clock stopped 
+2026-09-29T00:30:17Z report: Clock:        2026-09-28 22:28:18 -> 2026-09-29 00:29:04 Total:        2h00m45s XGBoost runs: 1h04m12s  53.2%   (66 runs: 65 ok, 0 crash, 1 training timeout, 0 eval timeout)   training:   0h26m19s  21.8%   (train.py up to evaluation: startup, data, features, fit)   evaluation: 0h37m53s  31.4%   (saving the artifact + row-by-row scoring of eval.csv) AI:           0h56m34s  46.8%   (everything else: token generation, tool calls, web research, API latency) 
+2026-09-29T00:30:17Z run_groundtruth_all.sh
+eval_auc: max=0.7667 at n=61
+holdout_auc: max=0.7622 at n=61
+2026-09-29T00:46:49Z branch=sep28 first=c2944176b831b726d954873c658e2bc6023d7c33 best=7e80331 upstream: xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779
+2026-09-29T00:46:50Z redacted 2 account id(s) in codex-session.jsonl
+2026-09-29T00:46:50Z summary: {  "container": "luna-test-1",  "status": "ok",  "reason": "",  "model": "gpt-5.6-luna",  "effort": "max",  "codex_version": "codex-cli 0.158.0",  "turn_context": "[('gpt-5.6-luna', 'max', 'never', 'danger-full-access')]",  "session_id": "01a0ea21-07e5-7af3-ba33-9cc9b03b071c",  "turns": [    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",    "go"  ],  "clock_stopped_by": "agent",  "branch": "sep28",  "first_commit": "c2944176b831b726d954873c658e2bc6023d7c33",  "upstream": "xgboost-autoresearch-minimal2 @ 20e1f9850ca0ff4a2433ca63b48992dc057d4779",  "results_rows": 66,  "best_commit": "7e80331",  "best_eval_auc": "0.7363\n0.7667",  "best_holdout_auc": "0.7324\n0.7622"}
+2026-09-29T00:47:00Z container deleted

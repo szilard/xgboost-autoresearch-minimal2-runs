@@ -1,0 +1,73 @@
+commit	status	description	eval_auc	holdout_auc
+c294417	keep	baseline	0.7203	0.7155
+51cbf12	discard	add Origin-Dest route categorical feature	0.7071	N/A
+8b59af5	discard	add scheduled departure hour feature	0.7201	N/A
+c2e7ec8	keep	increase n_estimators to 100	0.7306	0.7271
+71326e1	keep	increase n_estimators to 200	0.7345	0.7311
+916d5a3	discard	increase n_estimators to 400	0.7325	N/A
+597d027	discard	reduce max_depth to 4	0.7317	N/A
+f09b5a8	discard	increase max_depth to 8	0.7323	N/A
+c102f10	keep	learning_rate 0.05 with 400 trees	0.7354	0.7315
+68be42c	discard	add subsample 0.8	0.7285	N/A
+1700ce8	keep	add colsample_bytree 0.8	0.7386	0.7350
+73a6d4c	keep	set max_cat_threshold to 32	0.7392	0.7353
+d897a2a	keep	set max_cat_threshold to 16	0.7407	0.7354
+0c59717	discard	set max_cat_threshold to 8	0.7405	N/A
+56084b5	discard	set max_cat_threshold to 12	0.7407	N/A
+72e1950	discard	set min_child_weight to 5	0.7405	N/A
+4754cf0	keep	set min_child_weight to 2	0.7411	0.7359
+8ac7db0	discard	set min_child_weight to 3	0.7399	N/A
+19181b1	discard	set gamma to 0.1	0.7404	N/A
+e3f12ac	keep	set reg_lambda to 2	0.7413	0.7361
+3539535	discard	set colsample_bytree to 0.6	0.7413	N/A
+5274f5e	discard	set colsample_bytree to 0.9	0.7398	N/A
+11396e4	discard	600 trees with learning rate 0.033333	0.7413	N/A
+0868296	discard	add circular departure time sine/cosine features	0.7405	N/A
+4b9379c	discard	set max_bin to 512	0.7408	N/A
+5d41ea3	discard	set max_bin to 128	0.7404	N/A
+d80d03d	discard	set reg_alpha to 0.1	0.7410	N/A
+c81053d	discard	set reg_alpha to 0.01	0.7403	N/A
+623f4be	crash	DART booster timed out during training	0.0000	N/A
+a6f9f1f	discard	lossguide with 31 leaves	0.7396	N/A
+3589f1d	keep	lossguide with 63 leaves	0.7435	0.7401
+efd27b2	keep	lossguide with 95 leaves	0.7454	0.7414
+caf5735	keep	lossguide with 127 leaves	0.7457	0.7432
+e6c3d09	keep	lossguide with 191 leaves	0.7462	0.7436
+2a2f11b	keep	lossguide with 255 leaves	0.7471	0.7440
+b972746	discard	lossguide with 511 leaves	0.7465	N/A
+9a533a2	discard	255 leaves with min_child_weight 3	0.7469	N/A
+06eccee	keep	255 leaves with min_child_weight 1	0.7474	0.7437
+2b37301	keep	255 leaves with reg_lambda 3	0.7478	0.7446
+e421b3c	keep	255 leaves with reg_lambda 4	0.7483	0.7451
+6a744e6	discard	255 leaves with reg_lambda 5	0.7475	N/A
+05054a0	keep	500 trees with learning rate 0.04	0.7485	0.7442
+21f2cad	keep	600 trees with learning rate 0.033333	0.7489	0.7456
+ec9480a	discard	700 trees with learning rate 0.028571	0.7489	N/A
+28f638e	discard	leakage-safe carrier target-rate feature	0.6391	N/A
+8686d0b	keep	max_cat_threshold 8 with lossguide 255 leaves	0.7541	0.7495
+2767866	keep	max_cat_threshold 4 with lossguide 255 leaves	0.7574	0.7523
+f64de56	discard	max_cat_threshold 2 with lossguide 255 leaves	0.7516	N/A
+ec35dd0	keep	319 leaves with max_cat_threshold 4	0.7578	0.7531
+713ec40	discard	319 leaves with max_cat_threshold 4 and reg_lambda 3	0.7573	N/A
+b324f9b	keep	add colsample_bylevel 0.8	0.7580	0.7531
+a7de024	discard	add colsample_bynode 0.8	0.7578	N/A
+2c4e950	discard	add colsample_bynode 0.9	0.7578	N/A
+3583f87	keep	colsample_bylevel 0.9	0.7583	0.7537
+5ccb4e8	discard	colsample_bylevel 0.85	0.7583	N/A
+4dc182b	discard	colsample_bylevel 0.95	0.7583	N/A
+b0c0bbe	discard	colsample_bytree 0.9 with bylevel 0.9	0.7581	N/A
+1af7a1e	discard	colsample_bytree 0.7 with bylevel 0.9	0.7569	N/A
+d5271c4	keep	383 leaves with cap 4 and bylevel 0.9	0.7584	0.7532
+56e44b7	keep	447 leaves with cap 4 and bylevel 0.9	0.7588	0.7538
+6046cbb	keep	max_cat_threshold 3 with 447 leaves	0.7589	0.7536
+6e075bd	keep	511 leaves with max_cat_threshold 3	0.7590	0.7546
+12bf0d9	keep	575 leaves with max_cat_threshold 3	0.7598	0.7541
+ad275e9	discard	639 leaves with max_cat_threshold 3	0.7588	N/A
+5e9808b	keep	700 trees with learning rate 0.028571	0.7599	0.7541
+ee0ba64	discard	800 trees with learning rate 0.025	0.7596	N/A
+f75773b	discard	575 leaves with reg_lambda 5	0.7598	N/A
+a01d410	keep	categorical feature weights 2x numeric	0.7607	0.7556
+044cc63	keep	categorical feature weights 4x numeric	0.7614	0.7578
+ce8a2b6	discard	categorical feature weights 8x numeric	0.7605	N/A
+d134084	discard	categorical feature weights 5x numeric	0.7610	N/A
+8de1be6	discard	categorical feature weights 3.33x numeric	0.7614	N/A

@@ -264,8 +264,8 @@ for f in out.rglob("*"):
 EOF
 
 # summary for Claude
-EVAL=$(awk -F'\t' -v c="$BEST" '$1 == c { print $4 }' "$OUT/groundtruth_all.tsv" 2> /dev/null)
-HOLD=$(awk -F'\t' -v c="$BEST" '$1 == c { print $5 }' "$OUT/groundtruth_all.tsv" 2> /dev/null)
+EVAL=$(awk -F'\t' -v c="$BEST" '$1 "" == c { print $4 }' "$OUT/groundtruth_all.tsv" 2> /dev/null)
+HOLD=$(awk -F'\t' -v c="$BEST" '$1 "" == c { print $5 }' "$OUT/groundtruth_all.tsv" 2> /dev/null)
 NEXP=$(awk 'NR > 1' "$OUT/results.tsv" 2> /dev/null | wc -l)
 printf '%s\n' "${MESSAGES[@]}" > "$OUT/.turns"
 C=$C STATUS=$STATUS REASON=$REASON MODEL=$MODEL EFFORT=$EFFORT CODEX_VERSION=${CODEX_VERSION:-} \

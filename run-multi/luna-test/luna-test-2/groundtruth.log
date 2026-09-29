@@ -1,0 +1,146 @@
+=== [2] c294417 | keep | baseline ===
+  holdout=0.7155
+=== [3] 51cbf12 | discard | add Origin-Dest route categorical feature ===
+  SKIP: status discard
+=== [4] 8b59af5 | discard | add scheduled departure hour feature ===
+  SKIP: status discard
+=== [5] c2e7ec8 | keep | increase n_estimators to 100 ===
+  holdout=0.7271
+=== [6] 71326e1 | keep | increase n_estimators to 200 ===
+  holdout=0.7311
+=== [7] 916d5a3 | discard | increase n_estimators to 400 ===
+  SKIP: status discard
+=== [8] 597d027 | discard | reduce max_depth to 4 ===
+  SKIP: status discard
+=== [9] f09b5a8 | discard | increase max_depth to 8 ===
+  SKIP: status discard
+=== [10] c102f10 | keep | learning_rate 0.05 with 400 trees ===
+  holdout=0.7315
+=== [11] 68be42c | discard | add subsample 0.8 ===
+  SKIP: status discard
+=== [12] 1700ce8 | keep | add colsample_bytree 0.8 ===
+  holdout=0.7350
+=== [13] 73a6d4c | keep | set max_cat_threshold to 32 ===
+  holdout=0.7353
+=== [14] d897a2a | keep | set max_cat_threshold to 16 ===
+  holdout=0.7354
+=== [15] 0c59717 | discard | set max_cat_threshold to 8 ===
+  SKIP: status discard
+=== [16] 56084b5 | discard | set max_cat_threshold to 12 ===
+  SKIP: status discard
+=== [17] 72e1950 | discard | set min_child_weight to 5 ===
+  SKIP: status discard
+=== [18] 4754cf0 | keep | set min_child_weight to 2 ===
+  holdout=0.7359
+=== [19] 8ac7db0 | discard | set min_child_weight to 3 ===
+  SKIP: status discard
+=== [20] 19181b1 | discard | set gamma to 0.1 ===
+  SKIP: status discard
+=== [21] e3f12ac | keep | set reg_lambda to 2 ===
+  holdout=0.7361
+=== [22] 3539535 | discard | set colsample_bytree to 0.6 ===
+  SKIP: status discard
+=== [23] 5274f5e | discard | set colsample_bytree to 0.9 ===
+  SKIP: status discard
+=== [24] 11396e4 | discard | 600 trees with learning rate 0.033333 ===
+  SKIP: status discard
+=== [25] 0868296 | discard | add circular departure time sine/cosine features ===
+  SKIP: status discard
+=== [26] 4b9379c | discard | set max_bin to 512 ===
+  SKIP: status discard
+=== [27] 5d41ea3 | discard | set max_bin to 128 ===
+  SKIP: status discard
+=== [28] d80d03d | discard | set reg_alpha to 0.1 ===
+  SKIP: status discard
+=== [29] c81053d | discard | set reg_alpha to 0.01 ===
+  SKIP: status discard
+=== [30] 623f4be | crash | DART booster timed out during training ===
+  SKIP: status crash
+=== [31] a6f9f1f | discard | lossguide with 31 leaves ===
+  SKIP: status discard
+=== [32] 3589f1d | keep | lossguide with 63 leaves ===
+  holdout=0.7401
+=== [33] efd27b2 | keep | lossguide with 95 leaves ===
+  holdout=0.7414
+=== [34] caf5735 | keep | lossguide with 127 leaves ===
+  holdout=0.7432
+=== [35] e6c3d09 | keep | lossguide with 191 leaves ===
+  holdout=0.7436
+=== [36] 2a2f11b | keep | lossguide with 255 leaves ===
+  holdout=0.7440
+=== [37] b972746 | discard | lossguide with 511 leaves ===
+  SKIP: status discard
+=== [38] 9a533a2 | discard | 255 leaves with min_child_weight 3 ===
+  SKIP: status discard
+=== [39] 06eccee | keep | 255 leaves with min_child_weight 1 ===
+  holdout=0.7437
+=== [40] 2b37301 | keep | 255 leaves with reg_lambda 3 ===
+  holdout=0.7446
+=== [41] e421b3c | keep | 255 leaves with reg_lambda 4 ===
+  holdout=0.7451
+=== [42] 6a744e6 | discard | 255 leaves with reg_lambda 5 ===
+  SKIP: status discard
+=== [43] 05054a0 | keep | 500 trees with learning rate 0.04 ===
+  holdout=0.7442
+=== [44] 21f2cad | keep | 600 trees with learning rate 0.033333 ===
+  holdout=0.7456
+=== [45] ec9480a | discard | 700 trees with learning rate 0.028571 ===
+  SKIP: status discard
+=== [46] 28f638e | discard | leakage-safe carrier target-rate feature ===
+  SKIP: status discard
+=== [47] 8686d0b | keep | max_cat_threshold 8 with lossguide 255 leaves ===
+  holdout=0.7495
+=== [48] 2767866 | keep | max_cat_threshold 4 with lossguide 255 leaves ===
+  holdout=0.7523
+=== [49] f64de56 | discard | max_cat_threshold 2 with lossguide 255 leaves ===
+  SKIP: status discard
+=== [50] ec35dd0 | keep | 319 leaves with max_cat_threshold 4 ===
+  holdout=0.7531
+=== [51] 713ec40 | discard | 319 leaves with max_cat_threshold 4 and reg_lambda 3 ===
+  SKIP: status discard
+=== [52] b324f9b | keep | add colsample_bylevel 0.8 ===
+  holdout=0.7531
+=== [53] a7de024 | discard | add colsample_bynode 0.8 ===
+  SKIP: status discard
+=== [54] 2c4e950 | discard | add colsample_bynode 0.9 ===
+  SKIP: status discard
+=== [55] 3583f87 | keep | colsample_bylevel 0.9 ===
+  holdout=0.7537
+=== [56] 5ccb4e8 | discard | colsample_bylevel 0.85 ===
+  SKIP: status discard
+=== [57] 4dc182b | discard | colsample_bylevel 0.95 ===
+  SKIP: status discard
+=== [58] b0c0bbe | discard | colsample_bytree 0.9 with bylevel 0.9 ===
+  SKIP: status discard
+=== [59] 1af7a1e | discard | colsample_bytree 0.7 with bylevel 0.9 ===
+  SKIP: status discard
+=== [60] d5271c4 | keep | 383 leaves with cap 4 and bylevel 0.9 ===
+  holdout=0.7532
+=== [61] 56e44b7 | keep | 447 leaves with cap 4 and bylevel 0.9 ===
+  holdout=0.7538
+=== [62] 6046cbb | keep | max_cat_threshold 3 with 447 leaves ===
+  holdout=0.7536
+=== [63] 6e075bd | keep | 511 leaves with max_cat_threshold 3 ===
+  holdout=0.7546
+=== [64] 12bf0d9 | keep | 575 leaves with max_cat_threshold 3 ===
+  holdout=0.7541
+=== [65] ad275e9 | discard | 639 leaves with max_cat_threshold 3 ===
+  SKIP: status discard
+=== [66] 5e9808b | keep | 700 trees with learning rate 0.028571 ===
+  holdout=0.7541
+=== [67] ee0ba64 | discard | 800 trees with learning rate 0.025 ===
+  SKIP: status discard
+=== [68] f75773b | discard | 575 leaves with reg_lambda 5 ===
+  SKIP: status discard
+=== [69] a01d410 | keep | categorical feature weights 2x numeric ===
+  holdout=0.7556
+=== [70] 044cc63 | keep | categorical feature weights 4x numeric ===
+  holdout=0.7578
+=== [71] ce8a2b6 | discard | categorical feature weights 8x numeric ===
+  SKIP: status discard
+=== [72] d134084 | discard | categorical feature weights 5x numeric ===
+  SKIP: status discard
+=== [73] 8de1be6 | discard | categorical feature weights 3.33x numeric ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

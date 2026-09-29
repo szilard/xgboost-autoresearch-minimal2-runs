@@ -1,0 +1,4 @@
+2026-09-29T01:31:39.670287Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/research-log.md:
+- The next tests should tune leaf capacity and the learning-rate/tree-count schedule around this model rather than return to discarded feature families.
+2026-09-29T02:15:12.951208Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/research-log.md:
+- The safest next work is a narrow schedule or leaf-cap refinement, not more target-derived features.

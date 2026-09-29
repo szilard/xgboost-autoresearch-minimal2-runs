@@ -1,0 +1,9 @@
+Setup is ready:
+
+- Branch: `sep28`
+- `data/train.csv` and `data/eval.csv` verified
+- `results.tsv` initialized with the correct header
+- Experiment clock is not started
+- Working tree contains only the intended untracked `results.tsv`
+
+Say “go” when you want me to start the 2-hour experiment clock and run the baseline.

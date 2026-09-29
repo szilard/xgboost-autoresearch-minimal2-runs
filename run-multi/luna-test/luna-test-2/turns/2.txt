@@ -1,0 +1,9 @@
+Setup is complete:
+
+- Branch: `sep29`
+- Read: `README-autoresearch.md`, `train.py`, `harness.py`
+- Verified: `data/train.csv` and `data/eval.csv`
+- Initialized: [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv)
+- Clock: not started
+
+Everything looks good. Confirm when you want me to start the 2-hour experiment clock.

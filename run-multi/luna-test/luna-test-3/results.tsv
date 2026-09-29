@@ -1,0 +1,83 @@
+commit	Eval_AUC	status	description
+c294417	0.7203	keep	baseline
+0116998	0.7264	keep	100 trees, learning rate 0.05
+6397e22	0.7263	discard	200 trees, learning rate 0.025
+d44692e	0.7264	discard	force categorical partitioning
+1c5ca5c	0.7097	discard	add directed Origin-Dest route category
+bc4dce4	0.7264	discard	add minutes-since-midnight departure feature
+ee8a848	0.7190	discard	max depth 4
+4cd09c9	0.7290	keep	max depth 8
+b864405	0.7349	keep	depth 8 with row and feature subsampling 0.8
+375f2df	0.7273	discard	row subsampling 0.8 only
+8cb931f	0.7330	discard	smoothed carrier, origin, and destination delay rates
+662816b	0.7366	keep	200 trees, learning rate 0.025 with depth 8 and subsampling
+1c58468	0.7361	discard	min child weight 5
+d2b2754	0.7359	discard	max bin 512
+9c99477	0.7335	discard	categorical departure hour
+1539a19	0.7376	keep	colsample 0.7, subsample 0.8
+ad80414	0.7391	keep	colsample 0.6, subsample 0.8
+61e5e7a	0.7391	discard	colsample 0.5, subsample 0.8
+aa0bef1	0.7376	discard	colsample 0.6, subsample 0.7
+bea6014	0.7461	keep	max depth 10, colsample 0.6, subsample 0.8
+73305e0	0.7497	keep	max depth 12, colsample 0.6, subsample 0.8
+df05aca	0.7497	discard	max depth 14, colsample 0.6, subsample 0.8
+f6377d6	0.7493	discard	300 trees, learning rate 0.0167 at depth 12
+539d2ba	0.7498	keep	depth 12 with gamma 0.1
+1ec3903	0.7493	discard	depth 12 with gamma 0.5
+591403f	0.7510	keep	depth 12, gamma 0.1, reg lambda 5
+e9c0e07	0.7505	discard	reg lambda 10
+fc3974f	0.7511	keep	reg lambda 5 with reg alpha 0.1
+ab271ef	0.7519	keep	reg lambda 5, reg alpha 0.5, gamma 0.1
+e12f869	0.7489	discard	loss-guided growth with 512 leaves
+4a5a1c4	0.7522	keep	subsample 0.9, colsample 0.6, depth 12
+dcf53c3	0.7523	keep	subsample 0.95, colsample 0.6, depth 12
+261384f	0.7506	discard	subsample 1.0, colsample 0.6, depth 12
+c6b6728	0.7523	discard	subsample 0.95, colsample 0.55, depth 12
+c4ed284	0.7525	keep	max categorical threshold 256
+f7c6dc8	0.7523	discard	max categorical threshold 512
+29f8d93	0.0000	crash	carrier-hour interaction category list bug
+63dc668	0.7437	discard	carrier-hour categorical interaction
+33b33a7	0.7526	keep	250 trees, learning rate 0.02
+0ee2bc7	0.7532	keep	250 trees, learning rate 0.02, reg alpha 1
+e8f9cd7	0.7535	keep	reg alpha 2 with refined schedule
+4566a37	0.7529	discard	reg alpha 3
+11cee69	0.7538	keep	reg alpha 2, reg lambda 3
+b2a2bcc	0.7542	keep	reg alpha 2, reg lambda 2
+d75221d	0.7542	discard	reg alpha 2, reg lambda 1
+0c0dc3d	0.7540	discard	gamma 0.05
+5176e5e	0.7542	discard	max categorical threshold 128
+eef0458	0.7487	discard	add per-node feature sampling 0.8
+25a3818	0.7554	keep	max depth 14 with tuned regularization
+5cb8aef	0.7556	keep	max depth 16 with tuned regularization
+ef49f0f	0.7556	keep	200 trees, learning rate 0.025 at depth 16 (simpler tie)
+997c049	0.7554	discard	150 trees, learning rate 0.0333 at depth 16
+3426dc3	0.7553	discard	max depth 18 at 200 trees
+1d5f9c8	0.7463	discard	one-hot splits for low-cardinality categoricals
+87b845f	0.7554	discard	gradient-based row sampling
+d9d5cad	0.7503	discard	approximate tree method
+d754075	0.7501	discard	ordered smoothed carrier, origin, destination rates
+e05f286	0.7558	keep	min child weight 2 at depth 16
+6b5bb3f	0.7559	keep	min child weight 3 at depth 16
+8f910cb	0.7556	discard	min child weight 4 at depth 16
+4eb4725	0.7557	discard	250 trees, learning rate 0.02 with min child weight 3
+65da8d7	0.7568	keep	colsample 0.65 with min child weight 3
+a010b20	0.7568	discard	colsample 0.7 with min child weight 3
+b9ec3d2	0.7565	discard	subsample 0.9 with colsample 0.65
+c3f4948	0.7568	keep	reg alpha 2.5 with colsample 0.65 and child weight 3 (smaller tie)
+4bcd0b8	0.7567	discard	reg alpha 2.5, reg lambda 1.5
+17d7109	0.7547	discard	alternate random seed 7
+2efc015	0.7538	discard	log1p distance feature
+0265070	0.7546	discard	cyclic departure-time sine/cosine features
+d28656e	0.7567	discard	reg alpha 2.75
+3b6135a	0.7566	discard	max depth 15
+4c7b3d0	0.7569	keep	gamma 0.15 with tuned depth, sampling, and regularization
+fbf220e	0.7566	discard	gamma 0.2
+27da592	0.7563	discard	reg alpha 2.75 with gamma 0.15
+85b5f9c	0.7569	discard	colsample 0.625 with gamma 0.15
+1076780	0.7568	discard	max categorical threshold 192
+a5a929f	0.7568	discard	225 trees, learning rate 0.0222
+f4b0d3d	0.7565	discard	min child weight 3.5
+2c94216	0.7563	discard	reg lambda 2.5
+2839145	0.7569	discard	subsample 0.975
+1a52c6b	0.7564	discard	max depth 17
+2b5dbd1	0.7563	discard	190 trees, learning rate 0.0263

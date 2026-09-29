@@ -1,0 +1,67 @@
+commit	Eval_AUC	status	description
+c294417	0.7203	keep	baseline
+1a73a22	0.7071	discard	add native categorical Origin-Dest route interaction
+0c4faca	0.7201	discard	add numeric scheduled departure hour
+ecd9236	0.7198	discard	encode scheduled departure hour categorically
+34f7971	0.7264	keep	100 trees at learning rate 0.05
+57cd9c0	0.7325	keep	200 trees at learning rate 0.05
+ad84906	0.7354	keep	400 trees at learning rate 0.05
+ca9ecaf	0.7348	discard	800 trees at learning rate 0.05
+e74507d	0.7359	keep	600 trees at learning rate 0.05
+77b49c4	0.7350	discard	600 trees at max depth 4
+90afb01	0.7321	discard	600 trees at max depth 8
+bedbdfe	0.7280	discard	600 trees at learning rate 0.05 with subsample 0.8
+0ca362d	0.7327	discard	600 trees with smoothed route delay rate
+51ccd92	0.7350	discard	600 trees with smoothed origin and destination delay rates
+fbcd811	0.7257	discard	600 trees with native carrier-hour interaction
+c09c3fc	0.7345	discard	600 trees with min_child_weight 5
+3d97dd5	0.7360	keep	600 trees with gamma 0.1
+ff4da35	0.7349	discard	600 trees with gamma 0.5
+869e434	0.7363	keep	600 trees with gamma 0.01
+ede7b44	0.7405	keep	600 trees with gamma 0.01 and colsample 0.8
+2ff4ce2	0.7418	keep	600 trees with gamma 0.01 and colsample 0.7
+9184b10	0.7416	discard	600 trees with gamma 0.01, colsample 0.7, max_bin 512
+9ceeb8b	0.7425	keep	600 trees with gamma 0.01, colsample 0.7, reg_lambda 2
+3cea599	0.7429	keep	600 trees with gamma 0.01, colsample 0.7, reg_lambda 5
+360b126	0.7443	keep	600 trees with gamma 0.01, colsample 0.7, reg_lambda 10
+8365a8b	0.7445	keep	600 trees with gamma 0.01, colsample 0.7, reg_lambda 20
+9a4cc36	0.7451	keep	600 trees with gamma 0.01, colsample 0.7, reg_lambda 50
+b11e222	0.7452	keep	600 trees with gamma 0.01, colsample 0.7, reg_lambda 100
+44c99b6	0.7449	discard	600 trees with gamma 0.01, colsample 0.7, reg_lambda 200
+1142b89	0.7457	keep	600 trees with gamma 0.01, colsample 0.7, reg_lambda 100, reg_alpha 0.1
+ea235cd	0.7463	keep	600 trees with gamma 0.01, colsample 0.7, reg_lambda 100, reg_alpha 1
+b60164c	0.7490	keep	lossguide with max_leaves 64 and max_depth 0
+d0f88be	0.7456	discard	lossguide with max_leaves 32
+6b1203a	0.7523	keep	lossguide with max_leaves 128
+d767118	0.7543	keep	lossguide with max_leaves 256
+ee1f62b	0.7550	keep	lossguide with max_leaves 512
+4d77d02	0.7548	discard	lossguide with max_leaves 768
+002ab96	0.7497	discard	lossguide 512 leaves with max_cat_to_onehot 32
+e2845ff	0.0000	crash	DART rate_drop 0.1 timed out during training
+e9522d3	0.7557	keep	lossguide 512 leaves with max_cat_threshold 32
+01c9d34	0.7566	keep	lossguide 512 leaves with max_cat_threshold 16
+6a9855c	0.7571	keep	lossguide 512 leaves, learning rate 0.025, 1200 trees
+c95874a	0.7589	keep	lossguide 512 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 8
+c17aff8	0.7607	keep	lossguide 512 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 4
+ada6182	0.7552	discard	lossguide 512 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 2
+0e7b78d	0.7596	discard	lossguide 512 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 3
+967cf14	0.7601	discard	lossguide 576 leaves, learning rate 0.025, 1200 trees, max_cat_threshold 4
+6dc3555	0.7600	discard	lossguide 512 leaves, learning rate 0.025, reg_lambda 200, max_cat_threshold 4
+1f97489	0.7616	keep	lossguide 512 leaves, learning rate 0.025, reg_alpha 2, max_cat_threshold 4
+a84815b	0.7615	discard	lossguide 512 leaves, learning rate 0.025, reg_alpha 5, max_cat_threshold 4
+9ba100f	0.7590	discard	lossguide 512 leaves, learning rate 0.025, colsample 0.6, max_cat_threshold 4
+165c839	0.7653	keep	add numeric DayOfYear feature to tuned lossguide model
+3488ee6	0.7662	keep	add cyclic DayOfYear sine and cosine features
+61e028f	0.7653	discard	add cyclic scheduled departure-time sine and cosine features
+0bea429	0.7661	discard	add IsWeekend indicator
+5571f1a	0.7656	discard	add native Month-DayOfWeek interaction
+e1ad213	0.7629	discard	ablate raw DayofMonth while retaining DayOfYear features
+9dc4923	0.7656	discard	ablate raw Month while retaining DayOfYear features
+2709dce	0.7657	discard	ablate DayOfYear cosine feature
+4d4d69b	0.7659	discard	ablate DayOfYear sine feature
+7e80331	0.7667	keep	seasonal features with reg_alpha 3
+f797bce	0.7665	discard	weight seasonal features in column sampling
+f57a6e4	0.7666	discard	seasonal model with max_cat_threshold 5
+463f470	0.7665	discard	seasonal model with reg_alpha 4
+94c185b	0.7666	discard	seasonal model with colsample 0.75
+0e901bb	0.7666	discard	add Quarter categorical feature

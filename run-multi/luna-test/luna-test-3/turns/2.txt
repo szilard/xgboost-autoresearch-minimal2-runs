@@ -1,0 +1,7 @@
+Setup and experiment complete on branch `sep29`.
+
+- Best commit: `4c7b3d0`
+- Eval AUC: `0.7569` (baseline `0.7203`)
+- Clock stopped after `2h01m56s`
+- Logs: [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv), [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md)
+- Final model: [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py)

@@ -1,0 +1,73 @@
+commit	Eval_AUC	status	description
+c294417	0.7203	keep	baseline
+51cbf12	0.7071	discard	add Origin-Dest route categorical feature
+8b59af5	0.7201	discard	add scheduled departure hour feature
+c2e7ec8	0.7306	keep	increase n_estimators to 100
+71326e1	0.7345	keep	increase n_estimators to 200
+916d5a3	0.7325	discard	increase n_estimators to 400
+597d027	0.7317	discard	reduce max_depth to 4
+f09b5a8	0.7323	discard	increase max_depth to 8
+c102f10	0.7354	keep	learning_rate 0.05 with 400 trees
+68be42c	0.7285	discard	add subsample 0.8
+1700ce8	0.7386	keep	add colsample_bytree 0.8
+73a6d4c	0.7392	keep	set max_cat_threshold to 32
+d897a2a	0.7407	keep	set max_cat_threshold to 16
+0c59717	0.7405	discard	set max_cat_threshold to 8
+56084b5	0.7407	discard	set max_cat_threshold to 12
+72e1950	0.7405	discard	set min_child_weight to 5
+4754cf0	0.7411	keep	set min_child_weight to 2
+8ac7db0	0.7399	discard	set min_child_weight to 3
+19181b1	0.7404	discard	set gamma to 0.1
+e3f12ac	0.7413	keep	set reg_lambda to 2
+3539535	0.7413	discard	set colsample_bytree to 0.6
+5274f5e	0.7398	discard	set colsample_bytree to 0.9
+11396e4	0.7413	discard	600 trees with learning rate 0.033333
+0868296	0.7405	discard	add circular departure time sine/cosine features
+4b9379c	0.7408	discard	set max_bin to 512
+5d41ea3	0.7404	discard	set max_bin to 128
+d80d03d	0.7410	discard	set reg_alpha to 0.1
+c81053d	0.7403	discard	set reg_alpha to 0.01
+623f4be	0.0000	crash	DART booster timed out during training
+a6f9f1f	0.7396	discard	lossguide with 31 leaves
+3589f1d	0.7435	keep	lossguide with 63 leaves
+efd27b2	0.7454	keep	lossguide with 95 leaves
+caf5735	0.7457	keep	lossguide with 127 leaves
+e6c3d09	0.7462	keep	lossguide with 191 leaves
+2a2f11b	0.7471	keep	lossguide with 255 leaves
+b972746	0.7465	discard	lossguide with 511 leaves
+9a533a2	0.7469	discard	255 leaves with min_child_weight 3
+06eccee	0.7474	keep	255 leaves with min_child_weight 1
+2b37301	0.7478	keep	255 leaves with reg_lambda 3
+e421b3c	0.7483	keep	255 leaves with reg_lambda 4
+6a744e6	0.7475	discard	255 leaves with reg_lambda 5
+05054a0	0.7485	keep	500 trees with learning rate 0.04
+21f2cad	0.7489	keep	600 trees with learning rate 0.033333
+ec9480a	0.7489	discard	700 trees with learning rate 0.028571
+28f638e	0.6391	discard	leakage-safe carrier target-rate feature
+8686d0b	0.7541	keep	max_cat_threshold 8 with lossguide 255 leaves
+2767866	0.7574	keep	max_cat_threshold 4 with lossguide 255 leaves
+f64de56	0.7516	discard	max_cat_threshold 2 with lossguide 255 leaves
+ec35dd0	0.7578	keep	319 leaves with max_cat_threshold 4
+713ec40	0.7573	discard	319 leaves with max_cat_threshold 4 and reg_lambda 3
+b324f9b	0.7580	keep	add colsample_bylevel 0.8
+a7de024	0.7578	discard	add colsample_bynode 0.8
+2c4e950	0.7578	discard	add colsample_bynode 0.9
+3583f87	0.7583	keep	colsample_bylevel 0.9
+5ccb4e8	0.7583	discard	colsample_bylevel 0.85
+4dc182b	0.7583	discard	colsample_bylevel 0.95
+b0c0bbe	0.7581	discard	colsample_bytree 0.9 with bylevel 0.9
+1af7a1e	0.7569	discard	colsample_bytree 0.7 with bylevel 0.9
+d5271c4	0.7584	keep	383 leaves with cap 4 and bylevel 0.9
+56e44b7	0.7588	keep	447 leaves with cap 4 and bylevel 0.9
+6046cbb	0.7589	keep	max_cat_threshold 3 with 447 leaves
+6e075bd	0.7590	keep	511 leaves with max_cat_threshold 3
+12bf0d9	0.7598	keep	575 leaves with max_cat_threshold 3
+ad275e9	0.7588	discard	639 leaves with max_cat_threshold 3
+5e9808b	0.7599	keep	700 trees with learning rate 0.028571
+ee0ba64	0.7596	discard	800 trees with learning rate 0.025
+f75773b	0.7598	discard	575 leaves with reg_lambda 5
+a01d410	0.7607	keep	categorical feature weights 2x numeric
+044cc63	0.7614	keep	categorical feature weights 4x numeric
+ce8a2b6	0.7605	discard	categorical feature weights 8x numeric
+d134084	0.7610	discard	categorical feature weights 5x numeric
+8de1be6	0.7614	discard	categorical feature weights 3.33x numeric
