@@ -1,0 +1,3 @@
+The two-hour experiment is complete, and the clock is stopped. Across 94 trials on branch `sep29`, the best **Eval AUC was 0.7640** at commit `52303aa`, up from the 0.7203 baseline. This is an evaluation-set result; the holdout was untouched.
+
+The final model combines a global boosted forest with four quarter-specific models. The code is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py), with all trials in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and the findings in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).

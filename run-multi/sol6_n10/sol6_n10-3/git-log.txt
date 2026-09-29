@@ -1,0 +1,252 @@
+commit 52303aad1c30a3d4a3eaf1cdc5baaddb0d9b8208
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 20:46:46 2026 +0000
+
+    Test lower seasonal prediction weight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 332f68af84efd02e85f4c2ce34c327f51d467b48
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 20:43:16 2026 +0000
+
+    Increase regularized seasonal model weight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9ddddcd2b66f026fb6aa6653a370e945a0c39070
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 20:24:34 2026 +0000
+
+    Tighten seasonal category cap
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9ddfa3b2fe7dc6a7d0e3d4d9b10d451420787fdc
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 20:23:26 2026 +0000
+
+    Constrain seasonal date partitions
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e27e20878a0d8bd0c8a6e8039854b2c9e100b3c7
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 20:17:11 2026 +0000
+
+    Blend global forest with seasonal specialists
+
+ train.py | 49 ++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 32 insertions(+), 17 deletions(-)
+
+commit 9423f5dc1a82b4da5ffda0859396352e069b7825
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:58:49 2026 +0000
+
+    Blend depthwise and loss-guided boosters
+
+ train.py | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit bafdacc1124bfb83279f7e417276a9b964d576a3
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:53:02 2026 +0000
+
+    Average independent boosted forests
+
+ train.py | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit 52a21d8233a3e1c60ace3435dc39e92293aa3e3f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:49:35 2026 +0000
+
+    Test L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7d54de1bd7169dc5b41052f1ee934612f41f6f5c
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:33:26 2026 +0000
+
+    Try shorter boosted forest
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 48dd6478526932d84ec9ff8cac39cda1e90c3f6d
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:29:24 2026 +0000
+
+    Try five trees per boosting round
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ab51bcaf1537ac1b84f3836876c860ea64b3ab89
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:28:17 2026 +0000
+
+    Boost three trees per round
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ceb9a3e6bd66c72aad4ca11d6cbd6f2582222cb8
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:20:22 2026 +0000
+
+    Try stronger L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e1dfff9edff84e27c010494511a0722496ab77eb
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:17:27 2026 +0000
+
+    Try loss-guided eight-leaf trees
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit cc2fe17c4456cdc814e96bf9eab2f1fd656acfb4
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:15:00 2026 +0000
+
+    Ablate weekday category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dc96ed40cf7c14045cbd9026034efab32672e69a
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:13:49 2026 +0000
+
+    Ablate numeric day of year
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit eb77226b2c504f36f57e2054a97db7117da3d8d6
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:12:38 2026 +0000
+
+    Ablate raw day of month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d6cb43a5e87ba5704834f28b6d71f949285b2cc4
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:11:17 2026 +0000
+
+    Ablate distance from departure model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e5dd442f16f4361d1eb9920d215969d880b168da
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:04:12 2026 +0000
+
+    Allow wider categorical partitions
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 73aae742fbf9a981113ded721106209e1ffe77d5
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:02:44 2026 +0000
+
+    Represent flight date as categorical
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 8b377a2553b507339e12c7baec2f3e6286538b7e
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:01:39 2026 +0000
+
+    Use finer histogram bins
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b3246912f0c13bf3990c7af543469b67bbd886e5
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 19:00:38 2026 +0000
+
+    Try 80 percent column sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1c1c213c35c1209085b12a90c567b23de4c4b135
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:58:15 2026 +0000
+
+    Raise minimum child weight to 10
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0e7196d33f616d4064ec90a8f3128afc03a77e43
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:53:12 2026 +0000
+
+    Add numeric day of year
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit bf2dca32ff295aae866c3117bf789f2e13d09ed8
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:51:54 2026 +0000
+
+    Add categorical departure hour
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b50333dca33cd5cfb384d1dd0ac1888599939e9e
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:50:38 2026 +0000
+
+    Try shallow trees with longer boosting
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit aabb41d63f889f8098585548ea01834a392366c9
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:48:35 2026 +0000
+
+    Try 300 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

@@ -1,0 +1,190 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] aabb41d | keep | 300 boosting rounds ===
+  holdout=0.7315
+=== [4] 1801e9c | discard | 1000 boosting rounds at depth 6 ===
+  SKIP: status discard
+=== [5] b50333d | keep | 1000 shallow depth-3 trees ===
+  holdout=0.7322
+=== [6] bf2dca3 | keep | add categorical scheduled departure hour ===
+  holdout=0.7322
+=== [7] 0e7196d | keep | add numeric day of year ===
+  holdout=0.7352
+=== [8] c60fc72 | discard | add origin destination route category ===
+  SKIP: status discard
+=== [9] eb88897 | discard | one-hot splits for compact categories ===
+  SKIP: status discard
+=== [10] 2297277 | discard | holiday proximity ===
+  SKIP: status discard
+=== [11] 1c1c213 | keep | minimum child weight 10 ===
+  holdout=0.7350
+=== [12] 3e6f51e | discard | 80 percent row sampling ===
+  SKIP: status discard
+=== [13] b324691 | keep | 80 percent column sampling ===
+  holdout=0.7366
+=== [14] 8b377a2 | keep | 512 histogram bins ===
+  holdout=0.7365
+=== [15] 73aae74 | keep | add categorical day of year ===
+  holdout=0.7489
+=== [16] e5dd442 | keep | 128-category partition cap ===
+  holdout=0.7515
+=== [17] 5526f57 | discard | 256-category partition cap ===
+  SKIP: status discard
+=== [18] b7c9a07 | discard | depth 4 with categorical date ===
+  SKIP: status discard
+=== [19] 78bc4b3 | discard | 600 rounds with categorical date ===
+  SKIP: status discard
+=== [20] 892bd75 | discard | 1400 rounds with categorical date ===
+  SKIP: status discard
+=== [21] db40654 | discard | date by half-day category ===
+  SKIP: status discard
+=== [22] d6cb43a | keep | remove Distance simplification ===
+  holdout=0.7516
+=== [23] eb77226 | keep | remove raw DayofMonth category ===
+  holdout=0.7522
+=== [24] dc96ed4 | keep | remove numeric DayOfYear model input ===
+  holdout=0.7528
+=== [25] cc2fe17 | keep | remove weekday category simplification ===
+  holdout=0.7531
+=== [26] 7da8447 | discard | carrier by hour category ===
+  SKIP: status discard
+=== [27] e1dfff9 | keep | loss-guided eight-leaf trees ===
+  holdout=0.7533
+=== [28] 2ef35d5 | discard | twelve loss-guided leaves ===
+  SKIP: status discard
+=== [29] f1219ae | discard | six loss-guided leaves ===
+  SKIP: status discard
+=== [30] ceb9a3e | keep | L2 leaf regularization 5 ===
+  holdout=0.7544
+=== [31] e844753 | discard | L2 leaf regularization 10 ===
+  SKIP: status discard
+=== [32] a5c0bf6 | discard | approximate Hessian-weighted splits ===
+  SKIP: status discard
+=== [33] 613f118 | discard | gamma split penalty 1 ===
+  SKIP: status discard
+=== [34] 58420ea | discard | remove Month category ===
+  SKIP: status discard
+=== [35] 4c20105 | discard | add categorical week of year ===
+  SKIP: status discard
+=== [36] def75a8 | discard | restore weekday category ===
+  SKIP: status discard
+=== [37] ab51bca | keep | three parallel trees per boosting round ===
+  holdout=0.7552
+=== [38] 48dd647 | keep | five parallel trees per boosting round ===
+  holdout=0.7559
+=== [39] 66e460e | discard | eight parallel trees per boosting round ===
+  SKIP: status discard
+=== [40] 5699043 | discard | six parallel trees per boosting round ===
+  SKIP: status discard
+=== [41] 7d54de1 | keep | 700 rounds of five parallel trees ===
+  holdout=0.7561
+=== [42] 6c10b30 | discard | 500 rounds of five parallel trees ===
+  SKIP: status discard
+=== [43] 186b6c9 | discard | 0.05 learning rate and 1400 rounds ===
+  SKIP: status discard
+=== [44] b89a1ec | discard | 90 percent columns per tree ===
+  SKIP: status discard
+=== [45] 274c276 | discard | 70 percent columns per tree ===
+  SKIP: status discard
+=== [46] b1596fe | discard | numeric scheduled departure minute ===
+  SKIP: status discard
+=== [47] 1ed517e | discard | categorical scheduled departure minute ===
+  SKIP: status discard
+=== [48] c7000a2 | discard | minimum child weight 20 ===
+  SKIP: status discard
+=== [49] 3d63b7b | discard | minimum child weight 5 ===
+  SKIP: status discard
+=== [50] 5eac36c | discard | L2 leaf regularization 3 ===
+  SKIP: status discard
+=== [51] 74d61e7 | discard | origin-relative scheduled time ===
+  SKIP: status discard
+=== [52] 52a21d8 | keep | L1 leaf regularization 1 ===
+  holdout=0.7550
+=== [53] ba669fe | discard | L1 leaf regularization 2 ===
+  SKIP: status discard
+=== [54] 2f4f665 | discard | column sampling per split ===
+  SKIP: status discard
+=== [55] bafdacc | keep | two-seed probability average ===
+  holdout=0.7564
+=== [56] 58f2a14 | discard | seed 24 alone ===
+  SKIP: status discard
+=== [57] 046ebc6 | discard | third seed, negligible gain for full extra model ===
+  SKIP: status discard
+=== [58] ffab648 | discard | weekend indicator ===
+  SKIP: status discard
+=== [59] 9423f5d | keep | depthwise and loss-guided probability blend ===
+  holdout=0.7570
+=== [60] 818d6e5 | discard | two-to-one loss-guided blend weight ===
+  SKIP: status discard
+=== [61] db5084d | discard | two-to-one depthwise blend weight ===
+  SKIP: status discard
+=== [62] 34222bd | discard | depth cap on loss-guided forest ===
+  SKIP: status discard
+=== [63] d6b89fe | discard | weaker penalties in depthwise member ===
+  SKIP: status discard
+=== [64] d7c7633 | discard | all features in depthwise trees ===
+  SKIP: status discard
+=== [65] 88fc343 | discard | geometric probability pooling, equal AUC with extra code ===
+  SKIP: status discard
+=== [66] 043b632 | discard | additive logistic partner at 20 percent ===
+  SKIP: status discard
+=== [67] de23097 | discard | restore flight distance ===
+  SKIP: status discard
+=== [68] 4207093 | discard | route-relative scheduled time ===
+  SKIP: status discard
+=== [69] d5bc271 | discard | depthwise category cap 64 ===
+  SKIP: status discard
+=== [70] 05f00f6 | discard | monotonic depthwise time, tie with added complexity ===
+  SKIP: status discard
+=== [71] 578fc7e | discard | default histogram bins ===
+  SKIP: status discard
+=== [72] e27e208 | keep | quarter specialists at 20 percent ===
+  holdout=0.7575
+=== [73] 2cae5e8 | discard | 40 percent seasonal weight, tie ===
+  SKIP: status discard
+=== [74] 8ed617c | discard | two half-year specialists ===
+  SKIP: status discard
+=== [75] bca5bd7 | discard | meteorological-season specialists ===
+  SKIP: status discard
+=== [76] a7b7ff6 | discard | depth-two quarter specialists ===
+  SKIP: status discard
+=== [77] 9ddfa3b | keep | local category cap 64 ===
+  holdout=0.7576
+=== [78] 9ddddcd | keep | local category cap 32 ===
+  holdout=0.7576
+=== [79] b0298d4 | discard | local category cap 16 ===
+  SKIP: status discard
+=== [80] 2c16136 | discard | 700 rounds in quarter specialists ===
+  SKIP: status discard
+=== [81] c4efe32 | discard | minimum child weight 20 in specialists ===
+  SKIP: status discard
+=== [82] f10a49f | discard | restore weekday category in seasonal blend ===
+  SKIP: status discard
+=== [83] 594c8ea | discard | numeric day of year in all seasonal members ===
+  SKIP: status discard
+=== [84] b54f545 | discard | numeric day of year for specialists only ===
+  SKIP: status discard
+=== [85] 5feb23a | discard | loss-guided quarter specialists ===
+  SKIP: status discard
+=== [86] bdb2a8e | discard | monthly specialists, larger artifact ===
+  SKIP: status discard
+=== [87] aaf2258 | discard | overlapping seasonal training windows ===
+  SKIP: status discard
+=== [88] cc5e746 | discard | one-hot month splits in specialists, tie ===
+  SKIP: status discard
+=== [89] c79dda8 | discard | local L2 regularization 10 ===
+  SKIP: status discard
+=== [90] 95b8bbe | discard | local learning rate 0.05 and 1400 rounds ===
+  SKIP: status discard
+=== [91] 7ba9e66 | discard | local learning rate 0.15 and 700 rounds ===
+  SKIP: status discard
+=== [92] 332f68a | keep | 40 percent seasonal prediction weight ===
+  holdout=0.7579
+=== [93] 389a127 | discard | 60 percent seasonal prediction weight ===
+  SKIP: status discard
+=== [94] 723d073 | discard | equal global and seasonal weights ===
+  SKIP: status discard
+=== [95] 52303aa | keep | 30 percent seasonal prediction weight ===
+  holdout=0.7580
+
+=== DONE: results written to groundtruth_all.tsv ===

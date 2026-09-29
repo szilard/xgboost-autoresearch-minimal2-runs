@@ -1,0 +1,95 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+aabb41d	0.7342	keep	300 boosting rounds
+1801e9c	0.7253	discard	1000 boosting rounds at depth 6
+b50333d	0.7351	keep	1000 shallow depth-3 trees
+bf2dca3	0.7356	keep	add categorical scheduled departure hour
+0e7196d	0.7386	keep	add numeric day of year
+c60fc72	0.7105	discard	add origin destination route category
+eb88897	0.7317	discard	one-hot splits for compact categories
+2297277	0.7383	discard	holiday proximity
+1c1c213	0.7388	keep	minimum child weight 10
+3e6f51e	0.7227	discard	80 percent row sampling
+b324691	0.7390	keep	80 percent column sampling
+8b377a2	0.7391	keep	512 histogram bins
+73aae74	0.7555	keep	add categorical day of year
+e5dd442	0.7562	keep	128-category partition cap
+5526f57	0.7551	discard	256-category partition cap
+b7c9a07	0.7525	discard	depth 4 with categorical date
+78bc4b3	0.7558	discard	600 rounds with categorical date
+892bd75	0.7536	discard	1400 rounds with categorical date
+db40654	0.7521	discard	date by half-day category
+d6cb43a	0.7558	keep	remove Distance simplification
+eb77226	0.7560	keep	remove raw DayofMonth category
+dc96ed4	0.7574	keep	remove numeric DayOfYear model input
+cc2fe17	0.7567	keep	remove weekday category simplification
+7da8447	0.7522	discard	carrier by hour category
+e1dfff9	0.7570	keep	loss-guided eight-leaf trees
+2ef35d5	0.7556	discard	twelve loss-guided leaves
+f1219ae	0.7566	discard	six loss-guided leaves
+ceb9a3e	0.7584	keep	L2 leaf regularization 5
+e844753	0.7574	discard	L2 leaf regularization 10
+a5c0bf6	0.7575	discard	approximate Hessian-weighted splits
+613f118	0.7578	discard	gamma split penalty 1
+58420ea	0.7573	discard	remove Month category
+4c20105	0.7567	discard	add categorical week of year
+def75a8	0.7569	discard	restore weekday category
+ab51bca	0.7591	keep	three parallel trees per boosting round
+48dd647	0.7603	keep	five parallel trees per boosting round
+66e460e	0.7598	discard	eight parallel trees per boosting round
+5699043	0.7598	discard	six parallel trees per boosting round
+7d54de1	0.7605	keep	700 rounds of five parallel trees
+6c10b30	0.7582	discard	500 rounds of five parallel trees
+186b6c9	0.7600	discard	0.05 learning rate and 1400 rounds
+b89a1ec	0.7586	discard	90 percent columns per tree
+274c276	0.7602	discard	70 percent columns per tree
+b1596fe	0.7585	discard	numeric scheduled departure minute
+1ed517e	0.7588	discard	categorical scheduled departure minute
+c7000a2	0.7602	discard	minimum child weight 20
+3d63b7b	0.7601	discard	minimum child weight 5
+5eac36c	0.7597	discard	L2 leaf regularization 3
+74d61e7	0.7598	discard	origin-relative scheduled time
+52a21d8	0.7608	keep	L1 leaf regularization 1
+ba669fe	0.7600	discard	L1 leaf regularization 2
+2f4f665	0.7586	discard	column sampling per split
+bafdacc	0.7617	keep	two-seed probability average
+58f2a14	0.7605	discard	seed 24 alone
+046ebc6	0.7619	discard	third seed, negligible gain for full extra model
+ffab648	0.7611	discard	weekend indicator
+9423f5d	0.7628	keep	depthwise and loss-guided probability blend
+818d6e5	0.7626	discard	two-to-one loss-guided blend weight
+db5084d	0.7625	discard	two-to-one depthwise blend weight
+34222bd	0.7611	discard	depth cap on loss-guided forest
+d6b89fe	0.7619	discard	weaker penalties in depthwise member
+d7c7633	0.7620	discard	all features in depthwise trees
+88fc343	0.7628	discard	geometric probability pooling, equal AUC with extra code
+043b632	0.7594	discard	additive logistic partner at 20 percent
+de23097	0.7618	discard	restore flight distance
+4207093	0.7606	discard	route-relative scheduled time
+d5bc271	0.7620	discard	depthwise category cap 64
+05f00f6	0.7628	discard	monotonic depthwise time, tie with added complexity
+578fc7e	0.7618	discard	default histogram bins
+e27e208	0.7633	keep	quarter specialists at 20 percent
+2cae5e8	0.7633	discard	40 percent seasonal weight, tie
+8ed617c	0.7627	discard	two half-year specialists
+bca5bd7	0.7629	discard	meteorological-season specialists
+a7b7ff6	0.7615	discard	depth-two quarter specialists
+9ddfa3b	0.7634	keep	local category cap 64
+9ddddcd	0.7635	keep	local category cap 32
+b0298d4	0.7634	discard	local category cap 16
+2c16136	0.7632	discard	700 rounds in quarter specialists
+c4efe32	0.7633	discard	minimum child weight 20 in specialists
+f10a49f	0.7618	discard	restore weekday category in seasonal blend
+594c8ea	0.7633	discard	numeric day of year in all seasonal members
+b54f545	0.7634	discard	numeric day of year for specialists only
+5feb23a	0.7633	discard	loss-guided quarter specialists
+bdb2a8e	0.7633	discard	monthly specialists, larger artifact
+aaf2258	0.7630	discard	overlapping seasonal training windows
+cc5e746	0.7635	discard	one-hot month splits in specialists, tie
+c79dda8	0.7634	discard	local L2 regularization 10
+95b8bbe	0.7629	discard	local learning rate 0.05 and 1400 rounds
+7ba9e66	0.7631	discard	local learning rate 0.15 and 700 rounds
+332f68a	0.7639	keep	40 percent seasonal prediction weight
+389a127	0.7622	discard	60 percent seasonal prediction weight
+723d073	0.7633	discard	equal global and seasonal weights
+52303aa	0.7640	keep	30 percent seasonal prediction weight

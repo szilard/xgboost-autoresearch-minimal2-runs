@@ -1,0 +1,3 @@
+I’ve read the required files and confirmed that `train.csv`, `eval.csv`, and the Python dependencies are available. The workspace is clean, and `sep29` is unused.
+
+`program.md` requires an agreed run tag before I create the branch. Please confirm `sep29` or give me another tag. I haven’t started the experiment clock.
