@@ -52,7 +52,10 @@ Runs are strictly sequential: each uses all 8 cores.
 
        .claude/skills/xgb-multi/run_one.sh RUN_GROUP-i MODEL REASONING_EFFORT run-multi/RUN_GROUP/RUN_GROUP-i
 
-   It starts the container with only the `codex-auth` volume mounted, checks
+   It starts the container with only the `codex-auth` volume mounted and a
+   24 GB memory cap with no swap (so one experiment can't starve the host;
+   the agent isn't told, and a process killed at the cap shows up as a crash
+   or eval timeout in results.tsv), checks
    the repo state and the data, runs `python3 train.py` once as a setup
    check, checks the ChatGPT login and that MODEL has a level named
    REASONING_EFFORT, confirms from the session log that turns run with
@@ -61,7 +64,8 @@ Runs are strictly sequential: each uses all 8 cores.
    prompt, then "go" until the harness clock starts and "keep going" while
    it has time left, stops codex and the clock itself if the agent hasn't
    stopped it 15 min after TIME IS UP, then runs the report, the ground
-   truth scoring and the plot, runs `leak_check.py` in the container, copies
+   truth scoring and the plot, logs the container's peak memory and how
+   many processes were killed at the cap, runs `leak_check.py` in the container, copies
    the results out, and deletes the container. The session log is archived
    as `codex-session.jsonl.gz`, slimmed by `slim_session.py`
    (encrypted reasoning dropped, account ids redacted); of turns/ only each
@@ -107,14 +111,17 @@ Runs are strictly sequential: each uses all 8 cores.
      confirmed, the upstream minimal2 commit (in the message of the repo's
      first commit), run tag, date, turns and what was sent in each, number
      of experiments, best Eval AUC and its commit, its Holdout AUC, the
-     validity checks, how the clock was stopped, and anything notable.
+     validity checks, how the clock was stopped, the memory cap, peak
+     memory and processes killed at the cap (driver-summary.json), and
+     anything notable.
    - Add the run's row to `run-multi/RUN_GROUP/results_summary.md` and
      `run-multi/RUN_GROUP/holdout_auc.tsv` (below).
 
 ## Group files
 
 `run-multi/RUN_GROUP/results_summary.md`: a header line with the group,
-model, effort, N_RUNS, codex version and date, then one row per run with
+model, effort, N_RUNS, codex version, date and the container memory cap
+(24 GB, no swap), then one row per run with
 these columns: run, model, effort, experiments, best Eval AUC (commit), its
 Holdout AUC, gap (holdout - eval), total time and AI share (from
 report.txt), valid or excluded - with the reason. Once all runs are done, add

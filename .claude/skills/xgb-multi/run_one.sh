@@ -30,6 +30,7 @@ MAX_FAILED_TURNS=3  # consecutive turns that end without turn.completed
 FAILED_TURN_WAIT=300
 WRAP_UP_S=900       # time the agent gets after TIME IS UP to run harness.py stop
 POLL_S=60
+MEM_LIMIT=24g       # container memory cap, no swap: the agent's runs can't starve the host
 
 mkdir -p "$OUT"
 OUT=$(cd "$OUT" && pwd)
@@ -50,10 +51,12 @@ docker image inspect agents2 > /dev/null 2>&1 || { log "PRECONDITION: image agen
 docker volume inspect codex-auth > /dev/null 2>&1 || { log "PRECONDITION: volume codex-auth missing"; exit 2; }
 if docker container inspect "$C" > /dev/null 2>&1; then log "PRECONDITION: container $C already exists"; exit 2; fi
 
-docker run -dit --name "$C" -v codex-auth:/home/ubuntu/.codex-auth agents2 > /dev/null \
+docker run -dit --name "$C" --memory=$MEM_LIMIT --memory-swap=$MEM_LIMIT -v codex-auth:/home/ubuntu/.codex-auth agents2 > /dev/null \
   || { log "PRECONDITION: docker run failed"; exit 2; }
 STARTED=1
 log "container started"
+MEM_MAX=$(docker exec $C cat /sys/fs/cgroup/memory.max 2> /dev/null)
+log "memory limit: ${MEM_MAX:-unknown} bytes ($MEM_LIMIT requested, no swap)"
 
 precondition_fail() {
   log "PRECONDITION: $*"
@@ -200,6 +203,11 @@ if [[ "$(clock)" != *"Clock not started"* && "$(clock)" != *"Clock stopped"* ]];
 fi
 log "final clock: $(clock | tr '\n' ' ')"
 
+# peak memory and processes killed at the cap over the whole run
+MEM_PEAK=$(docker exec $C cat /sys/fs/cgroup/memory.peak 2> /dev/null)
+OOM_KILLS=$(docker exec $C awk '$1 == "oom_kill" { print $2 }' /sys/fs/cgroup/memory.events 2> /dev/null)
+log "memory: peak=${MEM_PEAK:-unknown} bytes, oom_kills=${OOM_KILLS:-unknown}"
+
 # ---------- after the run ----------
 
 if dx 'test -f timing/clock.json'; then
@@ -261,7 +269,8 @@ NEXP=$(awk 'NR > 1' "$OUT/results.tsv" 2> /dev/null | wc -l)
 printf '%s\n' "${MESSAGES[@]}" > "$OUT/.turns"
 C=$C STATUS=$STATUS REASON=$REASON MODEL=$MODEL EFFORT=$EFFORT CODEX_VERSION=${CODEX_VERSION:-} \
 TC=${TC:-} SID=$SID STOPPED_BY=$STOPPED_BY BRANCH=$BRANCH FIRST=$FIRST UPSTREAM=$UPSTREAM \
-NEXP=$NEXP BEST=$BEST EVAL=$EVAL HOLD=$HOLD python3 - "$OUT" <<'EOF'
+NEXP=$NEXP BEST=$BEST EVAL=$EVAL HOLD=$HOLD \
+MEM_MAX=${MEM_MAX:-} MEM_PEAK=${MEM_PEAK:-} OOM_KILLS=${OOM_KILLS:-} python3 - "$OUT" <<'EOF'
 import json, os, pathlib, sys
 out = pathlib.Path(sys.argv[1])
 e = os.environ
@@ -274,6 +283,8 @@ json.dump({
     "clock_stopped_by": e["STOPPED_BY"], "branch": e["BRANCH"], "first_commit": e["FIRST"],
     "upstream": e["UPSTREAM"], "results_rows": int(e["NEXP"]),
     "best_commit": e["BEST"], "best_eval_auc": e["EVAL"], "best_holdout_auc": e["HOLD"],
+    "memory_limit_bytes": e["MEM_MAX"], "memory_peak_bytes": e["MEM_PEAK"],
+    "oom_kills": e["OOM_KILLS"],
 }, open(out / "driver-summary.json", "w"), indent=2)
 EOF
 log "summary: $(tr -d '\n' < "$OUT/driver-summary.json")"

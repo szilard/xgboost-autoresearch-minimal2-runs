@@ -85,8 +85,14 @@ run needs, so it can run unattended (also in auto mode), and denies
 This is what the driver starts:
 
 ```bash
-docker run -dit --name <run> -v codex-auth:/home/ubuntu/.codex-auth agents2
+docker run -dit --name <run> --memory=24g --memory-swap=24g -v codex-auth:/home/ubuntu/.codex-auth agents2
 ```
+
+The memory cap (24 GB, no swap, on the 30 GB host) keeps a runaway experiment
+from starving the host: the kernel kills the largest process in the container
+instead, which the harness records as a crash or eval timeout. The agent sees
+the host's memory in `free`, not the cap. The driver logs the peak memory and
+the number of processes killed at the cap in driver.log and driver-summary.json.
 
 Only `auth.json` is shared, through the symlink; sessions, history and config
 stay in the container. Codex rewrites `auth.json` in place when it refreshes
