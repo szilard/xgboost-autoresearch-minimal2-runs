@@ -8,7 +8,7 @@
 #
 # Usage: python3 slim_session.py SESSION.jsonl OUT.jsonl.gz [--also DIR]
 #
-# Used by /xgb-run (step 14) and /xgb-multi (run_one.sh). Also works on an
+# Used by run_one.sh of /xgb-multi. Also works on an
 # already redacted log (e.g. to convert an archived codex-session.jsonl).
 import gzip
 import json

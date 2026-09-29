@@ -9,8 +9,6 @@
       "Bash(docker image inspect:*)",
       "Bash(docker volume ls:*)",
       "Bash(docker volume inspect:*)",
-      "Bash(mkdir -p runs/:*)",
-      "Edit(/runs/**)",
       "Bash(.claude/skills/xgb-multi/run_one.sh:*)",
       "Edit(/run-multi/**)"
     ],

@@ -244,7 +244,7 @@ SESSION=$(dx 'find ~/.codex/sessions -type f' | head -1)
 # account ids redacted, also in the other copied files); keep the raw copy
 # only if that fails
 if [ -s "$OUT/.codex-session-raw.jsonl" ]; then
-  python3 "$HERE/../xgb-run/slim_session.py" "$OUT/.codex-session-raw.jsonl" "$OUT/codex-session.jsonl.gz" \
+  python3 "$HERE/slim_session.py" "$OUT/.codex-session-raw.jsonl" "$OUT/codex-session.jsonl.gz" \
     --also "$OUT" 2>&1 | while read -r l; do log "$l"; done
   if [ "${PIPESTATUS[0]}" = 0 ]; then
     rm "$OUT/.codex-session-raw.jsonl"

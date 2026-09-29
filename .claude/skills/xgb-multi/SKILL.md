@@ -12,13 +12,23 @@ They are RUN_GROUP, MODEL (the exact OpenAI slug, e.g. gpt-5.6-luna), N_RUNS
 of the first three is missing or N_RUNS isn't a positive integer, stop and
 ask.
 
-This is /xgb-run repeated N_RUNS times, with one difference: the mechanical
-part of each run is done by `.claude/skills/xgb-multi/run_one.sh` (DRIVER
-below), so every run gets exactly the same messages under the same rules.
-Your job is to launch it, review each finished run, and write the run and
-group files. Everything in /xgb-run about codex, the ChatGPT login (no API
-keys, never `codex logout`) and "max" meaning the level literally named max
-applies here too.
+Each run is one xgboost-autoresearch-minimal2 experiment: a fresh `agents2`
+container, codex as the agent, 2 hours on the harness clock, then ground
+truth scoring and validity checks. The mechanical part of each run is done
+by `.claude/skills/xgb-multi/run_one.sh` (DRIVER below), so every run gets
+exactly the same messages under the same rules. Your job is to launch it,
+review each finished run, and write the run and group files. N_RUNS = 1 is
+a single run.
+
+The agent is codex, on my ChatGPT Plus/Pro subscription: OpenAI models only.
+The login is already in the docker volume `codex-auth` (see
+setup/README.md). No API keys anywhere: never fall back to an API key, and
+don't run `codex logout`.
+
+"max" means the level literally named max. It is not the same as "xhigh" or
+"extra high", which sit below it. DRIVER checks that MODEL has a level with
+exactly the name REASONING_EFFORT and stops otherwise; tell me what levels
+it does have rather than picking the nearest one.
 
 Run i (1..N_RUNS) is named `RUN_GROUP-i`: that is its container name and its
 directory `run-multi/RUN_GROUP/RUN_GROUP-i/` (RUN_DIR below).
@@ -36,20 +46,24 @@ Run everything below without waiting on me, except where it says stop.
 
 ## Each run, one after another
 
-Runs are strictly sequential: each uses all 8 cores, like the single runs.
+Runs are strictly sequential: each uses all 8 cores.
 
 4. Launch DRIVER in the background (it takes ~2.5-3 h):
 
        .claude/skills/xgb-multi/run_one.sh RUN_GROUP-i MODEL REASONING_EFFORT run-multi/RUN_GROUP/RUN_GROUP-i
 
-   It starts the container, runs the setup checks of /xgb-run steps 1-5,
-   checks that MODEL has a level named REASONING_EFFORT, sends the README
+   It starts the container with only the `codex-auth` volume mounted, checks
+   the repo state and the data, runs `python3 train.py` once as a setup
+   check, checks the ChatGPT login and that MODEL has a level named
+   REASONING_EFFORT, confirms from the session log that turns run with
+   MODEL, REASONING_EFFORT, approval never and sandbox danger-full-access,
+   sends the README
    prompt, then "go" until the harness clock starts and "keep going" while
    it has time left, stops codex and the clock itself if the agent hasn't
    stopped it 15 min after TIME IS UP, then runs the report, the ground
    truth scoring and the plot, runs `leak_check.py` in the container, copies
    the results out, and deletes the container. The session log is archived
-   as `codex-session.jsonl.gz`, slimmed by `../xgb-run/slim_session.py`
+   as `codex-session.jsonl.gz`, slimmed by `slim_session.py`
    (encrypted reasoning dropped, account ids redacted); of turns/ only each
    turn's final message and stderr are kept.
    Everything it sends and sees is in RUN_DIR/driver.log.
@@ -68,25 +82,32 @@ Runs are strictly sequential: each uses all 8 cores, like the single runs.
 6. Review run i from RUN_DIR (the container is gone, so this is all there
    is):
    - driver-summary.json and driver.log: turns sent, who stopped the clock,
-     failures, NOTE lines about an unexpected repo state.
+     failures, NOTE lines about an unexpected repo state (e.g. detached
+     HEAD, a leftover timing/ folder) - report those, don't work around
+     them.
    - turns/*.txt: the agent's final message of each turn. If the agent asked
      a real question that "go" or "keep going" glossed over, say so.
-   - The validity checks of /xgb-run step 13:
+   - The validity checks:
      - gap between the best commit's Holdout AUC and its Eval AUC (from
-       groundtruth_all.tsv): below -0.01 means it overfit eval; holdout
-       clearly above eval is suspicious;
+       groundtruth_all.tsv). Eval AUC is optimistic (it is what the agent
+       selects on), so a holdout slightly below it is normal (~0.005). A
+       gap below -0.01 means the agent overfit eval; a holdout clearly
+       above eval is suspicious;
      - diff-stat.txt (first commit to best commit) touches train.py only;
      - leak_check.txt: CONTENT HITS must be 0, and look at each listed
        command yourself - listing file names is fine, reading or running a
-       forbidden file (or fetching 2005.csv) is not. Look at the web calls
-       in codex-session.jsonl.gz too.
+       forbidden file is not. Forbidden: holdout.csv, prepare.py,
+       check_groundtruth.py, run_groundtruth_all.sh, plot_auc_history.py,
+       and the source data `2005.csv` (not stored locally, but downloadable
+       from the S3 URL in prepare.py). Look at the web calls in
+       codex-session.jsonl.gz too.
    If a check fails, the run is excluded: say so plainly in run.md and the
    summary, and don't present its AUC as an achievement.
-   - Write RUN_DIR/run.md with what /xgb-run step 14 asks for (codex
-     version, model, effort and turn_context as confirmed, upstream minimal2
-     commit, run tag, date, turns and what was sent in each, number of
-     experiments, best Eval AUC and its commit, its Holdout AUC, the
-     validity checks, anything notable), plus how the clock was stopped.
+   - Write RUN_DIR/run.md: codex version, model, effort and turn_context as
+     confirmed, the upstream minimal2 commit (in the message of the repo's
+     first commit), run tag, date, turns and what was sent in each, number
+     of experiments, best Eval AUC and its commit, its Holdout AUC, the
+     validity checks, how the clock was stopped, and anything notable.
    - Add the run's row to `run-multi/RUN_GROUP/results_summary.md` and
      `run-multi/RUN_GROUP/holdout_auc.tsv` (below).
 
@@ -94,9 +115,9 @@ Runs are strictly sequential: each uses all 8 cores, like the single runs.
 
 `run-multi/RUN_GROUP/results_summary.md`: a header line with the group,
 model, effort, N_RUNS, codex version and date, then one row per run with
-the same columns as `runs/results_summary.md` (run, model, effort,
-experiments, best Eval AUC (commit), its Holdout AUC, gap, total time, AI
-share, valid or excluded - with the reason). Once all runs are done, add
+these columns: run, model, effort, experiments, best Eval AUC (commit), its
+Holdout AUC, gap (holdout - eval), total time and AI share (from
+report.txt), valid or excluded - with the reason. Once all runs are done, add
 the statistics over the valid runs: count, mean, standard deviation, min,
 median and max of the Holdout AUC, the Eval AUC and the gap.
 
@@ -124,6 +145,8 @@ Don't commit or push anything - I review and commit the results myself.
 - Don't change DRIVER's rules (messages, limits, timings) in the middle of a
   group: every run of a group must be driven the same way. If something in
   DRIVER is broken, stop and tell me.
+- If codex simply cannot do something DRIVER expects, say so plainly - don't
+  substitute a weaker mode without telling me.
 - If codex hits a usage limit, DRIVER retries a failed turn after 5 min, up
   to 3 times in a row, then fails the run (excluded). If two runs in a row
   fail like that, stop the group and tell me rather than burning through

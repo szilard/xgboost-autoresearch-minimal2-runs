@@ -11,13 +11,11 @@ How a run works (the task, the agent's loop and the guardrails are described in 
 - **Agent:** currently codex, on a ChatGPT subscription (OpenAI models, at a chosen reasoning effort, e.g. `max`). It gets the prompt from the `xgboost-autoresearch-minimal2` README and then works on its own for 2 hours, enforced by the harness clock; the orchestrator only sends "go" to start and "keep going" if it stops early.
 - **Ground truth:** after the run, every kept model is scored on the holdout set (`groundtruth_all.tsv`, `auc_history.png`).
 - **Validity checks:** the model and effort actually used (from the agent's session log), the eval/holdout gap, only `train.py` changed, and no access to the holdout data or the human-only scripts (also searched for their content in the agent's commands and outputs). Runs that fail a check are recorded as excluded.
-- **Orchestration:** by Claude Code, with two project skills:
-  - `/xgb-run <run> <model> [effort]`: a single run, results in `runs/<run>/`, one row per run in [`runs/results_summary.md`](runs/results_summary.md).
-  - `/xgb-multi <group> <model> <n-runs> [effort]`: N sequential runs of the same setup, each driven identically by a script, results in `run-multi/<group>/<group>-<i>/`, plus a group `results_summary.md` (with mean/sd/min/median/max over the valid runs) and `holdout_auc.tsv` (one line per run, for plots such as histograms).
+- **Orchestration:** by Claude Code, with the project skill `/xgb-multi <group> <model> <n-runs> [effort]`: N sequential runs of the same setup (N = 1 for a single run), each driven identically by a script, results in `run-multi/<group>/<group>-<i>/`, plus a group `results_summary.md` (with mean/sd/min/median/max over the valid runs) and `holdout_auc.tsv` (one line per run, for plots such as histograms). Claude reviews each run and writes up the results.
 
 Each run's folder has the agent's `results.tsv`, `research-log.md` and final `train.py`, the ground truth scores and plot, the harness timing report, the git log, the agent's session log (gzipped, with the encrypted reasoning dropped and account ids redacted) and a `run.md` with the settings, the turns sent, the validity checks and anything notable.
 
-Results so far: a single run ([codex2-luna-1](runs/codex2-luna-1/run.md)) and a group of 3 ([luna-test](run-multi/luna-test/results_summary.md)), all gpt-5.6-luna at effort `max`.
+Results so far: a group of 3 runs ([luna-test](run-multi/luna-test/results_summary.md)), gpt-5.6-luna at effort `max`. An earlier single run driven live by Claude with the retired `/xgb-run` skill is in [archive/single-run](archive/single-run/).
 
 Recommended machine: m8i.2xlarge (8 cores, 32 GB RAM). The per-run time limits depend on the hardware, so compare results only across runs on the same machine type. Runs are sequential, since each uses all cores.
 
