@@ -1,0 +1,3 @@
+The experiment is complete on branch `sep29`. The best kept model is commit `8eb7b32`, with **Eval AUC 0.7618**, up from the 0.7203 baseline. The two-hour harness clock is stopped.
+
+All 101 experiments after the baseline are recorded in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv), with findings in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md). The branch points to the best [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py).

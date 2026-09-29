@@ -1,0 +1,204 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] 9178649 | keep | 200 boosting rounds at learning rate 0.1 ===
+  holdout=0.7311
+=== [4] 94c9738 | discard | 500 boosting rounds; overfit versus 200 ===
+  SKIP: status discard
+=== [5] fcd6b7d | discard | 300 boosting rounds; slightly below 200 ===
+  SKIP: status discard
+=== [6] c3d4b7a | discard | 150 boosting rounds; below 200 ===
+  SKIP: status discard
+=== [7] 930ba08 | discard | 200 depth-four trees; insufficient interaction capacity ===
+  SKIP: status discard
+=== [8] 116355a | discard | min_child_weight 10; nearly equal but more complex ===
+  SKIP: status discard
+=== [9] 3235952 | discard | min_child_weight 5; below default ===
+  SKIP: status discard
+=== [10] 940b466 | discard | row subsample 0.8; substantially worse ===
+  SKIP: status discard
+=== [11] 182a22a | discard | add departure hour and minute features ===
+  SKIP: status discard
+=== [12] b0b805b | keep | add numeric day of year ===
+  holdout=0.7345
+=== [13] e2ff093 | keep | add exact date as categorical feature ===
+  holdout=0.7460
+=== [14] 12f2ac8 | keep | remove redundant numeric day of year ===
+  holdout=0.7472
+=== [15] aa16a62 | discard | add high-cardinality route category ===
+  SKIP: status discard
+=== [16] 01e23f8 | keep | max_cat_threshold 128 for date category ===
+  holdout=0.7480
+=== [17] a9e142b | discard | max_cat_threshold 256; below 128 ===
+  SKIP: status discard
+=== [18] 8b66258 | discard | 300 rounds with date category; below 200 ===
+  SKIP: status discard
+=== [19] 814068c | discard | 150 rounds with date category; below 200 ===
+  SKIP: status discard
+=== [20] 7407438 | keep | depth five with date category ===
+  holdout=0.7490
+=== [21] bd468d9 | discard | depth four with date category; below depth five ===
+  SKIP: status discard
+=== [22] 58b90e8 | keep | one-hot splits for month and weekday categories ===
+  holdout=0.7492
+=== [23] 961000d | discard | one-hot splits through carrier and day-of-month ===
+  SKIP: status discard
+=== [24] ef6ab4e | discard | one-hot carrier split alone; worse ===
+  SKIP: status discard
+=== [25] ba93d1c | discard | weekday-only one-hot splits; below month plus weekday ===
+  SKIP: status discard
+=== [26] a6f25ac | keep | max_bin 512 for finer numeric splits ===
+  holdout=0.7494
+=== [27] 1632d1c | keep | max_bin 1024 for finer numeric splits ===
+  holdout=0.7480
+=== [28] bb6fd10 | discard | max_bin 2048; below 1024 ===
+  SKIP: status discard
+=== [29] 8911b4c | discard | remove day-of-month predictor; lower AUC ===
+  SKIP: status discard
+=== [30] 1a89bc0 | keep | remove redundant weekday predictor; equal AUC faster eval ===
+  holdout=0.7480
+=== [31] 2fa7c2d | discard | min_child_weight 10 with date category ===
+  SKIP: status discard
+=== [32] 39c2bdd | discard | gamma 1 minimum split gain; nearly equal but added parameter ===
+  SKIP: status discard
+=== [33] 0bd9c3a | discard | reg_lambda 5; nearly equal but added parameter ===
+  SKIP: status discard
+=== [34] 7874817 | discard | calendar week category; negligible gain for added feature ===
+  SKIP: status discard
+=== [35] fa66ce4 | discard | categorical departure hour; below raw HHMM alone ===
+  SKIP: status discard
+=== [36] 22e7d9f | discard | loss-guided growth capped at 16 leaves ===
+  SKIP: status discard
+=== [37] 0a8a153 | discard | loss-guided growth capped at 32 leaves ===
+  SKIP: status discard
+=== [38] 49a0877 | keep | remove unused month predictor and one-hot setting ===
+  holdout=0.7480
+=== [39] ca2d591 | keep | learning rate 0.05 with 400 trees ===
+  holdout=0.7499
+=== [40] f6288f2 | keep | learning rate 0.025 with 800 trees ===
+  holdout=0.7505
+=== [41] cb38f40 | discard | learning rate 0.0125 with 1600 trees; negligible gain at double size ===
+  SKIP: status discard
+=== [42] f8712d5 | discard | add numeric day of year after removing month predictor ===
+  SKIP: status discard
+=== [43] 48c43ff | discard | departure time relative to origin median; equal AUC more complexity ===
+  SKIP: status discard
+=== [44] af74b1b | keep | colsample_bytree 0.9 on 800-tree model ===
+  holdout=0.7503
+=== [45] 1ff626d | discard | colsample_bytree 0.8; below 0.9 ===
+  SKIP: status discard
+=== [46] a0633cb | keep | subsample 0.9 with colsample_bytree 0.9 ===
+  holdout=0.7541
+=== [47] ca72b84 | discard | subsample 0.8; below 0.9 ===
+  SKIP: status discard
+=== [48] f754d30 | keep | subsample 0.95; best among row-sampling settings ===
+  holdout=0.7546
+=== [49] ae7e6d8 | keep | subsample 0.975; improved upper-side bracket ===
+  holdout=0.7538
+=== [50] 3ae17df | discard | subsample 0.99; below 0.975 ===
+  SKIP: status discard
+=== [51] f77e5aa | keep | colsample_bytree 0.8 with subsample 0.975 ===
+  holdout=0.7539
+=== [52] 9646522 | keep | depth six with row and feature sampling ===
+  holdout=0.7556
+=== [53] 191fe17 | discard | depth seven with sampling; below six ===
+  SKIP: status discard
+=== [54] d897245 | keep | max_cat_threshold 160 with sampling and depth six ===
+  holdout=0.7560
+=== [55] 3202d29 | keep | max_cat_threshold 192 with sampled depth-six model ===
+  holdout=0.7563
+=== [56] 4fae37e | discard | max_cat_threshold 256; below 192 ===
+  SKIP: status discard
+=== [57] 9fa18f9 | discard | max_cat_threshold 224; tied simpler 192 setting ===
+  SKIP: status discard
+=== [58] a8a6f2f | discard | 1000 trees with sampling; below 800 ===
+  SKIP: status discard
+=== [59] 6000ad2 | discard | 600 trees with sampling; below 800 ===
+  SKIP: status discard
+=== [60] ab84b0e | discard | gradient-based sampling of half the rows ===
+  SKIP: status discard
+=== [61] 6072e56 | discard | node-level feature sampling instead of tree-level ===
+  SKIP: status discard
+=== [62] 8e583e7 | discard | two-seed soft-voting ensemble; tiny gain at double size ===
+  SKIP: status discard
+=== [63] e1fa82d | discard | min_child_weight 3; below default ===
+  SKIP: status discard
+=== [64] daed238 | keep | min_child_weight 0.5; finer splits help ===
+  holdout=0.7566
+=== [65] 832c342 | discard | min_child_weight 0.25; below 0.5 ===
+  SKIP: status discard
+=== [66] 6289384 | discard | reg_alpha 0.5; tied simpler default ===
+  SKIP: status discard
+=== [67] e5e3a92 | discard | reg_lambda 0.1; below default ===
+  SKIP: status discard
+=== [68] 6c7a943 | discard | reg_lambda 2; below default ===
+  SKIP: status discard
+=== [69] 1d3dbaf | discard | add 1551-level carrier-origin category; severe overfit ===
+  SKIP: status discard
+=== [70] d2b03b6 | discard | exponential learning rate decay 0.05 to 0.01 ===
+  SKIP: status discard
+=== [71] 98647e6 | discard | categorical two-hour departure periods ===
+  SKIP: status discard
+=== [72] 945972c | discard | cross-fitted origin-day delay rate ===
+  SKIP: status discard
+=== [73] b927226 | keep | remove standalone day-of-month predictor ===
+  holdout=0.7566
+=== [74] 289b542 | discard | add broad month category; tiny gain for extra feature ===
+  SKIP: status discard
+=== [75] fe44583 | discard | cross-fitted date delay rate alongside date category ===
+  SKIP: status discard
+=== [76] a21c88e | discard | colsample_bytree 0.9 after day ablation ===
+  SKIP: status discard
+=== [77] 0695224 | discard | loss-guided growth with 64 leaves ===
+  SKIP: status discard
+=== [78] a174d30 | discard | approximate tree method ===
+  SKIP: status discard
+=== [79] 4cbe61b | crash | 800-tree DART dropout training timeout ===
+  SKIP: status crash
+=== [80] e986d16 | crash | 400-tree light dropout training timeout ===
+  SKIP: status crash
+=== [81] ce56a19 | discard | gamma 0.1 minimum split gain ===
+  SKIP: status discard
+=== [82] d0b0039 | discard | add weekday after day-of-month ablation ===
+  SKIP: status discard
+=== [83] 202e399 | discard | ablate destination airport ===
+  SKIP: status discard
+=== [84] a31a120 | discard | ablate distance predictor ===
+  SKIP: status discard
+=== [85] 5ca184e | discard | double date feature sampling weight ===
+  SKIP: status discard
+=== [86] 206121d | discard | halve date feature sampling weight ===
+  SKIP: status discard
+=== [87] 79f9aa6 | discard | subsample 0.95 after day ablation ===
+  SKIP: status discard
+=== [88] 6103369 | discard | max_cat_threshold 160 after day ablation ===
+  SKIP: status discard
+=== [89] 136247c | discard | cross-fitted origin delay rate ===
+  SKIP: status discard
+=== [90] ac07ac5 | discard | categorical 250-mile distance bands ===
+  SKIP: status discard
+=== [91] 09a0454 | discard | two-tree boosted forest at 400 rounds ===
+  SKIP: status discard
+=== [92] 3d749b1 | discard | monotonic scheduled departure time ===
+  SKIP: status discard
+=== [93] 8fb42a6 | discard | max_depth 5 after day ablation ===
+  SKIP: status discard
+=== [94] 54cda5b | discard | max_bin 1536 after day ablation ===
+  SKIP: status discard
+=== [95] 8eb7b32 | keep | 900 boosting rounds after day ablation ===
+  holdout=0.7570
+=== [96] ede5b04 | discard | 850 boosting rounds after day ablation ===
+  SKIP: status discard
+=== [97] 0d67fd7 | discard | 950 rounds tied 900 at larger size ===
+  SKIP: status discard
+=== [98] 5c081f1 | discard | max_cat_threshold 224 tied at 900 rounds ===
+  SKIP: status discard
+=== [99] 5659eea | discard | colsample_bytree 0.75 tied at 900 rounds ===
+  SKIP: status discard
+=== [100] 5fed552 | discard | min_child_weight 0.75 at 900 rounds ===
+  SKIP: status discard
+=== [101] a1907b5 | discard | max_bin 768 tied at 900 rounds ===
+  SKIP: status discard
+=== [102] bc8cdc8 | discard | 1000 rounds on lean model ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

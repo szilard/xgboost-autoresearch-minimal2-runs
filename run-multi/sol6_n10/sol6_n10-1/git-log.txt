@@ -1,0 +1,234 @@
+commit 8eb7b32847907ec355408c448b22575d8ab5250b
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 15:56:17 2026 +0000
+
+    Test nine hundred boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b9272262c1eaaf970da5482c2e1bce0f066b44a0
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 15:30:37 2026 +0000
+
+    Ablate standalone day-of-month predictor
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit daed2382348a21ebb2607e4e221d10bcf6963bc4
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 15:15:58 2026 +0000
+
+    Relax minimum child weight in sampled model
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3202d297f1dd2177a56c4ff62491a42fda75a418
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 15:05:37 2026 +0000
+
+    Test broader date partitions
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d8972452b4812c293283e264f08b9a4e44b4dfee
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 15:04:42 2026 +0000
+
+    Test wider date split limit under sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9646522c3b09030d11202539f875c800f1d39dc9
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 15:02:53 2026 +0000
+
+    Test deeper trees with row and feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f77e5aae255ebe52c5652bc34b23113cdfde60ed
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 15:01:16 2026 +0000
+
+    Test stronger feature sampling with row sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ae7e6d8607953aeedff4299c65e2f43cf4125265
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:59:20 2026 +0000
+
+    Test very light row sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f754d30eed8540bba3559b8fc919e72d5163d631
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:58:26 2026 +0000
+
+    Test lighter row sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a0633cbc40c719214614a57cd349671092e25bbb
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:56:31 2026 +0000
+
+    Test mild row subsampling with feature sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit af74b1bc9458b081b611c5a8a2b56c3bca48616c
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:54:39 2026 +0000
+
+    Test modest feature subsampling per tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f6288f27c6bd9b3a4f222fac7f18a5c32550c261
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:48:32 2026 +0000
+
+    Test further boosting shrinkage
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit ca2d5912d8e36736d766f2937620c31e8436dd1d
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:47:38 2026 +0000
+
+    Test slower boosting with four hundred trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 49a087749a981a79d0b30159188467da5bba6622
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:46:15 2026 +0000
+
+    Remove unused month predictor and split setting
+
+ train.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 1a89bc0b3f9ec766414dc1878a2654b5b6189676
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:36:22 2026 +0000
+
+    Ablate separate weekday predictor
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1632d1c51c3a752562bb8f60786ebc840c990311
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:33:06 2026 +0000
+
+    Test very fine numeric histogram bins
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a6f25acf46204ea044ec189398beec2bde62de31
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:32:05 2026 +0000
+
+    Test finer numeric histogram bins
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 58b90e8b4f91d84c77557c85b4f64b47c33e32a8
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:28:07 2026 +0000
+
+    Test one-hot splits for small categories
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7407438c597d592c9fddcefc75cbf5bf0bf566a0
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:25:09 2026 +0000
+
+    Test depth five with date category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 01e23f8422b7feb954dc6daee0c62aff54490f5b
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:21:08 2026 +0000
+
+    Expand categorical split threshold
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 12f2ac8c1971849accb8bfe2dad860da97a72132
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:18:18 2026 +0000
+
+    Ablate numeric day of year feature
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit e2ff09382313d304fa037bb5d9ac8790982ef702
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:17:11 2026 +0000
+
+    Add exact date category
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b0b805b24d33194c1cd4eb7fb693409b2949b0eb
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:15:53 2026 +0000
+
+    Add numeric day of year
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 917864923527389183a0cf26f2294209712edfd7
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 14:06:09 2026 +0000
+
+    Increase boosting rounds to 200
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

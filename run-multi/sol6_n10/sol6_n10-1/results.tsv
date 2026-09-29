@@ -1,0 +1,102 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+9178649	0.7345	keep	200 boosting rounds at learning rate 0.1
+94c9738	0.7312	discard	500 boosting rounds; overfit versus 200
+fcd6b7d	0.7342	discard	300 boosting rounds; slightly below 200
+c3d4b7a	0.7332	discard	150 boosting rounds; below 200
+930ba08	0.7317	discard	200 depth-four trees; insufficient interaction capacity
+116355a	0.7344	discard	min_child_weight 10; nearly equal but more complex
+3235952	0.7334	discard	min_child_weight 5; below default
+940b466	0.7275	discard	row subsample 0.8; substantially worse
+182a22a	0.7334	discard	add departure hour and minute features
+b0b805b	0.7385	keep	add numeric day of year
+e2ff093	0.7511	keep	add exact date as categorical feature
+12f2ac8	0.7512	keep	remove redundant numeric day of year
+aa16a62	0.7319	discard	add high-cardinality route category
+01e23f8	0.7534	keep	max_cat_threshold 128 for date category
+a9e142b	0.7530	discard	max_cat_threshold 256; below 128
+8b66258	0.7522	discard	300 rounds with date category; below 200
+814068c	0.7530	discard	150 rounds with date category; below 200
+7407438	0.7538	keep	depth five with date category
+bd468d9	0.7526	discard	depth four with date category; below depth five
+58b90e8	0.7541	keep	one-hot splits for month and weekday categories
+961000d	0.7496	discard	one-hot splits through carrier and day-of-month
+ef6ab4e	0.7494	discard	one-hot carrier split alone; worse
+ba93d1c	0.7537	discard	weekday-only one-hot splits; below month plus weekday
+a6f25ac	0.7543	keep	max_bin 512 for finer numeric splits
+1632d1c	0.7552	keep	max_bin 1024 for finer numeric splits
+bb6fd10	0.7548	discard	max_bin 2048; below 1024
+8911b4c	0.7547	discard	remove day-of-month predictor; lower AUC
+1a89bc0	0.7552	keep	remove redundant weekday predictor; equal AUC faster eval
+2fa7c2d	0.7548	discard	min_child_weight 10 with date category
+39c2bdd	0.7551	discard	gamma 1 minimum split gain; nearly equal but added parameter
+0bd9c3a	0.7551	discard	reg_lambda 5; nearly equal but added parameter
+7874817	0.7553	discard	calendar week category; negligible gain for added feature
+fa66ce4	0.7546	discard	categorical departure hour; below raw HHMM alone
+22e7d9f	0.7506	discard	loss-guided growth capped at 16 leaves
+0a8a153	0.7523	discard	loss-guided growth capped at 32 leaves
+49a0877	0.7552	keep	remove unused month predictor and one-hot setting
+ca2d591	0.7556	keep	learning rate 0.05 with 400 trees
+f6288f2	0.7558	keep	learning rate 0.025 with 800 trees
+cb38f40	0.7559	discard	learning rate 0.0125 with 1600 trees; negligible gain at double size
+f8712d5	0.7557	discard	add numeric day of year after removing month predictor
+48c43ff	0.7558	discard	departure time relative to origin median; equal AUC more complexity
+af74b1b	0.7561	keep	colsample_bytree 0.9 on 800-tree model
+1ff626d	0.7560	discard	colsample_bytree 0.8; below 0.9
+a0633cb	0.7578	keep	subsample 0.9 with colsample_bytree 0.9
+ca72b84	0.7566	discard	subsample 0.8; below 0.9
+f754d30	0.7589	keep	subsample 0.95; best among row-sampling settings
+ae7e6d8	0.7591	keep	subsample 0.975; improved upper-side bracket
+3ae17df	0.7582	discard	subsample 0.99; below 0.975
+f77e5aa	0.7594	keep	colsample_bytree 0.8 with subsample 0.975
+9646522	0.7602	keep	depth six with row and feature sampling
+191fe17	0.7597	discard	depth seven with sampling; below six
+d897245	0.7607	keep	max_cat_threshold 160 with sampling and depth six
+3202d29	0.7610	keep	max_cat_threshold 192 with sampled depth-six model
+4fae37e	0.7607	discard	max_cat_threshold 256; below 192
+9fa18f9	0.7610	discard	max_cat_threshold 224; tied simpler 192 setting
+a8a6f2f	0.7607	discard	1000 trees with sampling; below 800
+6000ad2	0.7595	discard	600 trees with sampling; below 800
+ab84b0e	0.7555	discard	gradient-based sampling of half the rows
+6072e56	0.7593	discard	node-level feature sampling instead of tree-level
+8e583e7	0.7614	discard	two-seed soft-voting ensemble; tiny gain at double size
+e1fa82d	0.7605	discard	min_child_weight 3; below default
+daed238	0.7614	keep	min_child_weight 0.5; finer splits help
+832c342	0.7611	discard	min_child_weight 0.25; below 0.5
+6289384	0.7614	discard	reg_alpha 0.5; tied simpler default
+e5e3a92	0.7607	discard	reg_lambda 0.1; below default
+6c7a943	0.7606	discard	reg_lambda 2; below default
+1d3dbaf	0.7479	discard	add 1551-level carrier-origin category; severe overfit
+d2b03b6	0.7601	discard	exponential learning rate decay 0.05 to 0.01
+98647e6	0.7601	discard	categorical two-hour departure periods
+945972c	0.7581	discard	cross-fitted origin-day delay rate
+b927226	0.7615	keep	remove standalone day-of-month predictor
+289b542	0.7616	discard	add broad month category; tiny gain for extra feature
+fe44583	0.7599	discard	cross-fitted date delay rate alongside date category
+a21c88e	0.7596	discard	colsample_bytree 0.9 after day ablation
+0695224	0.7615	discard	loss-guided growth with 64 leaves
+a174d30	0.7607	discard	approximate tree method
+4cbe61b	0.0000	crash	800-tree DART dropout training timeout
+e986d16	0.0000	crash	400-tree light dropout training timeout
+ce56a19	0.7615	discard	gamma 0.1 minimum split gain
+d0b0039	0.7611	discard	add weekday after day-of-month ablation
+202e399	0.7543	discard	ablate destination airport
+a31a120	0.7592	discard	ablate distance predictor
+5ca184e	0.7610	discard	double date feature sampling weight
+206121d	0.7577	discard	halve date feature sampling weight
+79f9aa6	0.7605	discard	subsample 0.95 after day ablation
+6103369	0.7612	discard	max_cat_threshold 160 after day ablation
+136247c	0.7607	discard	cross-fitted origin delay rate
+ac07ac5	0.7608	discard	categorical 250-mile distance bands
+09a0454	0.7608	discard	two-tree boosted forest at 400 rounds
+3d749b1	0.7583	discard	monotonic scheduled departure time
+8fb42a6	0.7592	discard	max_depth 5 after day ablation
+54cda5b	0.7611	discard	max_bin 1536 after day ablation
+8eb7b32	0.7618	keep	900 boosting rounds after day ablation
+ede5b04	0.7616	discard	850 boosting rounds after day ablation
+0d67fd7	0.7618	discard	950 rounds tied 900 at larger size
+5c081f1	0.7618	discard	max_cat_threshold 224 tied at 900 rounds
+5659eea	0.7618	discard	colsample_bytree 0.75 tied at 900 rounds
+5fed552	0.7616	discard	min_child_weight 0.75 at 900 rounds
+a1907b5	0.7618	discard	max_bin 768 tied at 900 rounds
+bc8cdc8	0.7617	discard	1000 rounds on lean model
