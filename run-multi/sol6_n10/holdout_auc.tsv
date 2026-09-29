@@ -1,2 +1,3 @@
 run	best_commit	eval_auc	holdout_auc	gap	experiments	valid
 sol6_n10-1	8eb7b32	0.7618	0.7570	-0.0048	100	yes
+sol6_n10-2	fad5697	0.7670	0.7611	-0.0059	73	yes

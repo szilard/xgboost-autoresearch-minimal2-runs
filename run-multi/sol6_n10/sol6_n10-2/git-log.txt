@@ -1,0 +1,306 @@
+commit fad5697a5d0426efdd624daee5b474f5b3aff6f4
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:20:16 2026 +0000
+
+    Retest categorical split threshold at depth eight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7271b3116acef8e0656bdf3d9b73e44ffd6df80d
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:09:41 2026 +0000
+
+    Retune L1 penalty at depth eight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c318666c09008737a5db8e6b6c04e26e87a5581a
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:07:55 2026 +0000
+
+    Bracket depth eight under L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5bc8b9185bf9270cc35e003f71c3e6d1f4288650
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:06:19 2026 +0000
+
+    Bracket depth seven under L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 413282c7a857d8373fdda37af27defac1f1c183f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:04:47 2026 +0000
+
+    Bracket depth six under L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a0876f5cd0104bee7abfe20896457ae8ffe7569a
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 18:03:06 2026 +0000
+
+    Test depth five with L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 34d5b2247be0f98215ba0e4726e7b6d91bceabf0
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:54:43 2026 +0000
+
+    Test stronger L1 leaf penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f45dcdf49cc524c4fd39ca102fac2a245fffde66
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:53:17 2026 +0000
+
+    Test L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit cd293c064e6337d55d54de052e3699befd29593a
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:49:00 2026 +0000
+
+    Test three-model approx and hist ensemble
+
+ train.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit e40bb0837249ec1832829b51fef4ad0aa58c2f2a
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:44:41 2026 +0000
+
+    Ablate histogram ensemble members
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6a83fef18c75490e7b1d55ef366a78e905d019e5
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:42:50 2026 +0000
+
+    Average two seeds of both XGBoost methods
+
+ train.py | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit 3227d04dc9cc90d5e415f43b470202b8d9a43cb7
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:36:21 2026 +0000
+
+    Compare per-tree column sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0f7abd96d206f1c2e1979749eb3e03cc047c4338
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:34:45 2026 +0000
+
+    Sample 80 percent of features per split
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 39dacf17ff709f3bca987446de45f2a7cbb684a1
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:31:35 2026 +0000
+
+    Ablate month-weekday interaction
+
+ train.py | 4 ----
+ 1 file changed, 4 deletions(-)
+
+commit b68016a5743b0313f5eecb9cffbd3a03818801c6
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:26:16 2026 +0000
+
+    Average hist and approx XGBoost probabilities
+
+ train.py | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit 18b41b8ca2d22f13cc16e003d225fcb22c2d70dc
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:20:36 2026 +0000
+
+    Try approximate tree construction
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 59a3cbfbc5adc47c8bf28748c7be1c49f64d9c9c
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:07:05 2026 +0000
+
+    Increase categorical split threshold to 128
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 56cdb69573c8e421f039b1a3e48a562c08ce97b5
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:05:15 2026 +0000
+
+    Ablate unused standalone carrier predictor
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 32e73907d6f4b93075c1ce6c5f584bd9bc63e708
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:03:50 2026 +0000
+
+    Ablate standalone weekday predictor
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5dc36a521c71e3aa22163486c19c99985d9c3828
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:02:23 2026 +0000
+
+    Ablate standalone month predictor
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit db1590935fd5a5716a617c9191eaa23551b838ea
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 17:00:48 2026 +0000
+
+    Ablate day-of-month predictor
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 31d885fc43efa86684f3c748cce78ef235fbf586
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:59:13 2026 +0000
+
+    Ablate numeric day of year
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 7d978e76174f88b0736c7d2c195c1d315eb8db08
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:57:27 2026 +0000
+
+    Add categorical day of year
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit cb7b54a67b7da0a6d378e94d81ad6580096c468b
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:55:53 2026 +0000
+
+    Add month-weekday interaction category
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 316e7803474e4dc27b86368f4830d317f598ba11
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:54:27 2026 +0000
+
+    Add carrier-weekday interaction category
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 2b118a3f6ff68d45616cd59b7833fd2c59fdc090
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:53:03 2026 +0000
+
+    Add carrier-month interaction category
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit adc94cb53669e317d3f8d1c9aba2cb624027bdfa
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:36:00 2026 +0000
+
+    Raise minimum child weight to 10
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 83fddbc069565484ff506bd700edba385a12c9e3
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:30:04 2026 +0000
+
+    Try lower learning rate with 600 rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit da2bac6cc41bbe2f7e06e93161160124b068281f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:27:51 2026 +0000
+
+    Try depth-4 trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d1363d03afa3cbfa8028198d28d3be7b307190d0
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:26:34 2026 +0000
+
+    Parse c-prefixed calendar fields for day of year
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit f3840b23eca83b7e12f4374835ac7c870f64ab36
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:26:03 2026 +0000
+
+    Add day-of-year feature
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 8aee12456be46244dabf74d655c491c51ce4bc79
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 16:23:17 2026 +0000
+
+    Increase boosting rounds to 300
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

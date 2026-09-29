@@ -1,0 +1,150 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] 8aee124 | keep | 300 boosting rounds ===
+  holdout=0.7315
+=== [4] a0254c0 | discard | 800 boosting rounds ===
+  SKIP: status discard
+=== [5] f3840b2 | crash | day of year initial parse failed on c-prefixed dates ===
+  SKIP: status crash
+=== [6] d1363d0 | keep | day of year numeric feature ===
+  holdout=0.7346
+=== [7] da2bac6 | keep | depth 4 at 300 rounds ===
+  holdout=0.7350
+=== [8] 899fd6e | discard | 600 depth 4 trees ===
+  SKIP: status discard
+=== [9] 83fddbc | keep | 600 trees at learning rate 0.05 ===
+  holdout=0.7355
+=== [10] ae46c18 | discard | origin-destination route category ===
+  SKIP: status discard
+=== [11] 0a6a527 | discard | categorical departure hour ===
+  SKIP: status discard
+=== [12] c227c93 | discard | row subsampling 0.8 ===
+  SKIP: status discard
+=== [13] adc94cb | keep | minimum child weight 10 ===
+  holdout=0.7360
+=== [14] 8da8475 | discard | departure time relative to origin median ===
+  SKIP: status discard
+=== [15] dc1a4f6 | discard | categorical split threshold 16 ===
+  SKIP: status discard
+=== [16] 06bbfdd | discard | remove Distance feature ===
+  SKIP: status discard
+=== [17] 027ceba | discard | distance to major 2005 holidays ===
+  SKIP: status discard
+=== [18] 1aad504 | discard | one-hot splits for small categories ===
+  SKIP: status discard
+=== [19] e58b6e2 | discard | depth 3 at 600 rounds ===
+  SKIP: status discard
+=== [20] 9999a36 | discard | depth 5 tied best with more complexity ===
+  SKIP: status discard
+=== [21] 96ceb81 | discard | minimum child weight 25 ===
+  SKIP: status discard
+=== [22] 2e6e271 | discard | 512 histogram bins ===
+  SKIP: status discard
+=== [23] 879b4c1 | discard | 128 histogram bins ===
+  SKIP: status discard
+=== [24] 7e17247 | discard | minute within scheduled departure hour ===
+  SKIP: status discard
+=== [25] 2b118a3 | keep | carrier-month interaction category ===
+  holdout=0.7376
+=== [26] 316e780 | keep | carrier-weekday interaction category ===
+  holdout=0.7390
+=== [27] cb7b54a | keep | month-weekday interaction category ===
+  holdout=0.7403
+=== [28] 7d978e7 | keep | categorical day of year ===
+  holdout=0.7510
+=== [29] 31d885f | keep | remove redundant numeric day of year ===
+  holdout=0.7510
+=== [30] db15909 | keep | remove day-of-month predictor ===
+  holdout=0.7510
+=== [31] 5dc36a5 | keep | remove standalone month predictor ===
+  holdout=0.7510
+=== [32] 32e7390 | keep | remove standalone weekday predictor ===
+  holdout=0.7510
+=== [33] 56cdb69 | keep | remove unused standalone carrier predictor ===
+  holdout=0.7510
+=== [34] 59a3cbf | keep | categorical split threshold 128 ===
+  holdout=0.7521
+=== [35] 798ad3e | discard | categorical split threshold 256 ===
+  SKIP: status discard
+=== [36] 2ca035c | discard | carrier-hour interaction category ===
+  SKIP: status discard
+=== [37] 3e9daa9 | discard | 1000 boosting rounds with rich features ===
+  SKIP: status discard
+=== [38] 1a50d05 | discard | origin-weekday interaction category ===
+  SKIP: status discard
+=== [39] c372251 | discard | L2 regularization 10 ===
+  SKIP: status discard
+=== [40] ced52b6 | discard | lossguide trees with 16 leaves ===
+  SKIP: status discard
+=== [41] 18b41b8 | keep | approximate tree construction ===
+  holdout=0.7531
+=== [42] 14cbf1b | discard | depth 5 with approx trees ===
+  SKIP: status discard
+=== [43] b1aa9a4 | discard | 400 boosting rounds with approx ===
+  SKIP: status discard
+=== [44] b68016a | keep | equal soft vote of hist and approx ===
+  holdout=0.7536
+=== [45] e80d173 | discard | three-to-one approx-hist voting weights ===
+  SKIP: status discard
+=== [46] c2287b3 | discard | seven-day date block category ===
+  SKIP: status discard
+=== [47] 39dacf1 | keep | remove month-weekday interaction ===
+  holdout=0.7536
+=== [48] 4f512be | discard | remove carrier-month interaction ===
+  SKIP: status discard
+=== [49] 0f7abd9 | keep | column sampling 0.8 per node ===
+  holdout=0.7543
+=== [50] 3227d04 | keep | column sampling 0.8 per tree ===
+  holdout=0.7545
+=== [51] 75970a3 | discard | column sampling 0.7 per tree ===
+  SKIP: status discard
+=== [52] 1936422 | discard | column sampling 0.9 per tree ===
+  SKIP: status discard
+=== [53] f57f614 | discard | minimum split gain gamma 1 ===
+  SKIP: status discard
+=== [54] 6a83fef | keep | average two seeds of hist and approx ===
+  holdout=0.7548
+=== [55] e40bb08 | keep | remove hist members from two-seed ensemble ===
+  holdout=0.7547
+=== [56] 0971dce | discard | mixed approx seed 42 and hist seed 17 ===
+  SKIP: status discard
+=== [57] cd293c0 | keep | three-model ensemble with two approx seeds and hist seed 42 ===
+  holdout=0.7548
+=== [58] 1268b2f | discard | minimum child weight 5 in three-model ensemble ===
+  SKIP: status discard
+=== [59] f45dcdf | keep | L1 leaf regularization alpha 1 ===
+  holdout=0.7548
+=== [60] 34d5b22 | keep | L1 leaf regularization alpha 3 ===
+  holdout=0.7551
+=== [61] 7664ce1 | discard | L1 leaf regularization alpha 8 ===
+  SKIP: status discard
+=== [62] 3fe9d81 | discard | L1 leaf regularization alpha 5 ===
+  SKIP: status discard
+=== [63] acda980 | discard | remove hist member with L1 alpha 3 ===
+  SKIP: status discard
+=== [64] 231b6c1 | discard | cyclical departure time sine and cosine ===
+  SKIP: status discard
+=== [65] a0876f5 | keep | depth five with L1 regularization alpha 3 ===
+  holdout=0.7575
+=== [66] 413282c | keep | depth six with L1 regularization alpha 3 ===
+  holdout=0.7586
+=== [67] 5bc8b91 | keep | depth seven with L1 regularization alpha 3 ===
+  holdout=0.7591
+=== [68] c318666 | keep | depth eight with L1 regularization alpha 3 ===
+  holdout=0.7587
+=== [69] 7271b31 | keep | depth eight with L1 regularization alpha 5 ===
+  holdout=0.7609
+=== [70] 7cd8d4b | discard | depth eight with L1 regularization alpha 8 ===
+  SKIP: status discard
+=== [71] 3a9784b | discard | 400 rounds at depth eight alpha 5 ===
+  SKIP: status discard
+=== [72] 90441ca | discard | 800 rounds at depth eight alpha 5 ===
+  SKIP: status discard
+=== [73] 36b7252 | discard | remove histogram member at depth eight alpha 5 ===
+  SKIP: status discard
+=== [74] 0bbc04e | discard | remove Distance at depth eight alpha 5 ===
+  SKIP: status discard
+=== [75] fad5697 | keep | categorical split threshold 256 at depth eight alpha 5 ===
+  holdout=0.7611
+
+=== DONE: results written to groundtruth_all.tsv ===

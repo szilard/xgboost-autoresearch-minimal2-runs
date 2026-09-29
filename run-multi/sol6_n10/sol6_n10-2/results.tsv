@@ -1,0 +1,75 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+8aee124	0.7342	keep	300 boosting rounds
+a0254c0	0.7273	discard	800 boosting rounds
+f3840b2	0.0000	crash	day of year initial parse failed on c-prefixed dates
+d1363d0	0.7378	keep	day of year numeric feature
+da2bac6	0.7382	keep	depth 4 at 300 rounds
+899fd6e	0.7377	discard	600 depth 4 trees
+83fddbc	0.7390	keep	600 trees at learning rate 0.05
+ae46c18	0.7136	discard	origin-destination route category
+0a6a527	0.7387	discard	categorical departure hour
+c227c93	0.7295	discard	row subsampling 0.8
+adc94cb	0.7395	keep	minimum child weight 10
+8da8475	0.7394	discard	departure time relative to origin median
+dc1a4f6	0.7391	discard	categorical split threshold 16
+06bbfdd	0.7390	discard	remove Distance feature
+027ceba	0.7394	discard	distance to major 2005 holidays
+1aad504	0.7300	discard	one-hot splits for small categories
+e58b6e2	0.7349	discard	depth 3 at 600 rounds
+9999a36	0.7395	discard	depth 5 tied best with more complexity
+96ceb81	0.7394	discard	minimum child weight 25
+2e6e271	0.7387	discard	512 histogram bins
+879b4c1	0.7385	discard	128 histogram bins
+7e17247	0.7389	discard	minute within scheduled departure hour
+2b118a3	0.7403	keep	carrier-month interaction category
+316e780	0.7437	keep	carrier-weekday interaction category
+cb7b54a	0.7455	keep	month-weekday interaction category
+7d978e7	0.7564	keep	categorical day of year
+31d885f	0.7564	keep	remove redundant numeric day of year
+db15909	0.7564	keep	remove day-of-month predictor
+5dc36a5	0.7564	keep	remove standalone month predictor
+32e7390	0.7564	keep	remove standalone weekday predictor
+56cdb69	0.7564	keep	remove unused standalone carrier predictor
+59a3cbf	0.7569	keep	categorical split threshold 128
+798ad3e	0.7568	discard	categorical split threshold 256
+2ca035c	0.7555	discard	carrier-hour interaction category
+3e9daa9	0.7566	discard	1000 boosting rounds with rich features
+1a50d05	0.7460	discard	origin-weekday interaction category
+c372251	0.7568	discard	L2 regularization 10
+ced52b6	0.7558	discard	lossguide trees with 16 leaves
+18b41b8	0.7580	keep	approximate tree construction
+14cbf1b	0.7571	discard	depth 5 with approx trees
+b1aa9a4	0.7564	discard	400 boosting rounds with approx
+b68016a	0.7586	keep	equal soft vote of hist and approx
+e80d173	0.7586	discard	three-to-one approx-hist voting weights
+c2287b3	0.7586	discard	seven-day date block category
+39dacf1	0.7586	keep	remove month-weekday interaction
+4f512be	0.7573	discard	remove carrier-month interaction
+0f7abd9	0.7588	keep	column sampling 0.8 per node
+3227d04	0.7596	keep	column sampling 0.8 per tree
+75970a3	0.7594	discard	column sampling 0.7 per tree
+1936422	0.7593	discard	column sampling 0.9 per tree
+f57f614	0.7580	discard	minimum split gain gamma 1
+6a83fef	0.7600	keep	average two seeds of hist and approx
+e40bb08	0.7599	keep	remove hist members from two-seed ensemble
+0971dce	0.7594	discard	mixed approx seed 42 and hist seed 17
+cd293c0	0.7600	keep	three-model ensemble with two approx seeds and hist seed 42
+1268b2f	0.7596	discard	minimum child weight 5 in three-model ensemble
+f45dcdf	0.7603	keep	L1 leaf regularization alpha 1
+34d5b22	0.7610	keep	L1 leaf regularization alpha 3
+7664ce1	0.7573	discard	L1 leaf regularization alpha 8
+3fe9d81	0.7607	discard	L1 leaf regularization alpha 5
+acda980	0.7605	discard	remove hist member with L1 alpha 3
+231b6c1	0.7611	discard	cyclical departure time sine and cosine
+a0876f5	0.7630	keep	depth five with L1 regularization alpha 3
+413282c	0.7646	keep	depth six with L1 regularization alpha 3
+5bc8b91	0.7651	keep	depth seven with L1 regularization alpha 3
+c318666	0.7652	keep	depth eight with L1 regularization alpha 3
+7271b31	0.7668	keep	depth eight with L1 regularization alpha 5
+7cd8d4b	0.7646	discard	depth eight with L1 regularization alpha 8
+3a9784b	0.7662	discard	400 rounds at depth eight alpha 5
+90441ca	0.7668	discard	800 rounds at depth eight alpha 5
+36b7252	0.7666	discard	remove histogram member at depth eight alpha 5
+0bbc04e	0.7656	discard	remove Distance at depth eight alpha 5
+fad5697	0.7670	keep	categorical split threshold 256 at depth eight alpha 5
