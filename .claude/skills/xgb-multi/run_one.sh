@@ -231,37 +231,28 @@ for f in results.tsv research-log.md groundtruth_all.tsv auc_history.png report.
   cp_out $R/$f "$OUT/"
 done
 cp_out /home/ubuntu/groundtruth.log "$OUT/"
-cp_out /home/ubuntu/turns "$OUT/"
+# the final message and stderr of each turn; the event streams (turns/*.jsonl)
+# duplicate the session log and are not kept
+cp_out /home/ubuntu/turns "$OUT/" && rm -f "$OUT"/turns/*.jsonl
 [ -n "$BEST" ] && dx "git show $BEST:train.py" > "$OUT/train.py"
 [ -n "$BRANCH" ] && dx "git log --stat $BRANCH" > "$OUT/git-log.txt"
 [ -n "$BEST" ] && dx "git diff --stat $FIRST $BEST" > "$OUT/diff-stat.txt"
 SESSION=$(dx 'find ~/.codex/sessions -type f' | head -1)
-[ -n "$SESSION" ] && cp_out "$SESSION" "$OUT/codex-session.jsonl"
+[ -n "$SESSION" ] && cp_out "$SESSION" "$OUT/.codex-session-raw.jsonl"
 
-# redact the ChatGPT account identifiers from everything copied
-python3 - "$OUT" <<'EOF' | while read -r l; do log "$l"; done
-import json, pathlib, sys
-out = pathlib.Path(sys.argv[1])
-s = out / "codex-session.jsonl"
-if not s.exists():
-    sys.exit()
-ids = set()
-for line in open(s):
-    d = json.loads(line)
-    if d.get("type") == "session_meta":
-        for k in ("creator_user_id", "creator_account_id"):
-            if d["payload"].get(k):
-                ids.add(d["payload"][k])
-for f in out.rglob("*"):
-    if f.is_file() and f.suffix in (".jsonl", ".txt", ".err", ".log", ".md", ".tsv", ".json"):
-        t = f.read_text(errors="surrogateescape")
-        n = sum(t.count(i) for i in ids)
-        if n:
-            for i in ids:
-                t = t.replace(i, "REDACTED")
-            f.write_text(t, errors="surrogateescape")
-            print(f"redacted {n} account id(s) in {f.relative_to(out)}")
-EOF
+# archive the session log slimmed and gzipped (encrypted reasoning dropped,
+# account ids redacted, also in the other copied files); keep the raw copy
+# only if that fails
+if [ -s "$OUT/.codex-session-raw.jsonl" ]; then
+  python3 "$HERE/../xgb-run/slim_session.py" "$OUT/.codex-session-raw.jsonl" "$OUT/codex-session.jsonl.gz" \
+    --also "$OUT" 2>&1 | while read -r l; do log "$l"; done
+  if [ "${PIPESTATUS[0]}" = 0 ]; then
+    rm "$OUT/.codex-session-raw.jsonl"
+  else
+    log "slim_session.py failed: keeping the raw session log as .codex-session-raw.jsonl"
+    rm -f "$OUT/codex-session.jsonl.gz"
+  fi
+fi
 
 # summary for Claude
 EVAL=$(awk -F'\t' -v c="$BEST" '$1 "" == c { print $4 }' "$OUT/groundtruth_all.tsv" 2> /dev/null)
@@ -288,7 +279,7 @@ EOF
 log "summary: $(tr -d '\n' < "$OUT/driver-summary.json")"
 
 # delete the container only if the essentials made it out
-if [ -s "$OUT/codex-session.jsonl" ] && [ -s "$OUT/driver-summary.json" ] \
+if [ -s "$OUT/codex-session.jsonl.gz" ] && [ -s "$OUT/driver-summary.json" ] \
    && { [ "$STATUS" != ok ] || { [ -s "$OUT/results.tsv" ] && [ -s "$OUT/groundtruth_all.tsv" ]; }; }; then
   docker stop "$C" > /dev/null && docker rm "$C" > /dev/null && log "container deleted"
 else

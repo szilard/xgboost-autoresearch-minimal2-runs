@@ -15,7 +15,7 @@ How a run works (the task, the agent's loop and the guardrails are described in 
   - `/xgb-run <run> <model> [effort]`: a single run, results in `runs/<run>/`, one row per run in [`runs/results_summary.md`](runs/results_summary.md).
   - `/xgb-multi <group> <model> <n-runs> [effort]`: N sequential runs of the same setup, each driven identically by a script, results in `run-multi/<group>/<group>-<i>/`, plus a group `results_summary.md` (with mean/sd/min/median/max over the valid runs) and `holdout_auc.tsv` (one line per run, for plots such as histograms).
 
-Each run's folder has the agent's `results.tsv`, `research-log.md` and final `train.py`, the ground truth scores and plot, the harness timing report, the git log, the full agent session log (account ids redacted) and a `run.md` with the settings, the turns sent, the validity checks and anything notable.
+Each run's folder has the agent's `results.tsv`, `research-log.md` and final `train.py`, the ground truth scores and plot, the harness timing report, the git log, the agent's session log (gzipped, with the encrypted reasoning dropped and account ids redacted) and a `run.md` with the settings, the turns sent, the validity checks and anything notable.
 
 Results so far: a single run ([codex2-luna-1](runs/codex2-luna-1/run.md)) and a group of 3 ([luna-test](run-multi/luna-test/results_summary.md)), all gpt-5.6-luna at effort `max`.
 

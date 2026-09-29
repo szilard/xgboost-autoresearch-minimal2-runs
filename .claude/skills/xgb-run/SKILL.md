@@ -121,7 +121,13 @@ In REPO:
       report.txt, timing/
     - train.py at the best kept commit
     - git-log.txt: `git log --stat` of the run branch
-    - codex-session.jsonl: the session log from ~/.codex/sessions/
+    - codex-session.jsonl.gz: the session log from ~/.codex/sessions/,
+      copied out after the checks of step 13 and slimmed with
+
+          python3 .claude/skills/xgb-run/slim_session.py <copied log> runs/CONTAINER_NAME/codex-session.jsonl.gz --also runs/CONTAINER_NAME
+
+      (drops the encrypted reasoning, redacts the ChatGPT account ids, in
+      the other copied files too); then delete the uncompressed copy
     - run.md: codex version, MODEL, REASONING_EFFORT (as confirmed in step
       7), the upstream minimal2 commit (in the message of the repo's first
       commit), run tag, date, number of turns and what was sent in each,

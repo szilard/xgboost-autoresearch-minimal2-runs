@@ -48,7 +48,10 @@ Runs are strictly sequential: each uses all 8 cores, like the single runs.
    it has time left, stops codex and the clock itself if the agent hasn't
    stopped it 15 min after TIME IS UP, then runs the report, the ground
    truth scoring and the plot, runs `leak_check.py` in the container, copies
-   the results out (account ids redacted), and deletes the container.
+   the results out, and deletes the container. The session log is archived
+   as `codex-session.jsonl.gz`, slimmed by `../xgb-run/slim_session.py`
+   (encrypted reasoning dropped, account ids redacted); of turns/ only each
+   turn's final message and stderr are kept.
    Everything it sends and sees is in RUN_DIR/driver.log.
 
    Wait for it to finish (you are notified; schedule a ~1 h fallback wakeup,
@@ -76,7 +79,7 @@ Runs are strictly sequential: each uses all 8 cores, like the single runs.
      - leak_check.txt: CONTENT HITS must be 0, and look at each listed
        command yourself - listing file names is fine, reading or running a
        forbidden file (or fetching 2005.csv) is not. Look at the web calls
-       in codex-session.jsonl too.
+       in codex-session.jsonl.gz too.
    If a check fails, the run is excluded: say so plainly in run.md and the
    summary, and don't present its AUC as an achievement.
    - Write RUN_DIR/run.md with what /xgb-run step 14 asks for (codex

@@ -9,8 +9,10 @@
 #    are not also in train/eval, searched for in the whole log (commands AND
 #    their output) - any hit means the content reached the agent
 #
-# Usage: python3 leak_check.py [session.jsonl ...]   (default: ~/.codex/sessions)
+# Usage: python3 leak_check.py [session.jsonl[.gz] ...]   (default: ~/.codex/sessions)
+# (to re-check an archived run, run it where repo/ has the data and scripts)
 import glob
+import gzip
 import json
 import re
 import sys
@@ -37,7 +39,7 @@ def strings(x):
 
 calls, texts = [], []
 for f in sessions:
-    for line in open(f):
+    for line in (gzip.open(f, "rt") if f.endswith(".gz") else open(f)):
         d = json.loads(line)
         if d.get("type") == "session_meta":
             continue  # holds the system prompt, not agent activity
