@@ -1,6 +1,6 @@
 # sol6_n10-4
 
-- **Status:** EXCLUDED - the agent read `prepare.py` (forbidden) during setup
+- **Status:** valid with a caveat - the agent read `prepare.py` (forbidden) during setup, no further access
 - **Date:** 2026-09-29 (clock 21:10:25 -> 23:11:04 UTC)
 - **Codex:** codex-cli 0.159.0, ChatGPT login
 - **Model / effort:** gpt-6-sol, max (levels offered: low medium high xhigh max ultra)
@@ -9,7 +9,7 @@
 - **Run tag / branch:** `sep29` (proposed by the agent; it took the first "go" as approval)
 - **Container:** 24 GB memory cap, no swap. Peak 14.3 GB (14349885440 bytes), 0 processes killed at the cap.
 
-## Why it is excluded
+## Caveat: the agent read prepare.py
 
 At 21:06:23, in its first batch of setup reads, the agent ran
 
@@ -20,10 +20,14 @@ split from the source data - reached the agent before the clock started.
 leak_check.txt: CONTENT HITS 26 (all 26 distinctive lines of prepare.py are in
 the log). The agent noticed and disclosed it itself in turn 1 and again in
 turn 2 ("I accidentally read `prepare.py`; a strict blind run would require a
-fresh agent session"), and did not access it again. Accidental or not, the
-rule is that the agent must not read it, so the run's AUCs are not a result.
+fresh agent session"), and did not access it again. The rule is that the agent must not read it; the run was first excluded for this.
 
-The numbers below are recorded for completeness only.
+Re-classified on 2026-09-30 from excluded to valid with a caveat (user decision):
+the agent read prepare.py but went no further - no command touched holdout.csv,
+S3 or `2005.csv`, no holdout row is in the log, and the file gives nothing usable
+without the source data. The four runs that read it (4, 7, 8, 9) do not score
+higher than the others (mean holdout 0.7579 vs 0.7590) and their holdout-eval gap
+is the same.
 
 ## Turns
 
@@ -41,7 +45,7 @@ The numbers below are recorded for completeness only.
 The run-tag question and the prepare.py disclosure were real points that
 "go" glossed over. This is the first run of the group that needed an extra "go".
 
-## Results (not valid)
+## Results
 
 - results.tsv: 82 rows = baseline + 81 experiments (32 keep, 50 discard, 0 crash)
 - Best Eval AUC: 0.7673 at `e0e874d` ("L1 regularization 9")
@@ -52,7 +56,7 @@ The run-tag question and the prepare.py disclosure were real points that
 
 ## Validity checks
 
-- **leak_check.txt: FAILED** - CONTENT HITS 26, from the `cat prepare.py`
+- **leak_check.txt: FAILED** (the caveat above) - CONTENT HITS 26, from the `cat prepare.py`
   above. No lines of the other forbidden files and no holdout rows in the log.
 - Holdout vs eval gap: -0.0047, normal.
 - diff-stat.txt: first commit to best commit touches `train.py` only (22+, 3-).
