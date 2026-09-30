@@ -124,7 +124,7 @@ def strip_plot(runs, colour):
     ax.set_ylim(-0.6, len(rows) - 0.4)
     ax.set_xlabel("holdout AUC", color=INK2)
     ax.grid(axis="x", color=GRID, lw=0.8)
-    style(ax, "Holdout AUC per run: all run groups")
+    style(ax, "Holdout AUC per run")
     legend = [
         Line2D([], [], marker="o", ls="", color=INK2, markersize=7, label="run"),
         Line2D([], [], marker="o", ls="", markerfacecolor=SURFACE, markeredgecolor=INK2, markersize=7,
@@ -152,10 +152,10 @@ def path_plot(runs, colour):
                 lw=1.4, alpha=0.8, ls="-" if r["valid"] == "yes" else (0, (4, 2)), zorder=2)
         ax.scatter(n_last, auc[-1], s=22, zorder=3, color=colour[r["model"]])
     ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
-    ax.set_ylabel("holdout AUC of the kept model", color=INK2)
+    ax.set_ylabel("holdout AUC", color=INK2)
     ax.grid(color=GRID, lw=0.8)
     ax.set_xlim(left=0)
-    style(ax, "Holdout AUC path per run: all run groups")
+    style(ax, "Holdout AUC path per run")
     models = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
     legend = [Line2D([], [], color=colour[m], lw=2, label=m) for m in models] + [
         Line2D([], [], color=INK2, lw=1.4, label="run"),
