@@ -1,0 +1,7 @@
+The experiment clock has been stopped after two hours.
+
+- Branch `sep30` is at commit `b2529d9`. The selected model scored **0.7503 AUC**, up 0.0300 from the 0.7203 baseline.
+- It uses 210 trees, depth 9, loss-guided growth capped at 320 leaves, and the tuned sampling and regularization settings. Its artifact is 20.6 MB.
+- Only [`train.py`](/home/ubuntu/xgboost-autoresearch-minimal2/train.py) was changed as code. Results and the full research log are in [`results.tsv`](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [`research-log.md`](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md); these remain uncommitted for archiving.
+
+The final model matched the highest observed AUC with a smaller artifact than the uncapped deep model.

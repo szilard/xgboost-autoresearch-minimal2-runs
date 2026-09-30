@@ -1,0 +1,3 @@
+Setup is ready: I created branch `sep30` from the current `main` HEAD, confirmed both data files exist, reviewed `train.py` and `harness.py`, and initialized `results.tsv` with its header. The harness clock is not started.
+
+`program.md` calls for confirming setup before starting the two-hour clock. Reply `go` to start it.

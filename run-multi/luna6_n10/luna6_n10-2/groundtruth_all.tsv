@@ -1,0 +1,71 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline: starter XGBoost configuration	0.7203	0.7155
+1455db4	keep	300 trees at learning_rate 0.05	0.7348	0.7306
+1c9a9d0	discard	300 trees at learning_rate 0.05, max_depth 4	0.7300	N/A
+fa646c2	discard	add scheduled hour and cyclical departure-time features	0.7341	N/A
+f40a95c	discard	300 trees at learning_rate 0.05 with subsample 0.8	0.7283	N/A
+c3c50b5	discard	300 trees at learning_rate 0.05, max_depth 8	0.7343	N/A
+e923dc4	discard	300 trees at learning_rate 0.05 with min_child_weight 0.5	0.7336	N/A
+2d9f0ea	discard	add train-fitted Origin-Dest categorical feature	0.7086	N/A
+ed0c63f	discard	600 trees at learning_rate 0.025	0.7344	N/A
+20fbbf3	discard	150 trees at learning_rate 0.05	0.7304	N/A
+759afa7	discard	smoothed leave-one-out carrier and airport target rates	0.6052	N/A
+81e159f	discard	300 trees at learning_rate 0.05 with max_bin 512	0.7342	N/A
+39284e0	discard	add categorical scheduled departure hour	0.7348	N/A
+a9a04db	discard	replace raw CRSDepTime with categorical hour	0.7336	N/A
+d02ebef	keep	300 trees at learning_rate 0.05 with colsample_bytree 0.9	0.7352	0.7319
+0068857	keep	300 trees at learning_rate 0.05 with colsample_bytree 0.8	0.7371	0.7331
+54f89a2	keep	300 trees at learning_rate 0.05 with colsample_bytree 0.7	0.7386	0.7351
+fa3a42b	keep	300 trees at learning_rate 0.05 with colsample_bytree 0.6	0.7404	0.7358
+ee4e826	discard	300 trees at learning_rate 0.05 with colsample_bytree 0.5	0.7404	N/A
+6ab2b01	discard	300 trees at learning_rate 0.05 with colsample_bytree 0.4	0.7397	N/A
+ab25271	crash	DART booster exceeded 60s training timeout	0.0000	N/A
+808598d	crash	0.05 tree dropout exceeded 60s training timeout	0.0000	N/A
+8e87e41	discard	300 trees at learning_rate 0.05 with max_cat_to_onehot 16	0.7388	N/A
+9245181	discard	300 trees at learning_rate 0.05 with max_cat_to_onehot 8	0.7401	N/A
+8945086	keep	300 trees at learning_rate 0.05, colsample_bytree 0.6, colsample_bylevel 0.8	0.7412	0.7375
+5717a13	keep	300 trees at learning_rate 0.05, colsample_bytree 0.6, colsample_bylevel 0.7	0.7414	0.7376
+62faab0	discard	colsample_bytree 0.6 with colsample_bylevel 0.6	0.7414	N/A
+9b67a6d	keep	colsample_bytree 0.6, colsample_bylevel 0.7, gamma 0.1	0.7416	0.7376
+f5e3d13	discard	colsample_bytree 0.6, colsample_bylevel 0.7, gamma 1.0	0.7387	N/A
+08a8d02	keep	colsample_bytree 0.6, colsample_bylevel 0.7, gamma 0.3	0.7417	0.7376
+707027c	discard	add colsample_bynode 0.9 to the best model	0.7343	N/A
+9e4b5cf	keep	colsample_bytree 0.6, colsample_bylevel 0.7, gamma 0.3, reg_lambda 2.0	0.7418	0.7379
+d289990	discard	increase reg_lambda to 4.0	0.7414	N/A
+dbec724	keep	add reg_alpha 0.1 to reg_lambda 2.0 best model	0.7419	0.7380
+2f4ac8d	keep	increase reg_alpha to 0.5 with reg_lambda 2.0	0.7420	0.7378
+2a85514	discard	increase reg_alpha to 1.0	0.7418	N/A
+068c5bf	discard	set max_cat_threshold to 32	0.7411	N/A
+dab0a42	discard	set max_cat_threshold to 128	0.7415	N/A
+0e83b3b	discard	use loss-guided tree growth	0.7420	N/A
+b14d999	discard	increase min_child_weight to 2.0	0.7420	N/A
+a7124f0	discard	replace raw HHMM with minutes and cyclic time features	0.7410	N/A
+1802759	discard	set colsample_bytree to 0.55	0.7420	N/A
+229a148	keep	increase colsample_bytree to 0.65	0.7425	0.7388
+d624185	discard	increase colsample_bytree to 0.7	0.7425	N/A
+a00aeb8	discard	increase colsample_bylevel to 0.75	0.7425	N/A
+11d2952	keep	increase max_depth to 7 with tuned sampling and regularization	0.7462	0.7424
+3230961	keep	increase max_depth to 8 with tuned sampling and regularization	0.7479	0.7443
+e0c4be1	keep	increase max_depth to 9 with tuned sampling and regularization	0.7502	0.7468
+d50e718	discard	increase max_depth to 10 with tuned sampling and regularization	0.7488	N/A
+ccb4580	keep	reduce depth-9 model from 300 to 250 trees with tied AUC and smaller artifact	0.7502	0.7468
+0c3819b	discard	reduce depth-9 model to 200 trees	0.7497	N/A
+25df0cd	keep	reduce depth-9 model from 250 to 225 trees with tied AUC and smaller artifact	0.7502	0.7467
+4c43a6b	keep	reduce depth-9 model to 215 trees within 0.0001 AUC and smaller artifact	0.7501	0.7466
+6eba65f	keep	reduce depth-9 model to 210 trees with improved AUC and smaller artifact	0.7503	0.7465
+bab4665	keep	reduce depth-9 model to 205 trees within 0.0001 AUC and smaller artifact	0.7502	0.7465
+9d9f420	discard	reduce depth-9 model to 202 trees	0.7498	N/A
+ce6e38a	discard	use 230 trees with learning_rate 0.045 on the depth-9 model	0.7499	N/A
+5bcbff1	discard	lower gamma to 0.1 on the depth-9 model	0.7496	N/A
+da23158	discard	use approx tree construction for the depth-9 model	0.7499	N/A
+e5ab8be	discard	use loss-guided growth capped at 256 leaves	0.7494	N/A
+0b85c54	keep	use loss-guided depth-9 trees capped at 384 leaves; tied top AUC with smaller artifact	0.7503	0.7466
+cae42d9	keep	reduce loss-guided cap to 320 leaves within 0.0001 AUC and smaller artifact	0.7502	0.7467
+90e3dc7	discard	reduce loss-guided cap to 288 leaves	0.7496	N/A
+8f3d9ea	discard	set loss-guided leaf cap to 304	0.7493	N/A
+130ea0a	discard	increase loss-guided leaf cap to 352	0.7492	N/A
+b4394b4	discard	increase loss-guided leaf cap to 400	0.7500	N/A
+b2529d9	keep	increase leaf-capped model to 210 trees; tied top AUC with smaller artifact	0.7503	0.7468
+9441405	discard	reduce leaf cap to 312 with 210 trees	0.7493	N/A
+0e76664	discard	set max_bin to 128 on the loss-guided 320-leaf model	0.7493	N/A
+6712b94	discard	increase capped model to 215 trees; tied AUC with larger artifact	0.7503	N/A

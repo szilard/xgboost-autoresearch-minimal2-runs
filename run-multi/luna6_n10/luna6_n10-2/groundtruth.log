@@ -1,0 +1,142 @@
+=== [2] 92e43e6 | keep | baseline: starter XGBoost configuration ===
+  holdout=0.7155
+=== [3] 1455db4 | keep | 300 trees at learning_rate 0.05 ===
+  holdout=0.7306
+=== [4] 1c9a9d0 | discard | 300 trees at learning_rate 0.05, max_depth 4 ===
+  SKIP: status discard
+=== [5] fa646c2 | discard | add scheduled hour and cyclical departure-time features ===
+  SKIP: status discard
+=== [6] f40a95c | discard | 300 trees at learning_rate 0.05 with subsample 0.8 ===
+  SKIP: status discard
+=== [7] c3c50b5 | discard | 300 trees at learning_rate 0.05, max_depth 8 ===
+  SKIP: status discard
+=== [8] e923dc4 | discard | 300 trees at learning_rate 0.05 with min_child_weight 0.5 ===
+  SKIP: status discard
+=== [9] 2d9f0ea | discard | add train-fitted Origin-Dest categorical feature ===
+  SKIP: status discard
+=== [10] ed0c63f | discard | 600 trees at learning_rate 0.025 ===
+  SKIP: status discard
+=== [11] 20fbbf3 | discard | 150 trees at learning_rate 0.05 ===
+  SKIP: status discard
+=== [12] 759afa7 | discard | smoothed leave-one-out carrier and airport target rates ===
+  SKIP: status discard
+=== [13] 81e159f | discard | 300 trees at learning_rate 0.05 with max_bin 512 ===
+  SKIP: status discard
+=== [14] 39284e0 | discard | add categorical scheduled departure hour ===
+  SKIP: status discard
+=== [15] a9a04db | discard | replace raw CRSDepTime with categorical hour ===
+  SKIP: status discard
+=== [16] d02ebef | keep | 300 trees at learning_rate 0.05 with colsample_bytree 0.9 ===
+  holdout=0.7319
+=== [17] 0068857 | keep | 300 trees at learning_rate 0.05 with colsample_bytree 0.8 ===
+  holdout=0.7331
+=== [18] 54f89a2 | keep | 300 trees at learning_rate 0.05 with colsample_bytree 0.7 ===
+  holdout=0.7351
+=== [19] fa3a42b | keep | 300 trees at learning_rate 0.05 with colsample_bytree 0.6 ===
+  holdout=0.7358
+=== [20] ee4e826 | discard | 300 trees at learning_rate 0.05 with colsample_bytree 0.5 ===
+  SKIP: status discard
+=== [21] 6ab2b01 | discard | 300 trees at learning_rate 0.05 with colsample_bytree 0.4 ===
+  SKIP: status discard
+=== [22] ab25271 | crash | DART booster exceeded 60s training timeout ===
+  SKIP: status crash
+=== [23] 808598d | crash | 0.05 tree dropout exceeded 60s training timeout ===
+  SKIP: status crash
+=== [24] 8e87e41 | discard | 300 trees at learning_rate 0.05 with max_cat_to_onehot 16 ===
+  SKIP: status discard
+=== [25] 9245181 | discard | 300 trees at learning_rate 0.05 with max_cat_to_onehot 8 ===
+  SKIP: status discard
+=== [26] 8945086 | keep | 300 trees at learning_rate 0.05, colsample_bytree 0.6, colsample_bylevel 0.8 ===
+  holdout=0.7375
+=== [27] 5717a13 | keep | 300 trees at learning_rate 0.05, colsample_bytree 0.6, colsample_bylevel 0.7 ===
+  holdout=0.7376
+=== [28] 62faab0 | discard | colsample_bytree 0.6 with colsample_bylevel 0.6 ===
+  SKIP: status discard
+=== [29] 9b67a6d | keep | colsample_bytree 0.6, colsample_bylevel 0.7, gamma 0.1 ===
+  holdout=0.7376
+=== [30] f5e3d13 | discard | colsample_bytree 0.6, colsample_bylevel 0.7, gamma 1.0 ===
+  SKIP: status discard
+=== [31] 08a8d02 | keep | colsample_bytree 0.6, colsample_bylevel 0.7, gamma 0.3 ===
+  holdout=0.7376
+=== [32] 707027c | discard | add colsample_bynode 0.9 to the best model ===
+  SKIP: status discard
+=== [33] 9e4b5cf | keep | colsample_bytree 0.6, colsample_bylevel 0.7, gamma 0.3, reg_lambda 2.0 ===
+  holdout=0.7379
+=== [34] d289990 | discard | increase reg_lambda to 4.0 ===
+  SKIP: status discard
+=== [35] dbec724 | keep | add reg_alpha 0.1 to reg_lambda 2.0 best model ===
+  holdout=0.7380
+=== [36] 2f4ac8d | keep | increase reg_alpha to 0.5 with reg_lambda 2.0 ===
+  holdout=0.7378
+=== [37] 2a85514 | discard | increase reg_alpha to 1.0 ===
+  SKIP: status discard
+=== [38] 068c5bf | discard | set max_cat_threshold to 32 ===
+  SKIP: status discard
+=== [39] dab0a42 | discard | set max_cat_threshold to 128 ===
+  SKIP: status discard
+=== [40] 0e83b3b | discard | use loss-guided tree growth ===
+  SKIP: status discard
+=== [41] b14d999 | discard | increase min_child_weight to 2.0 ===
+  SKIP: status discard
+=== [42] a7124f0 | discard | replace raw HHMM with minutes and cyclic time features ===
+  SKIP: status discard
+=== [43] 1802759 | discard | set colsample_bytree to 0.55 ===
+  SKIP: status discard
+=== [44] 229a148 | keep | increase colsample_bytree to 0.65 ===
+  holdout=0.7388
+=== [45] d624185 | discard | increase colsample_bytree to 0.7 ===
+  SKIP: status discard
+=== [46] a00aeb8 | discard | increase colsample_bylevel to 0.75 ===
+  SKIP: status discard
+=== [47] 11d2952 | keep | increase max_depth to 7 with tuned sampling and regularization ===
+  holdout=0.7424
+=== [48] 3230961 | keep | increase max_depth to 8 with tuned sampling and regularization ===
+  holdout=0.7443
+=== [49] e0c4be1 | keep | increase max_depth to 9 with tuned sampling and regularization ===
+  holdout=0.7468
+=== [50] d50e718 | discard | increase max_depth to 10 with tuned sampling and regularization ===
+  SKIP: status discard
+=== [51] ccb4580 | keep | reduce depth-9 model from 300 to 250 trees with tied AUC and smaller artifact ===
+  holdout=0.7468
+=== [52] 0c3819b | discard | reduce depth-9 model to 200 trees ===
+  SKIP: status discard
+=== [53] 25df0cd | keep | reduce depth-9 model from 250 to 225 trees with tied AUC and smaller artifact ===
+  holdout=0.7467
+=== [54] 4c43a6b | keep | reduce depth-9 model to 215 trees within 0.0001 AUC and smaller artifact ===
+  holdout=0.7466
+=== [55] 6eba65f | keep | reduce depth-9 model to 210 trees with improved AUC and smaller artifact ===
+  holdout=0.7465
+=== [56] bab4665 | keep | reduce depth-9 model to 205 trees within 0.0001 AUC and smaller artifact ===
+  holdout=0.7465
+=== [57] 9d9f420 | discard | reduce depth-9 model to 202 trees ===
+  SKIP: status discard
+=== [58] ce6e38a | discard | use 230 trees with learning_rate 0.045 on the depth-9 model ===
+  SKIP: status discard
+=== [59] 5bcbff1 | discard | lower gamma to 0.1 on the depth-9 model ===
+  SKIP: status discard
+=== [60] da23158 | discard | use approx tree construction for the depth-9 model ===
+  SKIP: status discard
+=== [61] e5ab8be | discard | use loss-guided growth capped at 256 leaves ===
+  SKIP: status discard
+=== [62] 0b85c54 | keep | use loss-guided depth-9 trees capped at 384 leaves; tied top AUC with smaller artifact ===
+  holdout=0.7466
+=== [63] cae42d9 | keep | reduce loss-guided cap to 320 leaves within 0.0001 AUC and smaller artifact ===
+  holdout=0.7467
+=== [64] 90e3dc7 | discard | reduce loss-guided cap to 288 leaves ===
+  SKIP: status discard
+=== [65] 8f3d9ea | discard | set loss-guided leaf cap to 304 ===
+  SKIP: status discard
+=== [66] 130ea0a | discard | increase loss-guided leaf cap to 352 ===
+  SKIP: status discard
+=== [67] b4394b4 | discard | increase loss-guided leaf cap to 400 ===
+  SKIP: status discard
+=== [68] b2529d9 | keep | increase leaf-capped model to 210 trees; tied top AUC with smaller artifact ===
+  holdout=0.7468
+=== [69] 9441405 | discard | reduce leaf cap to 312 with 210 trees ===
+  SKIP: status discard
+=== [70] 0e76664 | discard | set max_bin to 128 on the loss-guided 320-leaf model ===
+  SKIP: status discard
+=== [71] 6712b94 | discard | increase capped model to 215 trees; tied AUC with larger artifact ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

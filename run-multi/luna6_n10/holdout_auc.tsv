@@ -1,2 +1,3 @@
 run	best_commit	eval_auc	holdout_auc	gap	experiments	valid
 luna6_n10-1	993b867	0.7652	0.7598	-0.0054	79	yes
+luna6_n10-2	6eba65f	0.7503	0.7465	-0.0038	69	yes

@@ -1,0 +1,234 @@
+commit b2529d92bbfd8684bfb64b914024b66984ae8479
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:39:46 2026 +0000
+
+    Retune rounds with leaf-capped growth
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cae42d9ee1567ae2f8ca0bb8d0908e0958eb7c42
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:32:10 2026 +0000
+
+    Tighten loss-guided leaf cap to 320
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0b85c54a3122c7f565974224b4f61de52404cf18
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:30:36 2026 +0000
+
+    Relax loss-guided leaf cap
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit bab46658bef9ce88e283223d7ce6a68d54bdbe2a
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:18:56 2026 +0000
+
+    Refine deep model tree count to 205
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6eba65f1aed71d5e675a93918e37f8c90274e8f5
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:17:33 2026 +0000
+
+    Reduce depth-9 model to 210 trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4c43a6b34e92d6bdc468acb94521170db1b7ef52
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:16:08 2026 +0000
+
+    Reduce deep model tree count to 215
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 25df0cd8335a7f318a7cf24e2e3aebb7c49fd9e0
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:14:42 2026 +0000
+
+    Tune deep model tree count to 225
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ccb45809d263b2530548d9dc1f076faae1bf17b0
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:11:34 2026 +0000
+
+    Reduce tree count for deeper model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e0c4be1ba61466ff0a2b435c6374b9ec3c64e1f8
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:07:49 2026 +0000
+
+    Increase tree depth to nine
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 32309614544841f3a2685b5a52119f60502d2464
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:06:24 2026 +0000
+
+    Increase tree depth to eight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 11d295254628148a890ed303fb5929c5cc52541d
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:05:01 2026 +0000
+
+    Increase tree depth to seven
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 229a14885f0539a8379cdfb8aa8c07d8f01190de
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 20:00:40 2026 +0000
+
+    Increase per-tree feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2f4ac8d38cf39f92c7e27801f11dfcfd592a8e1b
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:46:59 2026 +0000
+
+    Strengthen L1 leaf regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dbec724e1be5bf4b97e6e499d1aa1c174230d433
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:45:48 2026 +0000
+
+    Add L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 9e4b5cf7a2ba937605bfafca6c2a4a54392534fd
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:43:04 2026 +0000
+
+    Tune L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 08a8d02ca77c7dd4e692676b7e3ae54451e317c8
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:38:20 2026 +0000
+
+    Test moderate split-loss threshold
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9b67a6db793f6252646717eb0aabdeb38b21cfec
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:36:00 2026 +0000
+
+    Add a small split-loss threshold
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5717a13bfe62425dac1f73f3a77758a215dd1b87
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:33:29 2026 +0000
+
+    Strengthen level feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 89450868ab1f12a7b9fcd5667f887af064974f7f
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:32:17 2026 +0000
+
+    Sample features by tree level
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit fa3a42ba38fe0c46d5ac6f7349c8459321feeb8c
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:20:22 2026 +0000
+
+    Further reduce feature sampling ratio
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 54f89a260b6639c8587d879aef80afbe752603aa
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:19:19 2026 +0000
+
+    Reduce feature sampling ratio
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0068857e9c306eff11de937378872ecac6d6d6ec
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:18:16 2026 +0000
+
+    Strengthen feature subsampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d02ebefe90fc76682b841983d33ce669b2d90faa
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 19:17:05 2026 +0000
+
+    Try mild feature subsampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1455db4896c3217e2e921ea9299da10821f07b0c
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 18:49:59 2026 +0000
+
+    Tune boosting rounds and learning rate
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)
