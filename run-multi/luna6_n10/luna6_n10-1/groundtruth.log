@@ -1,0 +1,162 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] 6ed2e5f | keep | 100 trees, learning rate 0.1 ===
+  holdout=0.7271
+=== [4] d7cfa3f | keep | 200 trees, learning rate 0.1 ===
+  holdout=0.7311
+=== [5] 37e1454 | discard | 400 trees, learning rate 0.1 ===
+  SKIP: status discard
+=== [6] abc2399 | keep | 400 trees, learning rate 0.05 ===
+  holdout=0.7315
+=== [7] 1b6b839 | discard | added minute-of-day and cyclic departure-time features ===
+  SKIP: status discard
+=== [8] 1fdcc27 | discard | smoothed leave-one-out carrier, airport, and route delay rates ===
+  SKIP: status discard
+=== [9] 7e36c64 | discard | five-fold target encoding for carrier, airports, and route ===
+  SKIP: status discard
+=== [10] b5ff202 | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [11] e6984be | discard | max depth 5 ===
+  SKIP: status discard
+=== [12] d406ed8 | discard | added directed route categorical feature ===
+  SKIP: status discard
+=== [13] 143c024 | discard | min_child_weight 5 ===
+  SKIP: status discard
+=== [14] 2ddec7c | discard | max_cat_to_onehot 16 ===
+  SKIP: status discard
+=== [15] 71af766 | discard | max_cat_to_onehot 32 ===
+  SKIP: status discard
+=== [16] 9974cea | discard | 800 trees, learning rate 0.025 ===
+  SKIP: status discard
+=== [17] 30ae9d2 | discard | gamma 1.0 ===
+  SKIP: status discard
+=== [18] c45cd13 | keep | gamma 0.1 ===
+  holdout=0.7324
+=== [19] 5aaf37a | discard | gamma 0.25 ===
+  SKIP: status discard
+=== [20] 021f692 | discard | gamma 0.05 ===
+  SKIP: status discard
+=== [21] 89d21ac | discard | gamma 0.15 ===
+  SKIP: status discard
+=== [22] 1e3ce8f | keep | 500 trees, learning rate 0.05, gamma 0.1 ===
+  holdout=0.7332
+=== [23] 6d8a25d | discard | 600 trees, learning rate 0.05, gamma 0.1 ===
+  SKIP: status discard
+=== [24] 8608bb4 | discard | 550 trees, learning rate 0.05, gamma 0.1 ===
+  SKIP: status discard
+=== [25] 561a9bb | discard | reg_lambda 2.0 ===
+  SKIP: status discard
+=== [26] dbee635 | discard | max_cat_threshold 32 ===
+  SKIP: status discard
+=== [27] a4c72c7 | keep | max_cat_threshold 16 ===
+  holdout=0.7348
+=== [28] 45cb530 | keep | max_cat_threshold 8 ===
+  holdout=0.7360
+=== [29] 8123d8b | discard | max_cat_threshold 4 ===
+  SKIP: status discard
+=== [30] b8d8359 | discard | max_cat_threshold 6 ===
+  SKIP: status discard
+=== [31] 46f7ec4 | discard | max_cat_threshold 10 ===
+  SKIP: status discard
+=== [32] cf7eaa8 | keep | 600 trees, learning rate 0.05, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7374
+=== [33] a0a87d6 | keep | 700 trees, learning rate 0.05, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7382
+=== [34] f090a42 | discard | 800 trees, learning rate 0.05, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [35] 67b2336 | discard | 750 trees, learning rate 0.05, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [36] 7811fd8 | discard | 700 trees, learning rate 0.05, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [37] 75f3c60 | discard | 700 trees, learning rate 0.05, gamma 0.05, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [38] 029892f | discard | gamma 0.15, 700 trees, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [39] 8c257e1 | lossguide setup; duplicate max_depth keyword caused a syntax error before training |  ===
+  SKIP: status lossguide setup; duplicate max_depth keyword caused a syntax error before training
+=== [40] d3a34af | keep | lossguide, unlimited depth, max_leaves 64, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7414
+=== [41] 00ee865 | keep | lossguide, unlimited depth, max_leaves 96, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7426
+=== [42] 09115cd | discard | lossguide, unlimited depth, max_leaves 128, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [43] 2ac51a1 | keep | lossguide, max_leaves 96, reg_lambda 2, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7420
+=== [44] 55b25aa | keep | lossguide, max_leaves 96, reg_lambda 4, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7452
+=== [45] 8fc7b8c | keep | lossguide, max_leaves 96, reg_lambda 8, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7473
+=== [46] cfe1be1 | keep | lossguide, max_leaves 96, reg_lambda 16, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7493
+=== [47] d8e9822 | keep | lossguide, max_leaves 96, reg_lambda 32, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7493
+=== [48] 994cd4d | keep | lossguide, max_leaves 96, reg_lambda 64, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7519
+=== [49] 8a07aad | discard | lossguide, max_leaves 96, reg_lambda 128, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [50] a4df170 | discard | lossguide, max_leaves 96, reg_lambda 96, 700 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [51] 10bcedb | keep | lossguide, max_leaves 96, reg_lambda 64, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7521
+=== [52] 270e2c2 | discard | lossguide, max_leaves 96, reg_lambda 64, min_child_weight 2, 800 trees ===
+  SKIP: status discard
+=== [53] 6835db7 | keep | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 4, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7558
+=== [54] 3fc3859 | keep | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 8, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7561
+=== [55] 59b7b26 | discard | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 16, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [56] 78ba6d1 | discard | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 12, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [57] cfd8f75 | discard | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 10, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [58] 087bd4d | keep | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 6, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7564
+=== [59] 3db1a28 | keep | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7575
+=== [60] 2a3755f | discard | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7.5, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [61] a09baa1 | discard | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 6.5, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [62] 5ff2100 | discard | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, max_bin 512, 800 trees ===
+  SKIP: status discard
+=== [63] 5dda787 | discard | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, max_bin 128, 800 trees ===
+  SKIP: status discard
+=== [64] ec951dd | discard | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, 900 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [65] f75e74e | discard | lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, 750 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [66] 5d55e23 | keep | lossguide, max_leaves 128, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7585
+=== [67] d24d171 | keep | lossguide, max_leaves 160, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7588
+=== [68] 91a86f8 | keep | lossguide, max_leaves 192, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7591
+=== [69] cb8b6d4 | keep | lossguide, max_leaves 224, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7593
+=== [70] fb30572 | keep | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7600
+=== [71] 5932a46 | discard | lossguide, max_leaves 288, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8 ===
+  SKIP: status discard
+=== [72] e3817f1 | keep | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, learning_rate 0.04, 1000 trees, gamma 0.1, max_cat_threshold 8 ===
+  holdout=0.7599
+=== [73] c85f370 | discard | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, learning_rate 0.03, 1333 trees ===
+  SKIP: status discard
+=== [74] c688fed | discard | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, learning_rate 0.045, 889 trees ===
+  SKIP: status discard
+=== [75] da3ed98 | discard | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 8, learning_rate 0.04, 1000 trees ===
+  SKIP: status discard
+=== [76] 10de2b5 | discard | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 6.5, learning_rate 0.04, 1000 trees ===
+  SKIP: status discard
+=== [77] af93ad8 | discard | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, learning_rate 0.04, 1100 trees ===
+  SKIP: status discard
+=== [78] 993b867 | keep | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, gamma 0.15, learning_rate 0.04, 1000 trees ===
+  holdout=0.7598
+=== [79] 5e5c608 | discard | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, gamma 0.2, learning_rate 0.04, 1000 trees ===
+  SKIP: status discard
+=== [80] 15e9958 | discard | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, gamma 0.175, learning_rate 0.04, 1000 trees ===
+  SKIP: status discard
+=== [81] d546b83 | discard | lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, gamma 0.125, learning_rate 0.04, 1000 trees ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

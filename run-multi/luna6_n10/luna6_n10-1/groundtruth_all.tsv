@@ -1,0 +1,81 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline	0.7203	0.7155
+6ed2e5f	keep	100 trees, learning rate 0.1	0.7306	0.7271
+d7cfa3f	keep	200 trees, learning rate 0.1	0.7345	0.7311
+37e1454	discard	400 trees, learning rate 0.1	0.7325	N/A
+abc2399	keep	400 trees, learning rate 0.05	0.7354	0.7315
+1b6b839	discard	added minute-of-day and cyclic departure-time features	0.7345	N/A
+1fdcc27	discard	smoothed leave-one-out carrier, airport, and route delay rates	0.6113	N/A
+7e36c64	discard	five-fold target encoding for carrier, airports, and route	0.7310	N/A
+b5ff202	discard	subsample 0.8	0.7285	N/A
+e6984be	discard	max depth 5	0.7340	N/A
+d406ed8	discard	added directed route categorical feature	0.7071	N/A
+143c024	discard	min_child_weight 5	0.7346	N/A
+2ddec7c	discard	max_cat_to_onehot 16	0.7345	N/A
+71af766	discard	max_cat_to_onehot 32	0.7238	N/A
+9974cea	discard	800 trees, learning rate 0.025	0.7349	N/A
+30ae9d2	discard	gamma 1.0	0.7338	N/A
+c45cd13	keep	gamma 0.1	0.7364	0.7324
+5aaf37a	discard	gamma 0.25	0.7354	N/A
+021f692	discard	gamma 0.05	0.7361	N/A
+89d21ac	discard	gamma 0.15	0.7355	N/A
+1e3ce8f	keep	500 trees, learning rate 0.05, gamma 0.1	0.7369	0.7332
+6d8a25d	discard	600 trees, learning rate 0.05, gamma 0.1	0.7360	N/A
+8608bb4	discard	550 trees, learning rate 0.05, gamma 0.1	0.7364	N/A
+561a9bb	discard	reg_lambda 2.0	0.7359	N/A
+dbee635	discard	max_cat_threshold 32	0.7364	N/A
+a4c72c7	keep	max_cat_threshold 16	0.7400	0.7348
+45cb530	keep	max_cat_threshold 8	0.7420	0.7360
+8123d8b	discard	max_cat_threshold 4	0.7342	N/A
+b8d8359	discard	max_cat_threshold 6	0.7385	N/A
+46f7ec4	discard	max_cat_threshold 10	0.7420	N/A
+cf7eaa8	keep	600 trees, learning rate 0.05, gamma 0.1, max_cat_threshold 8	0.7430	0.7374
+a0a87d6	keep	700 trees, learning rate 0.05, gamma 0.1, max_cat_threshold 8	0.7438	0.7382
+f090a42	discard	800 trees, learning rate 0.05, gamma 0.1, max_cat_threshold 8	0.7436	N/A
+67b2336	discard	750 trees, learning rate 0.05, gamma 0.1, max_cat_threshold 8	0.7438	N/A
+7811fd8	discard	700 trees, learning rate 0.05, max_cat_threshold 8	0.7421	N/A
+75f3c60	discard	700 trees, learning rate 0.05, gamma 0.05, max_cat_threshold 8	0.7433	N/A
+029892f	discard	gamma 0.15, 700 trees, max_cat_threshold 8	0.7437	N/A
+8c257e1	lossguide setup; duplicate max_depth keyword caused a syntax error before training		crash	N/A
+d3a34af	keep	lossguide, unlimited depth, max_leaves 64, 700 trees, gamma 0.1, max_cat_threshold 8	0.7454	0.7414
+00ee865	keep	lossguide, unlimited depth, max_leaves 96, 700 trees, gamma 0.1, max_cat_threshold 8	0.7462	0.7426
+09115cd	discard	lossguide, unlimited depth, max_leaves 128, 700 trees, gamma 0.1, max_cat_threshold 8	0.7456	N/A
+2ac51a1	keep	lossguide, max_leaves 96, reg_lambda 2, 700 trees, gamma 0.1, max_cat_threshold 8	0.7464	0.7420
+55b25aa	keep	lossguide, max_leaves 96, reg_lambda 4, 700 trees, gamma 0.1, max_cat_threshold 8	0.7486	0.7452
+8fc7b8c	keep	lossguide, max_leaves 96, reg_lambda 8, 700 trees, gamma 0.1, max_cat_threshold 8	0.7514	0.7473
+cfe1be1	keep	lossguide, max_leaves 96, reg_lambda 16, 700 trees, gamma 0.1, max_cat_threshold 8	0.7524	0.7493
+d8e9822	keep	lossguide, max_leaves 96, reg_lambda 32, 700 trees, gamma 0.1, max_cat_threshold 8	0.7534	0.7493
+994cd4d	keep	lossguide, max_leaves 96, reg_lambda 64, 700 trees, gamma 0.1, max_cat_threshold 8	0.7563	0.7519
+8a07aad	discard	lossguide, max_leaves 96, reg_lambda 128, 700 trees, gamma 0.1, max_cat_threshold 8	0.7562	N/A
+a4df170	discard	lossguide, max_leaves 96, reg_lambda 96, 700 trees, gamma 0.1, max_cat_threshold 8	0.7563	N/A
+10bcedb	keep	lossguide, max_leaves 96, reg_lambda 64, 800 trees, gamma 0.1, max_cat_threshold 8	0.7565	0.7521
+270e2c2	discard	lossguide, max_leaves 96, reg_lambda 64, min_child_weight 2, 800 trees	0.7559	N/A
+6835db7	keep	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 4, 800 trees, gamma 0.1, max_cat_threshold 8	0.7597	0.7558
+3fc3859	keep	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 8, 800 trees, gamma 0.1, max_cat_threshold 8	0.7607	0.7561
+59b7b26	discard	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 16, 800 trees, gamma 0.1, max_cat_threshold 8	0.7573	N/A
+78ba6d1	discard	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 12, 800 trees, gamma 0.1, max_cat_threshold 8	0.7593	N/A
+cfd8f75	discard	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 10, 800 trees, gamma 0.1, max_cat_threshold 8	0.7597	N/A
+087bd4d	keep	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 6, 800 trees, gamma 0.1, max_cat_threshold 8	0.7609	0.7564
+3db1a28	keep	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8	0.7623	0.7575
+2a3755f	discard	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7.5, 800 trees, gamma 0.1, max_cat_threshold 8	0.7619	N/A
+a09baa1	discard	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 6.5, 800 trees, gamma 0.1, max_cat_threshold 8	0.7616	N/A
+5ff2100	discard	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, max_bin 512, 800 trees	0.7616	N/A
+5dda787	discard	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, max_bin 128, 800 trees	0.7615	N/A
+ec951dd	discard	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, 900 trees, gamma 0.1, max_cat_threshold 8	0.7623	N/A
+f75e74e	discard	lossguide, max_leaves 96, reg_lambda 64, reg_alpha 7, 750 trees, gamma 0.1, max_cat_threshold 8	0.7622	N/A
+5d55e23	keep	lossguide, max_leaves 128, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8	0.7632	0.7585
+d24d171	keep	lossguide, max_leaves 160, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8	0.7635	0.7588
+91a86f8	keep	lossguide, max_leaves 192, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8	0.7642	0.7591
+cb8b6d4	keep	lossguide, max_leaves 224, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8	0.7643	0.7593
+fb30572	keep	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8	0.7646	0.7600
+5932a46	discard	lossguide, max_leaves 288, reg_lambda 64, reg_alpha 7, 800 trees, gamma 0.1, max_cat_threshold 8	0.7646	N/A
+e3817f1	keep	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, learning_rate 0.04, 1000 trees, gamma 0.1, max_cat_threshold 8	0.7650	0.7599
+c85f370	discard	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, learning_rate 0.03, 1333 trees	0.7649	N/A
+c688fed	discard	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, learning_rate 0.045, 889 trees	0.7648	N/A
+da3ed98	discard	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 8, learning_rate 0.04, 1000 trees	0.7648	N/A
+10de2b5	discard	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 6.5, learning_rate 0.04, 1000 trees	0.7641	N/A
+af93ad8	discard	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, learning_rate 0.04, 1100 trees	0.7649	N/A
+993b867	keep	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, gamma 0.15, learning_rate 0.04, 1000 trees	0.7652	0.7598
+5e5c608	discard	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, gamma 0.2, learning_rate 0.04, 1000 trees	0.7651	N/A
+15e9958	discard	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, gamma 0.175, learning_rate 0.04, 1000 trees	0.7651	N/A
+d546b83	discard	lossguide, max_leaves 256, reg_lambda 64, reg_alpha 7, gamma 0.125, learning_rate 0.04, 1000 trees	0.7650	N/A

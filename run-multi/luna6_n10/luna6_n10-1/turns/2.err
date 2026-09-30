@@ -1,0 +1,43 @@
+2026-09-30T16:39:55.715546Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/train.py:
+cat_levels = {col: sorted(train[col].unique()) for col in cat_cols}
+train_target = (train[target] == "Y").astype(float)
+global_delay_rate = train_target.mean()
+target_smoothing = 20.0
+
+
+def fit_delay_stats(keys):
+    return train_target.groupby(keys).agg(["sum", "count"])
+
+
+carrier_delay_stats = fit_delay_stats(train["UniqueCarrier"])
+origin_delay_stats = fit_delay_stats(train["Origin"])
+dest_delay_stats = fit_delay_stats(train["Dest"])
+route_key = train["Origin"].astype(str) + "|" + train["Dest"].astype(str)
+route_delay_stats = fit_delay_stats(route_key)
+
+
+def prepare(df, training=False):
+    X = df[num_cols + cat_cols].copy()
+    row_target = (df[target] == "Y").astype(float)
+
+    def add_delay_rate(name, keys, stats):
+        group_sum = keys.map(stats["sum"]).fillna(0.0)
+        group_count = keys.map(stats["count"]).fillna(0.0)
+        if training:
+            group_sum = group_sum - row_target
+            group_count = group_count - 1.0
+        X[name] = (
+            group_sum + target_smoothing * global_delay_rate
+        ) / (group_count + target_smoothing)
+
+    add_delay_rate("CarrierDelayRate", df["UniqueCarrier"], carrier_delay_stats)
+    add_delay_rate("OriginDelayRate", df["Origin"], origin_delay_stats)
+    add_delay_rate("DestDelayRate", df["Dest"], dest_delay_stats)
+    route = df["Origin"].astype(str) + "|" + df["Dest"].astype(str)
+    add_delay_rate("RouteDelayRate", route, route_delay_stats)
+2026-09-30T16:55:17.805589Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/train.py:
+    gamma=1.0,
+2026-09-30T17:41:18.748104Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/train.py:
+    max_depth=0,
+    max_leaves=96,
+2026-09-30T18:09:24.394231Z ERROR codex_core::tools::router: error=write_stdin failed: Unknown process id 4934

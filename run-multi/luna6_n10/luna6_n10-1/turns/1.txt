@@ -1,0 +1,8 @@
+Setup is ready:
+
+- Created branch `sep30` from the existing `main` branch.
+- Confirmed `data/train.csv` and `data/eval.csv` exist.
+- Initialized `results.tsv` with the required header.
+- Read `train.py` and `harness.py`. The experiment clock is not running, and no `timing/` directory exists.
+
+`program.md` says to wait for your confirmation before starting the clock. Confirm the `sep30` setup, and I’ll start the experiment.

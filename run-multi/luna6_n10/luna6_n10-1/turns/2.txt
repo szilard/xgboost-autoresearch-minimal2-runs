@@ -1,0 +1,3 @@
+Experiment finished on branch `sep30`. The best checkpoint is **0.7652 AUC** at commit `993b867`, up from the 0.7203 baseline. Its settings are 256 leaves, `reg_lambda=64`, `reg_alpha=7`, gamma 0.15, learning rate 0.04, 1,000 trees, and `max_cat_threshold=8`.
+
+The harness clock is stopped. The final model configuration is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py), and the experiment history and synthesis are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).
