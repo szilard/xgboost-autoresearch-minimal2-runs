@@ -1,0 +1,5 @@
+The two-hour experiment is complete. Across **75 runs**, the best Eval AUC was **0.7626**, up from the **0.7203** baseline. Branch `sep30` is restored to the best commit, `3be07a8`, and the clock is stopped.
+
+The kept model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py). Run results and reasoning are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).
+
+Setup caveat: before reading `program.md`, I accidentally opened `prepare.py` once. I disclosed this earlier, did not use it in the experiments, and did not access held-out data or ground-truth results.

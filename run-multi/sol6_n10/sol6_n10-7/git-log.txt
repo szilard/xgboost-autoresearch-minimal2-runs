@@ -1,0 +1,216 @@
+commit 3be07a863cbf7415473cfa359ed7bfa9b0231ee1
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 05:58:33 2026 +0000
+
+    Try 450 rounds in three model ensemble
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3b584f307b2aa240ac687e3f35f7b41d9a7ecadb
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 05:30:32 2026 +0000
+
+    Average three independently seeded models
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e7a5196900c634b0609eeb02647fb73c6bbe211a
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 05:28:58 2026 +0000
+
+    Average two seeded XGBoost models
+
+ train.py | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit ff007744d239ba50cad27b8895f9f69dc5f80aa6
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 05:21:52 2026 +0000
+
+    Try stronger feature sampling per tree
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d995802b0984c69b2450577e84c6c038a8c1fb7f
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 05:20:21 2026 +0000
+
+    Try column sampling per tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 41ed3535f2b90ac76f0a7860ca055e811a22ea89
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 05:10:10 2026 +0000
+
+    Add 15-minute departure time blocks
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 68eee3fdd8e5b74d19f73be915501728387ac5e4
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 05:03:38 2026 +0000
+
+    Try 400 trees with categorical date
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 56fae6247eb6806e725c4d042ae371fd4f16f468
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:48:56 2026 +0000
+
+    Allow all date categories in partitions
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 38b15a16395e47ea91cfc5d23396c49ca768b18b
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:47:42 2026 +0000
+
+    Expand date categorical partition cap to 256
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1c3d69c5ffbeafad596e5b279928386b52313ace
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:46:28 2026 +0000
+
+    Expand date categorical partition cap to 128
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 71d4e373919b62c6a407ff08810c77459aba7e59
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:45:20 2026 +0000
+
+    Expand date categorical partition cap to 64
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 88f3863c32cc149528374afdbd83b2ca8b795500
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:44:10 2026 +0000
+
+    Try wider date categorical partitions
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a78ccc3e65b9dbe6ec26f5723dfe2c973239b2c7
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:43:01 2026 +0000
+
+    Increase category threshold with date feature
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ab3e4c5b2c7a8627a2aabd241866212a469700d4
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:41:38 2026 +0000
+
+    Add categorical date feature
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ed39eb4cad40f7eb60b055d765145fc059452362
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:40:15 2026 +0000
+
+    Add numeric day of year feature
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 8542ea55a9591dd2901eedac5a9501ec7d83fe4b
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:37:17 2026 +0000
+
+    Test categorical threshold of twelve
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 932e8e41a786e5b94910f40e8577b2086680e4f9
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:35:10 2026 +0000
+
+    Lower categorical split threshold to eight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 915090b17eb9c1839110a4e5b8226592d41671fc
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:34:07 2026 +0000
+
+    Lower categorical split threshold to 16
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b64efccace464794e95334253699e8ea6c267395
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:33:05 2026 +0000
+
+    Lower categorical split threshold to 32
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 247de9c83fbd875dda7d49a622b863af7f5c52ed
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:28:44 2026 +0000
+
+    Increase histogram bins to 512
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 39bd22c2c430f4915569c5834d3d7ee576d74a54
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:19:56 2026 +0000
+
+    Try smaller learning rate with 500 rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a1ad80b0f55593a390853c79086301f54f554d38
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 04:17:46 2026 +0000
+
+    Increase boosting rounds to 200
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

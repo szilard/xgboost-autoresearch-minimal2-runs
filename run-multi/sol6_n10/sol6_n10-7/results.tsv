@@ -1,0 +1,76 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline 30 trees depth 6
+a1ad80b	0.7345	keep	increase trees from 30 to 200
+c69512b	0.7312	discard	increase trees from 200 to 500
+39bd22c	0.7362	keep	500 trees with learning rate 0.05
+51a8a92	0.7337	discard	reduce tree depth from 6 to 4
+9b7452b	0.7362	discard	add departure minutes after midnight
+a7d2a27	0.7356	discard	add categorical departure hour
+d9bbce8	0.7349	discard	set min_child_weight to 5
+e1647dc	0.7071	discard	add origin destination route category
+4122034	0.7283	discard	set subsample to 0.8
+247de9c	0.7364	keep	increase histogram bins to 512
+583de3f	0.7360	discard	increase histogram bins to 1024
+ca1dd3e	0.7234	discard	one-hot splits for calendar and carrier
+c68f5d6	0.7358	discard	increase categorical threshold to 128
+b64efcc	0.7365	keep	lower categorical threshold to 32
+915090b	0.7381	keep	lower categorical threshold to 16
+932e8e4	0.7402	keep	lower categorical threshold to 8
+bcc32aa	0.7337	discard	lower categorical threshold to 4
+8542ea5	0.7413	keep	test categorical threshold of 12
+f5360f1	0.7404	discard	test categorical threshold of 10
+ed39eb4	0.7431	keep	add numeric day of year
+ab3e4c5	0.7494	keep	add categorical date
+a78ccc3	0.7515	keep	category threshold 16 with Date
+88f3863	0.7534	keep	category threshold 32 with Date
+71d4e37	0.7542	keep	category threshold 64 with Date
+1c3d69c	0.7554	keep	category threshold 128 with Date
+38b15a1	0.7561	keep	category threshold 256 with Date
+56fae62	0.7565	keep	category threshold 512 with Date
+8395059	0.7547	discard	increase rounds from 500 to 750 with Date
+584ceb5	0.7554	discard	remove redundant calendar features
+7089778	0.7552	discard	set minimum split gain gamma to 1
+1064bd3	0.7559	discard	loss-guided trees with 32 leaves
+c181bee	0.7558	discard	set L2 regularization to zero
+7ebb270	0.7552	discard	increase L2 regularization to 5
+e0f7284	0.7534	discard	increase depth from 6 to 7 with Date
+f7083dc	0.7560	discard	reduce depth from 6 to 5 with Date
+f663e0b	0.7565	discard	800 trees at learning rate 0.03
+68eee3f	0.7565	keep	reduce trees from 500 to 400 at equal AUC
+b7dd576	0.7556	discard	reduce trees from 400 to 300
+aa69c94	0.7558	discard	restore default 256 histogram bins
+eda5cc4	0.7342	discard	add exact scheduled time category
+41ed353	0.7576	keep	add categorical 15-minute departure blocks
+eedcd1f	0.7563	discard	use 30-minute departure blocks
+fca6165	0.7566	discard	use 10-minute departure blocks
+c36bcdf	0.7360	discard	add carrier by quarter-hour category
+12b7d3a	0.7568	discard	add week-of-year category
+d9ef075	0.7567	discard	use approx tree method
+d995802	0.7586	keep	sample 80 percent of features per tree
+ff00774	0.7596	keep	sample 60 percent of features per tree
+2b5957c	0.7590	discard	sample 40 percent of features per tree
+c1b23f6	0.7586	discard	sample 60 percent of features at each split
+4497141	0.7558	discard	boost two parallel randomized trees per round
+e7a5196	0.7611	keep	average two independent XGBoost seeds
+3b584f3	0.7621	keep	average three independent XGBoost seeds
+f6db1c4	0.7620	discard	average five independent XGBoost seeds
+2f0caef	0.7615	discard	mix column sampling rates in ensemble
+3474804	0.7607	discard	row subsample 0.9 in three-seed ensemble
+81b7db2	0.7612	discard	remove day-of-week feature
+0908c9a	0.7615	discard	set ensemble column sampling to 0.7
+0ecf088	0.0000	crash	DART 400 rounds exceeded training timeout
+ab3edff	0.7609	discard	constrain scheduled time to increase
+7283208	0.7621	discard	add cyclical day-of-year sine and cosine
+7520e0b	0.7615	discard	L1 regularization alpha 0.1 in ensemble
+7360e7f	0.7612	discard	feature sampling 0.5 in ensemble
+3be07a8	0.7626	keep	450 trees per model in ensemble
+bf6ae76	0.7625	discard	500 trees per model in ensemble
+d6898e1	0.7622	discard	minimum child weight 0.5 in ensemble
+0c2765d	0.7625	discard	425 trees per model in ensemble
+981baab	0.7622	discard	continuous scheduled minute of year
+b03ad55	0.7601	discard	depth five trees in ensemble
+056d3c9	0.7610	discard	gradient-based row sampling at 0.9
+dc8c918	0.7626	discard	four seeded models at 450 rounds
+f13a175	0.7616	discard	500 rounds at learning rate 0.04
+3d0d42d	0.7610	discard	remove numeric day of year model feature
+92f5e8a	0.7618	discard	768 histogram bins in ensemble

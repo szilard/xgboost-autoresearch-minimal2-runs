@@ -1,0 +1,152 @@
+=== [2] 92e43e6 | keep | baseline 30 trees depth 6 ===
+  holdout=0.7155
+=== [3] a1ad80b | keep | increase trees from 30 to 200 ===
+  holdout=0.7311
+=== [4] c69512b | discard | increase trees from 200 to 500 ===
+  SKIP: status discard
+=== [5] 39bd22c | keep | 500 trees with learning rate 0.05 ===
+  holdout=0.7321
+=== [6] 51a8a92 | discard | reduce tree depth from 6 to 4 ===
+  SKIP: status discard
+=== [7] 9b7452b | discard | add departure minutes after midnight ===
+  SKIP: status discard
+=== [8] a7d2a27 | discard | add categorical departure hour ===
+  SKIP: status discard
+=== [9] d9bbce8 | discard | set min_child_weight to 5 ===
+  SKIP: status discard
+=== [10] e1647dc | discard | add origin destination route category ===
+  SKIP: status discard
+=== [11] 4122034 | discard | set subsample to 0.8 ===
+  SKIP: status discard
+=== [12] 247de9c | keep | increase histogram bins to 512 ===
+  holdout=0.7330
+=== [13] 583de3f | discard | increase histogram bins to 1024 ===
+  SKIP: status discard
+=== [14] ca1dd3e | discard | one-hot splits for calendar and carrier ===
+  SKIP: status discard
+=== [15] c68f5d6 | discard | increase categorical threshold to 128 ===
+  SKIP: status discard
+=== [16] b64efcc | keep | lower categorical threshold to 32 ===
+  holdout=0.7333
+=== [17] 915090b | keep | lower categorical threshold to 16 ===
+  holdout=0.7346
+=== [18] 932e8e4 | keep | lower categorical threshold to 8 ===
+  holdout=0.7342
+=== [19] bcc32aa | discard | lower categorical threshold to 4 ===
+  SKIP: status discard
+=== [20] 8542ea5 | keep | test categorical threshold of 12 ===
+  holdout=0.7360
+=== [21] f5360f1 | discard | test categorical threshold of 10 ===
+  SKIP: status discard
+=== [22] ed39eb4 | keep | add numeric day of year ===
+  holdout=0.7374
+=== [23] ab3e4c5 | keep | add categorical date ===
+  holdout=0.7432
+=== [24] a78ccc3 | keep | category threshold 16 with Date ===
+  holdout=0.7444
+=== [25] 88f3863 | keep | category threshold 32 with Date ===
+  holdout=0.7470
+=== [26] 71d4e37 | keep | category threshold 64 with Date ===
+  holdout=0.7488
+=== [27] 1c3d69c | keep | category threshold 128 with Date ===
+  holdout=0.7502
+=== [28] 38b15a1 | keep | category threshold 256 with Date ===
+  holdout=0.7498
+=== [29] 56fae62 | keep | category threshold 512 with Date ===
+  holdout=0.7497
+=== [30] 8395059 | discard | increase rounds from 500 to 750 with Date ===
+  SKIP: status discard
+=== [31] 584ceb5 | discard | remove redundant calendar features ===
+  SKIP: status discard
+=== [32] 7089778 | discard | set minimum split gain gamma to 1 ===
+  SKIP: status discard
+=== [33] 1064bd3 | discard | loss-guided trees with 32 leaves ===
+  SKIP: status discard
+=== [34] c181bee | discard | set L2 regularization to zero ===
+  SKIP: status discard
+=== [35] 7ebb270 | discard | increase L2 regularization to 5 ===
+  SKIP: status discard
+=== [36] e0f7284 | discard | increase depth from 6 to 7 with Date ===
+  SKIP: status discard
+=== [37] f7083dc | discard | reduce depth from 6 to 5 with Date ===
+  SKIP: status discard
+=== [38] f663e0b | discard | 800 trees at learning rate 0.03 ===
+  SKIP: status discard
+=== [39] 68eee3f | keep | reduce trees from 500 to 400 at equal AUC ===
+  holdout=0.7495
+=== [40] b7dd576 | discard | reduce trees from 400 to 300 ===
+  SKIP: status discard
+=== [41] aa69c94 | discard | restore default 256 histogram bins ===
+  SKIP: status discard
+=== [42] eda5cc4 | discard | add exact scheduled time category ===
+  SKIP: status discard
+=== [43] 41ed353 | keep | add categorical 15-minute departure blocks ===
+  holdout=0.7514
+=== [44] eedcd1f | discard | use 30-minute departure blocks ===
+  SKIP: status discard
+=== [45] fca6165 | discard | use 10-minute departure blocks ===
+  SKIP: status discard
+=== [46] c36bcdf | discard | add carrier by quarter-hour category ===
+  SKIP: status discard
+=== [47] 12b7d3a | discard | add week-of-year category ===
+  SKIP: status discard
+=== [48] d9ef075 | discard | use approx tree method ===
+  SKIP: status discard
+=== [49] d995802 | keep | sample 80 percent of features per tree ===
+  holdout=0.7523
+=== [50] ff00774 | keep | sample 60 percent of features per tree ===
+  holdout=0.7544
+=== [51] 2b5957c | discard | sample 40 percent of features per tree ===
+  SKIP: status discard
+=== [52] c1b23f6 | discard | sample 60 percent of features at each split ===
+  SKIP: status discard
+=== [53] 4497141 | discard | boost two parallel randomized trees per round ===
+  SKIP: status discard
+=== [54] e7a5196 | keep | average two independent XGBoost seeds ===
+  holdout=0.7554
+=== [55] 3b584f3 | keep | average three independent XGBoost seeds ===
+  holdout=0.7561
+=== [56] f6db1c4 | discard | average five independent XGBoost seeds ===
+  SKIP: status discard
+=== [57] 2f0caef | discard | mix column sampling rates in ensemble ===
+  SKIP: status discard
+=== [58] 3474804 | discard | row subsample 0.9 in three-seed ensemble ===
+  SKIP: status discard
+=== [59] 81b7db2 | discard | remove day-of-week feature ===
+  SKIP: status discard
+=== [60] 0908c9a | discard | set ensemble column sampling to 0.7 ===
+  SKIP: status discard
+=== [61] 0ecf088 | crash | DART 400 rounds exceeded training timeout ===
+  SKIP: status crash
+=== [62] ab3edff | discard | constrain scheduled time to increase ===
+  SKIP: status discard
+=== [63] 7283208 | discard | add cyclical day-of-year sine and cosine ===
+  SKIP: status discard
+=== [64] 7520e0b | discard | L1 regularization alpha 0.1 in ensemble ===
+  SKIP: status discard
+=== [65] 7360e7f | discard | feature sampling 0.5 in ensemble ===
+  SKIP: status discard
+=== [66] 3be07a8 | keep | 450 trees per model in ensemble ===
+  holdout=0.7565
+=== [67] bf6ae76 | discard | 500 trees per model in ensemble ===
+  SKIP: status discard
+=== [68] d6898e1 | discard | minimum child weight 0.5 in ensemble ===
+  SKIP: status discard
+=== [69] 0c2765d | discard | 425 trees per model in ensemble ===
+  SKIP: status discard
+=== [70] 981baab | discard | continuous scheduled minute of year ===
+  SKIP: status discard
+=== [71] b03ad55 | discard | depth five trees in ensemble ===
+  SKIP: status discard
+=== [72] 056d3c9 | discard | gradient-based row sampling at 0.9 ===
+  SKIP: status discard
+=== [73] dc8c918 | discard | four seeded models at 450 rounds ===
+  SKIP: status discard
+=== [74] f13a175 | discard | 500 rounds at learning rate 0.04 ===
+  SKIP: status discard
+=== [75] 3d0d42d | discard | remove numeric day of year model feature ===
+  SKIP: status discard
+=== [76] 92f5e8a | discard | 768 histogram bins in ensemble ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===
