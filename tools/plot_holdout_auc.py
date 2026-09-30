@@ -149,8 +149,8 @@ def path_plot(runs, colour):
         with open(r["dir"] / "groundtruth_all.tsv") as f:
             n_last = sum(1 for _ in f) - 1
         ax.step(list(n) + [n_last], list(auc) + [auc[-1]], where="post", color=colour[r["model"]],
-                lw=1.4, alpha=0.8, ls="-" if r["valid"] == "yes" else (0, (4, 2)), zorder=2)
-        ax.scatter(n_last, auc[-1], s=22, zorder=3, color=colour[r["model"]])
+                lw=0.8, alpha=0.85, ls="-" if r["valid"] == "yes" else (0, (4, 2)), zorder=2)
+        ax.scatter(n_last, auc[-1], s=14, zorder=3, color=colour[r["model"]])
     ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
     ax.set_ylabel("holdout AUC", color=INK2)
     ax.grid(color=GRID, lw=0.8)
@@ -158,8 +158,8 @@ def path_plot(runs, colour):
     style(ax, "Holdout AUC path per run")
     models = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
     legend = [Line2D([], [], color=colour[m], lw=2, label=m) for m in models] + [
-        Line2D([], [], color=INK2, lw=1.4, label="run"),
-        Line2D([], [], color=INK2, lw=1.4, ls=(0, (4, 2)), label="run with caveat"),
+        Line2D([], [], color=INK2, lw=0.8, label="run"),
+        Line2D([], [], color=INK2, lw=0.8, ls=(0, (4, 2)), label="run with caveat"),
         Line2D([], [], marker="o", ls="", color=INK2, markersize=5, label="end of run"),
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
