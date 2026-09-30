@@ -1,0 +1,2 @@
+2026-09-29T22:50:55.898412Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/results.tsv:
+c2116cd	0.7668	discard	origin-carrier categorical interaction

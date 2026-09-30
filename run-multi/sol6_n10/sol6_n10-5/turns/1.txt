@@ -1,0 +1,3 @@
+Setup is ready on the new `sep29` branch. `train.py` is unchanged, both data files are present, the required libraries are available, and [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) has only its header. The experiment clock has not started.
+
+[program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md) requires confirmation before the two-hour run. Confirm `sep29` and say **go** when you’re ready; my first action will be to start the clock, then run the unchanged baseline.

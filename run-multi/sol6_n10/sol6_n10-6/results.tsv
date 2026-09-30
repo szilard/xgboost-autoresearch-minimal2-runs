@@ -1,0 +1,73 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+81c9904	0.7342	keep	300 boosting rounds
+706260e	0.7273	discard	800 boosting rounds
+f3cceb5	0.7359	keep	600 rounds at learning rate 0.05
+b91bf6b	0.7381	keep	add numeric day of year
+c461628	0.7394	keep	add categorical departure hour
+5be3200	0.7111	discard	add high-cardinality route category
+3ac8d08	0.7387	discard	depth 4 trees
+2ec4da5	0.7395	keep	depth 5 trees
+7ce6c63	0.7394	discard	minimum child weight 5
+3d4717d	0.7312	discard	80 percent row subsampling
+1f07c22	0.7313	discard	one-hot category splits below 32 levels
+f2405df	0.7427	keep	maximum 16 categories per partition split
+0e1ae72	0.7424	discard	maximum 8 categories per partition split
+c74ba7a	0.7412	discard	maximum 32 categories per partition split
+2ef374f	0.7364	discard	carrier-origin interaction category
+223ef51	0.7434	keep	distance to major 2005 holidays
+3dbd66e	0.7427	discard	signed holiday proximity
+0fa76c2	0.7433	discard	scheduled minute within hour
+6bf8ffe	0.7435	keep	distance from year boundary
+476792a	0.7415	discard	hour of week category
+78cd637	0.7431	discard	512 numeric histogram bins
+40b3087	0.7426	discard	128 numeric histogram bins
+02a9058	0.7405	discard	internal 10 percent validation early stopping
+42301c4	0.7425	discard	loss-guided growth with 32 leaves
+3f9ed33	0.7456	keep	L2 leaf regularization 5
+a7a0de8	0.7455	discard	L2 leaf regularization 10
+eca9ba5	0.7442	discard	minimum split gain 1
+f8360d2	0.7419	discard	remove day-of-month category
+b17dad2	0.7452	keep	remove year-boundary feature for simpler faster model
+6feaff3	0.7442	discard	remove holiday-distance feature
+7271ab4	0.7467	keep	L1 leaf regularization 1
+8fb26a6	0.7500	keep	L1 leaf regularization 3
+b7de7fd	0.7524	keep	L1 leaf regularization 6
+761a1d0	0.7521	discard	L1 leaf regularization 12
+55d24a0	0.7550	keep	900 rounds with L1 regularization 6
+ee840c6	0.7569	keep	1400 rounds with L1 regularization 6
+fe9b741	0.7579	keep	2200 rounds with L1 regularization 6
+52ecf7f	0.7584	keep	3500 rounds with L1 regularization 6
+0b5ecae	0.7581	discard	5000 rounds with L1 regularization 6
+de30335	0.7591	keep	3500 rounds with L1 regularization 12
+3d6008f	0.7587	discard	5000 rounds with L1 regularization 12
+73a2b2a	0.7591	discard	5000 rounds at learning rate 0.03
+ad96767	0.7597	keep	depth 6 with L1 regularization 12
+252544f	0.7589	discard	depth 7 with L1 regularization 12
+599a272	0.7596	discard	category cap 8 in deep regularized model
+2bc8cc4	0.7594	discard	L2 penalty 10 with L1 penalty 12
+019223f	0.7603	keep	average depth 5 and depth 6 models
+1be96bd	0.7607	keep	add category-cap-8 third model
+6677757	0.7606	keep	remove depth-5 member for smaller two-model ensemble
+5a3efd4	0.7604	discard	per-node column sampling 0.8 in ensemble
+0799c48	0.7606	discard	carrier-hour interaction category
+f37b235	0.7595	discard	origin-relative scheduled departure time
+2c53d19	0.7615	keep	sine and cosine of day of year
+0065794	0.7608	discard	remove annual sine feature
+e74eaba	0.7602	discard	sine and cosine of departure time
+127a0ff	0.7609	discard	origin and destination median distance profiles
+3b6fe6d	0.7619	keep	categorical week of year
+b614fa4	0.7621	keep	Monday-aligned week category
+e9a2d18	0.7616	discard	two-week seasonal categories
+b088416	0.7624	keep	numeric day of month alongside category
+ed0a7d3	0.7622	discard	numeric month alongside category
+18f9729	0.7625	keep	numeric weekday alongside category
+fcf2b9f	0.7613	discard	remove cap-8 ensemble member
+c6a2567	0.7618	discard	depth-5 ensemble with date features
+1cfff61	0.7624	keep	depth-6 cap-16 plus depth-5 cap-8 ensemble
+bfca5be	0.7624	discard	cap 12 for depth-5 ensemble member
+883451a	0.7619	discard	cap 16 for both ensemble members
+bc19288	0.7599	discard	L1 penalty 18 with rich calendar features
+39b2534	0.7626	keep	L1 penalty 8 with rich calendar features
+aed1c3e	0.7629	keep	L1 penalty 10 with rich calendar features
+78b7ef8	0.7630	keep	minimum child weight 2

@@ -1,0 +1,146 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] 81c9904 | keep | 300 boosting rounds ===
+  holdout=0.7315
+=== [4] 706260e | discard | 800 boosting rounds ===
+  SKIP: status discard
+=== [5] f3cceb5 | keep | 600 rounds at learning rate 0.05 ===
+  holdout=0.7320
+=== [6] b91bf6b | keep | add numeric day of year ===
+  holdout=0.7372
+=== [7] c461628 | keep | add categorical departure hour ===
+  holdout=0.7375
+=== [8] 5be3200 | discard | add high-cardinality route category ===
+  SKIP: status discard
+=== [9] 3ac8d08 | discard | depth 4 trees ===
+  SKIP: status discard
+=== [10] 2ec4da5 | keep | depth 5 trees ===
+  holdout=0.7370
+=== [11] 7ce6c63 | discard | minimum child weight 5 ===
+  SKIP: status discard
+=== [12] 3d4717d | discard | 80 percent row subsampling ===
+  SKIP: status discard
+=== [13] 1f07c22 | discard | one-hot category splits below 32 levels ===
+  SKIP: status discard
+=== [14] f2405df | keep | maximum 16 categories per partition split ===
+  holdout=0.7378
+=== [15] 0e1ae72 | discard | maximum 8 categories per partition split ===
+  SKIP: status discard
+=== [16] c74ba7a | discard | maximum 32 categories per partition split ===
+  SKIP: status discard
+=== [17] 2ef374f | discard | carrier-origin interaction category ===
+  SKIP: status discard
+=== [18] 223ef51 | keep | distance to major 2005 holidays ===
+  holdout=0.7378
+=== [19] 3dbd66e | discard | signed holiday proximity ===
+  SKIP: status discard
+=== [20] 0fa76c2 | discard | scheduled minute within hour ===
+  SKIP: status discard
+=== [21] 6bf8ffe | keep | distance from year boundary ===
+  holdout=0.7380
+=== [22] 476792a | discard | hour of week category ===
+  SKIP: status discard
+=== [23] 78cd637 | discard | 512 numeric histogram bins ===
+  SKIP: status discard
+=== [24] 40b3087 | discard | 128 numeric histogram bins ===
+  SKIP: status discard
+=== [25] 02a9058 | discard | internal 10 percent validation early stopping ===
+  SKIP: status discard
+=== [26] 42301c4 | discard | loss-guided growth with 32 leaves ===
+  SKIP: status discard
+=== [27] 3f9ed33 | keep | L2 leaf regularization 5 ===
+  holdout=0.7404
+=== [28] a7a0de8 | discard | L2 leaf regularization 10 ===
+  SKIP: status discard
+=== [29] eca9ba5 | discard | minimum split gain 1 ===
+  SKIP: status discard
+=== [30] f8360d2 | discard | remove day-of-month category ===
+  SKIP: status discard
+=== [31] b17dad2 | keep | remove year-boundary feature for simpler faster model ===
+  holdout=0.7405
+=== [32] 6feaff3 | discard | remove holiday-distance feature ===
+  SKIP: status discard
+=== [33] 7271ab4 | keep | L1 leaf regularization 1 ===
+  holdout=0.7428
+=== [34] 8fb26a6 | keep | L1 leaf regularization 3 ===
+  holdout=0.7459
+=== [35] b7de7fd | keep | L1 leaf regularization 6 ===
+  holdout=0.7472
+=== [36] 761a1d0 | discard | L1 leaf regularization 12 ===
+  SKIP: status discard
+=== [37] 55d24a0 | keep | 900 rounds with L1 regularization 6 ===
+  holdout=0.7502
+=== [38] ee840c6 | keep | 1400 rounds with L1 regularization 6 ===
+  holdout=0.7517
+=== [39] fe9b741 | keep | 2200 rounds with L1 regularization 6 ===
+  holdout=0.7529
+=== [40] 52ecf7f | keep | 3500 rounds with L1 regularization 6 ===
+  holdout=0.7532
+=== [41] 0b5ecae | discard | 5000 rounds with L1 regularization 6 ===
+  SKIP: status discard
+=== [42] de30335 | keep | 3500 rounds with L1 regularization 12 ===
+  holdout=0.7546
+=== [43] 3d6008f | discard | 5000 rounds with L1 regularization 12 ===
+  SKIP: status discard
+=== [44] 73a2b2a | discard | 5000 rounds at learning rate 0.03 ===
+  SKIP: status discard
+=== [45] ad96767 | keep | depth 6 with L1 regularization 12 ===
+  holdout=0.7552
+=== [46] 252544f | discard | depth 7 with L1 regularization 12 ===
+  SKIP: status discard
+=== [47] 599a272 | discard | category cap 8 in deep regularized model ===
+  SKIP: status discard
+=== [48] 2bc8cc4 | discard | L2 penalty 10 with L1 penalty 12 ===
+  SKIP: status discard
+=== [49] 019223f | keep | average depth 5 and depth 6 models ===
+  holdout=0.7557
+=== [50] 1be96bd | keep | add category-cap-8 third model ===
+  holdout=0.7561
+=== [51] 6677757 | keep | remove depth-5 member for smaller two-model ensemble ===
+  holdout=0.7558
+=== [52] 5a3efd4 | discard | per-node column sampling 0.8 in ensemble ===
+  SKIP: status discard
+=== [53] 0799c48 | discard | carrier-hour interaction category ===
+  SKIP: status discard
+=== [54] f37b235 | discard | origin-relative scheduled departure time ===
+  SKIP: status discard
+=== [55] 2c53d19 | keep | sine and cosine of day of year ===
+  holdout=0.7565
+=== [56] 0065794 | discard | remove annual sine feature ===
+  SKIP: status discard
+=== [57] e74eaba | discard | sine and cosine of departure time ===
+  SKIP: status discard
+=== [58] 127a0ff | discard | origin and destination median distance profiles ===
+  SKIP: status discard
+=== [59] 3b6fe6d | keep | categorical week of year ===
+  holdout=0.7576
+=== [60] b614fa4 | keep | Monday-aligned week category ===
+  holdout=0.7575
+=== [61] e9a2d18 | discard | two-week seasonal categories ===
+  SKIP: status discard
+=== [62] b088416 | keep | numeric day of month alongside category ===
+  holdout=0.7576
+=== [63] ed0a7d3 | discard | numeric month alongside category ===
+  SKIP: status discard
+=== [64] 18f9729 | keep | numeric weekday alongside category ===
+  holdout=0.7572
+=== [65] fcf2b9f | discard | remove cap-8 ensemble member ===
+  SKIP: status discard
+=== [66] c6a2567 | discard | depth-5 ensemble with date features ===
+  SKIP: status discard
+=== [67] 1cfff61 | keep | depth-6 cap-16 plus depth-5 cap-8 ensemble ===
+  holdout=0.7577
+=== [68] bfca5be | discard | cap 12 for depth-5 ensemble member ===
+  SKIP: status discard
+=== [69] 883451a | discard | cap 16 for both ensemble members ===
+  SKIP: status discard
+=== [70] bc19288 | discard | L1 penalty 18 with rich calendar features ===
+  SKIP: status discard
+=== [71] 39b2534 | keep | L1 penalty 8 with rich calendar features ===
+  holdout=0.7578
+=== [72] aed1c3e | keep | L1 penalty 10 with rich calendar features ===
+  holdout=0.7582
+=== [73] 78b7ef8 | keep | minimum child weight 2 ===
+  holdout=0.7583
+
+=== DONE: results written to groundtruth_all.tsv ===

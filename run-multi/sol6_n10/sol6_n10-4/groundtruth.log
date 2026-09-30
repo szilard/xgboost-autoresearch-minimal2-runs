@@ -1,0 +1,166 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] 05cfe71 | keep | 200 boosting rounds ===
+  holdout=0.7311
+=== [4] c1b40e4 | discard | 500 boosting rounds ===
+  SKIP: status discard
+=== [5] 0c4d648 | discard | 200 rounds depth 4 ===
+  SKIP: status discard
+=== [6] cee0f72 | keep | add ordinal day of year ===
+  holdout=0.7345
+=== [7] 4bbed2a | discard | add route category ===
+  SKIP: status discard
+=== [8] 643759e | discard | add departure hour category ===
+  SKIP: status discard
+=== [9] b8e7723 | discard | min child weight 5 ===
+  SKIP: status discard
+=== [10] 8e39ade | discard | row subsample 0.8 ===
+  SKIP: status discard
+=== [11] 9bf33e0 | discard | 200 rounds depth 7 ===
+  SKIP: status discard
+=== [12] 97af306 | discard | 120 boosting rounds ===
+  SKIP: status discard
+=== [13] 74905eb | discard | max bin 512 ===
+  SKIP: status discard
+=== [14] 38def31 | discard | max bin 128 ===
+  SKIP: status discard
+=== [15] 896a651 | keep | max cat threshold 16 ===
+  holdout=0.7365
+=== [16] 1b481e1 | keep | max cat threshold 8 ===
+  holdout=0.7364
+=== [17] 197c950 | discard | max cat threshold 4 ===
+  SKIP: status discard
+=== [18] 0d5b85c | discard | one-hot weekday splits ===
+  SKIP: status discard
+=== [19] dd027b4 | discard | add scheduled minute within hour ===
+  SKIP: status discard
+=== [20] 1b8c76e | discard | add major holiday proximity ===
+  SKIP: status discard
+=== [21] a752d03 | discard | remove distance feature ===
+  SKIP: status discard
+=== [22] a0fa0ee | discard | remove day-of-month category ===
+  SKIP: status discard
+=== [23] 7668687 | keep | 400 rounds learning rate 0.05 ===
+  holdout=0.7369
+=== [24] 31cddc8 | keep | 650 rounds learning rate 0.03 ===
+  holdout=0.7374
+=== [25] 1313856 | keep | 1000 rounds learning rate 0.02 ===
+  holdout=0.7372
+=== [26] 7b26035 | discard | 2000 rounds learning rate 0.01 ===
+  SKIP: status discard
+=== [27] 1813392 | keep | L2 regularization 5 ===
+  holdout=0.7409
+=== [28] 9c58353 | keep | L2 regularization 10 ===
+  holdout=0.7416
+=== [29] b080087 | discard | L2 regularization 20 ===
+  SKIP: status discard
+=== [30] f0db0f7 | keep | 1500 rounds with L2 10 ===
+  holdout=0.7444
+=== [31] 58b93e0 | keep | 2000 rounds with L2 10 ===
+  holdout=0.7456
+=== [32] ea1fa18 | keep | 3000 rounds with L2 10 ===
+  holdout=0.7463
+=== [33] 46acea7 | keep | add L1 regularization 1 ===
+  holdout=0.7498
+=== [34] 9b72c4c | keep | L1 regularization 5 ===
+  holdout=0.7547
+=== [35] 2b51c15 | keep | L1 regularization 10 ===
+  holdout=0.7558
+=== [36] 8726521 | discard | L1 regularization 20 ===
+  SKIP: status discard
+=== [37] 0a7fb50 | keep | 4000 rounds with L1 10 ===
+  holdout=0.7566
+=== [38] 2f4a00d | discard | L2 5 with L1 10 ===
+  SKIP: status discard
+=== [39] 156cc1d | discard | L2 20 with L1 10 ===
+  SKIP: status discard
+=== [40] 88b18ba | discard | gamma 1 split penalty ===
+  SKIP: status discard
+=== [41] 2748bbc | discard | gamma 0.1 split penalty ===
+  SKIP: status discard
+=== [42] 93f4681 | keep | lossguide 64 leaves ===
+  holdout=0.7589
+=== [43] 4e752f0 | keep | lossguide 96 leaves ===
+  holdout=0.7597
+=== [44] 43283ff | keep | lossguide 128 leaves ===
+  holdout=0.7596
+=== [45] 99067af | keep | 3000 rounds 128 leaves ===
+  holdout=0.7601
+=== [46] d6fd70b | keep | 2000 rounds 128 leaves ===
+  holdout=0.7599
+=== [47] 675267d | discard | 1500 rounds 128 leaves ===
+  SKIP: status discard
+=== [48] e679d04 | discard | max cat threshold 16 leaf-wise ===
+  SKIP: status discard
+=== [49] 7028790 | discard | min child weight 5 leaf-wise ===
+  SKIP: status discard
+=== [50] fdf6459 | discard | 96 leaves 2000 rounds ===
+  SKIP: status discard
+=== [51] f3fb295 | discard | L1 12 leaf-wise ===
+  SKIP: status discard
+=== [52] 0f262ad | keep | learning rate 0.03 1350 rounds ===
+  holdout=0.7598
+=== [53] 163afc6 | keep | cyclical day of year ===
+  holdout=0.7605
+=== [54] d911bf4 | discard | cyclical scheduled time ===
+  SKIP: status discard
+=== [55] f5f668e | discard | origin-relative departure time ===
+  SKIP: status discard
+=== [56] a649bb1 | discard | remove season sine ===
+  SKIP: status discard
+=== [57] 1807b07 | discard | column subsample 0.9 ===
+  SKIP: status discard
+=== [58] c1d7cb5 | discard | soft-vote leaf and depth models ===
+  SKIP: status discard
+=== [59] fb86687 | keep | gradient-based row sampling 0.8 ===
+  holdout=0.7620
+=== [60] 0cdd216 | discard | gradient-based row sampling 0.6 ===
+  SKIP: status discard
+=== [61] d2e1eaa | keep | gradient-based row sampling 0.9 ===
+  holdout=0.7613
+=== [62] 9978cff | discard | categorical origin-destination route ===
+  SKIP: status discard
+=== [63] 3db5bca | discard | holiday proximity ===
+  SKIP: status discard
+=== [64] 7a20488 | discard | 512 histogram bins ===
+  SKIP: status discard
+=== [65] 3862ca4 | keep | 160 leaves under gradient sampling ===
+  holdout=0.7620
+=== [66] 753f495 | keep | 192 leaves under gradient sampling ===
+  holdout=0.7621
+=== [67] 08361ff | discard | 256 leaves under gradient sampling ===
+  SKIP: status discard
+=== [68] a005937 | discard | 1600 rounds at 192 leaves ===
+  SKIP: status discard
+=== [69] d034468 | keep | 1100 rounds at 192 leaves; smaller artifact ===
+  holdout=0.7622
+=== [70] 0d039d8 | discard | 900 rounds at 192 leaves ===
+  SKIP: status discard
+=== [71] c2116cd | discard | origin-carrier categorical interaction ===
+  SKIP: status discard
+=== [72] df8406c | discard | scheduled departure minute ===
+  SKIP: status discard
+=== [73] 3f6136b | keep | minimum child weight 0.5 ===
+  holdout=0.7621
+=== [74] cedd6bc | discard | minimum child weight 0.25 ===
+  SKIP: status discard
+=== [75] 53ad35b | discard | minimum child weight 0.75 ===
+  SKIP: status discard
+=== [76] e1770cb | discard | 256 leaves with child weight 0.5 ===
+  SKIP: status discard
+=== [77] 4437021 | discard | node level column sampling 0.9 ===
+  SKIP: status discard
+=== [78] aadf9c9 | discard | categorical partition threshold 4 ===
+  SKIP: status discard
+=== [79] 31e8c86 | keep | L1 regularization 8 ===
+  holdout=0.7622
+=== [80] 2456eab | discard | L1 regularization 6 ===
+  SKIP: status discard
+=== [81] e0e874d | keep | L1 regularization 9 ===
+  holdout=0.7626
+=== [82] 8e8551e | discard | L2 regularization 8 ===
+  SKIP: status discard
+=== [83] 0475c6f | discard | L2 regularization 12 ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

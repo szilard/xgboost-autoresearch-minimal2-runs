@@ -1,0 +1,3 @@
+The two-hour experiment is complete. Across 84 runs, the best Eval AUC was **0.7685**, up from the 0.7203 baseline. Branch `sep29` is at the best commit, `cc135a1`.
+
+The model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py). Results and decisions are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md). The clock is stopped.

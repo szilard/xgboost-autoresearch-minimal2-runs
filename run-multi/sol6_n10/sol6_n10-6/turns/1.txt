@@ -1,0 +1,3 @@
+Setup is ready on the new `sep30` branch, created from the current HEAD. I read the experiment instructions and training files, confirmed `train.csv` and `eval.csv` and the required packages are present, and created [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) with only its header. `train.py` is unchanged.
+
+The two-hour clock has **not** started. `program.md` requires your confirmation before it starts; reply **go** to begin the baseline run.

@@ -1,0 +1,73 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline	0.7203	0.7155
+81c9904	keep	300 boosting rounds	0.7342	0.7315
+706260e	discard	800 boosting rounds	0.7273	N/A
+f3cceb5	keep	600 rounds at learning rate 0.05	0.7359	0.7320
+b91bf6b	keep	add numeric day of year	0.7381	0.7372
+c461628	keep	add categorical departure hour	0.7394	0.7375
+5be3200	discard	add high-cardinality route category	0.7111	N/A
+3ac8d08	discard	depth 4 trees	0.7387	N/A
+2ec4da5	keep	depth 5 trees	0.7395	0.7370
+7ce6c63	discard	minimum child weight 5	0.7394	N/A
+3d4717d	discard	80 percent row subsampling	0.7312	N/A
+1f07c22	discard	one-hot category splits below 32 levels	0.7313	N/A
+f2405df	keep	maximum 16 categories per partition split	0.7427	0.7378
+0e1ae72	discard	maximum 8 categories per partition split	0.7424	N/A
+c74ba7a	discard	maximum 32 categories per partition split	0.7412	N/A
+2ef374f	discard	carrier-origin interaction category	0.7364	N/A
+223ef51	keep	distance to major 2005 holidays	0.7434	0.7378
+3dbd66e	discard	signed holiday proximity	0.7427	N/A
+0fa76c2	discard	scheduled minute within hour	0.7433	N/A
+6bf8ffe	keep	distance from year boundary	0.7435	0.7380
+476792a	discard	hour of week category	0.7415	N/A
+78cd637	discard	512 numeric histogram bins	0.7431	N/A
+40b3087	discard	128 numeric histogram bins	0.7426	N/A
+02a9058	discard	internal 10 percent validation early stopping	0.7405	N/A
+42301c4	discard	loss-guided growth with 32 leaves	0.7425	N/A
+3f9ed33	keep	L2 leaf regularization 5	0.7456	0.7404
+a7a0de8	discard	L2 leaf regularization 10	0.7455	N/A
+eca9ba5	discard	minimum split gain 1	0.7442	N/A
+f8360d2	discard	remove day-of-month category	0.7419	N/A
+b17dad2	keep	remove year-boundary feature for simpler faster model	0.7452	0.7405
+6feaff3	discard	remove holiday-distance feature	0.7442	N/A
+7271ab4	keep	L1 leaf regularization 1	0.7467	0.7428
+8fb26a6	keep	L1 leaf regularization 3	0.7500	0.7459
+b7de7fd	keep	L1 leaf regularization 6	0.7524	0.7472
+761a1d0	discard	L1 leaf regularization 12	0.7521	N/A
+55d24a0	keep	900 rounds with L1 regularization 6	0.7550	0.7502
+ee840c6	keep	1400 rounds with L1 regularization 6	0.7569	0.7517
+fe9b741	keep	2200 rounds with L1 regularization 6	0.7579	0.7529
+52ecf7f	keep	3500 rounds with L1 regularization 6	0.7584	0.7532
+0b5ecae	discard	5000 rounds with L1 regularization 6	0.7581	N/A
+de30335	keep	3500 rounds with L1 regularization 12	0.7591	0.7546
+3d6008f	discard	5000 rounds with L1 regularization 12	0.7587	N/A
+73a2b2a	discard	5000 rounds at learning rate 0.03	0.7591	N/A
+ad96767	keep	depth 6 with L1 regularization 12	0.7597	0.7552
+252544f	discard	depth 7 with L1 regularization 12	0.7589	N/A
+599a272	discard	category cap 8 in deep regularized model	0.7596	N/A
+2bc8cc4	discard	L2 penalty 10 with L1 penalty 12	0.7594	N/A
+019223f	keep	average depth 5 and depth 6 models	0.7603	0.7557
+1be96bd	keep	add category-cap-8 third model	0.7607	0.7561
+6677757	keep	remove depth-5 member for smaller two-model ensemble	0.7606	0.7558
+5a3efd4	discard	per-node column sampling 0.8 in ensemble	0.7604	N/A
+0799c48	discard	carrier-hour interaction category	0.7606	N/A
+f37b235	discard	origin-relative scheduled departure time	0.7595	N/A
+2c53d19	keep	sine and cosine of day of year	0.7615	0.7565
+0065794	discard	remove annual sine feature	0.7608	N/A
+e74eaba	discard	sine and cosine of departure time	0.7602	N/A
+127a0ff	discard	origin and destination median distance profiles	0.7609	N/A
+3b6fe6d	keep	categorical week of year	0.7619	0.7576
+b614fa4	keep	Monday-aligned week category	0.7621	0.7575
+e9a2d18	discard	two-week seasonal categories	0.7616	N/A
+b088416	keep	numeric day of month alongside category	0.7624	0.7576
+ed0a7d3	discard	numeric month alongside category	0.7622	N/A
+18f9729	keep	numeric weekday alongside category	0.7625	0.7572
+fcf2b9f	discard	remove cap-8 ensemble member	0.7613	N/A
+c6a2567	discard	depth-5 ensemble with date features	0.7618	N/A
+1cfff61	keep	depth-6 cap-16 plus depth-5 cap-8 ensemble	0.7624	0.7577
+bfca5be	discard	cap 12 for depth-5 ensemble member	0.7624	N/A
+883451a	discard	cap 16 for both ensemble members	0.7619	N/A
+bc19288	discard	L1 penalty 18 with rich calendar features	0.7599	N/A
+39b2534	keep	L1 penalty 8 with rich calendar features	0.7626	0.7578
+aed1c3e	keep	L1 penalty 10 with rich calendar features	0.7629	0.7582
+78b7ef8	keep	minimum child weight 2	0.7630	0.7583

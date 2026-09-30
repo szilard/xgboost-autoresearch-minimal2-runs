@@ -1,0 +1,297 @@
+commit 78b7ef8d31d13192d9ab4d517cfed789e414dd11
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 03:45:50 2026 +0000
+
+    Test minimum child weight 2
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit aed1c3e284212eb1b489fae8d3c68db1c4989472
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 03:43:14 2026 +0000
+
+    Test midpoint L1 penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 39b2534c5e1a39e77c67aa41c29e6df14d067cd0
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 03:41:19 2026 +0000
+
+    Test milder L1 with rich date features
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1cfff61e1eb1b992d5e90ac5d0e36e5fb3581f16
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 03:33:18 2026 +0000
+
+    Test hybrid depth and category-cap ensemble
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 18f9729482b03e10564653c4b4e529cda91aeb3c
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 03:27:20 2026 +0000
+
+    Add ordered weekday feature
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit b08841677dfc3b634da3cdf5b8bcd1f63279b64c
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 03:23:07 2026 +0000
+
+    Add ordered day-of-month feature
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b614fa408a47c9da0d24b563e7b6df155bb9127b
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 03:19:06 2026 +0000
+
+    Align weekly category to Mondays
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3b6fe6d455d510838d65e0be91bd98440620c3c7
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 03:17:09 2026 +0000
+
+    Add categorical week of year
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2c53d191850c9a8d1865d9d252883470c8ae314d
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 03:08:27 2026 +0000
+
+    Add cyclic annual date features
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 66777574d72d721c29630f40464b6a4792a857c4
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:58:54 2026 +0000
+
+    Ablate depth 5 ensemble member
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1be96bd726a213e2ca5666f3c5c2c710eca4af15
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:56:47 2026 +0000
+
+    Add category-cap variant to ensemble
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 019223f6890b12c428a9af11ddaadc51af8befee
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:54:35 2026 +0000
+
+    Average depth 5 and depth 6 models
+
+ train.py | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
+
+commit ad9676733508e2ff40c7f9ffb1764902ea1cfcc5
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:47:50 2026 +0000
+
+    Test deeper trees under strong L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit de30335cf3ddb7a119440b58bd27a22abc4cf6ad
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:42:40 2026 +0000
+
+    Test stronger L1 with longer boosting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 52ecf7fbf27ada1aa90511f6b87b89ca042ab103
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:39:50 2026 +0000
+
+    Test 3500 regularized boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fe9b7417d049a6cc1db159ba07317d3ff1dea937
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:38:37 2026 +0000
+
+    Test 2200 regularized boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ee840c6b8d670905e7882301b3282a6385219aa1
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:37:28 2026 +0000
+
+    Test 1400 regularized boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 55d24a0d65029834843393c1965bb87716e93ad3
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:36:16 2026 +0000
+
+    Test 900 rounds with strong regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b7de7fd81ccd8f060e101def0e42eab9a4b9aa77
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:33:50 2026 +0000
+
+    Test L1 leaf penalty 6
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8fb26a6de8759b8a73a30bd2712a20c9b051a307
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:32:42 2026 +0000
+
+    Test stronger L1 leaf penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7271ab4eb8eebb4f05a7bab9940dafd77f00ef03
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:31:34 2026 +0000
+
+    Test L1 leaf penalty
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b17dad2035fb008eb56713003a675b543dea118d
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:28:11 2026 +0000
+
+    Remove year-boundary distance feature
+
+ train.py | 3 ---
+ 1 file changed, 3 deletions(-)
+
+commit 3f9ed3356a69effca642618640698fecbc8476c5
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:23:01 2026 +0000
+
+    Test stronger L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 6bf8ffe0348daca747354a83539ad9eeb8446ca0
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:13:43 2026 +0000
+
+    Add distance from year boundary
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 223ef515a463e74869328a07761e79d0f3c16028
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:09:56 2026 +0000
+
+    Add distance to major holidays
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit f2405dff9500be8f71832a791cc2370c6dd71660
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 02:04:04 2026 +0000
+
+    Limit category partition candidates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2ec4da55d0e29033c5d89a037b66138a2448b6cf
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 01:58:47 2026 +0000
+
+    Test depth 5 trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c46162885f625f9f8159ae1e21e9a789349d8393
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 01:54:45 2026 +0000
+
+    Add categorical departure hour
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b91bf6b5711201a1c5d9db1ec71ff086ce5ba29c
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 01:53:25 2026 +0000
+
+    Add day of year feature
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit f3cceb546068b3b8fdb294a5a2060414af26a3a2
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 01:52:05 2026 +0000
+
+    Use 600 rounds with smaller learning rate
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 81c9904aaa6633785b0723bfb0dc065e6a124e7b
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 01:50:03 2026 +0000
+
+    Increase boosting rounds to 300
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

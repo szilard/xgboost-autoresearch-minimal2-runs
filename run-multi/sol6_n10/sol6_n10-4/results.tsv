@@ -1,0 +1,83 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+05cfe71	0.7345	keep	200 boosting rounds
+c1b40e4	0.7312	discard	500 boosting rounds
+0c4d648	0.7317	discard	200 rounds depth 4
+cee0f72	0.7385	keep	add ordinal day of year
+4bbed2a	0.7125	discard	add route category
+643759e	0.7372	discard	add departure hour category
+b8e7723	0.7370	discard	min child weight 5
+8e39ade	0.7301	discard	row subsample 0.8
+9bf33e0	0.7363	discard	200 rounds depth 7
+97af306	0.7375	discard	120 boosting rounds
+74905eb	0.7370	discard	max bin 512
+38def31	0.7368	discard	max bin 128
+896a651	0.7419	keep	max cat threshold 16
+1b481e1	0.7421	keep	max cat threshold 8
+197c950	0.7369	discard	max cat threshold 4
+0d5b85c	0.7411	discard	one-hot weekday splits
+dd027b4	0.7410	discard	add scheduled minute within hour
+1b8c76e	0.7420	discard	add major holiday proximity
+a752d03	0.7407	discard	remove distance feature
+a0fa0ee	0.7381	discard	remove day-of-month category
+7668687	0.7427	keep	400 rounds learning rate 0.05
+31cddc8	0.7431	keep	650 rounds learning rate 0.03
+1313856	0.7432	keep	1000 rounds learning rate 0.02
+7b26035	0.7432	discard	2000 rounds learning rate 0.01
+1813392	0.7458	keep	L2 regularization 5
+9c58353	0.7470	keep	L2 regularization 10
+b080087	0.7470	discard	L2 regularization 20
+f0db0f7	0.7493	keep	1500 rounds with L2 10
+58b93e0	0.7504	keep	2000 rounds with L2 10
+ea1fa18	0.7509	keep	3000 rounds with L2 10
+46acea7	0.7527	keep	add L1 regularization 1
+9b72c4c	0.7594	keep	L1 regularization 5
+2b51c15	0.7609	keep	L1 regularization 10
+8726521	0.7560	discard	L1 regularization 20
+0a7fb50	0.7617	keep	4000 rounds with L1 10
+2f4a00d	0.7615	discard	L2 5 with L1 10
+156cc1d	0.7606	discard	L2 20 with L1 10
+88b18ba	0.7491	discard	gamma 1 split penalty
+2748bbc	0.7569	discard	gamma 0.1 split penalty
+93f4681	0.7640	keep	lossguide 64 leaves
+4e752f0	0.7643	keep	lossguide 96 leaves
+43283ff	0.7644	keep	lossguide 128 leaves
+99067af	0.7650	keep	3000 rounds 128 leaves
+d6fd70b	0.7651	keep	2000 rounds 128 leaves
+675267d	0.7646	discard	1500 rounds 128 leaves
+e679d04	0.7648	discard	max cat threshold 16 leaf-wise
+7028790	0.7648	discard	min child weight 5 leaf-wise
+fdf6459	0.7637	discard	96 leaves 2000 rounds
+f3fb295	0.7637	discard	L1 12 leaf-wise
+0f262ad	0.7651	keep	learning rate 0.03 1350 rounds
+163afc6	0.7654	keep	cyclical day of year
+d911bf4	0.7644	discard	cyclical scheduled time
+f5f668e	0.7644	discard	origin-relative departure time
+a649bb1	0.7648	discard	remove season sine
+1807b07	0.7652	discard	column subsample 0.9
+c1d7cb5	0.7653	discard	soft-vote leaf and depth models
+fb86687	0.7660	keep	gradient-based row sampling 0.8
+0cdd216	0.7648	discard	gradient-based row sampling 0.6
+d2e1eaa	0.7664	keep	gradient-based row sampling 0.9
+9978cff	0.7659	discard	categorical origin-destination route
+3db5bca	0.7661	discard	holiday proximity
+7a20488	0.7661	discard	512 histogram bins
+3862ca4	0.7667	keep	160 leaves under gradient sampling
+753f495	0.7668	keep	192 leaves under gradient sampling
+08361ff	0.7667	discard	256 leaves under gradient sampling
+a005937	0.7667	discard	1600 rounds at 192 leaves
+d034468	0.7668	keep	1100 rounds at 192 leaves; smaller artifact
+0d039d8	0.7665	discard	900 rounds at 192 leaves
+c2116cd	0.7668	discard	origin-carrier categorical interaction
+df8406c	0.7659	discard	scheduled departure minute
+3f6136b	0.7671	keep	minimum child weight 0.5
+cedd6bc	0.7667	discard	minimum child weight 0.25
+53ad35b	0.7668	discard	minimum child weight 0.75
+e1770cb	0.7668	discard	256 leaves with child weight 0.5
+4437021	0.7668	discard	node level column sampling 0.9
+aadf9c9	0.7655	discard	categorical partition threshold 4
+31e8c86	0.7672	keep	L1 regularization 8
+2456eab	0.7662	discard	L1 regularization 6
+e0e874d	0.7673	keep	L1 regularization 9
+8e8551e	0.7671	discard	L2 regularization 8
+0475c6f	0.7664	discard	L2 regularization 12

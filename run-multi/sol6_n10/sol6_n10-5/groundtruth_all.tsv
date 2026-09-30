@@ -1,0 +1,85 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline	0.7203	0.7155
+8dae695	keep	300 boosting rounds	0.7342	0.7315
+d2de493	discard	600 boosting rounds	0.7299	N/A
+6169722	keep	200 boosting rounds	0.7345	0.7311
+7b3aec4	discard	150 boosting rounds	0.7332	N/A
+36b4a4b	discard	depth 4 with 200 rounds	0.7317	N/A
+f02f697	discard	depth 8 with 200 rounds	0.7323	N/A
+aeeb23e	discard	add scheduled departure minute	0.7344	N/A
+f7fbc21	keep	remove redundant category membership checks	0.7345	0.7311
+5d62e9f	keep	add day of year feature	0.7385	0.7345
+2e3ed9d	discard	one-hot splits for small categoricals	0.7306	N/A
+79ec58f	discard	add high-cardinality origin destination route	0.7125	N/A
+471eef6	discard	min_child_weight 10	0.7376	N/A
+fc7cc57	discard	max_bin 512 for finer numeric splits	0.7370	N/A
+57e7de1	keep	add categorical day of year	0.7511	0.7460
+b2761f0	keep	remove numeric day of year predictor	0.7512	0.7472
+607d5bc	keep	max_cat_threshold 128	0.7534	0.7480
+198a368	discard	max_cat_threshold 256	0.7530	N/A
+72b7a61	keep	remove month and day direct predictors	0.7533	0.7481
+4108752	keep	remove weekday predictor	0.7533	0.7481
+67973bd	discard	add categorical departure hour	0.7533	N/A
+033052e	keep	learning rate 0.05 with 400 rounds	0.7558	0.7503
+80c423c	keep	learning rate 0.025 with 800 rounds	0.7571	0.7511
+d1383c3	discard	learning rate 0.0125 with 1600 rounds	0.7567	N/A
+94cde4f	discard	subsample 0.8	0.7542	N/A
+0113eb6	keep	colsample_bytree 0.8	0.7598	0.7546
+71f229c	discard	colsample_bytree 0.6	0.7597	N/A
+9075122	discard	colsample_bytree 0.9	0.7577	N/A
+7236be2	discard	colsample_bynode 0.8	0.7575	N/A
+99a4493	discard	depth 5 with categorical date model	0.7560	N/A
+f63ee06	keep	depth 7 with categorical date model	0.7604	0.7558
+a7acd5e	discard	depth 8 with categorical date model	0.7599	N/A
+2adefff	discard	lossguide growth with 64 leaves	0.7599	N/A
+d0c10f7	keep	lossguide growth with 96 leaves	0.7607	0.7556
+6d7b80c	keep	reg_lambda 5	0.7612	0.7565
+3cab727	keep	reg_lambda 10	0.7615	0.7563
+652f857	discard	reg_lambda 20	0.7613	N/A
+cf03e16	keep	reg_alpha 1 with lambda 10	0.7623	0.7583
+a96e345	keep	reg_alpha 2 with lambda 10	0.7641	0.7597
+49c2871	keep	reg_alpha 4 with lambda 10	0.7654	0.7595
+75bcb18	discard	reg_alpha 8 with lambda 10	0.7611	N/A
+922c318	keep	approx tree method	0.7657	0.7604
+8ba2769	keep	1000 rounds with approx tree method	0.7669	0.7615
+154aea8	keep	1200 rounds with approx tree method	0.7675	0.7622
+28c9bad	keep	1500 rounds with approx tree method	0.7678	0.7626
+08f66d8	discard	1800 rounds with approx tree method	0.7678	N/A
+016b4ef	discard	train-only early stopping	0.7660	N/A
+39b85c8	discard	one-hot splits for carrier only	0.7659	N/A
+52e8029	discard	gamma 1 split penalty	0.7607	N/A
+de65812	discard	gamma 0.1 split penalty	0.7676	N/A
+975e5bf	discard	departure time vs origin median schedule	0.7672	N/A
+9e0edae	discard	origin distance to ATL and LAX via train graph	0.7677	N/A
+d6d3bf8	discard	disjoint interaction constraints for schedule and route features	0.7590	N/A
+e74d044	discard	weight scheduled time and day of year in column sampling	0.7671	N/A
+a998e85	keep	min_child_weight 0.5 with strong leaf regularization	0.7679	0.7618
+34ca44c	discard	min_child_weight 0.25 with strong leaf regularization	0.7679	N/A
+aaa5a15	discard	128 leaves with strong regularization	0.7679	N/A
+6d1aa20	discard	max_bin 128 with approx trees	0.7678	N/A
+8056752	discard	add categorical seven-day calendar block	0.7674	N/A
+73d0e18	discard	max_cat_threshold 192 on regularized approx model	0.7677	N/A
+1ef3d77	discard	restore weekday category on regularized model	0.7677	N/A
+c643dd1	crash	1500-round hist DART timed out training	0.0000	N/A
+a7dc82d	crash	1000-round hist tree dropout timed out training	0.0000	N/A
+29f170e	keep	two-tree boosted forest with hist construction	0.7683	0.7622
+e83671e	discard	three-tree boosted forest	0.7679	N/A
+fefdc8a	discard	colsample_bytree 0.6 in two-tree forest	0.7677	N/A
+c21c621	discard	subsample 0.8 in two-tree forest	0.7673	N/A
+d54b26b	discard	reg_alpha 2 in two-tree forest	0.7657	N/A
+522e026	discard	reg_alpha 6 in two-tree forest	0.7667	N/A
+cc135a1	keep	1800 rounds in two-tree boosted forest	0.7685	0.7624
+921ce86	discard	2100 rounds in two-tree boosted forest	0.7684	N/A
+643ddc5	discard	depth 6 in two-tree boosted forest	0.7669	N/A
+893c99d	discard	depth 8 in two-tree boosted forest	0.7685	N/A
+932ad94	discard	eta 0.03 with 1500 two-tree rounds	0.7680	N/A
+f470656	discard	linear learning rate 0.03 to 0.02 over 1800 forest rounds	0.7679	N/A
+d357ec1	discard	eta 0.02 with 2250 two-tree rounds	0.7682	N/A
+7305e7d	discard	128 leaves in two-tree forest	0.7682	N/A
+cb23fee	discard	64 leaves in two-tree forest	0.7675	N/A
+e74f9bb	discard	min_child_weight 0.25 in two-tree forest	0.7681	N/A
+429153c	discard	default min_child_weight 1 in two-tree forest	0.7681	N/A
+0ecf165	discard	colsample_bytree 0.7 in two-tree forest	0.7685	N/A
+944c7df	discard	reg_lambda 5 in two-tree forest	0.7680	N/A
+fe30861	discard	reg_lambda 20 in two-tree forest	0.7677	N/A
+2e5c338	discard	colsample_bytree 0.9 in two-tree forest	0.7669	N/A

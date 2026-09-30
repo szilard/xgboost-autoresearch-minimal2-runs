@@ -1,0 +1,2 @@
+2026-09-30T03:03:35.496727Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/research-log.md:
+The current working model is the two-member category-cap ensemble at 6677757 (0.7606); the three-member ensemble at 1be96bd retains the highest raw AUC by only 0.0001. The next search should seek a different source of model diversity or a compact row-level feature that earns its evaluation cost.

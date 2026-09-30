@@ -1,0 +1,297 @@
+commit e0e874d32ce07b137027da64fb0727ba4581f3da
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 23:06:04 2026 +0000
+
+    Bracket L1 regularization optimum
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 31e8c869a978b19c83e11c3554c30ff645461ad0
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 23:03:05 2026 +0000
+
+    Reduce L1 regularization slightly
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3f6136bd95fc5f07c39bb95a954c0a45b682caf6
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:53:09 2026 +0000
+
+    Lower child weight under gradient sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit d03446831150315a916319f0b2691a253c3cfc34
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:46:00 2026 +0000
+
+    Try fewer rounds with 192 leaves
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 753f49538bc93d525197d040b5a52b59bbe47a2b
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:41:06 2026 +0000
+
+    Test 192 leaf cap
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3862ca4cd4bd5e0e0903787d04b41b8b51c63030
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:39:39 2026 +0000
+
+    Increase leaf cap under gradient sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d2e1eaa74fa40ea80f215e39b6e97cc05a2b5831
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:31:23 2026 +0000
+
+    Test milder gradient sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fb8668775c498acc5112b5f55006b20341bbd353
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:28:22 2026 +0000
+
+    Try gradient based row sampling
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 163afc6d969bb36fa449c63ac9f3059e88f595a6
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:15:18 2026 +0000
+
+    Add cyclical season features
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 0f262adbceacdf15962bd536710a3f99ea36fade
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:13:20 2026 +0000
+
+    Test faster boosting with fewer leaf-wise trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit d6fd70bcbcafb74eb7eaa96e3e6377e518f4be7f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:03:52 2026 +0000
+
+    Test two thousand rounds with 128 leaves
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 99067afdd9c2aaf858cc5456d3b806015625ffda
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:02:14 2026 +0000
+
+    Reduce rounds in larger leaf-wise model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 43283ff2ec8d4dc008c1855d2f1e8578f83ad21d
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 22:00:21 2026 +0000
+
+    Test 128 leaf budget
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4e752f0ce85c3c7988c1a975d48a0c4666f707db
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:58:36 2026 +0000
+
+    Test ninety-six leaf budget
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 93f4681a639dbed684a8a3f4273a43ddb0f38113
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:56:39 2026 +0000
+
+    Test bounded leaf-wise tree growth
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 0a7fb503fd4a3818d4f95fbe456d65d7d746bf7d
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:50:05 2026 +0000
+
+    Test more rounds under strong L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2b51c15ce9aa337333306087a193eb543f0dd9ba
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:47:35 2026 +0000
+
+    Test L1 leaf penalty ten
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9b72c4cc49df107c0a50fe86f1f405628c572efd
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:46:25 2026 +0000
+
+    Test stronger L1 leaf regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 46acea7ff591add314f9135d8a8290eb1b948cc2
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:45:11 2026 +0000
+
+    Add L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ea1fa182128a535e34044f0830a521cc025a487e
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:43:40 2026 +0000
+
+    Test three thousand regularized rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 58b93e05e1a5d4b1b6c82272f4fadc15808b9273
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:42:34 2026 +0000
+
+    Test two thousand regularized rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f0db0f7e7c393454cf4b49c61668da61346e48f3
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:41:32 2026 +0000
+
+    Test more rounds with L2 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9c5835381b2e21974e7cdc169565896eb1fd1db8
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:39:17 2026 +0000
+
+    Test stronger L2 leaf regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1813392e18d8bb756d462e53e7c8900d63c6841f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:38:14 2026 +0000
+
+    Increase L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1313856a04560e0b00af9b5a38982f6808f61094
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:35:53 2026 +0000
+
+    Test thousand-round low-rate boosting
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 31cddc8413192b74a73ea3095fde7188ffc6f47c
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:34:50 2026 +0000
+
+    Test slower 650-round boosting
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7668687c43f1fb65d101f68bd52c6211b90aa41a
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:33:48 2026 +0000
+
+    Test slower boosting with 400 rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1b481e16965977ca943809b18d2f3ba70e6246b8
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:26:12 2026 +0000
+
+    Test eight-category split limit
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 896a6518f4187cc8dfd7254c3a3f62bc4142556b
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:25:14 2026 +0000
+
+    Limit categorical split candidates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit cee0f7243e41f4446198b8b7f22cc39659c7c8f6
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:14:56 2026 +0000
+
+    Add ordinal day of year feature
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 05cfe71a903506502df6d80a973abc6d212bb60e
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 21:11:33 2026 +0000
+
+    Increase boosting rounds to 200
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

@@ -1,0 +1,3 @@
+The two-hour experiment is complete. Across 81 trials, the best Eval AUC was **0.7673**, up from the 0.7203 baseline. Branch `sep29` is restored to the best commit, `e0e874d`, and the harness clock is stopped.
+
+The selected model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py). Trial scores and findings are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).

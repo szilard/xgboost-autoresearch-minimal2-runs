@@ -1,0 +1,3 @@
+Setup is complete on the new `sep29` branch, created from commit `92e43e6`. Both data files are present, dependencies are available, and [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) contains only its header. The experiment clock is stopped.
+
+I took “go” as approval of the tag because you asked to do setup first. Reply **start** when you want me to begin the two-hour experiment. As disclosed earlier, I accidentally read `prepare.py`; a strict blind run would require a fresh agent session.

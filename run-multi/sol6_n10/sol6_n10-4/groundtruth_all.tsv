@@ -1,0 +1,83 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline	0.7203	0.7155
+05cfe71	keep	200 boosting rounds	0.7345	0.7311
+c1b40e4	discard	500 boosting rounds	0.7312	N/A
+0c4d648	discard	200 rounds depth 4	0.7317	N/A
+cee0f72	keep	add ordinal day of year	0.7385	0.7345
+4bbed2a	discard	add route category	0.7125	N/A
+643759e	discard	add departure hour category	0.7372	N/A
+b8e7723	discard	min child weight 5	0.7370	N/A
+8e39ade	discard	row subsample 0.8	0.7301	N/A
+9bf33e0	discard	200 rounds depth 7	0.7363	N/A
+97af306	discard	120 boosting rounds	0.7375	N/A
+74905eb	discard	max bin 512	0.7370	N/A
+38def31	discard	max bin 128	0.7368	N/A
+896a651	keep	max cat threshold 16	0.7419	0.7365
+1b481e1	keep	max cat threshold 8	0.7421	0.7364
+197c950	discard	max cat threshold 4	0.7369	N/A
+0d5b85c	discard	one-hot weekday splits	0.7411	N/A
+dd027b4	discard	add scheduled minute within hour	0.7410	N/A
+1b8c76e	discard	add major holiday proximity	0.7420	N/A
+a752d03	discard	remove distance feature	0.7407	N/A
+a0fa0ee	discard	remove day-of-month category	0.7381	N/A
+7668687	keep	400 rounds learning rate 0.05	0.7427	0.7369
+31cddc8	keep	650 rounds learning rate 0.03	0.7431	0.7374
+1313856	keep	1000 rounds learning rate 0.02	0.7432	0.7372
+7b26035	discard	2000 rounds learning rate 0.01	0.7432	N/A
+1813392	keep	L2 regularization 5	0.7458	0.7409
+9c58353	keep	L2 regularization 10	0.7470	0.7416
+b080087	discard	L2 regularization 20	0.7470	N/A
+f0db0f7	keep	1500 rounds with L2 10	0.7493	0.7444
+58b93e0	keep	2000 rounds with L2 10	0.7504	0.7456
+ea1fa18	keep	3000 rounds with L2 10	0.7509	0.7463
+46acea7	keep	add L1 regularization 1	0.7527	0.7498
+9b72c4c	keep	L1 regularization 5	0.7594	0.7547
+2b51c15	keep	L1 regularization 10	0.7609	0.7558
+8726521	discard	L1 regularization 20	0.7560	N/A
+0a7fb50	keep	4000 rounds with L1 10	0.7617	0.7566
+2f4a00d	discard	L2 5 with L1 10	0.7615	N/A
+156cc1d	discard	L2 20 with L1 10	0.7606	N/A
+88b18ba	discard	gamma 1 split penalty	0.7491	N/A
+2748bbc	discard	gamma 0.1 split penalty	0.7569	N/A
+93f4681	keep	lossguide 64 leaves	0.7640	0.7589
+4e752f0	keep	lossguide 96 leaves	0.7643	0.7597
+43283ff	keep	lossguide 128 leaves	0.7644	0.7596
+99067af	keep	3000 rounds 128 leaves	0.7650	0.7601
+d6fd70b	keep	2000 rounds 128 leaves	0.7651	0.7599
+675267d	discard	1500 rounds 128 leaves	0.7646	N/A
+e679d04	discard	max cat threshold 16 leaf-wise	0.7648	N/A
+7028790	discard	min child weight 5 leaf-wise	0.7648	N/A
+fdf6459	discard	96 leaves 2000 rounds	0.7637	N/A
+f3fb295	discard	L1 12 leaf-wise	0.7637	N/A
+0f262ad	keep	learning rate 0.03 1350 rounds	0.7651	0.7598
+163afc6	keep	cyclical day of year	0.7654	0.7605
+d911bf4	discard	cyclical scheduled time	0.7644	N/A
+f5f668e	discard	origin-relative departure time	0.7644	N/A
+a649bb1	discard	remove season sine	0.7648	N/A
+1807b07	discard	column subsample 0.9	0.7652	N/A
+c1d7cb5	discard	soft-vote leaf and depth models	0.7653	N/A
+fb86687	keep	gradient-based row sampling 0.8	0.7660	0.7620
+0cdd216	discard	gradient-based row sampling 0.6	0.7648	N/A
+d2e1eaa	keep	gradient-based row sampling 0.9	0.7664	0.7613
+9978cff	discard	categorical origin-destination route	0.7659	N/A
+3db5bca	discard	holiday proximity	0.7661	N/A
+7a20488	discard	512 histogram bins	0.7661	N/A
+3862ca4	keep	160 leaves under gradient sampling	0.7667	0.7620
+753f495	keep	192 leaves under gradient sampling	0.7668	0.7621
+08361ff	discard	256 leaves under gradient sampling	0.7667	N/A
+a005937	discard	1600 rounds at 192 leaves	0.7667	N/A
+d034468	keep	1100 rounds at 192 leaves; smaller artifact	0.7668	0.7622
+0d039d8	discard	900 rounds at 192 leaves	0.7665	N/A
+c2116cd	discard	origin-carrier categorical interaction	0.7668	N/A
+df8406c	discard	scheduled departure minute	0.7659	N/A
+3f6136b	keep	minimum child weight 0.5	0.7671	0.7621
+cedd6bc	discard	minimum child weight 0.25	0.7667	N/A
+53ad35b	discard	minimum child weight 0.75	0.7668	N/A
+e1770cb	discard	256 leaves with child weight 0.5	0.7668	N/A
+4437021	discard	node level column sampling 0.9	0.7668	N/A
+aadf9c9	discard	categorical partition threshold 4	0.7655	N/A
+31e8c86	keep	L1 regularization 8	0.7672	0.7622
+2456eab	discard	L1 regularization 6	0.7662	N/A
+e0e874d	keep	L1 regularization 9	0.7673	0.7626
+8e8551e	discard	L2 regularization 8	0.7671	N/A
+0475c6f	discard	L2 regularization 12	0.7664	N/A
