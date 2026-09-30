@@ -1,0 +1,207 @@
+commit fc90376e9c321008fcd0650d612a1d60a9879a6a
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 13:19:59 2026 +0000
+
+    Check final leaf cap under L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 12b400543149c2bffeddcb6534a4abb8a3bdead5
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 13:18:26 2026 +0000
+
+    Test smaller leaf budget after L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 33a193fda55059c4a7b2dbf4937fbdfb567b572a
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 13:09:12 2026 +0000
+
+    Test longer boosting with L1 penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e64295d90f31457ac263f27e73adab176cce8386
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 13:05:57 2026 +0000
+
+    Probe L1 penalty at four
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dc261258dd143abb978c203e486fb7fda609decb
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 13:04:33 2026 +0000
+
+    Test stronger L1 leaf penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3d3de300966224f737d728c0877077c1ef46adb2
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 13:03:02 2026 +0000
+
+    Test L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e2191ac2f64f9aba9867d0c8387529726a9add82
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 12:52:18 2026 +0000
+
+    Test leaf-wise growth at 24 leaves
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 5559e8c826de52eef89f9b06583565bbc79265fd
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 12:45:44 2026 +0000
+
+    Test milder column sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 245d3cd5cbf9d2f39482d58bb5e9e98ed026a60d
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 12:40:41 2026 +0000
+
+    Bracket tree count at depth five
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit af4111ddc45707ff0babdef87215156ea3391e92
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 12:34:51 2026 +0000
+
+    Test deeper date interactions
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c395647470cc69312868230757912362c9468301
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 12:19:50 2026 +0000
+
+    Add calendar date category
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 88ae22fccad3b89af0d1b219903487e45591b36a
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 12:09:45 2026 +0000
+
+    Test stronger L2 at ten
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9baa86e4251dd89a47206288ebcd08df1bdd0d8f
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 12:08:25 2026 +0000
+
+    Test stronger L2 regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 720ccf2ec4cbcac93c3c14d92baf6d5e3a87bfed
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 12:03:06 2026 +0000
+
+    Add scheduled departure minute
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0ceff5c0834b819519c747096b61e98aaf0656de
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 11:54:13 2026 +0000
+
+    Bracket tree count after category regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ccfb6b4b0c0cd3e1e3a76be5c66eedaa0564e853
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 11:52:47 2026 +0000
+
+    Test more trees after category regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 62c8a607019fe25928164145d047e5bb6d078540
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 11:46:58 2026 +0000
+
+    Test tighter categorical threshold
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e3007c770d9661da25b10685f8acac7d2ecc5821
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 11:45:37 2026 +0000
+
+    Restrict categorical split threshold
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 438c332379892c83633d5b1edcaa10551d4de76f
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 11:27:51 2026 +0000
+
+    Test 600 rounds with shallow trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d3bbde9b84a81b86111d038cb39911638d23510c
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 11:26:27 2026 +0000
+
+    Test shallower depth-four trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2825ddcb20e79f0d0fb23658b76da62b5e122ed8
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 11:22:58 2026 +0000
+
+    Increase boosting rounds to 300
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

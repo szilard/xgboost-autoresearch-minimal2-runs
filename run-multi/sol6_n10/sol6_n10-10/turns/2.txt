@@ -1,0 +1,3 @@
+The experiment is complete on branch `sep30`, and the clock is stopped. Best Eval AUC was **0.7639** at commit `fc90376`, up from the **0.7203** baseline.
+
+The final model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py). All runs and findings are recorded in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md). The held-out set remains untouched for your post-run evaluation.

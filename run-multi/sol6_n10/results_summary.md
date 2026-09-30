@@ -11,3 +11,26 @@
 | sol6_n10-7 | gpt-6-sol | max | 74 | 0.7626 (3be07a8) | 0.7565 | -0.0061 | 2h01m07s | 54.2% | **excluded**: agent read prepare.py during setup (leak check: 26 content hits) |
 | sol6_n10-8 | gpt-6-sol | max | 58 | 0.7572 (40f546a) | 0.7510 | -0.0062 | 2h00m24s | 66.3% | **excluded**: agent read prepare.py during setup (leak check: 26 content hits) |
 | sol6_n10-9 | gpt-6-sol | max | 65 | 0.7669 (0569a41) | 0.7614 | -0.0055 | 2h01m21s | 63.6% | **excluded**: agent read prepare.py during setup (leak check: 27 content hits, 26 from prepare.py) |
+| sol6_n10-10 | gpt-6-sol | max | 65 | 0.7639 (12b4005) | 0.7572 | -0.0067 | 2h01m31s | 64.2% | valid (used public solutions to the equivalent mlcourse.ai Kaggle task, see run.md) |
+
+## Statistics over the valid runs (6 of 10: runs 1, 2, 3, 5, 6, 10)
+
+| metric | count | mean | std dev | min | median | max |
+|---|---|---|---|---|---|---|
+| Holdout AUC | 6 | 0.7590 | 0.0022 | 0.7570 | 0.7581 | 0.7624 |
+| Eval AUC | 6 | 0.7647 | 0.0025 | 0.7618 | 0.7640 | 0.7685 |
+| Gap (holdout - eval) | 6 | -0.0057 | 0.0008 | -0.0067 | -0.0060 | -0.0047 |
+
+Excluded: 4 runs (4, 7, 8, 9), all for the same reason - the agent read
+`prepare.py` in its first batch of setup reads (in parallel with, or before,
+`cat program.md`, so before it had seen the restriction), and disclosed it
+itself. Their AUCs are in holdout_auc.tsv with `valid` = `no` for completeness.
+
+Notes:
+- All clocks were stopped by the agent itself; no run was stopped by the driver.
+- Run 4 needed one extra "go"; all others used only the README prompt and one "go". No "keep going" was needed in any run.
+- The container peaked at 6.0-14.3 GB; no process was killed at the 24 GB cap in any run.
+- Run 10 is valid by the rules, but used public solutions to the equivalent
+  mlcourse.ai Kaggle flight-delays task (a solution gist, GitHub repos) for
+  feature ideas - see sol6_n10-10/run.md. Runs 3 and 5 ran bts.gov- and
+  kaggle.com-restricted searches but opened no such page.

@@ -1,0 +1,67 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+2825ddc	0.7342	keep	300 trees instead of 30
+e901956	0.7273	discard	800 trees; overfit relative to 300
+d3bbde9	0.7343	keep	depth 4 at 300 trees; simpler and marginally higher AUC
+438c332	0.7359	keep	600 trees at depth 4
+5542fb0	0.7332	discard	1000 trees at depth 4; overfit
+96dad92	0.0000	crash	calendar parse failed on c-prefixed strings
+e4c852f	0.7359	discard	ordered calendar copies; no AUC gain and slower evaluation
+9f00606	0.7227	discard	carrier-origin category; severe overfitting
+077de99	0.7211	discard	80 percent row subsampling; worse AUC
+d76b17c	0.7229	discard	one-hot splits for lower-cardinality categories
+9821e4e	0.7352	discard	min child weight 5; marginally worse
+4ed95b7	0.7053	discard	explicit origin-destination route category; severe overfit
+e3007c7	0.7379	keep	max category threshold 16
+62c8a60	0.7400	keep	max category threshold 8
+0047d44	0.7352	discard	max category threshold 4; too restrictive
+50f75ee	0.7386	discard	max category threshold 12; below threshold 8
+666c33b	0.7393	discard	learning rate 0.05 with 1200 trees
+ccfb6b4	0.7401	keep	800 trees with category threshold 8; marginal gain
+0ceff5c	0.7405	keep	1000 trees with category threshold 8
+f7bcb99	0.7398	discard	1400 trees with threshold 8; overfit
+5bb6705	0.7373	discard	depth 3 at 1000 trees; underfit
+fcc5e28	0.7302	discard	carrier-origin category with threshold 8; still worse
+720ccf2	0.7409	keep	numeric minute within scheduled departure hour
+65ebdd2	0.7398	discard	categorical departure minute; worse than numeric
+b2fdcf4	0.7401	discard	five-minute scheduling flag; less informative than numeric minute
+9baa86e	0.7418	keep	L2 leaf regularization 5
+88ae22f	0.7434	keep	L2 leaf regularization 10
+4b97422	0.7426	discard	L2 regularization 20; below 10
+c700b43	0.7425	discard	1400 trees with L2 10; overfit
+0c6c0b7	0.7350	discard	gamma 1; pruned too many splits
+2df2c90	0.7415	discard	gamma 0.1; below no split penalty
+c395647	0.7548	keep	calendar date categorical interaction
+c3e2538	0.7543	discard	category threshold 16 with date feature
+82e389e	0.7544	discard	ordered date copy; no gain and slower
+a121b70	0.7547	discard	train-fitted daily delay rate; no gain
+eebf107	0.7532	discard	month weekday category; below date alone
+48a07f0	0.7543	discard	L2 20 with date feature; below 10
+8ee0bda	0.7537	discard	L2 5 with date feature; below 10
+af4111d	0.7568	keep	depth 5 captures date interactions
+c94450b	0.7562	discard	depth 6 date model; larger and worse
+40aee18	0.7552	discard	700 depth 5 trees; below 1000
+245d3cd	0.7570	keep	1200 depth 5 trees; marginal gain
+4d494b3	0.7569	discard	1500 depth 5 trees; larger and no gain
+e4b6d74	0.7570	discard	column sampling 0.8; equal AUC without code simplification
+5559e8c	0.7571	keep	column sampling 0.9; marginal gain
+95dcc64	0.7569	discard	512 numeric bins; no gain
+c48dbe3	0.7565	discard	128 numeric bins; worse
+fe82352	0.7565	discard	leaf-wise growth capped at 16 leaves
+e2191ac	0.7581	keep	leaf-wise growth capped at 24 leaves
+663082c	0.7571	discard	leaf-wise growth 32 leaves; no cap benefit
+08b50c9	0.7580	discard	leaf-wise growth 28 leaves; below 24
+637c1b0	0.7566	discard	depth 6 under 24-leaf cap; worse
+08a978c	0.7571	discard	min child weight 5; below default
+cc86993	0.7581	discard	min child weight 2; equal AUC with extra parameter
+3d3de30	0.7619	keep	L1 leaf regularization 1
+dc26125	0.7632	keep	L1 leaf regularization 2
+e64295d	0.7632	keep	L1 leaf regularization 4; equal AUC smaller model
+af26e33	0.7623	discard	L1 8; overregularized
+33a193f	0.7634	keep	1600 trees with L1 4; marginal gain
+10bcb24	0.7629	discard	2000 trees with L1 4; overfit
+f0ba87d	0.7628	discard	remove column sampling after L1; worse
+e10cd5b	0.7627	discard	L1 2 at 1600 trees; below L1 4
+f95e976	0.7632	discard	L1 5 at 1600 trees; below L1 4
+12b4005	0.7639	keep	20 leaves with L1 4; higher AUC smaller model
+fc90376	0.7639	keep	16 leaves with L1 4; equal AUC smaller model

@@ -1,0 +1,3 @@
+Setup is complete on the new `sep30` branch. The data and dependencies are present, `results.tsv` and `research-log.md` are initialized, and the experiment clock is stopped.
+
+`program.md` requires your confirmation before starting the two-hour clock. Reply **go** when you’re ready.

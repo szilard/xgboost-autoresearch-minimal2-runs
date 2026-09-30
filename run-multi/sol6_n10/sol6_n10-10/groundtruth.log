@@ -1,0 +1,134 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] 2825ddc | keep | 300 trees instead of 30 ===
+  holdout=0.7315
+=== [4] e901956 | discard | 800 trees; overfit relative to 300 ===
+  SKIP: status discard
+=== [5] d3bbde9 | keep | depth 4 at 300 trees; simpler and marginally higher AUC ===
+  holdout=0.7303
+=== [6] 438c332 | keep | 600 trees at depth 4 ===
+  holdout=0.7326
+=== [7] 5542fb0 | discard | 1000 trees at depth 4; overfit ===
+  SKIP: status discard
+=== [8] 96dad92 | crash | calendar parse failed on c-prefixed strings ===
+  SKIP: status crash
+=== [9] e4c852f | discard | ordered calendar copies; no AUC gain and slower evaluation ===
+  SKIP: status discard
+=== [10] 9f00606 | discard | carrier-origin category; severe overfitting ===
+  SKIP: status discard
+=== [11] 077de99 | discard | 80 percent row subsampling; worse AUC ===
+  SKIP: status discard
+=== [12] d76b17c | discard | one-hot splits for lower-cardinality categories ===
+  SKIP: status discard
+=== [13] 9821e4e | discard | min child weight 5; marginally worse ===
+  SKIP: status discard
+=== [14] 4ed95b7 | discard | explicit origin-destination route category; severe overfit ===
+  SKIP: status discard
+=== [15] e3007c7 | keep | max category threshold 16 ===
+  holdout=0.7326
+=== [16] 62c8a60 | keep | max category threshold 8 ===
+  holdout=0.7355
+=== [17] 0047d44 | discard | max category threshold 4; too restrictive ===
+  SKIP: status discard
+=== [18] 50f75ee | discard | max category threshold 12; below threshold 8 ===
+  SKIP: status discard
+=== [19] 666c33b | discard | learning rate 0.05 with 1200 trees ===
+  SKIP: status discard
+=== [20] ccfb6b4 | keep | 800 trees with category threshold 8; marginal gain ===
+  holdout=0.7358
+=== [21] 0ceff5c | keep | 1000 trees with category threshold 8 ===
+  holdout=0.7370
+=== [22] f7bcb99 | discard | 1400 trees with threshold 8; overfit ===
+  SKIP: status discard
+=== [23] 5bb6705 | discard | depth 3 at 1000 trees; underfit ===
+  SKIP: status discard
+=== [24] fcc5e28 | discard | carrier-origin category with threshold 8; still worse ===
+  SKIP: status discard
+=== [25] 720ccf2 | keep | numeric minute within scheduled departure hour ===
+  holdout=0.7364
+=== [26] 65ebdd2 | discard | categorical departure minute; worse than numeric ===
+  SKIP: status discard
+=== [27] b2fdcf4 | discard | five-minute scheduling flag; less informative than numeric minute ===
+  SKIP: status discard
+=== [28] 9baa86e | keep | L2 leaf regularization 5 ===
+  holdout=0.7371
+=== [29] 88ae22f | keep | L2 leaf regularization 10 ===
+  holdout=0.7385
+=== [30] 4b97422 | discard | L2 regularization 20; below 10 ===
+  SKIP: status discard
+=== [31] c700b43 | discard | 1400 trees with L2 10; overfit ===
+  SKIP: status discard
+=== [32] 0c6c0b7 | discard | gamma 1; pruned too many splits ===
+  SKIP: status discard
+=== [33] 2df2c90 | discard | gamma 0.1; below no split penalty ===
+  SKIP: status discard
+=== [34] c395647 | keep | calendar date categorical interaction ===
+  holdout=0.7492
+=== [35] c3e2538 | discard | category threshold 16 with date feature ===
+  SKIP: status discard
+=== [36] 82e389e | discard | ordered date copy; no gain and slower ===
+  SKIP: status discard
+=== [37] a121b70 | discard | train-fitted daily delay rate; no gain ===
+  SKIP: status discard
+=== [38] eebf107 | discard | month weekday category; below date alone ===
+  SKIP: status discard
+=== [39] 48a07f0 | discard | L2 20 with date feature; below 10 ===
+  SKIP: status discard
+=== [40] 8ee0bda | discard | L2 5 with date feature; below 10 ===
+  SKIP: status discard
+=== [41] af4111d | keep | depth 5 captures date interactions ===
+  holdout=0.7516
+=== [42] c94450b | discard | depth 6 date model; larger and worse ===
+  SKIP: status discard
+=== [43] 40aee18 | discard | 700 depth 5 trees; below 1000 ===
+  SKIP: status discard
+=== [44] 245d3cd | keep | 1200 depth 5 trees; marginal gain ===
+  holdout=0.7516
+=== [45] 4d494b3 | discard | 1500 depth 5 trees; larger and no gain ===
+  SKIP: status discard
+=== [46] e4b6d74 | discard | column sampling 0.8; equal AUC without code simplification ===
+  SKIP: status discard
+=== [47] 5559e8c | keep | column sampling 0.9; marginal gain ===
+  holdout=0.7506
+=== [48] 95dcc64 | discard | 512 numeric bins; no gain ===
+  SKIP: status discard
+=== [49] c48dbe3 | discard | 128 numeric bins; worse ===
+  SKIP: status discard
+=== [50] fe82352 | discard | leaf-wise growth capped at 16 leaves ===
+  SKIP: status discard
+=== [51] e2191ac | keep | leaf-wise growth capped at 24 leaves ===
+  holdout=0.7521
+=== [52] 663082c | discard | leaf-wise growth 32 leaves; no cap benefit ===
+  SKIP: status discard
+=== [53] 08b50c9 | discard | leaf-wise growth 28 leaves; below 24 ===
+  SKIP: status discard
+=== [54] 637c1b0 | discard | depth 6 under 24-leaf cap; worse ===
+  SKIP: status discard
+=== [55] 08a978c | discard | min child weight 5; below default ===
+  SKIP: status discard
+=== [56] cc86993 | discard | min child weight 2; equal AUC with extra parameter ===
+  SKIP: status discard
+=== [57] 3d3de30 | keep | L1 leaf regularization 1 ===
+  holdout=0.7563
+=== [58] dc26125 | keep | L1 leaf regularization 2 ===
+  holdout=0.7580
+=== [59] e64295d | keep | L1 leaf regularization 4; equal AUC smaller model ===
+  holdout=0.7574
+=== [60] af26e33 | discard | L1 8; overregularized ===
+  SKIP: status discard
+=== [61] 33a193f | keep | 1600 trees with L1 4; marginal gain ===
+  holdout=0.7577
+=== [62] 10bcb24 | discard | 2000 trees with L1 4; overfit ===
+  SKIP: status discard
+=== [63] f0ba87d | discard | remove column sampling after L1; worse ===
+  SKIP: status discard
+=== [64] e10cd5b | discard | L1 2 at 1600 trees; below L1 4 ===
+  SKIP: status discard
+=== [65] f95e976 | discard | L1 5 at 1600 trees; below L1 4 ===
+  SKIP: status discard
+=== [66] 12b4005 | keep | 20 leaves with L1 4; higher AUC smaller model ===
+  holdout=0.7572
+=== [67] fc90376 | keep | 16 leaves with L1 4; equal AUC smaller model ===
+  holdout=0.7572
+
+=== DONE: results written to groundtruth_all.tsv ===
