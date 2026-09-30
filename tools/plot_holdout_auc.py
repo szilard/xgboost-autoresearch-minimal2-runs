@@ -13,9 +13,11 @@ at right the SD, n and number of caveat runs. Dotted line: the starting code's
 holdout AUC (baseline row of groundtruth_all.tsv).
 
 Usage:
+    tools/plot_holdout_auc.py                                          # all groups in run-multi/
     tools/plot_holdout_auc.py run-multi/sol6_n10 run-multi/luna-test [-o out.png]
 
-Default output: run-multi/plots/holdout_auc__<group>__<group>.png
+Default output: run-multi/SUMMARY/holdout_auc.png for all groups,
+run-multi/SUMMARY/holdout_auc__<group>__<group>.png for the groups given
 """
 import argparse
 import csv
@@ -39,7 +41,8 @@ SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a
 # models not listed get the remaining slots in sorted order (and a warning)
 MODEL_SLOT = {"gpt-5.6-luna": 0, "gpt-6-sol": 1}
 SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#d9d8d3"
-MIN_N_STATS = 5  # interval and percentiles only from this many runs up
+MIN_N_STATS = 5
+RUN_MULTI = Path(__file__).resolve().parent.parent / "run-multi"  # interval and percentiles only from this many runs up
 
 
 def load_group(gdir):
@@ -67,9 +70,15 @@ def baseline_holdout(gdir):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("groups", nargs="+", type=Path, help="run group directories (run-multi/<group>)")
+    ap.add_argument("groups", nargs="*", type=Path,
+                    help="run group directories (run-multi/<group>); default: all groups in run-multi/")
     ap.add_argument("-o", "--output", type=Path, help="output file (.png or .svg)")
     args = ap.parse_args()
+    all_groups = not args.groups
+    if all_groups:
+        args.groups = sorted(d for d in RUN_MULTI.iterdir() if (d / "holdout_auc.tsv").is_file())
+        if not args.groups:
+            sys.exit(f"no groups with holdout_auc.tsv in {RUN_MULTI}")
 
     runs, baselines = [], set()
     for g in args.groups:
@@ -148,7 +157,7 @@ def main():
         for (name, cx), v in zip(cols, vals):
             ax.text(cx, y, v, ha="right", va="center", fontsize=8.5, color=INK, transform=trans)
 
-    groups = ", ".join(g.name for g in args.groups)
+    groups = "all run groups" if all_groups else ", ".join(g.name for g in args.groups)
     ax.set_title(f"Holdout AUC per run: {groups}", color=INK, fontsize=11, loc="left", pad=16)
     legend = [
         Line2D([], [], marker="o", ls="", color=INK2, markersize=7, label="run"),
@@ -162,7 +171,8 @@ def main():
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
               ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handletextpad=0.4, columnspacing=1.2)
 
-    out = args.output or Path("run-multi/plots") / ("holdout_auc__" + "__".join(g.name for g in args.groups) + ".png")
+    name = "holdout_auc.png" if all_groups else "holdout_auc__" + "__".join(g.name for g in args.groups) + ".png"
+    out = args.output or RUN_MULTI / "SUMMARY" / name
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=150, bbox_inches="tight", facecolor=SURFACE)
     print(out)
