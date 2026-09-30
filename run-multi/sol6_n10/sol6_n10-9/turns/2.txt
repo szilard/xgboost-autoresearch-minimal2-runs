@@ -1,0 +1,3 @@
+The experiment is complete and the clock is stopped. On branch `sep30`, 65 trials plus the baseline produced a best Eval AUC of **0.7669** at commit `0569a41`, up from **0.7203** (+0.0466). The branch is restored to that model in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py). The full trial record and conclusions are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).
+
+I mistakenly opened `prepare.py` during the initial survey; I did not open holdout or evaluation data rows.

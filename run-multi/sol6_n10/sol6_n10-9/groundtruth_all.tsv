@@ -1,0 +1,67 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline 30 trees	0.7203	0.7155
+2e17a0b	keep	200 trees at learning rate 0.1	0.7345	0.7311
+dc3ed1f	discard	500 trees overfit versus 200	0.7312	N/A
+c79dbf8	discard	120 trees below 200-tree AUC	0.7317	N/A
+5a4bada	discard	depth 4 at 200 trees	0.7317	N/A
+ad03c63	keep	add scheduled departure hour	0.7354	0.7310
+8f5ee85	discard	add departure minute	0.7334	N/A
+27bb150	discard	add 4290-level route category	0.7082	N/A
+a0a3e1e	discard	minimum child weight 10	0.7348	N/A
+f386389	discard	row subsampling 0.8	0.7265	N/A
+85a255b	discard	add numeric month with no gain	0.7354	N/A
+f43d4fb	discard	learning rate 0.05 and 400 trees	0.7351	N/A
+4c407eb	keep	max_cat_threshold 16	0.7385	0.7331
+4154543	discard	max_cat_threshold 8	0.7378	N/A
+99d5169	discard	max_cat_threshold 32	0.7355	N/A
+7d45ecc	discard	depth 7 with categorical threshold 16	0.7375	N/A
+85ab8e0	keep	combined month-day flight date category	0.7486	0.7428
+4ed1d7d	discard	add numeric day of year	0.7478	N/A
+299b503	keep	300 trees with flight date	0.7499	0.7446
+b80c281	discard	450 trees with flight date	0.7496	N/A
+a262e03	discard	max_cat_threshold 8 with flight date	0.7455	N/A
+c97805c	discard	one-hot splits for small calendar categories	0.7493	N/A
+a3f6349	keep	column sampling 0.8	0.7509	0.7451
+4f8f38d	keep	column sampling 0.6	0.7522	0.7458
+100512d	discard	column sampling 0.4	0.7495	N/A
+d492962	keep	400 trees with column sampling 0.6	0.7528	0.7472
+8974095	discard	600 trees with column sampling 0.6	0.7516	N/A
+c3d828e	discard	per-node column sampling 0.6	0.7510	N/A
+4c9b227	keep	L2 regularization 5	0.7560	0.7508
+41f3a6a	keep	L2 regularization 10	0.7578	0.7525
+df4c373	keep	L2 regularization 20	0.7597	0.7543
+860e78d	keep	L2 regularization 40	0.7599	0.7544
+8879acb	discard	L2 regularization 80	0.7596	N/A
+12dc88b	discard	gamma 1 minimum split loss	0.7537	N/A
+0fc37e2	keep	L1 regularization 1 alongside L2 40	0.7608	0.7561
+40006ea	keep	L1 regularization 3	0.7625	0.7564
+481c109	discard	L1 regularization 6	0.7623	N/A
+0d3b852	keep	remove departure hour feature	0.7626	0.7565
+8d46815	discard	remove day of month category	0.7615	N/A
+1ef6611	discard	remove month category	0.7589	N/A
+faf4324	discard	remove day of week category	0.7604	N/A
+691770c	discard	loss-guided growth with 64 leaves no gain	0.7626	N/A
+3513c60	discard	max_bin 512 finer numeric splits	0.7623	N/A
+6f16c47	keep	max_cat_threshold 32 after regularization	0.7647	0.7590
+4a78915	discard	max_cat_threshold 64 equal AUC larger model	0.7647	N/A
+15aa6fc	keep	remove explicit categorical threshold equal AUC	0.7647	0.7593
+830b2a8	keep	learning rate 0.05 and 800 trees	0.7657	0.7599
+cd5d24a	keep	1100 trees at learning rate 0.05	0.7660	0.7605
+b54cc17	discard	1500 trees at learning rate 0.05	0.7654	N/A
+7f856c1	discard	depth 5 with regularized model	0.7652	N/A
+e343a44	discard	depth 7 equal AUC larger model	0.7660	N/A
+a5fd733	discard	gradient row sampling 0.7	0.7625	N/A
+968e2a7	discard	minimum child weight 5 equal AUC	0.7660	N/A
+be1db91	discard	out-of-fold origin month rate	0.7640	N/A
+604c1cc	discard	column sampling 0.7	0.7654	N/A
+fc5b844	discard	column sampling 0.5	0.7659	N/A
+746142b	discard	early stopping on 5 percent train slice	0.7655	N/A
+ec73329	discard	one-hot splits for carrier and calendar	0.7637	N/A
+736a556	discard	double FlightDate column selection weight	0.7650	N/A
+433d40e	discard	half FlightDate column selection weight	0.7657	N/A
+e12e720	discard	max_cat_threshold 32 at learning rate 0.05	0.7657	N/A
+c99f402	discard	two parallel trees per round	0.7647	N/A
+7135a4c	keep	L1 regularization 4 at lower rate	0.7665	0.7612
+f6cd530	discard	L1 regularization 5 at lower rate	0.7659	N/A
+0569a41	keep	L2 regularization 20 with L1 four	0.7669	0.7614
+b49036f	discard	L2 regularization 10 with L1 four	0.7667	N/A

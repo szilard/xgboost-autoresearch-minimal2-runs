@@ -1,0 +1,5 @@
+Setup checks passed: `train.csv` and `eval.csv` exist, the required packages are installed, the working tree is clean, and the experiment clock has not started. `sep30` is available as a fresh branch name.
+
+I accidentally opened `prepare.py` during the initial survey before seeing its restriction in `program.md`. I did not open the held-out or source data, and I won’t use that file in the experiment.
+
+Please confirm `sep30` or provide another run tag. I’ll then create the branch and initialize `results.tsv`; the clock will stay stopped until setup is confirmed.

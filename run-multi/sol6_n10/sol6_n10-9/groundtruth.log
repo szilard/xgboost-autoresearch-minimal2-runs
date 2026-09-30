@@ -1,0 +1,134 @@
+=== [2] 92e43e6 | keep | baseline 30 trees ===
+  holdout=0.7155
+=== [3] 2e17a0b | keep | 200 trees at learning rate 0.1 ===
+  holdout=0.7311
+=== [4] dc3ed1f | discard | 500 trees overfit versus 200 ===
+  SKIP: status discard
+=== [5] c79dbf8 | discard | 120 trees below 200-tree AUC ===
+  SKIP: status discard
+=== [6] 5a4bada | discard | depth 4 at 200 trees ===
+  SKIP: status discard
+=== [7] ad03c63 | keep | add scheduled departure hour ===
+  holdout=0.7310
+=== [8] 8f5ee85 | discard | add departure minute ===
+  SKIP: status discard
+=== [9] 27bb150 | discard | add 4290-level route category ===
+  SKIP: status discard
+=== [10] a0a3e1e | discard | minimum child weight 10 ===
+  SKIP: status discard
+=== [11] f386389 | discard | row subsampling 0.8 ===
+  SKIP: status discard
+=== [12] 85a255b | discard | add numeric month with no gain ===
+  SKIP: status discard
+=== [13] f43d4fb | discard | learning rate 0.05 and 400 trees ===
+  SKIP: status discard
+=== [14] 4c407eb | keep | max_cat_threshold 16 ===
+  holdout=0.7331
+=== [15] 4154543 | discard | max_cat_threshold 8 ===
+  SKIP: status discard
+=== [16] 99d5169 | discard | max_cat_threshold 32 ===
+  SKIP: status discard
+=== [17] 7d45ecc | discard | depth 7 with categorical threshold 16 ===
+  SKIP: status discard
+=== [18] 85ab8e0 | keep | combined month-day flight date category ===
+  holdout=0.7428
+=== [19] 4ed1d7d | discard | add numeric day of year ===
+  SKIP: status discard
+=== [20] 299b503 | keep | 300 trees with flight date ===
+  holdout=0.7446
+=== [21] b80c281 | discard | 450 trees with flight date ===
+  SKIP: status discard
+=== [22] a262e03 | discard | max_cat_threshold 8 with flight date ===
+  SKIP: status discard
+=== [23] c97805c | discard | one-hot splits for small calendar categories ===
+  SKIP: status discard
+=== [24] a3f6349 | keep | column sampling 0.8 ===
+  holdout=0.7451
+=== [25] 4f8f38d | keep | column sampling 0.6 ===
+  holdout=0.7458
+=== [26] 100512d | discard | column sampling 0.4 ===
+  SKIP: status discard
+=== [27] d492962 | keep | 400 trees with column sampling 0.6 ===
+  holdout=0.7472
+=== [28] 8974095 | discard | 600 trees with column sampling 0.6 ===
+  SKIP: status discard
+=== [29] c3d828e | discard | per-node column sampling 0.6 ===
+  SKIP: status discard
+=== [30] 4c9b227 | keep | L2 regularization 5 ===
+  holdout=0.7508
+=== [31] 41f3a6a | keep | L2 regularization 10 ===
+  holdout=0.7525
+=== [32] df4c373 | keep | L2 regularization 20 ===
+  holdout=0.7543
+=== [33] 860e78d | keep | L2 regularization 40 ===
+  holdout=0.7544
+=== [34] 8879acb | discard | L2 regularization 80 ===
+  SKIP: status discard
+=== [35] 12dc88b | discard | gamma 1 minimum split loss ===
+  SKIP: status discard
+=== [36] 0fc37e2 | keep | L1 regularization 1 alongside L2 40 ===
+  holdout=0.7561
+=== [37] 40006ea | keep | L1 regularization 3 ===
+  holdout=0.7564
+=== [38] 481c109 | discard | L1 regularization 6 ===
+  SKIP: status discard
+=== [39] 0d3b852 | keep | remove departure hour feature ===
+  holdout=0.7565
+=== [40] 8d46815 | discard | remove day of month category ===
+  SKIP: status discard
+=== [41] 1ef6611 | discard | remove month category ===
+  SKIP: status discard
+=== [42] faf4324 | discard | remove day of week category ===
+  SKIP: status discard
+=== [43] 691770c | discard | loss-guided growth with 64 leaves no gain ===
+  SKIP: status discard
+=== [44] 3513c60 | discard | max_bin 512 finer numeric splits ===
+  SKIP: status discard
+=== [45] 6f16c47 | keep | max_cat_threshold 32 after regularization ===
+  holdout=0.7590
+=== [46] 4a78915 | discard | max_cat_threshold 64 equal AUC larger model ===
+  SKIP: status discard
+=== [47] 15aa6fc | keep | remove explicit categorical threshold equal AUC ===
+  holdout=0.7593
+=== [48] 830b2a8 | keep | learning rate 0.05 and 800 trees ===
+  holdout=0.7599
+=== [49] cd5d24a | keep | 1100 trees at learning rate 0.05 ===
+  holdout=0.7605
+=== [50] b54cc17 | discard | 1500 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [51] 7f856c1 | discard | depth 5 with regularized model ===
+  SKIP: status discard
+=== [52] e343a44 | discard | depth 7 equal AUC larger model ===
+  SKIP: status discard
+=== [53] a5fd733 | discard | gradient row sampling 0.7 ===
+  SKIP: status discard
+=== [54] 968e2a7 | discard | minimum child weight 5 equal AUC ===
+  SKIP: status discard
+=== [55] be1db91 | discard | out-of-fold origin month rate ===
+  SKIP: status discard
+=== [56] 604c1cc | discard | column sampling 0.7 ===
+  SKIP: status discard
+=== [57] fc5b844 | discard | column sampling 0.5 ===
+  SKIP: status discard
+=== [58] 746142b | discard | early stopping on 5 percent train slice ===
+  SKIP: status discard
+=== [59] ec73329 | discard | one-hot splits for carrier and calendar ===
+  SKIP: status discard
+=== [60] 736a556 | discard | double FlightDate column selection weight ===
+  SKIP: status discard
+=== [61] 433d40e | discard | half FlightDate column selection weight ===
+  SKIP: status discard
+=== [62] e12e720 | discard | max_cat_threshold 32 at learning rate 0.05 ===
+  SKIP: status discard
+=== [63] c99f402 | discard | two parallel trees per round ===
+  SKIP: status discard
+=== [64] 7135a4c | keep | L1 regularization 4 at lower rate ===
+  holdout=0.7612
+=== [65] f6cd530 | discard | L1 regularization 5 at lower rate ===
+  SKIP: status discard
+=== [66] 0569a41 | keep | L2 regularization 20 with L1 four ===
+  holdout=0.7614
+=== [67] b49036f | discard | L2 regularization 10 with L1 four ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===
