@@ -1,0 +1,120 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] 0a85357 | keep | 150 trees at learning rate 0.1 ===
+  holdout=0.7297
+=== [4] c06a378 | keep | 300 trees at learning rate 0.1 ===
+  holdout=0.7315
+=== [5] 273ff47 | discard | 600 trees at learning rate 0.1 ===
+  SKIP: status discard
+=== [6] 38e5e6d | discard | origin-destination route category ===
+  SKIP: status discard
+=== [7] b15bcba | keep | add ordinal calendar date ===
+  holdout=0.7346
+=== [8] a01e533 | discard | add categorical departure hour ===
+  SKIP: status discard
+=== [9] e9c90ba | keep | depth 4 with date index ===
+  holdout=0.7350
+=== [10] ca9563e | discard | depth 3 with date index ===
+  SKIP: status discard
+=== [11] 6e194b1 | discard | min_child_weight 5 at depth 4 ===
+  SKIP: status discard
+=== [12] 1282a28 | discard | 500 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [13] 11bc47d | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [14] e4ee6ad | keep | max_cat_threshold 128 ===
+  holdout=0.7358
+=== [15] f3e1bd5 | discard | max_cat_threshold 256 ===
+  SKIP: status discard
+=== [16] c328885 | discard | one-hot splits for all categories ===
+  SKIP: status discard
+=== [17] f95480a | discard | depth 5 with max_cat_threshold 128 ===
+  SKIP: status discard
+=== [18] 35a162a | discard | reg_lambda 10 ===
+  SKIP: status discard
+=== [19] 851df1c | discard | reg_lambda 0 ===
+  SKIP: status discard
+=== [20] db7f4c7 | discard | add scheduled date-time index ===
+  SKIP: status discard
+=== [21] 27487b9 | discard | ablate day-of-month category ===
+  SKIP: status discard
+=== [22] 139b69d | discard | add numeric day of month ===
+  SKIP: status discard
+=== [23] aef3338 | discard | max_bin 512 ===
+  SKIP: status discard
+=== [24] 33a3041 | discard | max_bin 128 ===
+  SKIP: status discard
+=== [25] 21e9999 | discard | loss-guided 16-leaf trees ===
+  SKIP: status discard
+=== [26] 6a9d0cb | keep | month-weekday category interaction ===
+  holdout=0.7384
+=== [27] 7ba8e0c | keep | carrier-weekday category interaction ===
+  holdout=0.7391
+=== [28] a7179cb | keep | carrier-month category interaction ===
+  holdout=0.7396
+=== [29] 74b3ade | keep | add categorical calendar date ===
+  holdout=0.7508
+=== [30] 2d09938 | keep | ablate numeric date index at equal AUC ===
+  holdout=0.7508
+=== [31] 390cfe9 | keep | max_cat_threshold 256 with DateCat ===
+  holdout=0.7506
+=== [32] 1ac7797 | discard | max_cat_threshold 512 with DateCat ===
+  SKIP: status discard
+=== [33] 1329127 | discard | carrier x three-hour departure block ===
+  SKIP: status discard
+=== [34] 6ca7bd1 | discard | carrier x scheduled hour ===
+  SKIP: status discard
+=== [35] ac7c421 | discard | 450 trees with richer features ===
+  SKIP: status discard
+=== [36] 7876199 | discard | 200 trees with richer features ===
+  SKIP: status discard
+=== [37] 2b6a167 | keep | ablate month-weekday at equal AUC ===
+  holdout=0.7506
+=== [38] 655b321 | discard | ablate carrier-weekday interaction ===
+  SKIP: status discard
+=== [39] d7a0aba | discard | ablate carrier-month interaction ===
+  SKIP: status discard
+=== [40] 241b32b | keep | ablate standalone month at equal AUC ===
+  holdout=0.7506
+=== [41] cce1d75 | keep | ablate standalone weekday at equal AUC ===
+  holdout=0.7506
+=== [42] 62092a2 | keep | ablate standalone day of month near-equal AUC ===
+  holdout=0.7507
+=== [43] 8e532a7 | keep | ablate unused standalone carrier ===
+  holdout=0.7507
+=== [44] e230b92 | discard | ablate flight distance ===
+  SKIP: status discard
+=== [45] 9e85bec | discard | three origin-to-hub distance proxies ===
+  SKIP: status discard
+=== [46] c1fbfee | discard | carrier-origin category interaction ===
+  SKIP: status discard
+=== [47] f05b25a | keep | distance to major 2005 holidays ===
+  holdout=0.7518
+=== [48] 1731628 | discard | restore day of month with holiday feature ===
+  SKIP: status discard
+=== [49] 48da428 | discard | gamma 1 minimum split gain ===
+  SKIP: status discard
+=== [50] 608fb66 | discard | ISO week categorical feature ===
+  SKIP: status discard
+=== [51] 3adab4c | discard | approximate tree method ===
+  SKIP: status discard
+=== [52] b57eeb6 | discard | depth 5 with holiday features ===
+  SKIP: status discard
+=== [53] 8eeca4e | discard | route-relative scheduled departure time ===
+  SKIP: status discard
+=== [54] 30e01f7 | discard | carrier by holiday proximity ===
+  SKIP: status discard
+=== [55] 623eb9d | discard | 375 trees at learning rate 0.08 ===
+  SKIP: status discard
+=== [56] c1134bc | discard | signed nearest holiday distance ===
+  SKIP: status discard
+=== [57] 1201543 | discard | origin hourly schedule share ===
+  SKIP: status discard
+=== [58] d93e338 | discard | max_cat_threshold 192 ===
+  SKIP: status discard
+=== [59] 40f546a | keep | min_child_weight 2 ===
+  holdout=0.7510
+=== [60] 75301c8 | discard | min_child_weight 3 ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

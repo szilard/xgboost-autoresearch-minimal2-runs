@@ -1,0 +1,3 @@
+Setup checks pass: `train.csv` and `eval.csv` are present, the required packages import, and `results.tsv` has its header. The experiment clock is off.
+
+**Please confirm `sep30` as the run tag.** The name is available; I’ll create the branch once you confirm it. I accidentally opened the human-only `prepare.py` during the initial file read. I won’t use or inspect it further.

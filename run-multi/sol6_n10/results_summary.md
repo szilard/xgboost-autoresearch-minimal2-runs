@@ -9,3 +9,4 @@
 | sol6_n10-5 | gpt-6-sol | max | 83 | 0.7685 (cc135a1) | 0.7624 | -0.0061 | 2h00m33s | 49.9% | valid |
 | sol6_n10-6 | gpt-6-sol | max | 71 | 0.7630 (78b7ef8) | 0.7583 | -0.0047 | 2h00m18s | 39.5% | valid |
 | sol6_n10-7 | gpt-6-sol | max | 74 | 0.7626 (3be07a8) | 0.7565 | -0.0061 | 2h01m07s | 54.2% | **excluded**: agent read prepare.py during setup (leak check: 26 content hits) |
+| sol6_n10-8 | gpt-6-sol | max | 58 | 0.7572 (40f546a) | 0.7510 | -0.0062 | 2h00m24s | 66.3% | **excluded**: agent read prepare.py during setup (leak check: 26 content hits) |

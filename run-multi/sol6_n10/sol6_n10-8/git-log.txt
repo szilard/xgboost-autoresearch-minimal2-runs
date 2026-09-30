@@ -1,0 +1,180 @@
+commit 40f546a0f50e3afe2daca601fe49efd69f4ecf88
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 08:37:17 2026 +0000
+
+    Try moderate minimum child weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f05b25ab7e7b1ecf4ee465fb070f064869267e04
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 08:12:28 2026 +0000
+
+    Add distance to major holidays
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 8e532a7193e2a051dbf3f4cccfa31737aba8da84
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 08:00:33 2026 +0000
+
+    Ablate unused standalone carrier category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 62092a2f57702bb0353e01c6c3f6125a80522148
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:56:45 2026 +0000
+
+    Ablate standalone day of month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cce1d7520010db78947ef5366e2fad9460d5dba7
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:55:13 2026 +0000
+
+    Ablate standalone weekday category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 241b32b916e368bd6488273a46393c282b1ac6da
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:53:42 2026 +0000
+
+    Ablate standalone month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2b6a1674166a31a39ff34c46951f882a2c1ef8c9
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:48:52 2026 +0000
+
+    Ablate month weekday interaction
+
+ train.py | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 390cfe9f8dc9c126e751ced4d788f78c239d4237
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:35:10 2026 +0000
+
+    Test wider date categorical partitions
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2d0993851b0fbad1e708a4c20ae1aa43977d07af
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:33:26 2026 +0000
+
+    Ablate numeric date index
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 74b3ade80e271fc8ec15590a395f5228fcb4417f
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:31:14 2026 +0000
+
+    Add categorical calendar date
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit a7179cb97724a7ee179d586f60a65722be309243
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:28:59 2026 +0000
+
+    Add carrier month interaction category
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 7ba8e0ced4fbb0d295546a9909ffcad542bfb1bf
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:27:17 2026 +0000
+
+    Add carrier weekday interaction category
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 6a9d0cb30f3c370203ccbfd3c294875cc627ca92
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:25:39 2026 +0000
+
+    Add month weekday interaction category
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit e4ee6ad7ca274a711b25dcd973cde211c5ca29c0
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 07:02:52 2026 +0000
+
+    Test wider categorical partitions
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e9c90ba13292ce17abcabb90d44c8165b3ba6da3
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 06:53:36 2026 +0000
+
+    Test depth four trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b15bcba65515d6b9e03314e4bc1856225e8aba6b
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 06:50:23 2026 +0000
+
+    Add ordinal calendar date feature
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c06a3782e22a0f5a62a9f86cb26e290a030df3d4
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 06:43:07 2026 +0000
+
+    Increase boosting rounds to 300
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0a8535709524972aca9065b29f6d4fcf1cd16fc2
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 06:41:49 2026 +0000
+
+    Increase boosting rounds to 150
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

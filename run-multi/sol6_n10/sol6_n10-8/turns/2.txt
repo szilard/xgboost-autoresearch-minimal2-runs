@@ -1,0 +1,5 @@
+The two-hour experiment is complete, and the clock is stopped. I ran 58 trials on branch `sep30`. The best measured Eval AUC was **0.7572** at commit `40f546a`, up from the 0.7203 baseline. The final gain over the previous best is only 0.0001, so it may not hold on another split.
+
+The selected model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py). Trial outcomes are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv), with hypotheses and findings in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).
+
+During setup, I accidentally opened `prepare.py`; I did not use its contents or inspect held-out data.

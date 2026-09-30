@@ -1,0 +1,60 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+0a85357	0.7332	keep	150 trees at learning rate 0.1
+c06a378	0.7342	keep	300 trees at learning rate 0.1
+273ff47	0.7299	discard	600 trees at learning rate 0.1
+38e5e6d	0.7050	discard	origin-destination route category
+b15bcba	0.7378	keep	add ordinal calendar date
+a01e533	0.7369	discard	add categorical departure hour
+e9c90ba	0.7382	keep	depth 4 with date index
+ca9563e	0.7342	discard	depth 3 with date index
+6e194b1	0.7378	discard	min_child_weight 5 at depth 4
+1282a28	0.7381	discard	500 trees at learning rate 0.05
+11bc47d	0.7272	discard	subsample 0.8
+e4ee6ad	0.7393	keep	max_cat_threshold 128
+f3e1bd5	0.7389	discard	max_cat_threshold 256
+c328885	0.7323	discard	one-hot splits for all categories
+f95480a	0.7383	discard	depth 5 with max_cat_threshold 128
+35a162a	0.7382	discard	reg_lambda 10
+851df1c	0.7391	discard	reg_lambda 0
+db7f4c7	0.7387	discard	add scheduled date-time index
+27487b9	0.7318	discard	ablate day-of-month category
+139b69d	0.7393	discard	add numeric day of month
+aef3338	0.7378	discard	max_bin 512
+33a3041	0.7391	discard	max_bin 128
+21e9999	0.7362	discard	loss-guided 16-leaf trees
+6a9d0cb	0.7410	keep	month-weekday category interaction
+7ba8e0c	0.7433	keep	carrier-weekday category interaction
+a7179cb	0.7443	keep	carrier-month category interaction
+74b3ade	0.7561	keep	add categorical calendar date
+2d09938	0.7561	keep	ablate numeric date index at equal AUC
+390cfe9	0.7568	keep	max_cat_threshold 256 with DateCat
+1ac7797	0.7557	discard	max_cat_threshold 512 with DateCat
+1329127	0.7559	discard	carrier x three-hour departure block
+6ca7bd1	0.7531	discard	carrier x scheduled hour
+ac7c421	0.7556	discard	450 trees with richer features
+7876199	0.7552	discard	200 trees with richer features
+2b6a167	0.7568	keep	ablate month-weekday at equal AUC
+655b321	0.7556	discard	ablate carrier-weekday interaction
+d7a0aba	0.7555	discard	ablate carrier-month interaction
+241b32b	0.7568	keep	ablate standalone month at equal AUC
+cce1d75	0.7568	keep	ablate standalone weekday at equal AUC
+62092a2	0.7564	keep	ablate standalone day of month near-equal AUC
+8e532a7	0.7564	keep	ablate unused standalone carrier
+e230b92	0.7555	discard	ablate flight distance
+9e85bec	0.7564	discard	three origin-to-hub distance proxies
+c1fbfee	0.7475	discard	carrier-origin category interaction
+f05b25a	0.7571	keep	distance to major 2005 holidays
+1731628	0.7568	discard	restore day of month with holiday feature
+48da428	0.7558	discard	gamma 1 minimum split gain
+608fb66	0.7565	discard	ISO week categorical feature
+3adab4c	0.7565	discard	approximate tree method
+b57eeb6	0.7534	discard	depth 5 with holiday features
+8eeca4e	0.7567	discard	route-relative scheduled departure time
+30e01f7	0.7569	discard	carrier by holiday proximity
+623eb9d	0.7571	discard	375 trees at learning rate 0.08
+c1134bc	0.7571	discard	signed nearest holiday distance
+1201543	0.7561	discard	origin hourly schedule share
+d93e338	0.7557	discard	max_cat_threshold 192
+40f546a	0.7572	keep	min_child_weight 2
+75301c8	0.7567	discard	min_child_weight 3
