@@ -8,7 +8,7 @@ row (all runs are effort max).
 
 Per row: a filled dot per valid run and a hollow dot per caveat run (runs with
 valid = "no" are left out), a grey bar over the full range, the mean with its
-95% interval (t) and the 10th/90th percentiles (nearest run) when the row has
+90% interval (t) and the 10th/90th percentiles (nearest run) when the row has
 >= 5 runs.
 
 Usage:
@@ -118,7 +118,7 @@ def main():
                        facecolors=colour[m] if filled else SURFACE, edgecolors=colour[m])
         mean = x.mean()
         if n >= MIN_N_STATS:
-            half = stats.t.ppf(0.975, n - 1) * x.std(ddof=1) / np.sqrt(n)
+            half = stats.t.ppf(0.95, n - 1) * x.std(ddof=1) / np.sqrt(n)
             ax.errorbar(mean, y + 0.22, xerr=half, fmt="none", ecolor=INK, elinewidth=1.6, capsize=3, zorder=4)
             # "nearest": each percentile is an actual run (with n = 10, the 2nd and 9th)
             p10, p90 = np.percentile(x, [10, 90], method="nearest")
@@ -142,7 +142,7 @@ def main():
         Line2D([], [], marker="o", ls="", color=INK2, markersize=7, label="run"),
         Line2D([], [], marker="o", ls="", markerfacecolor=SURFACE, markeredgecolor=INK2, markersize=7,
                label="run with caveat"),
-        Line2D([], [], marker="o", color=INK, markersize=5, lw=1.6, label=f"mean, 95% interval (n >= {MIN_N_STATS})"),
+        Line2D([], [], marker="o", color=INK, markersize=5, lw=1.6, label=f"mean, 90% interval (n >= {MIN_N_STATS})"),
         Line2D([], [], marker="|", ls="", color=INK2, markersize=9, markeredgewidth=1.6, label="10th and 90th percentile"),
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
