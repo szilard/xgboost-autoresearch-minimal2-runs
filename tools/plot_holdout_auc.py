@@ -8,7 +8,8 @@ row (all runs are effort max).
 
 Per row: a filled dot per valid run and a hollow dot per caveat run (runs with
 valid = "no" are left out), a grey bar over the full range, the mean with its
-95% interval (t) and the 10th/90th percentiles when the row has >= 5 runs.
+95% interval (t) and the 10th/90th percentiles (nearest run) when the row has
+>= 5 runs.
 
 Usage:
     tools/plot_holdout_auc.py                                          # all groups in run-multi/
@@ -119,7 +120,8 @@ def main():
         if n >= MIN_N_STATS:
             half = stats.t.ppf(0.975, n - 1) * x.std(ddof=1) / np.sqrt(n)
             ax.errorbar(mean, y + 0.22, xerr=half, fmt="none", ecolor=INK, elinewidth=1.6, capsize=3, zorder=4)
-            p10, p90 = np.percentile(x, [10, 90])
+            # "nearest": each percentile is an actual run (with n = 10, the 2nd and 9th)
+            p10, p90 = np.percentile(x, [10, 90], method="nearest")
             ax.scatter([p10, p90], [y, y], marker="|", s=260, color=INK, linewidths=1.6, zorder=2)
         ax.scatter(mean, y + 0.22, s=34, color=INK, zorder=5)
 
