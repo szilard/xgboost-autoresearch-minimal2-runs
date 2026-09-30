@@ -13,6 +13,9 @@ valid = "no" are left out), a grey bar over the full range, the mean with its
 Usage:
     tools/plot_holdout_auc.py                                          # all groups in run-multi/
     tools/plot_holdout_auc.py run-multi/sol6_n10 run-multi/luna-test [-o out.png]
+    tools/plot_holdout_auc.py --xlim 0.72 0.77                         # fixed x range, to compare plots
+
+The x axis spans the runs' holdout AUCs unless --xlim is given.
 
 Default output: run-multi/SUMMARY/holdout_auc.png for all groups,
 run-multi/SUMMARY/holdout_auc__<group>__<group>.png for the groups given
@@ -60,6 +63,8 @@ def main():
     ap.add_argument("groups", nargs="*", type=Path,
                     help="run group directories (run-multi/<group>); default: all groups in run-multi/")
     ap.add_argument("-o", "--output", type=Path, help="output file (.png or .svg)")
+    ap.add_argument("--xlim", nargs=2, type=float, metavar=("MIN", "MAX"),
+                    help="fixed holdout AUC range of the x axis (default: the runs' range)")
     args = ap.parse_args()
     all_groups = not args.groups
     if all_groups:
@@ -90,8 +95,15 @@ def main():
     fig.subplots_adjust(bottom=0.85 / (1.6 + 0.55 * len(rows)), right=0.97)
     ax.set_facecolor(SURFACE)
     lo, hi = min(r["holdout"] for r in runs), max(r["holdout"] for r in runs)
-    pad = (hi - lo) * 0.05 or 0.001
-    ax.set_xlim(lo - pad, hi + pad)
+    if args.xlim:
+        if args.xlim[0] >= args.xlim[1]:
+            sys.exit("--xlim: MIN must be below MAX")
+        if lo < args.xlim[0] or hi > args.xlim[1]:
+            print(f"warning: runs span {lo:.4f}-{hi:.4f}, outside --xlim; some are cut off", file=sys.stderr)
+        ax.set_xlim(*args.xlim)
+    else:
+        pad = (hi - lo) * 0.05 or 0.001
+        ax.set_xlim(lo - pad, hi + pad)
 
     for i, m in enumerate(rows):
         y = len(rows) - 1 - i
