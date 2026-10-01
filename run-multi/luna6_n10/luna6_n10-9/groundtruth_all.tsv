@@ -1,0 +1,67 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline, unchanged starter	0.7203	0.7155
+cc04906	keep	200 trees, learning rate 0.05	0.7325	0.7282
+c845268	discard	add categorical scheduled departure hour	0.7319	N/A
+4100a47	keep	increase max_depth to 8	0.7331	0.7297
+4135243	discard	min_child_weight 10 at depth 8	0.7327	N/A
+49a7750	discard	subsample 0.8	0.7307	N/A
+a1e9cd0	discard	add categorical origin destination route	0.7068	N/A
+389a42a	keep	400 trees at learning rate 0.05	0.7336	0.7299
+99336d9	discard	800 trees at learning rate 0.05	0.7309	N/A
+97033e4	keep	800 trees at learning rate 0.025	0.7347	0.7315
+e956267	discard	gamma 1.0	0.7342	N/A
+f053bbd	keep	colsample_bytree 0.8	0.7423	0.7400
+2e73448	keep	colsample_bytree 0.7	0.7456	0.7420
+8d6638a	keep	colsample_bytree 0.6	0.7489	0.7454
+c698671	keep	colsample_bytree 0.5; tied score with stronger regularization	0.7489	0.7454
+da70770	discard	colsample_bytree 0.4	0.7480	N/A
+8c50c03	discard	max_depth 10 at colsample 0.5	0.7486	N/A
+a8e9c6b	discard	max_depth 6 at colsample 0.5	0.7429	N/A
+88ca92a	discard	max_cat_to_onehot 13	0.7453	N/A
+b58d8b3	discard	1200 trees at learning rate 0.025	0.7478	N/A
+1d15843	keep	add cyclical scheduled time sine and cosine	0.7491	0.7443
+c0e00f4	keep	remove raw departure time, keep cyclical pair	0.7482	0.7449
+02ede7a	discard	colsample_bytree 0.6 with cyclical-only time	0.7461	N/A
+59124d9	discard	colsample_bynode 0.8	0.7477	N/A
+86dfd86	keep	colsample_bylevel 0.8 with cyclical-only time	0.7491	0.7449
+34dafde	discard	colsample_bylevel 0.6	0.7471	N/A
+09ec1ee	discard	colsample_bylevel 0.9; prefer 0.8 regularized setting	0.7491	N/A
+fa88947	discard	1000 trees at learning rate 0.02	0.7488	N/A
+9847dec	discard	600 trees at learning rate 0.03	0.7478	N/A
+b48f01b	discard	colsample_bytree 0.6 plus bylevel 0.8	0.7474	N/A
+4f36c85	crash	cyclic calendar features failed on string columns	0.0000	N/A
+4a34cd3	discard	cyclic month and weekday features	0.7481	N/A
+e4277f3	discard	three-seed soft-vote ensemble; tied best at triple model size	0.7491	N/A
+2504985	crash	scheduled-arrival cycles unavailable; CRSArrTime is not in the training schema	0.0000	N/A
+3164ed2	keep	reg_lambda 5.0 with current feature sampling	0.7495	0.7457
+7386e7b	discard	reg_lambda 10.0; tied lambda 5.0	0.7495	N/A
+a08e305	keep	reg_alpha 0.5 with reg_lambda 5.0	0.7504	0.7470
+f900bd1	keep	reg_alpha 1.0 with reg_lambda 5.0	0.7516	0.7482
+015fbff	keep	reg_alpha 2.0 with reg_lambda 5.0	0.7527	0.7488
+96b7d39	keep	reg_alpha 4.0 with reg_lambda 5.0	0.7538	0.7495
+dacc195	discard	reg_alpha 8.0; below value 4.0	0.7531	N/A
+7a28e51	discard	carrier by scheduled departure hour category	0.7510	N/A
+3278656	discard	reg_alpha 3.0; 0.0001 below value 4.0	0.7537	N/A
+eddfe38	discard	reg_alpha 3.5; below value 4.0	0.7534	N/A
+28ffd02	keep	reg_alpha 4.0 with reg_lambda 1.0	0.7541	0.7501
+4939dd5	keep	reg_alpha 4.0 with reg_lambda 0.0	0.7542	0.7500
+c99d72d	keep	reg_alpha 5.0 with reg_lambda 0.0	0.7545	0.7501
+84f5e9c	discard	reg_alpha 6.0 with reg_lambda 0.0; below value 5.0	0.7542	N/A
+77ac988	discard	reg_alpha 4.5 with reg_lambda 0.0; below value 5.0	0.7543	N/A
+fb32518	discard	reg_alpha 5.5 with reg_lambda 0.0; tied value 5.0	0.7545	N/A
+74f08ab	crash	DART booster timed out at 60s training cap	0.0000	N/A
+59da363	crash	tree dropout parameters timed out at 60s training cap	0.0000	N/A
+26c605a	discard	reg_lambda 0.5 with reg_alpha 5.0	0.7539	N/A
+8dd3134	discard	gamma 0.5 with reg_alpha 5.0 and reg_lambda 0.0	0.7508	N/A
+22ecba3	discard	gamma 0.1 with reg_alpha 5.0 and reg_lambda 0.0	0.7543	N/A
+3f2640e	discard	gamma 0.05 with reg_alpha 5.0 and reg_lambda 0.0	0.7544	N/A
+b442a2e	discard	max_cat_threshold 32	0.7539	N/A
+331b789	discard	max_cat_threshold 128	0.7541	N/A
+97d5b7b	discard	subsample 0.8 with reg_alpha 5.0 and reg_lambda 0.0	0.7519	N/A
+d06b3e4	discard	min_child_weight 3 with reg_alpha 5.0 and reg_lambda 0.0	0.7538	N/A
+e2f47c7	discard	min_child_weight 2 with reg_alpha 5.0 and reg_lambda 0.0	0.7543	N/A
+1151369	discard	min_child_weight 1.5 with reg_alpha 5.0 and reg_lambda 0.0	0.7540	N/A
+36676ee	keep	max_depth 9 with reg_alpha 5.0 and reg_lambda 0.0	0.7551	0.7510
+8e355d8	keep	max_depth 10 with reg_alpha 5.0 and reg_lambda 0.0	0.7582	0.7536
+c161b49	keep	max_depth 11 with reg_alpha 5.0 and reg_lambda 0.0	0.7583	0.7536
+72ddc2a	keep	max_depth 12 with reg_alpha 5.0 and reg_lambda 0.0	0.7594	0.7543

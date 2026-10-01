@@ -1,0 +1,5 @@
+The experiment run is complete. The best checkpoint is **`72ddc2a`** on branch `oct1`, with eval AUC **0.7594**, up **0.0391** from the 0.7203 baseline. The final model uses depth 12, 800 trees, `reg_alpha=5`, and `reg_lambda=0`; stronger L1 regularization helped the deeper trees. XGBoost documents `reg_alpha` as L1 regularization on tree weights ([parameter reference](https://xgboost.readthedocs.io/en/latest/parameter.html)).
+
+The results and research notes are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md). The final model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py). DART was discarded after both attempts exceeded the training cap; XGBoost notes that dropout can slow training ([DART documentation](https://xgboost.readthedocs.io/en/stable/tutorials/dart.html)).
+
+The harness clock reached `TIME IS UP` and was stopped.

@@ -1,0 +1,67 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline, unchanged starter
+cc04906	0.7325	keep	200 trees, learning rate 0.05
+c845268	0.7319	discard	add categorical scheduled departure hour
+4100a47	0.7331	keep	increase max_depth to 8
+4135243	0.7327	discard	min_child_weight 10 at depth 8
+49a7750	0.7307	discard	subsample 0.8
+a1e9cd0	0.7068	discard	add categorical origin destination route
+389a42a	0.7336	keep	400 trees at learning rate 0.05
+99336d9	0.7309	discard	800 trees at learning rate 0.05
+97033e4	0.7347	keep	800 trees at learning rate 0.025
+e956267	0.7342	discard	gamma 1.0
+f053bbd	0.7423	keep	colsample_bytree 0.8
+2e73448	0.7456	keep	colsample_bytree 0.7
+8d6638a	0.7489	keep	colsample_bytree 0.6
+c698671	0.7489	keep	colsample_bytree 0.5; tied score with stronger regularization
+da70770	0.7480	discard	colsample_bytree 0.4
+8c50c03	0.7486	discard	max_depth 10 at colsample 0.5
+a8e9c6b	0.7429	discard	max_depth 6 at colsample 0.5
+88ca92a	0.7453	discard	max_cat_to_onehot 13
+b58d8b3	0.7478	discard	1200 trees at learning rate 0.025
+1d15843	0.7491	keep	add cyclical scheduled time sine and cosine
+c0e00f4	0.7482	keep	remove raw departure time, keep cyclical pair
+02ede7a	0.7461	discard	colsample_bytree 0.6 with cyclical-only time
+59124d9	0.7477	discard	colsample_bynode 0.8
+86dfd86	0.7491	keep	colsample_bylevel 0.8 with cyclical-only time
+34dafde	0.7471	discard	colsample_bylevel 0.6
+09ec1ee	0.7491	discard	colsample_bylevel 0.9; prefer 0.8 regularized setting
+fa88947	0.7488	discard	1000 trees at learning rate 0.02
+9847dec	0.7478	discard	600 trees at learning rate 0.03
+b48f01b	0.7474	discard	colsample_bytree 0.6 plus bylevel 0.8
+4f36c85	0.0000	crash	cyclic calendar features failed on string columns
+4a34cd3	0.7481	discard	cyclic month and weekday features
+e4277f3	0.7491	discard	three-seed soft-vote ensemble; tied best at triple model size
+2504985	0.0000	crash	scheduled-arrival cycles unavailable; CRSArrTime is not in the training schema
+3164ed2	0.7495	keep	reg_lambda 5.0 with current feature sampling
+7386e7b	0.7495	discard	reg_lambda 10.0; tied lambda 5.0
+a08e305	0.7504	keep	reg_alpha 0.5 with reg_lambda 5.0
+f900bd1	0.7516	keep	reg_alpha 1.0 with reg_lambda 5.0
+015fbff	0.7527	keep	reg_alpha 2.0 with reg_lambda 5.0
+96b7d39	0.7538	keep	reg_alpha 4.0 with reg_lambda 5.0
+dacc195	0.7531	discard	reg_alpha 8.0; below value 4.0
+7a28e51	0.7510	discard	carrier by scheduled departure hour category
+3278656	0.7537	discard	reg_alpha 3.0; 0.0001 below value 4.0
+eddfe38	0.7534	discard	reg_alpha 3.5; below value 4.0
+28ffd02	0.7541	keep	reg_alpha 4.0 with reg_lambda 1.0
+4939dd5	0.7542	keep	reg_alpha 4.0 with reg_lambda 0.0
+c99d72d	0.7545	keep	reg_alpha 5.0 with reg_lambda 0.0
+84f5e9c	0.7542	discard	reg_alpha 6.0 with reg_lambda 0.0; below value 5.0
+77ac988	0.7543	discard	reg_alpha 4.5 with reg_lambda 0.0; below value 5.0
+fb32518	0.7545	discard	reg_alpha 5.5 with reg_lambda 0.0; tied value 5.0
+74f08ab	0.0000	crash	DART booster timed out at 60s training cap
+59da363	0.0000	crash	tree dropout parameters timed out at 60s training cap
+26c605a	0.7539	discard	reg_lambda 0.5 with reg_alpha 5.0
+8dd3134	0.7508	discard	gamma 0.5 with reg_alpha 5.0 and reg_lambda 0.0
+22ecba3	0.7543	discard	gamma 0.1 with reg_alpha 5.0 and reg_lambda 0.0
+3f2640e	0.7544	discard	gamma 0.05 with reg_alpha 5.0 and reg_lambda 0.0
+b442a2e	0.7539	discard	max_cat_threshold 32
+331b789	0.7541	discard	max_cat_threshold 128
+97d5b7b	0.7519	discard	subsample 0.8 with reg_alpha 5.0 and reg_lambda 0.0
+d06b3e4	0.7538	discard	min_child_weight 3 with reg_alpha 5.0 and reg_lambda 0.0
+e2f47c7	0.7543	discard	min_child_weight 2 with reg_alpha 5.0 and reg_lambda 0.0
+1151369	0.7540	discard	min_child_weight 1.5 with reg_alpha 5.0 and reg_lambda 0.0
+36676ee	0.7551	keep	max_depth 9 with reg_alpha 5.0 and reg_lambda 0.0
+8e355d8	0.7582	keep	max_depth 10 with reg_alpha 5.0 and reg_lambda 0.0
+c161b49	0.7583	keep	max_depth 11 with reg_alpha 5.0 and reg_lambda 0.0
+72ddc2a	0.7594	keep	max_depth 12 with reg_alpha 5.0 and reg_lambda 0.0

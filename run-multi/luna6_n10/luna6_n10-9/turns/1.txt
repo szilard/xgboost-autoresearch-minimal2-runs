@@ -1,0 +1,8 @@
+Setup is ready:
+
+- Created branch `oct1` from the current HEAD.
+- Confirmed `data/train.csv` and `data/eval.csv` are present.
+- Initialized [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) with the required header.
+- The experiment clock is still stopped.
+
+Confirm when you want me to start the clock and run the baseline.

@@ -1,0 +1,225 @@
+commit 72ddc2a547ebc863acd2313476cf57745a9a15d2
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:50:43 2026 +0000
+
+    Try depth twelve under strong L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c161b4985a56eee791185873d2a38a8bb2e2d473
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:49:14 2026 +0000
+
+    Increase tree depth to eleven with strong L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8e355d8d0385e701dbd897bd86d6acaaaa9a8454
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:47:52 2026 +0000
+
+    Increase tree depth to ten with strong L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 36676eebce4b4b1f36c4d5cf2a07db8484d981bf
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:46:37 2026 +0000
+
+    Increase tree depth with strong L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c99d72dcfe298453bf122098824f2bcbe712efa1
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:23:14 2026 +0000
+
+    Raise L1 regularization with no L2 penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4939dd5b12ab54788119b460158311a48260d146
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:22:07 2026 +0000
+
+    Remove L2 regularization with L1 penalty four
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 28ffd02a6be97762b2e49e99fba11c1c8ca58955
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:20:53 2026 +0000
+
+    Pair L1 regularization with default L2
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 96b7d397aadd606d1495a6b005dbf63a6a3fbc4d
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:12:43 2026 +0000
+
+    Raise XGBoost L1 regularization to four
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 015fbffbf631a36dd96368b23ced96de266797e6
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:11:28 2026 +0000
+
+    Raise XGBoost L1 regularization to two
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f900bd18792f461fdf101a9ecf4f10474240c159
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:10:20 2026 +0000
+
+    Raise XGBoost L1 regularization to one
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a08e305e855b84b95b8ad5acbfb6b76f3c5c39cd
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:09:07 2026 +0000
+
+    Add L1 regularization to XGBoost
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3164ed2d08ea87637821d045764f73e7d1be5e91
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 12:06:01 2026 +0000
+
+    Increase XGBoost L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 86dfd86ee2a80238aa2f1423fe93869eeea902d6
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 11:41:50 2026 +0000
+
+    Sample feature subsets by tree level
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c0e00f46043eba5ade7ef7a5666e82aa2bb93afe
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 11:35:30 2026 +0000
+
+    Use cyclical departure time in place of raw time
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1d15843e4f8bd3adaa2c7c43f4942f3783900ba5
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 11:33:34 2026 +0000
+
+    Add cyclical scheduled departure time features
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit c698671f59d3fad768cc2bbeb19980c69da0c38f
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 11:20:23 2026 +0000
+
+    Lower per-tree feature sampling to fifty percent
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8d6638a3df9731bd13afe4700d0c64d58d89eb0a
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 11:19:01 2026 +0000
+
+    Lower per-tree feature sampling to sixty percent
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2e73448903c08f44a40b31247b75b39e0e6fa751
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 11:17:37 2026 +0000
+
+    Lower per-tree feature sampling to seventy percent
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f053bbdee61ce5b72b1fa6c42451220bee53c54c
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 11:15:58 2026 +0000
+
+    Sample features for each boosting tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 97033e4051fa24b603ce682f91ed5343b35a1741
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 11:11:24 2026 +0000
+
+    Use smaller updates for more boosting rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 389a42a199d4df6a478bdd75cdb650cfcc9e0d49
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 11:08:07 2026 +0000
+
+    Increase boosting rounds to four hundred
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4100a473fdf688895e761d023198dcd544ff4e29
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 10:59:53 2026 +0000
+
+    Increase tree depth to eight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cc04906c9387be422b46511cd9640b30c1a1c4f9
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 10:54:09 2026 +0000
+
+    Increase rounds and lower learning rate
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

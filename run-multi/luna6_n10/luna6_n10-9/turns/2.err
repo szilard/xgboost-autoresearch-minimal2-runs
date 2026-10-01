@@ -1,0 +1,6 @@
+2026-10-01T10:52:12.074967Z ERROR codex_core::tools::router: error=write_stdin failed: Unknown process id 62488
+2026-10-01T12:30:38.335884Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/train.py:
+    booster="dart",
+    rate_drop=0.1,
+2026-10-01T12:36:24.016596Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/train.py:
+    gamma=0.1,
