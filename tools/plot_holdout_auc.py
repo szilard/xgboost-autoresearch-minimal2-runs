@@ -38,7 +38,7 @@ from scipy import stats
 SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"]
 # colour follows the model in every plot: add new models here with the next free slot;
 # models not listed get the remaining slots in sorted order (and a warning)
-MODEL_SLOT = {"gpt-5.6-luna": 0, "gpt-6-sol": 1, "gpt-6-luna": 2}
+MODEL_SLOT = {"gpt-5.6-luna": 0, "gpt-6-sol": 1, "gpt-6-luna": 2, "gpt-6-astra": 3}
 SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#d9d8d3"
 MIN_N_STATS = 5  # interval and percentiles only from this many runs up
 XLIM = None  # fixed holdout AUC range of the strip plot, e.g. (0.74, 0.77); None: the runs' range
