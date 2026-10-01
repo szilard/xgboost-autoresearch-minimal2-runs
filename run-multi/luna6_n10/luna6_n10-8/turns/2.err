@@ -1,0 +1,2 @@
+2026-10-01T09:11:20.162327Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/results.tsv:
+96a3a26	discard	use colsample_bynode 0.4 instead of bytree

@@ -1,0 +1,207 @@
+commit 118a7a68e67e5a620291b3cc2c93d3d3738ec39e
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 10:20:54 2026 +0000
+
+    Increase L1 regularization at depth nine
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 59dfad7cac73277d2f91a06cca31d4b183204cb1
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 10:19:04 2026 +0000
+
+    Try mild L1 regularization at depth nine
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f3cfbdd0cc74927f00be5d2d5379e199bbc2c7bc
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 10:13:39 2026 +0000
+
+    Test stronger L2 regularization at depth nine
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cec373c9b8f4150099a80e0382278f70390225aa
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 10:12:29 2026 +0000
+
+    Increase L2 regularization for depth nine
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 74c0a1f013c95ff36a5bf7cf351942b3ee186260
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 10:04:41 2026 +0000
+
+    Test 350 rounds for regularized depth-nine model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d81ccecd44986159c5bc3f5692e6408c0a0a8d4e
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 10:03:30 2026 +0000
+
+    Try fewer rounds for depth-nine model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b328d4d7a0cd03f42bdf61466ea51120d2c22125
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 09:59:38 2026 +0000
+
+    Regularize leaves in depth-nine trees
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit fc5e4ac9434e5add509bba254caa63363051ae70
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 09:57:51 2026 +0000
+
+    Try depth nine with stronger feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit be6fb104957eb5a29e29aa2fefd18663990fe9de
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 09:53:54 2026 +0000
+
+    Retune tree feature fraction at depth eight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 659a2431469fb0b7572f93178f68f2ae2cd804d5
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 09:37:12 2026 +0000
+
+    Try smaller learning rate at depth eight
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 20de88c93fbde228462fb3a70b31af253293960a
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 09:35:03 2026 +0000
+
+    Try 350 trees for depth-eight model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b348a087a4e963adc7f322d9d8a33c3492da13b7
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 09:32:23 2026 +0000
+
+    Reduce depth-eight model to 300 rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3b0d80672032fc9d429d48c8216b59ebe6e13b86
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 09:25:49 2026 +0000
+
+    Increase tree depth to eight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2c4edeb0b54f6a557d32292bcbaf885caa8ef570
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 09:24:05 2026 +0000
+
+    Increase tree depth to seven
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2f64036c438a94d067f3d6e9e7fb125b702dcfd0
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 09:01:53 2026 +0000
+
+    Require a small gain for each split
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e326d392148242e898ef46d3ef8e76e4f5d889d2
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:56:14 2026 +0000
+
+    Reduce per-tree column sample to 0.4
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e02eab6367f79fdd738ea7b4702d9dd5424218d2
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:54:55 2026 +0000
+
+    Reduce per-tree column sample to 0.6
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1d7cf8f77a379f511ec4c3632b2f5fb78da07c10
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:53:37 2026 +0000
+
+    Sample features per boosting tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 56b0e18de95770ab03a34fc2291f1d9b936c611d
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:44:26 2026 +0000
+
+    Use smaller steps for 400 boosting rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit edd60ad1afa76749897981ffa650208519e4f9c8
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:41:43 2026 +0000
+
+    Increase boosting rounds to 200
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e6cf329fa7eae36b4233407aa8abb5458be96cb7
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:40:27 2026 +0000
+
+    Increase boosting rounds to 100
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

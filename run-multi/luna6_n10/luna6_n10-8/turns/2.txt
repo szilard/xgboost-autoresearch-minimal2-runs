@@ -1,0 +1,5 @@
+The 2-hour experiment is complete. The best checkpoint is **`118a7a6`**, with Eval AUC **0.7518**—up **0.0315** from the 0.7203 baseline. The branch is restored to that checkpoint, and the harness clock is stopped.
+
+The best configuration uses depth 9, 350 rounds, learning rate 0.04, `colsample_bytree=0.5`, `min_child_weight=2`, `gamma=0.1`, `reg_lambda=3`, and `reg_alpha=0.2`.
+
+I recorded all 68 experiments and the final summary in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md); [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) contains the scores. A smaller 300-round model scored 0.7514 with a 34.2 MB artifact.

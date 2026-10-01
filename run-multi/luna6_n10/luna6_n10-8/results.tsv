@@ -1,0 +1,69 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+e25ad0c	0.7195	discard	add scheduled departure minute and cyclic features
+74791e4	0.7071	discard	add origin-destination categorical feature
+e6cf329	0.7306	keep	increase n_estimators from 30 to 100
+edd60ad	0.7345	keep	increase n_estimators from 100 to 200
+40794f6	0.7325	discard	increase n_estimators from 200 to 400
+56b0e18	0.7354	keep	use learning_rate 0.05 with 400 trees
+b93416e	0.7349	discard	use learning_rate 0.025 with 800 trees
+35f9b34	0.7326	discard	reduce max_depth from 6 to 4
+4533c8e	0.7285	discard	set subsample to 0.8
+e9148ab	0.7346	discard	set min_child_weight to 5
+ad5be21	0.7354	discard	set min_child_weight to 2
+1d7cf8f	0.7386	keep	set colsample_bytree to 0.8
+e02eab6	0.7423	keep	set colsample_bytree to 0.6
+e326d39	0.7424	keep	set colsample_bytree to 0.4
+f3ca7c3	0.7334	discard	set colsample_bytree to 0.3
+dea6053	0.7423	discard	set colsample_bytree to 0.5
+4eb11a2	0.7374	discard	reduce max_depth from 6 to 5 with colsample 0.4
+2f64036	0.7425	keep	set gamma to 0.1
+1c76f62	0.7411	discard	set gamma to 0.5
+003959b	0.7406	discard	add train-derived departure hour category
+96a3a26	0.7411	discard	use colsample_bynode 0.4 instead of bytree
+023952f	0.7420	discard	set max_cat_threshold to 32
+1e9b05a	0.7421	discard	use learning_rate 0.04 with 500 trees
+1341b07	0.7422	discard	set reg_lambda to 2
+18fbae2	0.0000	crash	DART training timeout at 60 seconds
+035f389	0.7353	discard	use two parallel trees over 200 rounds
+73e6681	0.7420	discard	set reg_alpha to 0.1
+2c4edeb	0.7458	keep	increase max_depth from 6 to 7
+3b0d806	0.7472	keep	increase max_depth from 7 to 8
+97e3fcb	0.7472	discard	use loss-guided tree growth with 256 leaves
+6816613	0.7470	discard	increase max_depth from 8 to 9
+b348a08	0.7466	keep	reduce depth-8 model from 400 to 300 rounds
+20de88c	0.7472	keep	increase depth-8 model from 300 to 350 rounds
+659a243	0.7475	keep	use learning rate 0.04 with 450 depth-8 rounds
+0d8452c	0.7453	discard	set max_cat_to_onehot to 13
+67392a8	0.7469	discard	set scale_pos_weight to 2.0
+e163052	0.7474	discard	increase histogram max_bin to 512
+460b1f1	0.7440	discard	add cross-fitted smoothed route delay-rate feature
+f710efb	0.7453	discard	add cross-fitted smoothed origin delay-rate feature
+6d3691a	0.7434	discard	weight numeric features twice for column sampling
+be6fb10	0.7486	keep	increase depth-8 tree feature fraction to 0.5
+3298742	0.7486	discard	increase depth-8 tree feature fraction to 0.6
+d7c7b84	0.7486	discard	test depth-8 tree feature fraction 0.55
+fc5e4ac	0.7491	keep	increase depth from 8 to 9 at feature fraction 0.5
+b328d4d	0.7500	keep	set min_child_weight to 2 in depth-nine model
+f888d1d	0.7494	discard	increase depth-nine min_child_weight to 3
+28e19b7	0.7493	discard	increase depth-nine model to depth 10
+d81ccec	0.7500	keep	reduce depth-nine model from 450 to 400 rounds
+74c0a1f	0.7500	keep	reduce regularized depth-nine model to 350 rounds
+e8a966d	0.7496	discard	set max_delta_step to 1
+5d55e95	0.7496	keep	use 0.05 learning rate with 280 depth-nine rounds
+7026164	0.7494	discard	use 0.045 learning rate with 310 depth-nine rounds
+0d4f090	0.7492	discard	increase compact 0.05 schedule from 280 to 320 rounds
+cec373c	0.7510	keep	set reg_lambda to 2 in depth-nine model
+f3cfbdd	0.7511	keep	set reg_lambda to 3 in depth-nine model
+a996d58	0.7508	discard	increase reg_lambda to 4
+1a90f10	0.7504	discard	set reg_lambda to 2.5
+0e31508	0.7505	discard	lower gamma from 0.1 to 0.05
+59dfad7	0.7515	keep	add reg_alpha 0.1 with depth-nine L2 regularization
+118a7a6	0.7518	keep	increase depth-nine reg_alpha to 0.2
+ace666b	0.7515	discard	increase depth-nine reg_alpha to 0.3
+a0656d9	0.7510	discard	set depth-nine reg_alpha to 0.25
+e1cf167	0.7514	keep	reduce L1-regularized depth-nine model to 325 rounds
+d9fcb69	0.7514	keep	reduce L1-regularized depth-nine model to 300 rounds
+79a9d20	0.7510	keep	reduce L1-regularized depth-nine model to 275 rounds
+f73d748	0.7489	discard	reduce regularized model depth from 9 to 8
+44eedad	0.7516	discard	set min_child_weight to 1.5 with L1 and L2
