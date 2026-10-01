@@ -1,0 +1,5 @@
+Experiment completed on branch `oct1` and the clock is stopped.
+
+Best result: **Eval AUC 0.7540**, up from the 0.7203 baseline, at commit `4e521f0`. The best model includes cyclic encodings for departure time, weekday, and month, with `max_depth=24` and `colsample_bytree=0.55`.
+
+The branch is at the best kept commit. The experiment results and notes are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).

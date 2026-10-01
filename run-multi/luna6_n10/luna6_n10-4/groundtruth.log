@@ -1,0 +1,116 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] 2a91ba4 | keep | increase trees from 30 to 120 ===
+  holdout=0.7282
+=== [4] 8ca3375 | keep | increase trees from 120 to 240 ===
+  holdout=0.7312
+=== [5] 47e578c | discard | increase trees from 240 to 480 ===
+  SKIP: status discard
+=== [6] 742f9c7 | discard | add scheduled departure hour and minute ===
+  SKIP: status discard
+=== [7] 4c19728 | keep | add scheduled departure hour ===
+  holdout=0.7313
+=== [8] d8b3bde | keep | reduce max_depth from 6 to 5 ===
+  holdout=0.7323
+=== [9] a979090 | discard | reduce max_depth from 5 to 4 ===
+  SKIP: status discard
+=== [10] 7c1caac | discard | set row subsample to 0.8 ===
+  SKIP: status discard
+=== [11] 56fefc4 | discard | set column subsample to 0.8 ===
+  SKIP: status discard
+=== [12] 7fd9c17 | discard | add directional route category ===
+  SKIP: status discard
+=== [13] 5a215ef | discard | add route with max_cat_threshold 32 ===
+  SKIP: status discard
+=== [14] 01ce3e0 | discard | set max_cat_threshold to 32 ===
+  SKIP: status discard
+=== [15] 125f16b | discard | set max_cat_to_onehot to 13 ===
+  SKIP: status discard
+=== [16] e8296c8 | discard | set min_child_weight to 5 ===
+  SKIP: status discard
+=== [17] 994c2da | discard | set gamma to 0.1 ===
+  SKIP: status discard
+=== [18] e9c2235 | discard | set gamma to 0.01 ===
+  SKIP: status discard
+=== [19] 9964eea | keep | set reg_lambda to 5 ===
+  holdout=0.7319
+=== [20] 0030eea | discard | set reg_lambda to 10 ===
+  SKIP: status discard
+=== [21] d714902 | discard | set reg_lambda to 3 ===
+  SKIP: status discard
+=== [22] 6dc2e7c | discard | add cyclical scheduled departure time ===
+  SKIP: status discard
+=== [23] b849b25 | crash | DayOfWeek cyclic arithmetic on string dtype ===
+  SKIP: status crash
+=== [24] b6b526d | discard | cyclical day-of-week features after dtype fix ===
+  SKIP: status discard
+=== [25] 9ed6619 | discard | cyclical month features ===
+  SKIP: status discard
+=== [26] bb71b53 | discard | 480 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [27] bd543cf | discard | add carrier by departure hour category ===
+  SKIP: status discard
+=== [28] 050c1e3 | discard | set max_bin to 512 ===
+  SKIP: status discard
+=== [29] 96bc96f | discard | set max_bin to 1024 ===
+  SKIP: status discard
+=== [30] 7695983 | discard | use DART booster at dropout rate 0.1 ===
+  SKIP: status discard
+=== [31] 4097483 | discard | set reg_alpha to 0.1 ===
+  SKIP: status discard
+=== [32] 34a55d7 | discard | set reg_alpha to 0.01 ===
+  SKIP: status discard
+=== [33] 227e766 | discard | use lossguide with 31 leaves ===
+  SKIP: status discard
+=== [34] 6d5bd94 | discard | use approximate split finding ===
+  SKIP: status discard
+=== [35] 3df773f | discard | constrain leaf updates to one ===
+  SKIP: status discard
+=== [36] c0be676 | discard | weight positive labels by two ===
+  SKIP: status discard
+=== [37] 11f684d | discard | add night-flight indicator ===
+  SKIP: status discard
+=== [38] 395f1fb | discard | encode departure hour as categorical ===
+  SKIP: status discard
+=== [39] e936bc5 | discard | add categorical two hour time blocks ===
+  SKIP: status discard
+=== [40] b3479be | discard | test depth six with L2 regularization ===
+  SKIP: status discard
+=== [41] 36c128f | discard | add weekday weekend flag ===
+  SKIP: status discard
+=== [42] 2e3ccba | keep | increase boosting rounds to 300 ===
+  holdout=0.7326
+=== [43] 6193e0f | keep | add origin date and time block flight count ===
+  holdout=0.7327
+=== [44] 4df1261 | discard | use hourly origin count instead of two hour count ===
+  SKIP: status discard
+=== [45] 90b6fec | discard | use 240 rounds with origin schedule count ===
+  SKIP: status discard
+=== [46] 422d699 | discard | use 360 rounds with origin schedule count ===
+  SKIP: status discard
+=== [47] a8e2885 | discard | pool origin counts across all dates ===
+  SKIP: status discard
+=== [48] dcef069 | discard | group origin counts by weekday and time block ===
+  SKIP: status discard
+=== [49] 44a2211 | discard | use 330 rounds with origin schedule count ===
+  SKIP: status discard
+=== [50] 26540ff | keep | set min child weight to two with schedule count ===
+  holdout=0.7342
+=== [51] 1eff58b | discard | set min child weight to three with schedule count ===
+  SKIP: status discard
+=== [52] f72ab1e | discard | test gamma 0.01 with schedule count ===
+  SKIP: status discard
+=== [53] ced2abf | discard | add carrier date and time block count ===
+  SKIP: status discard
+=== [54] cc71ca4 | keep | use three hour origin date count ===
+  holdout=0.7354
+=== [55] ea6b548 | discard | use four hour origin date count ===
+  SKIP: status discard
+=== [56] f0729c1 | discard | set depth six with three hour count ===
+  SKIP: status discard
+=== [57] d4c38bb | keep | use default child weight with three hour count ===
+  holdout=0.7346
+=== [58] 31ee1bc | keep | use 330 rounds with three hour count ===
+  holdout=0.7348
+
+=== DONE: results written to groundtruth_all.tsv ===

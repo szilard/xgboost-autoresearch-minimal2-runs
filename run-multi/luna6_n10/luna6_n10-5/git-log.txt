@@ -1,0 +1,189 @@
+commit 4e521f031d6e945ab4ba70e32a29239396edc11f
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 03:40:34 2026 +0000
+
+    Try slightly stronger feature subsampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c4b82d26d8f5135577c9bea2a1578178efd4def5
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 03:19:39 2026 +0000
+
+    Loosen loss-guided depth cap to 24
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit df88b3f09447785a08a08e707096fa77d7831a1a
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 03:17:49 2026 +0000
+
+    Test a looser loss-guided depth cap
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 35c85832b9233e73fac41f8a52c5711569e3f972
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 03:00:11 2026 +0000
+
+    Parse categorical calendar values for cycles
+
+ train.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit c4f36fb4fecc255c8004a5186b431e9f74448f5a
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:58:54 2026 +0000
+
+    Add cyclic schedule encodings
+
+ train.py | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+commit 61978f85bb942a48ff3a870e21c3fd1b0fcd6ff9
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:28:18 2026 +0000
+
+    Double histogram bins again
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 33429f3604ef783c360c02ba5cfc0a033e50cbb8
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:26:49 2026 +0000
+
+    Increase histogram split resolution
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3a901102f91dd75c2ad06096f317dfd269d0a410
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:17:09 2026 +0000
+
+    Try loss-guided tree growth
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 4b04aa5f7ba6dc866eea52c06da14bdb8f7fabf6
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:14:16 2026 +0000
+
+    Increase depth to eight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 85c8758b88a1e017c623d6027eabdc61a0ec083d
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:13:01 2026 +0000
+
+    Increase depth to seven
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 382d50cba06bc2a8457424b4569520dc629cd287
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:11:37 2026 +0000
+
+    Test deeper trees with feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9d38cc2aab27fe71f698daf361a5ae04a153a0de
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:08:45 2026 +0000
+
+    Lower per-tree feature fraction
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 07abb285606b2a2b0cb2299d4f522f7358e18036
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:07:30 2026 +0000
+
+    Sample fewer features per tree
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d6e16db07915a36fd33a8b13836ef79d9033b3b7
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:06:09 2026 +0000
+
+    Increase feature sampling strength
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a3468a796795e563140fc157d39c726d2d82bb47
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:04:50 2026 +0000
+
+    Sample features per tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b96e35aebacfe415a04a79d094513f2fa4d80e1c
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 02:00:44 2026 +0000
+
+    Use smaller steps over more trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit e7badc913e75afb9f792a9182b53ee6afec8770c
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 01:52:01 2026 +0000
+
+    Reduce tree depth to five
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ca8913874766dc8a85f5f7efe7573857a2f9d19c
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 01:49:26 2026 +0000
+
+    Double tree count at reduced learning rate
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7fc5827f7cef42e5948f53de81bc758182a1987f
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 01:47:46 2026 +0000
+
+    Use more boosting rounds at a lower learning rate
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

@@ -1,0 +1,58 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+2a91ba4	0.7317	keep	increase trees from 30 to 120
+8ca3375	0.7345	keep	increase trees from 120 to 240
+47e578c	0.7316	discard	increase trees from 240 to 480
+742f9c7	0.7342	discard	add scheduled departure hour and minute
+4c19728	0.7351	keep	add scheduled departure hour
+d8b3bde	0.7357	keep	reduce max_depth from 6 to 5
+a979090	0.7332	discard	reduce max_depth from 5 to 4
+7c1caac	0.7249	discard	set row subsample to 0.8
+56fefc4	0.7356	discard	set column subsample to 0.8
+7fd9c17	0.7077	discard	add directional route category
+5a215ef	0.7153	discard	add route with max_cat_threshold 32
+01ce3e0	0.7355	discard	set max_cat_threshold to 32
+125f16b	0.7336	discard	set max_cat_to_onehot to 13
+e8296c8	0.7351	discard	set min_child_weight to 5
+994c2da	0.7349	discard	set gamma to 0.1
+e9c2235	0.7357	discard	set gamma to 0.01
+9964eea	0.7360	keep	set reg_lambda to 5
+0030eea	0.7346	discard	set reg_lambda to 10
+d714902	0.7350	discard	set reg_lambda to 3
+6dc2e7c	0.7345	discard	add cyclical scheduled departure time
+b849b25	0.0000	crash	DayOfWeek cyclic arithmetic on string dtype
+b6b526d	0.7360	discard	cyclical day-of-week features after dtype fix
+9ed6619	0.7360	discard	cyclical month features
+bb71b53	0.7356	discard	480 trees at learning rate 0.05
+bd543cf	0.7267	discard	add carrier by departure hour category
+050c1e3	0.7358	discard	set max_bin to 512
+96bc96f	0.7349	discard	set max_bin to 1024
+7695983	0.7186	discard	use DART booster at dropout rate 0.1
+4097483	0.7345	discard	set reg_alpha to 0.1
+34a55d7	0.7349	discard	set reg_alpha to 0.01
+227e766	0.7334	discard	use lossguide with 31 leaves
+6d5bd94	0.7355	discard	use approximate split finding
+3df773f	0.7355	discard	constrain leaf updates to one
+c0be676	0.7333	discard	weight positive labels by two
+11f684d	0.7360	discard	add night-flight indicator
+395f1fb	0.7356	discard	encode departure hour as categorical
+e936bc5	0.7356	discard	add categorical two hour time blocks
+b3479be	0.7359	discard	test depth six with L2 regularization
+36c128f	0.7360	discard	add weekday weekend flag
+2e3ccba	0.7364	keep	increase boosting rounds to 300
+6193e0f	0.7369	keep	add origin date and time block flight count
+4df1261	0.7349	discard	use hourly origin count instead of two hour count
+90b6fec	0.7363	discard	use 240 rounds with origin schedule count
+422d699	0.7368	discard	use 360 rounds with origin schedule count
+a8e2885	0.7354	discard	pool origin counts across all dates
+dcef069	0.7341	discard	group origin counts by weekday and time block
+44a2211	0.7369	discard	use 330 rounds with origin schedule count
+26540ff	0.7374	keep	set min child weight to two with schedule count
+1eff58b	0.7366	discard	set min child weight to three with schedule count
+f72ab1e	0.7374	discard	test gamma 0.01 with schedule count
+ced2abf	0.7359	discard	add carrier date and time block count
+cc71ca4	0.7376	keep	use three hour origin date count
+ea6b548	0.7376	discard	use four hour origin date count
+f0729c1	0.7372	discard	set depth six with three hour count
+d4c38bb	0.7380	keep	use default child weight with three hour count
+31ee1bc	0.7382	keep	use 330 rounds with three hour count

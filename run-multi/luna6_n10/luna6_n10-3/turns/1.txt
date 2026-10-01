@@ -1,0 +1,3 @@
+Setup checks are clear: the working tree is clean on `main`, `sep30` is available, both required data files exist, `results.tsv` is absent, and the experiment clock is stopped. I’ve read `program.md`, `train.py`, and `harness.py`.
+
+I’m waiting for your run-tag choice before creating the branch and initializing `results.tsv`. The program says to start the clock only after setup is confirmed.

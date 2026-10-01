@@ -1,0 +1,42 @@
+2026-09-30T23:29:50Z run luna6_n10-4: model=gpt-6-luna effort=max out=/home/ubuntu/xgboost-autoresearch-minimal2-runs/run-multi/luna6_n10/luna6_n10-4
+2026-09-30T23:29:50Z container started
+2026-09-30T23:29:50Z memory limit: 25769803776 bytes (24g requested, no swap)
+total 8
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep 29 10:28 .
+drwxr-x--- 1 ubuntu ubuntu 4096 Sep 29 10:29 ..
+lrwxrwxrwx 1 ubuntu ubuntu   34 Sep 29 10:28 auth.json -> /home/ubuntu/.codex-auth/auth.json
+## main
+92e43e6 xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+README-autoresearch.md
+README.md
+check_groundtruth.py
+data
+harness.py
+plot_auc_history.py
+prepare.py
+program.md
+run_groundtruth_all.sh
+train.py
+2026-09-30T23:29:50Z setup check: python3 train.py
+2026-09-30T23:30:22Z setup check: Eval AUC: 0.7203
+Logged in using ChatGPT
+2026-09-30T23:30:24Z reasoning levels for gpt-6-luna: low medium high xhigh max
+2026-09-30T23:30:24Z turn 1 send: Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.
+2026-09-30T23:32:25Z session id: 01a0f4a7-abd0-7a20-933e-554cc3726313
+2026-09-30T23:32:25Z turn 1 done (exit 0): `program.md` requires us to agree on a fresh run tag before creating the branch. `sep30` is available; the current branch is `main`, the worktree is clean, and `data/train.csv` plus `data/eval.csv` are present. I’ve also read the in-scope `train.py` and `harness.py`.  Should I use `sep30`? `results.tsv` is missing; I’ll create it with the required header once the tag is settled.
+2026-09-30T23:32:25Z turn_context: [('gpt-6-luna', 'max', 'never', 'danger-full-access')]
+2026-09-30T23:32:26Z clock: Clock not started 
+2026-09-30T23:32:26Z turn 2 send: go
+2026-10-01T01:34:23Z turn 2 done (exit 0): Experiment complete. The 2-hour clock is stopped.  - Best Eval AUC: **0.7382**, at commit `31ee1bc` on branch `sep30`. - Best setup: 330 trees, depth 5, learning rate 0.1, `reg_lambda=5`, numeric scheduled hour, and a training-derived origin flight count for the same date and three-hour departure window. This schedule-density feature was motivated by research on scheduled airport demand over time 
+2026-10-01T01:34:24Z clock: Elapsed: 2h00m10s, remaining: 0h00m00s Clock stopped 
+2026-10-01T01:34:26Z final clock: Elapsed: 2h00m10s, remaining: 0h00m00s Clock stopped 
+2026-10-01T01:34:27Z memory: peak=12658102272 bytes, oom_kills=0
+2026-10-01T01:34:27Z report: Clock:        2026-09-30 23:33:24 -> 2026-10-01 01:33:35 Total:        2h00m10s XGBoost runs: 0h34m50s  29.0%   (57 runs: 56 ok, 1 crash, 0 training timeout, 0 eval timeout)   training:   0h02m40s   2.2%   (train.py up to evaluation: startup, data, features, fit)   evaluation: 0h32m11s  26.8%   (saving the artifact + row-by-row scoring of eval.csv) AI:           1h25m20s  71.0%   (everything else: token generation, tool calls, web research, API latency) 
+2026-10-01T01:34:27Z run_groundtruth_all.sh
+eval_auc: max=0.7382 at n=57
+holdout_auc: max=0.7354 at n=53
+2026-10-01T01:41:13Z branch=sep30 first=92e43e63a900eb0cb75c7de1995dc01e7b8e136f best=31ee1bc upstream: xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+2026-10-01T01:41:14Z .codex-session-raw.jsonl: 5.6 MB -> codex-session.jsonl.gz: 0.62 MB (4556 lines, 2 account id(s) redacted)
+2026-10-01T01:41:14Z redacted 2 account id(s) in .codex-session-raw.jsonl
+2026-10-01T01:41:14Z summary: {  "container": "luna6_n10-4",  "status": "ok",  "reason": "",  "model": "gpt-6-luna",  "effort": "max",  "codex_version": "codex-cli 0.159.0",  "turn_context": "[('gpt-6-luna', 'max', 'never', 'danger-full-access')]",  "session_id": "01a0f4a7-abd0-7a20-933e-554cc3726313",  "turns": [    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",    "go"  ],  "clock_stopped_by": "agent",  "branch": "sep30",  "first_commit": "92e43e63a900eb0cb75c7de1995dc01e7b8e136f",  "upstream": "xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89",  "results_rows": 57,  "best_commit": "31ee1bc",  "best_eval_auc": "0.7382",  "best_holdout_auc": "0.7348",  "memory_limit_bytes": "25769803776",  "memory_peak_bytes": "12658102272",  "oom_kills": "0"}
+2026-10-01T01:41:24Z container deleted

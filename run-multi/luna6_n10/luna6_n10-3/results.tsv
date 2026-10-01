@@ -1,0 +1,82 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+e478dae	0.7345	keep	200 boosting rounds
+29c88bd	0.7312	discard	500 boosting rounds
+eefcad4	0.7275	discard	subsample=0.8
+402b9f7	0.7349	keep	categorical departure hour
+0c053d9	0.7354	keep	learning_rate=0.05, 400 rounds
+e29680d	0.7356	keep	learning_rate=0.05, 600 rounds
+89cfd63	0.7063	discard	route category
+b5f1f9f	0.7364	keep	max_depth=5
+e39e995	0.7352	discard	max_depth=4
+3ee2216	0.7370	keep	min_child_weight=2
+fb7f9f4	0.7369	discard	gamma=0.1
+96c228e	0.7357	discard	cyclic time added to departure hour
+ea27121	0.7359	discard	cyclic time replaces departure hour
+a7d4ed6	0.7281	discard	carrier-hour category
+c0bdca2	0.7362	discard	min_child_weight=4
+ca4924b	0.7365	discard	min_child_weight=3
+1f98b04	0.7363	keep	remove raw CRSDepTime input (simplification)
+6f8090d	0.7363	discard	IsNightFlight indicator
+7c792fe	0.7375	keep	reg_lambda=2
+1d264b6	0.7378	keep	max_cat_threshold=32
+6085ae3	0.7391	keep	max_cat_threshold=16
+42f9590	0.7392	keep	max_cat_threshold=8
+68cb2ed	0.7256	discard	max_cat_to_onehot=32
+8861a27	0.7395	keep	max_cat_to_onehot=16
+0e7d4af	0.7400	keep	max_cat_to_onehot=8
+baa1c65	0.7325	discard	max_cat_threshold=4
+0ddfb34	0.7381	discard	max_cat_threshold=6
+5e1180a	0.7400	discard	max_cat_to_onehot=12
+c75f274	0.7400	discard	grow_policy=lossguide
+22fba05	0.7400	discard	IsWeekend added
+d73b0c3	0.7350	discard	weekend flag replaces DayOfWeek
+f3f289b	0.0000	crash	DART training timeout after 60s
+2999c3f	0.7392	discard	max_bin=512
+8d13074	0.7403	keep	max_bin=128
+3adfeff	0.7395	discard	max_bin=64
+041f634	0.7400	discard	max_bin=192
+23ca622	0.7404	keep	max_bin=96
+358a137	0.7400	discard	max_bin=112
+986daea	0.7405	keep	reg_alpha=0.1
+9aeaf0c	0.7400	discard	colsample_bytree=0.9
+f69ee6c	0.7406	keep	reg_alpha=0.2
+82e6b82	0.0000	crash	DayHour interaction cast category labels to int
+6cb55f5	0.7391	discard	weekday-departure-hour category
+be99240	0.7416	keep	reg_alpha=0.3
+46e7cda	0.7420	keep	reg_alpha=0.5
+780791e	0.7431	keep	reg_alpha=0.8
+3c046b1	0.7438	keep	reg_alpha=1.2
+34f4c37	0.7447	keep	reg_alpha=2.0
+41b15de	0.7455	keep	reg_alpha=3.5
+a8eeed4	0.7509	keep	max_depth=6
+e0a4e0a	0.7534	keep	max_depth=7
+b08cbea	0.7547	keep	max_depth=8
+d19750e	0.7569	keep	max_depth=9
+49788cd	0.7572	keep	max_depth=10
+cf8436e	0.7576	keep	max_depth=11
+8b95c23	0.7582	keep	max_depth=12
+a2bf721	0.7604	keep	reg_alpha=5.0 at depth 12
+9497c87	0.7618	keep	reg_alpha=7.5 at depth 12
+fd7dd9c	0.7605	discard	max_depth=13 at reg_alpha=7.5
+7d13a98	0.7617	discard	min_child_weight=4 at depth 12
+0d8e593	0.7613	discard	min_child_weight=1 at depth 12
+4e2ca87	0.7608	discard	gamma=0.1 at depth 12
+368d3f2	0.7606	discard	max_bin=128 at depth 12
+66a7ad4	0.7611	discard	reg_alpha=10 at depth 12
+4cd87c5	0.7611	discard	reg_alpha=9 at depth 12
+72bf32c	0.7620	keep	reg_lambda=4 at depth 12
+ada4c8d	0.7617	discard	reg_lambda=6 at depth 12
+09386ac	0.7616	discard	reg_lambda=3 at depth 12
+4d38072	0.7601	discard	reg_alpha=6.5 with reg_lambda=4 at depth 12
+2486b3b	0.7612	discard	n_estimators=800 at depth 12
+875b660	0.7619	keep	n_estimators=500, comparable AUC with smaller model
+adccf54	0.7621	keep	n_estimators=550 at depth 12
+10d3c9e	0.7620	discard	n_estimators=575 at depth 12
+9192ac1	0.7620	keep	n_estimators=525, comparable AUC with smaller model
+7e3d57d	0.7620	discard	n_estimators=540 tied, larger than 525
+6f48f7e	0.7620	discard	learning_rate=0.04, n_estimators=650
+5255492	0.7614	discard	reg_alpha=8 at depth 12
+2f30550	0.7617	discard	reg_alpha=7 at depth 12
+b40b823	0.7621	discard	reg_lambda=4.5 tied, no simplification
+61f15e9	0.7615	discard	reg_lambda=3.5 at depth 12

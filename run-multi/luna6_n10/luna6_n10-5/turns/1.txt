@@ -1,0 +1,3 @@
+Setup is ready on branch `oct1`, created from the current `main` HEAD. Both `data/train.csv` and `data/eval.csv` are present, and [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) has the required header.
+
+The experiment clock hasn’t started and no run has been launched. I used the suggested `oct1` tag after no tag change came through. If the setup looks good, confirm and I’ll start the clock and run the baseline.

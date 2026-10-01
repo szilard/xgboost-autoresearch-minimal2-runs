@@ -1,0 +1,2 @@
+2026-09-30T22:50:26.988370Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/research-log.md:
+**Outcome:** Eval AUC 0.7619 (`875b660`), 0.0008 below best. Discarded and returned to `72bf32c`; 600 rounds remains better than 800.

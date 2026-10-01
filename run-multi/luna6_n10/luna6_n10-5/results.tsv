@@ -1,0 +1,60 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline: unmodified starter model
+7fc5827	0.7348	keep	300 trees at learning rate 0.05
+ca89138	0.7359	keep	600 trees at learning rate 0.05
+83878bc	0.7324	discard	1200 trees at learning rate 0.05
+e7badc9	0.7362	keep	600 trees with max_depth 5
+26fe527	0.7350	discard	600 trees with max_depth 4
+d239341	0.7359	discard	600 trees, depth 5, min_child_weight 5
+5d58e35	0.7249	discard	600 trees, depth 5, subsample 0.8
+1f6d656	0.7079	discard	added directional Origin-Dest categorical feature
+b96e35a	0.7366	keep	1000 trees at learning rate 0.03 and depth 5
+08220e5	0.7366	discard	1200 trees at learning rate 0.025 and depth 5
+a3468a7	0.7368	keep	1000 trees, learning rate 0.03, colsample_bytree 0.9
+d6e16db	0.7385	keep	1000 trees, learning rate 0.03, colsample_bytree 0.8
+07abb28	0.7394	keep	1000 trees, learning rate 0.03, colsample_bytree 0.7
+9d38cc2	0.7399	keep	1000 trees, learning rate 0.03, colsample_bytree 0.6
+28370de	0.7399	discard	1000 trees, learning rate 0.03, colsample_bytree 0.5
+382d50c	0.7442	keep	1000 trees, learning rate 0.03, depth 6, colsample_bytree 0.6
+85c8758	0.7467	keep	1000 trees, learning rate 0.03, depth 7, colsample_bytree 0.6
+4b04aa5	0.7478	keep	1000 trees, learning rate 0.03, depth 8, colsample_bytree 0.6
+3a90110	0.7507	keep	1000 trees, learning rate 0.03, lossguide, 255 leaves, colsample_bytree 0.6
+7b94d63	0.7495	discard	1000 trees, lossguide, max_leaves 127
+9ab9ae1	0.7486	discard	1000 trees, lossguide, max_leaves 511
+a9b7ffb	0.7505	discard	added train-fitted categorical departure hour
+33429f3	0.7509	keep	1000 trees, lossguide 255 leaves, max_bin 512
+61978f8	0.7518	keep	1000 trees, lossguide 255 leaves, max_bin 1024
+ae445b4	0.7506	discard	1000 trees, lossguide 255 leaves, max_bin 2048
+d30b0d0	0.7492	discard	1000 trees, lossguide, max_cat_threshold 32
+d12ac8a	0.7506	discard	1000 trees, lossguide 255 leaves, max_bin 1536
+9e1f64f	0.7495	discard	1000 trees, lossguide, max_cat_to_onehot 16
+331e21c	0.7504	discard	1000 trees, lossguide 255 leaves, reg_lambda 2
+ef9a0c1	0.7500	discard	1000 trees, lossguide, max_leaves 383, max_bin 1024
+452ff74	0.0000	crash	DART booster timed out during training
+9d5ac9a	0.0000	crash	dropout parameters timed out during training
+6206d29	0.7512	discard	1000 trees, max_bin 1024, colsample_bylevel 0.8
+4adb063	0.7504	discard	1000 trees, max_bin 1024, colsample_bynode 0.8
+c614935	0.7485	discard	five-fold cross-fitted smoothed delay rates for carrier, origin, and destination
+c4f36fb	0.0000	crash	cyclic schedule encoding attempt failed on c-prefixed calendar categories
+35c8583	0.7533	keep	cyclic sine/cosine encodings for departure time, weekday, and month
+6cec1ca	0.7502	discard	kept departure-time cycle, removed weekday and month cycles
+02a0be8	0.7520	discard	kept month and weekday cycles, removed departure-time cycle
+94501ec	0.7533	discard	added second harmonic for scheduled departure time
+7b67122	0.7462	discard	colsample_bytree 0.8 with cyclic schedule features
+9d68f4b	0.7513	discard	colsample_bytree 0.7 with cyclic schedule features
+56af675	0.7513	discard	gamma 1.0 split penalty with cyclic schedule features
+b38bf3e	0.7533	discard	gamma 0.1 split penalty with cyclic schedule features
+6fe2669	0.7481	discard	max_depth 8 cap on loss-guided trees with cyclic features
+df88b3f	0.7535	keep	max_depth 16 cap on loss-guided trees with cyclic features
+c4b82d2	0.7538	keep	max_depth 24 cap on loss-guided trees with cyclic features
+73d7c47	0.7533	discard	max_depth 32 cap on loss-guided trees with cyclic features
+214ca16	0.7530	discard	1200 trees at learning rate 0.025 with depth 24
+f89749c	0.7535	discard	min_child_weight 2 with depth-24 loss-guided trees
+a511e07	0.7526	discard	reg_alpha 0.1 with depth-24 loss-guided trees
+81a3668	0.7536	discard	1100 trees at learning rate 0.03 with depth 24
+5aacf89	0.7529	discard	max_depth 20 cap on loss-guided trees with cyclic features
+41707e7	0.7534	discard	max_depth 28 cap on loss-guided trees with cyclic features
+dc462d7	0.7525	discard	max_leaves 192 with depth-24 loss-guided trees
+cf22dca	0.7535	discard	max_bin 768 with depth-24 cyclic features
+4e521f0	0.7540	keep	colsample_bytree 0.55 with depth-24 cyclic features
+4741fc0	0.7540	discard	colsample_bytree 0.5 with depth-24 cyclic features

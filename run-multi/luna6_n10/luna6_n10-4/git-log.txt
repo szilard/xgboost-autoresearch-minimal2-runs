@@ -1,0 +1,117 @@
+commit 31ee1bcfc1dd244b21e9e286df09f2765602bfeb
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 01:32:05 2026 +0000
+
+    Test 330 rounds with default child weight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d4c38bb700ad9a2e1695b48672fe0b9da1d34e22
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 01:30:50 2026 +0000
+
+    Test default child weight with three hour count
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit cc71ca4668e1ffa7a3fdfe2f3e0a485293d42eca
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 01:27:10 2026 +0000
+
+    Test three hour origin schedule counts
+
+ train.py | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 26540ff53ed7884609bbbee60185788c8db582fa
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 01:20:51 2026 +0000
+
+    Test light child weight regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 6193e0fb97cb52747c9368f5e4b091b0144aa481
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 01:08:26 2026 +0000
+
+    Add origin schedule density feature
+
+ train.py | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit 2e3ccba6d0cc30ebbb3aca1d72a4d3ed38408fac
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 01:03:17 2026 +0000
+
+    Test three hundred boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9964eea5b3d09b30e925a4dd0f89f8832e0979ac
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 00:09:58 2026 +0000
+
+    Increase L2 regularization of XGBoost leaves
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit d8b3bdebda93443d18c749a9f2e50cee3232e74f
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 23:47:30 2026 +0000
+
+    Reduce XGBoost tree depth to five
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4c197287b8bbd5f11af3a1c3ce3d9890bb35b4f1
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 23:44:42 2026 +0000
+
+    Add scheduled departure hour feature
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 8ca3375e14c9010c1e00b2ac7b4080dd77e53e72
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 23:38:25 2026 +0000
+
+    Increase XGBoost rounds to 240
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2a91ba4b1fab7a4c661427894ac72c9c8ef615a2
+Author: agent <agent@localhost>
+Date:   Wed Sep 30 23:36:42 2026 +0000
+
+    Increase XGBoost boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

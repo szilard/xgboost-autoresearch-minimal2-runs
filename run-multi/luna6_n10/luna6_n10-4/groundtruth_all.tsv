@@ -1,0 +1,58 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline	0.7203	0.7155
+2a91ba4	keep	increase trees from 30 to 120	0.7317	0.7282
+8ca3375	keep	increase trees from 120 to 240	0.7345	0.7312
+47e578c	discard	increase trees from 240 to 480	0.7316	N/A
+742f9c7	discard	add scheduled departure hour and minute	0.7342	N/A
+4c19728	keep	add scheduled departure hour	0.7351	0.7313
+d8b3bde	keep	reduce max_depth from 6 to 5	0.7357	0.7323
+a979090	discard	reduce max_depth from 5 to 4	0.7332	N/A
+7c1caac	discard	set row subsample to 0.8	0.7249	N/A
+56fefc4	discard	set column subsample to 0.8	0.7356	N/A
+7fd9c17	discard	add directional route category	0.7077	N/A
+5a215ef	discard	add route with max_cat_threshold 32	0.7153	N/A
+01ce3e0	discard	set max_cat_threshold to 32	0.7355	N/A
+125f16b	discard	set max_cat_to_onehot to 13	0.7336	N/A
+e8296c8	discard	set min_child_weight to 5	0.7351	N/A
+994c2da	discard	set gamma to 0.1	0.7349	N/A
+e9c2235	discard	set gamma to 0.01	0.7357	N/A
+9964eea	keep	set reg_lambda to 5	0.7360	0.7319
+0030eea	discard	set reg_lambda to 10	0.7346	N/A
+d714902	discard	set reg_lambda to 3	0.7350	N/A
+6dc2e7c	discard	add cyclical scheduled departure time	0.7345	N/A
+b849b25	crash	DayOfWeek cyclic arithmetic on string dtype	0.0000	N/A
+b6b526d	discard	cyclical day-of-week features after dtype fix	0.7360	N/A
+9ed6619	discard	cyclical month features	0.7360	N/A
+bb71b53	discard	480 trees at learning rate 0.05	0.7356	N/A
+bd543cf	discard	add carrier by departure hour category	0.7267	N/A
+050c1e3	discard	set max_bin to 512	0.7358	N/A
+96bc96f	discard	set max_bin to 1024	0.7349	N/A
+7695983	discard	use DART booster at dropout rate 0.1	0.7186	N/A
+4097483	discard	set reg_alpha to 0.1	0.7345	N/A
+34a55d7	discard	set reg_alpha to 0.01	0.7349	N/A
+227e766	discard	use lossguide with 31 leaves	0.7334	N/A
+6d5bd94	discard	use approximate split finding	0.7355	N/A
+3df773f	discard	constrain leaf updates to one	0.7355	N/A
+c0be676	discard	weight positive labels by two	0.7333	N/A
+11f684d	discard	add night-flight indicator	0.7360	N/A
+395f1fb	discard	encode departure hour as categorical	0.7356	N/A
+e936bc5	discard	add categorical two hour time blocks	0.7356	N/A
+b3479be	discard	test depth six with L2 regularization	0.7359	N/A
+36c128f	discard	add weekday weekend flag	0.7360	N/A
+2e3ccba	keep	increase boosting rounds to 300	0.7364	0.7326
+6193e0f	keep	add origin date and time block flight count	0.7369	0.7327
+4df1261	discard	use hourly origin count instead of two hour count	0.7349	N/A
+90b6fec	discard	use 240 rounds with origin schedule count	0.7363	N/A
+422d699	discard	use 360 rounds with origin schedule count	0.7368	N/A
+a8e2885	discard	pool origin counts across all dates	0.7354	N/A
+dcef069	discard	group origin counts by weekday and time block	0.7341	N/A
+44a2211	discard	use 330 rounds with origin schedule count	0.7369	N/A
+26540ff	keep	set min child weight to two with schedule count	0.7374	0.7342
+1eff58b	discard	set min child weight to three with schedule count	0.7366	N/A
+f72ab1e	discard	test gamma 0.01 with schedule count	0.7374	N/A
+ced2abf	discard	add carrier date and time block count	0.7359	N/A
+cc71ca4	keep	use three hour origin date count	0.7376	0.7354
+ea6b548	discard	use four hour origin date count	0.7376	N/A
+f0729c1	discard	set depth six with three hour count	0.7372	N/A
+d4c38bb	keep	use default child weight with three hour count	0.7380	0.7346
+31ee1bc	keep	use 330 rounds with three hour count	0.7382	0.7348

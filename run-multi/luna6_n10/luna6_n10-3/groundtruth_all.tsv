@@ -1,0 +1,82 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline	0.7203	0.7155
+e478dae	keep	200 boosting rounds	0.7345	0.7311
+29c88bd	discard	500 boosting rounds	0.7312	N/A
+eefcad4	discard	subsample=0.8	0.7275	N/A
+402b9f7	keep	categorical departure hour	0.7349	0.7309
+0c053d9	keep	learning_rate=0.05, 400 rounds	0.7354	0.7317
+e29680d	keep	learning_rate=0.05, 600 rounds	0.7356	0.7320
+89cfd63	discard	route category	0.7063	N/A
+b5f1f9f	keep	max_depth=5	0.7364	0.7334
+e39e995	discard	max_depth=4	0.7352	N/A
+3ee2216	keep	min_child_weight=2	0.7370	0.7347
+fb7f9f4	discard	gamma=0.1	0.7369	N/A
+96c228e	discard	cyclic time added to departure hour	0.7357	N/A
+ea27121	discard	cyclic time replaces departure hour	0.7359	N/A
+a7d4ed6	discard	carrier-hour category	0.7281	N/A
+c0bdca2	discard	min_child_weight=4	0.7362	N/A
+ca4924b	discard	min_child_weight=3	0.7365	N/A
+1f98b04	keep	remove raw CRSDepTime input (simplification)	0.7363	0.7343
+6f8090d	discard	IsNightFlight indicator	0.7363	N/A
+7c792fe	keep	reg_lambda=2	0.7375	0.7347
+1d264b6	keep	max_cat_threshold=32	0.7378	0.7351
+6085ae3	keep	max_cat_threshold=16	0.7391	0.7338
+42f9590	keep	max_cat_threshold=8	0.7392	0.7339
+68cb2ed	discard	max_cat_to_onehot=32	0.7256	N/A
+8861a27	keep	max_cat_to_onehot=16	0.7395	0.7350
+0e7d4af	keep	max_cat_to_onehot=8	0.7400	0.7340
+baa1c65	discard	max_cat_threshold=4	0.7325	N/A
+0ddfb34	discard	max_cat_threshold=6	0.7381	N/A
+5e1180a	discard	max_cat_to_onehot=12	0.7400	N/A
+c75f274	discard	grow_policy=lossguide	0.7400	N/A
+22fba05	discard	IsWeekend added	0.7400	N/A
+d73b0c3	discard	weekend flag replaces DayOfWeek	0.7350	N/A
+f3f289b	crash	DART training timeout after 60s	0.0000	N/A
+2999c3f	discard	max_bin=512	0.7392	N/A
+8d13074	keep	max_bin=128	0.7403	0.7341
+3adfeff	discard	max_bin=64	0.7395	N/A
+041f634	discard	max_bin=192	0.7400	N/A
+23ca622	keep	max_bin=96	0.7404	0.7346
+358a137	discard	max_bin=112	0.7400	N/A
+986daea	keep	reg_alpha=0.1	0.7405	0.7345
+9aeaf0c	discard	colsample_bytree=0.9	0.7400	N/A
+f69ee6c	keep	reg_alpha=0.2	0.7406	0.7357
+82e6b82	crash	DayHour interaction cast category labels to int	0.0000	N/A
+6cb55f5	discard	weekday-departure-hour category	0.7391	N/A
+be99240	keep	reg_alpha=0.3	0.7416	0.7362
+46e7cda	keep	reg_alpha=0.5	0.7420	0.7368
+780791e	keep	reg_alpha=0.8	0.7431	0.7382
+3c046b1	keep	reg_alpha=1.2	0.7438	0.7393
+34f4c37	keep	reg_alpha=2.0	0.7447	0.7401
+41b15de	keep	reg_alpha=3.5	0.7455	0.7415
+a8eeed4	keep	max_depth=6	0.7509	0.7461
+e0a4e0a	keep	max_depth=7	0.7534	0.7484
+b08cbea	keep	max_depth=8	0.7547	0.7510
+d19750e	keep	max_depth=9	0.7569	0.7522
+49788cd	keep	max_depth=10	0.7572	0.7520
+cf8436e	keep	max_depth=11	0.7576	0.7526
+8b95c23	keep	max_depth=12	0.7582	0.7528
+a2bf721	keep	reg_alpha=5.0 at depth 12	0.7604	0.7549
+9497c87	keep	reg_alpha=7.5 at depth 12	0.7618	0.7562
+fd7dd9c	discard	max_depth=13 at reg_alpha=7.5	0.7605	N/A
+7d13a98	discard	min_child_weight=4 at depth 12	0.7617	N/A
+0d8e593	discard	min_child_weight=1 at depth 12	0.7613	N/A
+4e2ca87	discard	gamma=0.1 at depth 12	0.7608	N/A
+368d3f2	discard	max_bin=128 at depth 12	0.7606	N/A
+66a7ad4	discard	reg_alpha=10 at depth 12	0.7611	N/A
+4cd87c5	discard	reg_alpha=9 at depth 12	0.7611	N/A
+72bf32c	keep	reg_lambda=4 at depth 12	0.7620	0.7556
+ada4c8d	discard	reg_lambda=6 at depth 12	0.7617	N/A
+09386ac	discard	reg_lambda=3 at depth 12	0.7616	N/A
+4d38072	discard	reg_alpha=6.5 with reg_lambda=4 at depth 12	0.7601	N/A
+2486b3b	discard	n_estimators=800 at depth 12	0.7612	N/A
+875b660	keep	n_estimators=500, comparable AUC with smaller model	0.7619	0.7556
+adccf54	keep	n_estimators=550 at depth 12	0.7621	0.7557
+10d3c9e	discard	n_estimators=575 at depth 12	0.7620	N/A
+9192ac1	keep	n_estimators=525, comparable AUC with smaller model	0.7620	0.7556
+7e3d57d	discard	n_estimators=540 tied, larger than 525	0.7620	N/A
+6f48f7e	discard	learning_rate=0.04, n_estimators=650	0.7620	N/A
+5255492	discard	reg_alpha=8 at depth 12	0.7614	N/A
+2f30550	discard	reg_alpha=7 at depth 12	0.7617	N/A
+b40b823	discard	reg_lambda=4.5 tied, no simplification	0.7621	N/A
+61f15e9	discard	reg_lambda=3.5 at depth 12	0.7615	N/A

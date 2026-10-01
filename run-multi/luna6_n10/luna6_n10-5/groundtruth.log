@@ -1,0 +1,120 @@
+=== [2] 92e43e6 | keep | baseline: unmodified starter model ===
+  holdout=0.7155
+=== [3] 7fc5827 | keep | 300 trees at learning rate 0.05 ===
+  holdout=0.7306
+=== [4] ca89138 | keep | 600 trees at learning rate 0.05 ===
+  holdout=0.7320
+=== [5] 83878bc | discard | 1200 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [6] e7badc9 | keep | 600 trees with max_depth 5 ===
+  holdout=0.7331
+=== [7] 26fe527 | discard | 600 trees with max_depth 4 ===
+  SKIP: status discard
+=== [8] d239341 | discard | 600 trees, depth 5, min_child_weight 5 ===
+  SKIP: status discard
+=== [9] 5d58e35 | discard | 600 trees, depth 5, subsample 0.8 ===
+  SKIP: status discard
+=== [10] 1f6d656 | discard | added directional Origin-Dest categorical feature ===
+  SKIP: status discard
+=== [11] b96e35a | keep | 1000 trees at learning rate 0.03 and depth 5 ===
+  holdout=0.7338
+=== [12] 08220e5 | discard | 1200 trees at learning rate 0.025 and depth 5 ===
+  SKIP: status discard
+=== [13] a3468a7 | keep | 1000 trees, learning rate 0.03, colsample_bytree 0.9 ===
+  holdout=0.7340
+=== [14] d6e16db | keep | 1000 trees, learning rate 0.03, colsample_bytree 0.8 ===
+  holdout=0.7349
+=== [15] 07abb28 | keep | 1000 trees, learning rate 0.03, colsample_bytree 0.7 ===
+  holdout=0.7357
+=== [16] 9d38cc2 | keep | 1000 trees, learning rate 0.03, colsample_bytree 0.6 ===
+  holdout=0.7361
+=== [17] 28370de | discard | 1000 trees, learning rate 0.03, colsample_bytree 0.5 ===
+  SKIP: status discard
+=== [18] 382d50c | keep | 1000 trees, learning rate 0.03, depth 6, colsample_bytree 0.6 ===
+  holdout=0.7405
+=== [19] 85c8758 | keep | 1000 trees, learning rate 0.03, depth 7, colsample_bytree 0.6 ===
+  holdout=0.7433
+=== [20] 4b04aa5 | keep | 1000 trees, learning rate 0.03, depth 8, colsample_bytree 0.6 ===
+  holdout=0.7442
+=== [21] 3a90110 | keep | 1000 trees, learning rate 0.03, lossguide, 255 leaves, colsample_bytree 0.6 ===
+  holdout=0.7470
+=== [22] 7b94d63 | discard | 1000 trees, lossguide, max_leaves 127 ===
+  SKIP: status discard
+=== [23] 9ab9ae1 | discard | 1000 trees, lossguide, max_leaves 511 ===
+  SKIP: status discard
+=== [24] a9b7ffb | discard | added train-fitted categorical departure hour ===
+  SKIP: status discard
+=== [25] 33429f3 | keep | 1000 trees, lossguide 255 leaves, max_bin 512 ===
+  holdout=0.7469
+=== [26] 61978f8 | keep | 1000 trees, lossguide 255 leaves, max_bin 1024 ===
+  holdout=0.7476
+=== [27] ae445b4 | discard | 1000 trees, lossguide 255 leaves, max_bin 2048 ===
+  SKIP: status discard
+=== [28] d30b0d0 | discard | 1000 trees, lossguide, max_cat_threshold 32 ===
+  SKIP: status discard
+=== [29] d12ac8a | discard | 1000 trees, lossguide 255 leaves, max_bin 1536 ===
+  SKIP: status discard
+=== [30] 9e1f64f | discard | 1000 trees, lossguide, max_cat_to_onehot 16 ===
+  SKIP: status discard
+=== [31] 331e21c | discard | 1000 trees, lossguide 255 leaves, reg_lambda 2 ===
+  SKIP: status discard
+=== [32] ef9a0c1 | discard | 1000 trees, lossguide, max_leaves 383, max_bin 1024 ===
+  SKIP: status discard
+=== [33] 452ff74 | crash | DART booster timed out during training ===
+  SKIP: status crash
+=== [34] 9d5ac9a | crash | dropout parameters timed out during training ===
+  SKIP: status crash
+=== [35] 6206d29 | discard | 1000 trees, max_bin 1024, colsample_bylevel 0.8 ===
+  SKIP: status discard
+=== [36] 4adb063 | discard | 1000 trees, max_bin 1024, colsample_bynode 0.8 ===
+  SKIP: status discard
+=== [37] c614935 | discard | five-fold cross-fitted smoothed delay rates for carrier, origin, and destination ===
+  SKIP: status discard
+=== [38] c4f36fb | crash | cyclic schedule encoding attempt failed on c-prefixed calendar categories ===
+  SKIP: status crash
+=== [39] 35c8583 | keep | cyclic sine/cosine encodings for departure time, weekday, and month ===
+  holdout=0.7479
+=== [40] 6cec1ca | discard | kept departure-time cycle, removed weekday and month cycles ===
+  SKIP: status discard
+=== [41] 02a0be8 | discard | kept month and weekday cycles, removed departure-time cycle ===
+  SKIP: status discard
+=== [42] 94501ec | discard | added second harmonic for scheduled departure time ===
+  SKIP: status discard
+=== [43] 7b67122 | discard | colsample_bytree 0.8 with cyclic schedule features ===
+  SKIP: status discard
+=== [44] 9d68f4b | discard | colsample_bytree 0.7 with cyclic schedule features ===
+  SKIP: status discard
+=== [45] 56af675 | discard | gamma 1.0 split penalty with cyclic schedule features ===
+  SKIP: status discard
+=== [46] b38bf3e | discard | gamma 0.1 split penalty with cyclic schedule features ===
+  SKIP: status discard
+=== [47] 6fe2669 | discard | max_depth 8 cap on loss-guided trees with cyclic features ===
+  SKIP: status discard
+=== [48] df88b3f | keep | max_depth 16 cap on loss-guided trees with cyclic features ===
+  holdout=0.7487
+=== [49] c4b82d2 | keep | max_depth 24 cap on loss-guided trees with cyclic features ===
+  holdout=0.7484
+=== [50] 73d7c47 | discard | max_depth 32 cap on loss-guided trees with cyclic features ===
+  SKIP: status discard
+=== [51] 214ca16 | discard | 1200 trees at learning rate 0.025 with depth 24 ===
+  SKIP: status discard
+=== [52] f89749c | discard | min_child_weight 2 with depth-24 loss-guided trees ===
+  SKIP: status discard
+=== [53] a511e07 | discard | reg_alpha 0.1 with depth-24 loss-guided trees ===
+  SKIP: status discard
+=== [54] 81a3668 | discard | 1100 trees at learning rate 0.03 with depth 24 ===
+  SKIP: status discard
+=== [55] 5aacf89 | discard | max_depth 20 cap on loss-guided trees with cyclic features ===
+  SKIP: status discard
+=== [56] 41707e7 | discard | max_depth 28 cap on loss-guided trees with cyclic features ===
+  SKIP: status discard
+=== [57] dc462d7 | discard | max_leaves 192 with depth-24 loss-guided trees ===
+  SKIP: status discard
+=== [58] cf22dca | discard | max_bin 768 with depth-24 cyclic features ===
+  SKIP: status discard
+=== [59] 4e521f0 | keep | colsample_bytree 0.55 with depth-24 cyclic features ===
+  holdout=0.7496
+=== [60] 4741fc0 | discard | colsample_bytree 0.5 with depth-24 cyclic features ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

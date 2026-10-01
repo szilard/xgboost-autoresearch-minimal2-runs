@@ -1,0 +1,6 @@
+Experiment complete. The 2-hour clock is stopped.
+
+- Best Eval AUC: **0.7382**, at commit `31ee1bc` on branch `sep30`.
+- Best setup: 330 trees, depth 5, learning rate 0.1, `reg_lambda=5`, numeric scheduled hour, and a training-derived origin flight count for the same date and three-hour departure window. This schedule-density feature was motivated by research on scheduled airport demand over time intervals ([airport throughput study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9234322/)).
+- I recorded 56 experiments, including the baseline, in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and summarized findings in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md). Only [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py) is committed; the ledger and log remain local as directed.
+- The harness reported the clock stopped after **2h00m10s**.

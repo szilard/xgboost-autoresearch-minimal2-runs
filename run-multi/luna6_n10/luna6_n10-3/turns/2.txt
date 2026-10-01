@@ -1,0 +1,5 @@
+The experiment is complete. The `sep30` branch is at **`adccf54`**, the best numeric checkpoint: Eval AUC **0.7621**, up **0.0418** from the 0.7203 baseline.
+
+It uses 550 rounds, depth 12, `reg_alpha=7.5`, `reg_lambda=4`, and `max_bin=96`. The largest gains came from stronger L1 regularization paired with deeper trees; XGBoost documents both as controls on leaf weights and model complexity ([parameter reference](https://xgboost.readthedocs.io/en/stable/parameter.html)).
+
+I logged all 81 experiments in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and the hypotheses, findings, and final summary in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md). A 525-round version (`9192ac1`, AUC 0.7620) is also kept as a smaller near-tie. The harness clock was stopped at **2h00m09s**.
