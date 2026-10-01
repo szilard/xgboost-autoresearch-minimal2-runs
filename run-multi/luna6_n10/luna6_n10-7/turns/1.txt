@@ -1,0 +1,3 @@
+Setup is ready on branch `oct1`: the required data files are present, `results.tsv` has its header, and `research-log.md` is initialized. The starter `train.py` is unchanged, and the experiment clock is not running.
+
+Please confirm the setup looks good. Then I’ll start the clock and run the baseline.

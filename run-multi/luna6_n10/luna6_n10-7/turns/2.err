@@ -1,0 +1,10 @@
+2026-10-01T06:44:24.656915Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/results.tsv:
+bd6ccb9	0.7468	keep	min_child_weight 60
+2026-10-01T06:57:21.827734Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/results.tsv:
+7b207ee	discard	1600 trees, min_child_weight 60
+2026-10-01T07:05:26.240183Z ERROR codex_core::tools::router: error=write_stdin failed: Unknown process id 8134
+2026-10-01T07:16:36.570142Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/results.tsv:
+26bc48b	discard	lossguide, max leaves 128
+2026-10-01T08:04:43.107459Z ERROR codex_core::tools::router: error=apply_patch verification failed: invalid hunk at line 5, Expected update hunk to start with a @@ context marker, got: 'aa1a768	0.7584	keep	reg_alpha 1.0 under lossguide'
+2026-10-01T08:12:44.188302Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/research-log.md:
+- **Hypothesis:** test `reg_alpha=0.7`, then stop at the two-hour clock limit. If it does not beat 0.75, restore commit `5a6da1e` and finish the run.

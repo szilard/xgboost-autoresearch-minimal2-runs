@@ -1,0 +1,146 @@
+=== [2] 92e43e6 | keep | baseline ===
+  holdout=0.7155
+=== [3] 1f23655 | keep | 300 trees, learning rate 0.05 ===
+  holdout=0.7306
+=== [4] bdf3a7d | keep | 600 trees, learning rate 0.05 ===
+  holdout=0.7320
+=== [5] 282ae7e | discard | max depth 8 ===
+  SKIP: status discard
+=== [6] 2f7b4dc | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [7] 4dd691e | discard | minute of day and cyclic departure time features ===
+  SKIP: status discard
+=== [8] c1e35c0 | discard | route median departure time residual ===
+  SKIP: status discard
+=== [9] 2efbf99 | discard | max_cat_to_onehot 32 ===
+  SKIP: status discard
+=== [10] 142be3f | keep | max_cat_threshold 32 ===
+  holdout=0.7343
+=== [11] 7f62064 | keep | max_cat_threshold 16 ===
+  holdout=0.7357
+=== [12] cbc12e8 | keep | max_cat_threshold 8 ===
+  holdout=0.7368
+=== [13] 50487c6 | discard | max_cat_threshold 4 ===
+  SKIP: status discard
+=== [14] 99e4b1d | keep | min_child_weight 5 ===
+  holdout=0.7386
+=== [15] a0c57b5 | keep | min_child_weight 10 ===
+  holdout=0.7387
+=== [16] ac677a6 | keep | min_child_weight 20 ===
+  holdout=0.7384
+=== [17] 602b949 | keep | min_child_weight 40 ===
+  holdout=0.7402
+=== [18] 9998dbc | discard | min_child_weight 80 ===
+  SKIP: status discard
+=== [19] da96cdf | discard | gamma 1 ===
+  SKIP: status discard
+=== [20] 2b08bed | discard | gamma 0.1 ===
+  SKIP: status discard
+=== [21] 044dbc7 | discard | reg_lambda 5 ===
+  SKIP: status discard
+=== [22] bd6ccb9 | keep | min_child_weight 60 ===
+  holdout=0.7416
+=== [23] eee859a | discard | min_child_weight 50 ===
+  SKIP: status discard
+=== [24] 90822ae | discard | min_child_weight 70 ===
+  SKIP: status discard
+=== [25] 341a649 | discard | max_depth 5 ===
+  SKIP: status discard
+=== [26] 2b29a1f | keep | 800 trees, min_child_weight 60 ===
+  holdout=0.7435
+=== [27] 919fcc3 | keep | 1000 trees, min_child_weight 60 ===
+  holdout=0.7445
+=== [28] b4a1b99 | keep | 1200 trees, min_child_weight 60 ===
+  holdout=0.7453
+=== [29] 100c89b | keep | 1400 trees, min_child_weight 60 ===
+  holdout=0.7458
+=== [30] 7b207ee | discard | 1600 trees, min_child_weight 60 ===
+  SKIP: status discard
+=== [31] ce38e68 | keep | 2300 trees, learning rate 0.03 ===
+  holdout=0.7455
+=== [32] 1fa9e7e | discard | 2600 trees, learning rate 0.03 ===
+  SKIP: status discard
+=== [33] 2f5bb54 | discard | 3450 trees, learning rate 0.02 ===
+  SKIP: status discard
+=== [34] c6656a5 | discard | 2760 trees, learning rate 0.025 ===
+  SKIP: status discard
+=== [35] 0d79c54 | discard | Origin-Dest native category ===
+  SKIP: status discard
+=== [36] 86df5da | discard | 4-hour departure time block category ===
+  SKIP: status discard
+=== [37] f327baa | discard | origin by departure block category ===
+  SKIP: status discard
+=== [38] 7824878 | keep | lossguide, max leaves 64 ===
+  holdout=0.7471
+=== [39] 26bc48b | discard | lossguide, max leaves 128 ===
+  SKIP: status discard
+=== [40] e06bcc7 | keep | lossguide, max leaves 32 ===
+  holdout=0.7476
+=== [41] d0c8717 | keep | lossguide, max leaves 48 ===
+  holdout=0.7483
+=== [42] c47499d | discard | lossguide, max leaves 56 ===
+  SKIP: status discard
+=== [43] 8d3a478 | keep | lossguide, max leaves 40; tied rounded AUC with a smaller model ===
+  holdout=0.7475
+=== [44] 8b5fa9f | keep | lossguide, max leaves 44 ===
+  holdout=0.7487
+=== [45] 61ef4cc | discard | lossguide, max leaves 42 ===
+  SKIP: status discard
+=== [46] 63bef7e | discard | lossguide, max leaves 46 ===
+  SKIP: status discard
+=== [47] 26f58b8 | discard | lossguide, max leaves 43 ===
+  SKIP: status discard
+=== [48] acae50a | discard | colsample_bytree 0.8 ===
+  SKIP: status discard
+=== [49] 7fdaa25 | discard | colsample_bytree 0.9 ===
+  SKIP: status discard
+=== [50] 87c47e4 | keep | min_child_weight 50 under lossguide, max leaves 44 ===
+  holdout=0.7491
+=== [51] f113683 | discard | min_child_weight 55 under lossguide, max leaves 44 ===
+  SKIP: status discard
+=== [52] 8d8238e | discard | min_child_weight 45 under lossguide, max leaves 44 ===
+  SKIP: status discard
+=== [53] 5876c2f | discard | min_child_weight 48 under lossguide, max leaves 44 ===
+  SKIP: status discard
+=== [54] 6a14f23 | discard | max_cat_threshold 16 under lossguide, max leaves 44 ===
+  SKIP: status discard
+=== [55] 2fc9ee6 | discard | max_cat_to_onehot 8 under lossguide ===
+  SKIP: status discard
+=== [56] 14cadb3 | discard | max_cat_to_onehot 16 under lossguide ===
+  SKIP: status discard
+=== [57] 523a3aa | discard | cross-fitted smoothed target rates for Origin, Dest, Carrier, Route ===
+  SKIP: status discard
+=== [58] 1306688 | discard | cross-fitted smoothed target rates for Origin, Dest, Carrier ===
+  SKIP: status discard
+=== [59] 18ff1a9 | discard | cross-fitted smoothed target rates for Origin, Dest ===
+  SKIP: status discard
+=== [60] c04916c | discard | cross-fitted smoothed Origin target rate ===
+  SKIP: status discard
+=== [61] 4acab1e | discard | cross-fitted smoothed Dest target rate ===
+  SKIP: status discard
+=== [62] 2c5ab63 | discard | max_bin 512 under lossguide ===
+  SKIP: status discard
+=== [63] bd165ba | discard | max_bin 128 under lossguide ===
+  SKIP: status discard
+=== [64] d1aba92 | discard | max_bin 192 under lossguide ===
+  SKIP: status discard
+=== [65] a3fa724 | keep | reg_alpha 0.1 under lossguide ===
+  holdout=0.7507
+=== [66] 0270f00 | keep | reg_alpha 0.5 under lossguide ===
+  holdout=0.7540
+=== [67] aa1a768 | keep | reg_alpha 1.0 under lossguide ===
+  holdout=0.7542
+=== [68] d565873 | discard | reg_alpha 2.0 under lossguide ===
+  SKIP: status discard
+=== [69] 16a0058 | discard | reg_alpha 1.5 under lossguide ===
+  SKIP: status discard
+=== [70] 5a6da1e | keep | reg_alpha 0.75 under lossguide ===
+  holdout=0.7550
+=== [71] 467d4ee | discard | reg_alpha 0.8 under lossguide ===
+  SKIP: status discard
+=== [72] cfb4e7c | discard | reg_alpha 0.7 under lossguide ===
+  SKIP: status discard
+=== [73] 0d00ae7 | discard | reg_alpha 0.74 under lossguide ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

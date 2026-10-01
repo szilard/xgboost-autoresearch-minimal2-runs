@@ -1,0 +1,5 @@
+Experiment complete. The harness clock stopped after **2:00:28**.
+
+- Best: **Eval AUC 0.7597**, up **0.0394** from the 0.7203 baseline.
+- Best commit: `5a6da1e` on branch `oct1`, with 2300 trees, learning rate 0.03, `lossguide` growth, 44 leaves, `min_child_weight=50`, `max_cat_threshold=8`, and `reg_alpha=0.75`. The final 0.74 trial scored lower, so I restored the best commit. XGBoost documents `reg_alpha` as L1 regularization on weights ([parameter guide](https://xgboost.readthedocs.io/en/latest/parameter.html)).
+- Results and experiment notes are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md). The selected configuration is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal2/train.py).

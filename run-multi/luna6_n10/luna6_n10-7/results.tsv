@@ -1,0 +1,73 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+1f23655	0.7348	keep	300 trees, learning rate 0.05
+bdf3a7d	0.7359	keep	600 trees, learning rate 0.05
+282ae7e	0.7321	discard	max depth 8
+2f7b4dc	0.7280	discard	subsample 0.8
+4dd691e	0.7346	discard	minute of day and cyclic departure time features
+c1e35c0	0.7355	discard	route median departure time residual
+2efbf99	0.7236	discard	max_cat_to_onehot 32
+142be3f	0.7373	keep	max_cat_threshold 32
+7f62064	0.7409	keep	max_cat_threshold 16
+cbc12e8	0.7415	keep	max_cat_threshold 8
+50487c6	0.7371	discard	max_cat_threshold 4
+99e4b1d	0.7431	keep	min_child_weight 5
+a0c57b5	0.7436	keep	min_child_weight 10
+ac677a6	0.7439	keep	min_child_weight 20
+602b949	0.7456	keep	min_child_weight 40
+9998dbc	0.7450	discard	min_child_weight 80
+da96cdf	0.7373	discard	gamma 1
+2b08bed	0.7453	discard	gamma 0.1
+044dbc7	0.7453	discard	reg_lambda 5
+bd6ccb9	0.7468	keep	min_child_weight 60
+eee859a	0.7453	discard	min_child_weight 50
+90822ae	0.7459	discard	min_child_weight 70
+341a649	0.7402	discard	max_depth 5
+2b29a1f	0.7489	keep	800 trees, min_child_weight 60
+919fcc3	0.7496	keep	1000 trees, min_child_weight 60
+b4a1b99	0.7502	keep	1200 trees, min_child_weight 60
+100c89b	0.7504	keep	1400 trees, min_child_weight 60
+7b207ee	0.7503	discard	1600 trees, min_child_weight 60
+ce38e68	0.7508	keep	2300 trees, learning rate 0.03
+1fa9e7e	0.7507	discard	2600 trees, learning rate 0.03
+2f5bb54	0.7505	discard	3450 trees, learning rate 0.02
+c6656a5	0.7500	discard	2760 trees, learning rate 0.025
+0d79c54	0.7499	discard	Origin-Dest native category
+86df5da	0.7504	discard	4-hour departure time block category
+f327baa	0.7500	discard	origin by departure block category
+7824878	0.7524	keep	lossguide, max leaves 64
+26bc48b	0.7474	discard	lossguide, max leaves 128
+e06bcc7	0.7531	keep	lossguide, max leaves 32
+d0c8717	0.7537	keep	lossguide, max leaves 48
+c47499d	0.7528	discard	lossguide, max leaves 56
+8d3a478	0.7537	keep	lossguide, max leaves 40; tied rounded AUC with a smaller model
+8b5fa9f	0.7541	keep	lossguide, max leaves 44
+61ef4cc	0.7527	discard	lossguide, max leaves 42
+63bef7e	0.7536	discard	lossguide, max leaves 46
+26f58b8	0.7529	discard	lossguide, max leaves 43
+acae50a	0.7530	discard	colsample_bytree 0.8
+7fdaa25	0.7533	discard	colsample_bytree 0.9
+87c47e4	0.7545	keep	min_child_weight 50 under lossguide, max leaves 44
+f113683	0.7540	discard	min_child_weight 55 under lossguide, max leaves 44
+8d8238e	0.7543	discard	min_child_weight 45 under lossguide, max leaves 44
+5876c2f	0.7543	discard	min_child_weight 48 under lossguide, max leaves 44
+6a14f23	0.7477	discard	max_cat_threshold 16 under lossguide, max leaves 44
+2fc9ee6	0.7537	discard	max_cat_to_onehot 8 under lossguide
+14cadb3	0.7531	discard	max_cat_to_onehot 16 under lossguide
+523a3aa	0.7522	discard	cross-fitted smoothed target rates for Origin, Dest, Carrier, Route
+1306688	0.7541	discard	cross-fitted smoothed target rates for Origin, Dest, Carrier
+18ff1a9	0.7544	discard	cross-fitted smoothed target rates for Origin, Dest
+c04916c	0.7545	discard	cross-fitted smoothed Origin target rate
+4acab1e	0.7537	discard	cross-fitted smoothed Dest target rate
+2c5ab63	0.7529	discard	max_bin 512 under lossguide
+bd165ba	0.7542	discard	max_bin 128 under lossguide
+d1aba92	0.7539	discard	max_bin 192 under lossguide
+a3fa724	0.7546	keep	reg_alpha 0.1 under lossguide
+0270f00	0.7581	keep	reg_alpha 0.5 under lossguide
+aa1a768	0.7584	keep	reg_alpha 1.0 under lossguide
+d565873	0.7568	discard	reg_alpha 2.0 under lossguide
+16a0058	0.7570	discard	reg_alpha 1.5 under lossguide
+5a6da1e	0.7597	keep	reg_alpha 0.75 under lossguide
+467d4ee	0.7591	discard	reg_alpha 0.8 under lossguide
+cfb4e7c	0.7596	discard	reg_alpha 0.7 under lossguide
+0d00ae7	0.7584	discard	reg_alpha 0.74 under lossguide

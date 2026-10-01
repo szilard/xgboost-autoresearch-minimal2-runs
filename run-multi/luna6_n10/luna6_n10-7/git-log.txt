@@ -1,0 +1,243 @@
+commit 5a6da1e50e2f95afb9a69d99c3b8f0efc76dea6c
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:08:11 2026 +0000
+
+    Test reg_alpha 0.75
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit aa1a7683697b92280d79639a04d7eac60cdd655b
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:03:42 2026 +0000
+
+    Test reg_alpha 1.0
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0270f0030e480ac637b8674109dfea9b65eb98d2
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:02:16 2026 +0000
+
+    Test stronger L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a3fa72441cc63519b24a347a9955015f0291a8e8
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 08:00:53 2026 +0000
+
+    Test light L1 regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 87c47e400e4c261aa732ab2804bb77b000b80f6f
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 07:31:39 2026 +0000
+
+    Test lower child weight with lossguide
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8b5fa9fcf069d246ab12152286f7ef936a5437fb
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 07:22:22 2026 +0000
+
+    Test 44 loss-guided leaves
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8d3a4786b6d9c8dc1694626442a56937ad93125e
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 07:20:55 2026 +0000
+
+    Test 40 loss-guided leaves
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d0c8717b813a236e0597e42a6392b0eb87e9222d
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 07:17:56 2026 +0000
+
+    Test intermediate loss-guided leaf count
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e06bcc78d3c68038e3b2b08cf252ce21f29f8ebb
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 07:15:30 2026 +0000
+
+    Reduce loss-guided tree leaves
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 782487886958aa7e8000651d5079e57438096f88
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 07:11:58 2026 +0000
+
+    Try loss-guided histogram trees
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit ce38e68a13dc58b65812232f4a88fd6715de20bb
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:56:12 2026 +0000
+
+    Try smaller learning steps with more rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 100c89b7940d775c41ac864eec854a1a679fa037
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:52:44 2026 +0000
+
+    Test fourteen hundred boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b4a1b99a29591927e7ee33d5e7d73ab07cadd50b
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:51:19 2026 +0000
+
+    Test one thousand two hundred rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 919fcc340708d87fce1711b96e02acd43b964a86
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:49:58 2026 +0000
+
+    Test one thousand regularized rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2b29a1fdaa93cb78ea5bcf00191e0adaf7b55969
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:48:45 2026 +0000
+
+    Test additional rounds with regularized trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bd6ccb933ec448eaa647d5e7d724cbd2bbf28dd3
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:43:32 2026 +0000
+
+    Test minimum child weight sixty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 602b949f359f21c343e0d2aee982a5ed4a0573b0
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:36:14 2026 +0000
+
+    Test minimum child weight forty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ac677a6163e768d6c5c0b7fe635ccb9fa696e5db
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:35:06 2026 +0000
+
+    Raise minimum child weight to twenty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a0c57b57f9f09ef67a993ae7e8de2c56a0893166
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:34:01 2026 +0000
+
+    Test stronger minimum leaf weight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 99e4b1d13d2427e8618ea5b196e8ee5763bd629e
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:32:57 2026 +0000
+
+    Regularize small tree leaves
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit cbc12e8807bc1a10b989c1d44c853e9a3a4af749
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:30:16 2026 +0000
+
+    Reduce categorical partition cap to eight
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7f62064189586e2d8334705ff33284ac0b915592
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:28:51 2026 +0000
+
+    Tighten categorical partition cap
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 142be3fa6d9bfa0442c92473ae040866784b5f60
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:27:40 2026 +0000
+
+    Limit categorical split candidates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit bdf3a7d2e1e17d712639866dc1c1a789618c2f9e
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:17:53 2026 +0000
+
+    Test additional boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1f236555ad1b5ef7027c9e9262b4b46b81be389a
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 06:16:38 2026 +0000
+
+    Explore more conservative boosting schedule
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)
