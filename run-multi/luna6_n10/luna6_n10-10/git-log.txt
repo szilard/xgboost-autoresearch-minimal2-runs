@@ -1,0 +1,252 @@
+commit af9b4d9abc6cdb7086d5368b306b5684f80957ff
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:47:47 2026 +0000
+
+    Allow depth 6 with leaf cap
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ead8b2d3c61b98c94e485ce9086e83070fcb2a9d
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:43:32 2026 +0000
+
+    Increase boosting rounds to 1200
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a4f13c46f8cd4949588a3eb9783288d4f5e44f4b
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:42:19 2026 +0000
+
+    Increase boosting rounds to 1050
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e5484fa1a301e034c078efc1d163e736cb558b81
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:41:04 2026 +0000
+
+    Increase boosting rounds to 900
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8ed728128b56172b8d8c6e9f8aac044a6bc355a8
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:39:45 2026 +0000
+
+    Increase boosting rounds to 750
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e1f07c465c1dfa6b13b9ecb966fb800bca1de75e
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:36:04 2026 +0000
+
+    Set L1 regularization to 1.1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4132aaef08bcc4768188857c402bc314a26c4eaa
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:33:17 2026 +0000
+
+    Set L1 regularization to 0.7
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit daea9c07509bf457a488e1490c4554c32b5a4304
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:32:00 2026 +0000
+
+    Set L1 regularization to 0.5
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 47a181323e69dfc6c9a7959660fe2f16127328e1
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:27:48 2026 +0000
+
+    Set categorical threshold to 10
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 183cc2f74254bdf57f4027d5f9d1fcf274e162be
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:26:37 2026 +0000
+
+    Set categorical threshold to 12
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 197db2bb705b84160f213f0c684e1327cb23e3dc
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:21:47 2026 +0000
+
+    Increase L1 leaf regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 73b337d88db656ff886434e8ba7fbcfb3eacedce
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:20:33 2026 +0000
+
+    Add mild L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 768d338130ff1cfd542a03867c7f2f984ee9c7de
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:18:01 2026 +0000
+
+    Strengthen L2 leaf regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 295e455d16a8756469c4685139c04c0729d8552d
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:16:51 2026 +0000
+
+    Increase L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 65b4479831e7bc310891b47d0cf3d5dfb1ec86a4
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:12:06 2026 +0000
+
+    Add cyclic departure hour features
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 03cc94f2ca1c8089e929fcd8bfd98333b5c893e7
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:04:22 2026 +0000
+
+    Lower categorical partition threshold
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit de217784814885fb7b0b988bb33a4d16482dfae1
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 14:02:58 2026 +0000
+
+    Limit categorical partition threshold
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit bd5143f48de2f6b664d3935b4affbed1dbf2163b
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 13:56:18 2026 +0000
+
+    Try loss-guided tree growth
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 00fe269814e8aacf3314eb52580e70db4b617f5a
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 13:51:21 2026 +0000
+
+    Remove raw scheduled time feature
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4cd5fd86030f48fce68ef43f210f8927aed6351a
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 13:47:54 2026 +0000
+
+    Add scheduled departure hour category
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 4806c5bec8e79e183b0bea92ed663d826b3663d3
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 13:37:01 2026 +0000
+
+    Reduce histogram bins to 128
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 42d5dcfd0d06c879b2e3a0d2dfe9c6d0bcfe532b
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 13:26:12 2026 +0000
+
+    Use smaller learning rate over more rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 9d7f41bd345ab802f346001fa2932028cbebe0e7
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 13:23:22 2026 +0000
+
+    Set tree depth to five
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bf11b3250c411b807375513191785858a4b2afe3
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 13:20:43 2026 +0000
+
+    Reduce tree depth to four
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7473a858f83b01970653b483eed64fa65405010b
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 13:14:45 2026 +0000
+
+    Increase boosting rounds to 300
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7b7a599fb68e87e53262499aaf9bd8afdf06c002
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 13:13:33 2026 +0000
+
+    Increase boosting rounds to 150
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

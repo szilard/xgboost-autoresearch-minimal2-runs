@@ -1,0 +1,72 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline; 30 trees depth 6 learning rate 0.1
+7b7a599	0.7332	keep	150 trees; improved by 0.0129 over baseline
+7473a85	0.7342	keep	300 trees; improved by 0.0010 over 150
+b1fc036	0.7299	discard	600 trees; fell below 300-tree AUC
+64eb864	0.7336	discard	night-flight flag; 0.0006 below best
+bf11b32	0.7343	keep	300 trees depth 4; small improvement over depth 6
+95a12bc	0.7286	discard	depth 3 at 300 trees; below depth 4
+9d7f41b	0.7354	keep	300 trees depth 5; improved by 0.0011 over best
+2136874	0.7246	discard	row subsampling at 0.8; below best
+42d5dcf	0.7362	keep	600 trees at learning rate 0.05; new best
+7b31d99	0.7079	discard	directed route category; large AUC drop
+e25ab74	0.7235	discard	max_cat_to_onehot 32; below best
+fefe7c8	0.7359	discard	min_child_weight 5; slightly below best
+15969e3	0.7357	discard	max_bin 512; slightly below best
+4806c5b	0.7365	keep	max_bin 128; new best by 0.0003
+b46e187	0.7364	discard	max_bin 64; just below 128 bins
+af1091e	0.7351	discard	depth 4 with 600 rounds and 0.05 learning rate
+a2f697c	0.7354	discard	depth 6 with 600 rounds and 0.05 learning rate
+da4414d	0.7365	discard	900 trees at learning rate 0.0333; tied but more complex
+312cc67	0.7360	discard	gamma 0.1; below best
+4cd5fd8	0.7367	keep	scheduled departure hour category; new best
+b5de04b	0.7357	discard	four-hour departure periods; below full-hour category
+00fe269	0.7366	keep	removed raw scheduled time; AUC nearly unchanged with fewer inputs
+a357302	0.7301	discard	weekday-hour category interaction; AUC drop and slower evaluation
+bd5143f	0.7380	keep	loss-guided growth with depth 5 and 31 leaves; new best
+4d18adf	0.7359	discard	loss-guided growth without a depth cap
+3c35be9	0.7370	discard	900 rounds at 0.0333 with loss-guided growth
+19b1812	0.7324	discard	loss-guided growth with 15 leaves; below best
+de21778	0.7372	keep	max_cat_threshold 32; new best by 0.0008
+03cc94f	0.7391	keep	max_cat_threshold 16; new best by 0.0019
+42d260a	0.7385	discard	colsample_bytree 0.9; below best by 0.0006
+bb44818	0.7373	discard	max_cat_threshold 8; below best by 0.0018
+65b4479	0.7395	keep	cyclic departure-hour sine/cosine features; new best by 0.0004
+11f738e	0.7385	discard	cyclic features without DepHour category; below best by 0.0010
+97a9220	0.7384	discard	minute-resolution cyclic time; below best by 0.0011
+295e455	0.7398	keep	reg_lambda 2; new best by 0.0003
+768d338	0.7399	keep	reg_lambda 4; new best by 0.0001
+c87cc80	0.7396	discard	reg_lambda 8; below best by 0.0003
+73b337d	0.7401	keep	reg_alpha 0.1 with reg_lambda 4; new best by 0.0002
+197db2b	0.7411	keep	reg_alpha 0.3 with reg_lambda 4; new best by 0.0010
+16e140d	0.7361	discard	month-hour category; below best by 0.0050 and slower evaluation
+183cc2f	0.7419	keep	max_cat_threshold 12; new best by 0.0008
+47a1813	0.7421	keep	max_cat_threshold 10; new best by 0.0002
+35ef366	0.7419	discard	max_cat_threshold 8 on updated model; below best by 0.0002
+97d63cd	0.7421	discard	max_cat_threshold 9; tied best but did not exceed threshold 10
+daea9c0	0.7425	keep	reg_alpha 0.5 with reg_lambda 4; new best by 0.0004
+4132aae	0.7434	keep	reg_alpha 0.7 with reg_lambda 4; new best by 0.0009
+7060ea4	0.7434	discard	reg_alpha 0.9; tied best but did not exceed 0.7
+e1f07c4	0.7442	keep	reg_alpha 1.1 with reg_lambda 4; new best by 0.0008
+db85efd	0.7439	discard	reg_alpha 1.3; below best by 0.0003
+8ed7281	0.7459	keep	750 trees at learning rate 0.05; new best by 0.0017
+e5484fa	0.7470	keep	900 trees at learning rate 0.05; new best by 0.0011
+a4f13c4	0.7472	keep	1050 trees at learning rate 0.05; new best by 0.0002
+ead8b2d	0.7474	keep	1200 trees at learning rate 0.05; new best by 0.0002
+3f63a98	0.7469	discard	1350 trees at learning rate 0.05; below best by 0.0005
+30e0bc4	0.7471	discard	1275 trees at learning rate 0.05; below best by 0.0003
+af9b4d9	0.7479	keep	max_depth 6 with 31-leaf cap; new best by 0.0005
+ca69bfd	0.7476	discard	max_depth 7 with 31-leaf cap; below best by 0.0003
+3317681	0.7467	discard	max_leaves 63; below best by 0.0012
+b0fc0e8	0.7475	discard	max_leaves 47; below best by 0.0004
+82fb485	0.7479	discard	gamma 0.05; tied best but did not improve
+1c57272	0.7479	discard	gamma 0.02; tied best but did not improve
+4a64b18	0.7472	discard	max_bin 256; below best by 0.0007
+be305a9	0.7476	discard	max_bin 192; below best by 0.0003
+76bd1f5	0.7469	discard	max_bin 160; below best by 0.0010
+2a834bf	0.7460	discard	max_cat_threshold 12 on updated model; below best by 0.0019
+c06327b	0.7473	discard	reg_alpha 1.0; below best by 0.0006
+7d2ebc2	0.7474	discard	reg_lambda 2 on updated model; below best by 0.0005
+ec4f989	0.7477	discard	min_child_weight 2; below best by 0.0002
+cbeb1a9	0.7479	discard	reg_alpha 1.2; tied best but did not improve
+380e4f2	0.7471	discard	reg_alpha 1.15; below best by 0.0008

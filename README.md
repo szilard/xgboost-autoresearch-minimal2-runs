@@ -15,7 +15,7 @@ How a run works (the task, the agent's loop and the guardrails are described in 
 
 Each run's folder has the agent's `results.tsv`, `research-log.md` and final `train.py`, the ground truth scores and plot, the harness timing report, the git log, the agent's session log (gzipped, with the encrypted reasoning dropped and account ids redacted) and a `run.md` with the settings, the turns sent, the validity checks and anything notable.
 
-Results so far (effort `max`, 24 GB container memory cap): [sol6_n10](run-multi/sol6_n10/results_summary.md), 10 runs of gpt-6-sol, and [luna6_n10](run-multi/luna6_n10/results_summary.md), gpt-6-luna (in progress). Plots over all groups: [run-multi/SUMMARY/](run-multi/SUMMARY/) (made by `tools/plot_holdout_auc.py`). Earlier runs - the first test group luna-test (3 runs of gpt-5.6-luna, before the memory cap) and a single run driven live by Claude with the retired `/xgb-run` skill - are in [archive/](archive/).
+Results so far (effort `max`, 24 GB container memory cap): [sol6_n10](run-multi/sol6_n10/results_summary.md), 10 runs of gpt-6-sol, and [luna6_n10](run-multi/luna6_n10/results_summary.md), 10 runs of gpt-6-luna. Plots over all groups: [run-multi/SUMMARY/](run-multi/SUMMARY/) (made by `tools/plot_holdout_auc.py`). Earlier runs - the first test group luna-test (3 runs of gpt-5.6-luna, before the memory cap) and a single run driven live by Claude with the retired `/xgb-run` skill - are in [archive/](archive/).
 
 Recommended machine: m8i.2xlarge (8 cores, 32 GB RAM). The per-run time limits depend on the hardware, so compare results only across runs on the same machine type. Runs are sequential, since each uses all cores.
 

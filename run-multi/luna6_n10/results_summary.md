@@ -11,3 +11,20 @@
 | luna6_n10-7 | gpt-6-luna | max | 71 | 0.7597 (5a6da1e) | 0.7550 | -0.0047 | 2h00m28s | 56.6% | valid |
 | luna6_n10-8 | gpt-6-luna | max | 67 | 0.7518 (118a7a6) | 0.7469 | -0.0049 | 2h00m43s | 66.4% | valid |
 | luna6_n10-9 | gpt-6-luna | max | 65 | 0.7594 (72ddc2a) | 0.7543 | -0.0051 | 2h00m48s | 62.2% | valid |
+| luna6_n10-10 | gpt-6-luna | max | 70 | 0.7479 (af9b4d9) | 0.7437 | -0.0042 | 2h00m11s | 59.7% | valid |
+
+## Statistics over the valid runs (10 of 10)
+
+| metric | count | mean | std dev | min | median | max |
+|---|---|---|---|---|---|---|
+| Holdout AUC | 10 | 0.7504 | 0.0076 | 0.7348 | 0.7520 | 0.7598 |
+| Eval AUC | 10 | 0.7551 | 0.0083 | 0.7382 | 0.7567 | 0.7652 |
+| Gap (holdout - eval) | 10 | -0.0048 | 0.0009 | -0.0064 | -0.0048 | -0.0034 |
+
+Notes:
+- All 10 runs are valid: no run read prepare.py or any other forbidden file; the leak-check content hits (runs 1, 5-10) are all the `import matplotlib.pyplot as plt` line from scikit-learn docs pages.
+- All clocks were stopped by the agent itself; no run was stopped by the driver.
+- Run 2 needed one extra "go"; all others used only the README prompt and one "go". No "keep going" was needed in any run.
+- The container peaked at 7.0-12.2 GiB; no process was killed at the 24 GB cap in any run.
+- Wide spread compared with sol6_n10 (gpt-6-sol): holdout 0.7348-0.7598 here vs 0.7510-0.7626.
+- No run's best model uses an ensemble or early stopping; 5 runs tried target encoding (all discarded).

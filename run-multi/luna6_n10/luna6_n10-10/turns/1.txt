@@ -1,0 +1,9 @@
+Setup is ready.
+
+- Created fresh branch `oct1` from the current `main` HEAD.
+- Confirmed `data/train.csv` and `data/eval.csv` are present.
+- Created `results.tsv` with the required header.
+- Reviewed `train.py` and `harness.py`; neither was changed.
+- The working tree has only the new, untracked `results.tsv`. The experiment clock has not started.
+
+Confirm when you’re ready, and I’ll start the clock and run the baseline first.

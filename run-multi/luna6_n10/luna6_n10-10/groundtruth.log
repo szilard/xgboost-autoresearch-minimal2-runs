@@ -1,0 +1,144 @@
+=== [2] 92e43e6 | keep | baseline; 30 trees depth 6 learning rate 0.1 ===
+  holdout=0.7155
+=== [3] 7b7a599 | keep | 150 trees; improved by 0.0129 over baseline ===
+  holdout=0.7297
+=== [4] 7473a85 | keep | 300 trees; improved by 0.0010 over 150 ===
+  holdout=0.7315
+=== [5] b1fc036 | discard | 600 trees; fell below 300-tree AUC ===
+  SKIP: status discard
+=== [6] 64eb864 | discard | night-flight flag; 0.0006 below best ===
+  SKIP: status discard
+=== [7] bf11b32 | keep | 300 trees depth 4; small improvement over depth 6 ===
+  holdout=0.7303
+=== [8] 95a12bc | discard | depth 3 at 300 trees; below depth 4 ===
+  SKIP: status discard
+=== [9] 9d7f41b | keep | 300 trees depth 5; improved by 0.0011 over best ===
+  holdout=0.7328
+=== [10] 2136874 | discard | row subsampling at 0.8; below best ===
+  SKIP: status discard
+=== [11] 42d5dcf | keep | 600 trees at learning rate 0.05; new best ===
+  holdout=0.7331
+=== [12] 7b31d99 | discard | directed route category; large AUC drop ===
+  SKIP: status discard
+=== [13] e25ab74 | discard | max_cat_to_onehot 32; below best ===
+  SKIP: status discard
+=== [14] fefe7c8 | discard | min_child_weight 5; slightly below best ===
+  SKIP: status discard
+=== [15] 15969e3 | discard | max_bin 512; slightly below best ===
+  SKIP: status discard
+=== [16] 4806c5b | keep | max_bin 128; new best by 0.0003 ===
+  holdout=0.7337
+=== [17] b46e187 | discard | max_bin 64; just below 128 bins ===
+  SKIP: status discard
+=== [18] af1091e | discard | depth 4 with 600 rounds and 0.05 learning rate ===
+  SKIP: status discard
+=== [19] a2f697c | discard | depth 6 with 600 rounds and 0.05 learning rate ===
+  SKIP: status discard
+=== [20] da4414d | discard | 900 trees at learning rate 0.0333; tied but more complex ===
+  SKIP: status discard
+=== [21] 312cc67 | discard | gamma 0.1; below best ===
+  SKIP: status discard
+=== [22] 4cd5fd8 | keep | scheduled departure hour category; new best ===
+  holdout=0.7339
+=== [23] b5de04b | discard | four-hour departure periods; below full-hour category ===
+  SKIP: status discard
+=== [24] 00fe269 | keep | removed raw scheduled time; AUC nearly unchanged with fewer inputs ===
+  holdout=0.7343
+=== [25] a357302 | discard | weekday-hour category interaction; AUC drop and slower evaluation ===
+  SKIP: status discard
+=== [26] bd5143f | keep | loss-guided growth with depth 5 and 31 leaves; new best ===
+  holdout=0.7345
+=== [27] 4d18adf | discard | loss-guided growth without a depth cap ===
+  SKIP: status discard
+=== [28] 3c35be9 | discard | 900 rounds at 0.0333 with loss-guided growth ===
+  SKIP: status discard
+=== [29] 19b1812 | discard | loss-guided growth with 15 leaves; below best ===
+  SKIP: status discard
+=== [30] de21778 | keep | max_cat_threshold 32; new best by 0.0008 ===
+  holdout=0.7343
+=== [31] 03cc94f | keep | max_cat_threshold 16; new best by 0.0019 ===
+  holdout=0.7346
+=== [32] 42d260a | discard | colsample_bytree 0.9; below best by 0.0006 ===
+  SKIP: status discard
+=== [33] bb44818 | discard | max_cat_threshold 8; below best by 0.0018 ===
+  SKIP: status discard
+=== [34] 65b4479 | keep | cyclic departure-hour sine/cosine features; new best by 0.0004 ===
+  holdout=0.7351
+=== [35] 11f738e | discard | cyclic features without DepHour category; below best by 0.0010 ===
+  SKIP: status discard
+=== [36] 97a9220 | discard | minute-resolution cyclic time; below best by 0.0011 ===
+  SKIP: status discard
+=== [37] 295e455 | keep | reg_lambda 2; new best by 0.0003 ===
+  holdout=0.7352
+=== [38] 768d338 | keep | reg_lambda 4; new best by 0.0001 ===
+  holdout=0.7354
+=== [39] c87cc80 | discard | reg_lambda 8; below best by 0.0003 ===
+  SKIP: status discard
+=== [40] 73b337d | keep | reg_alpha 0.1 with reg_lambda 4; new best by 0.0002 ===
+  holdout=0.7352
+=== [41] 197db2b | keep | reg_alpha 0.3 with reg_lambda 4; new best by 0.0010 ===
+  holdout=0.7363
+=== [42] 16e140d | discard | month-hour category; below best by 0.0050 and slower evaluation ===
+  SKIP: status discard
+=== [43] 183cc2f | keep | max_cat_threshold 12; new best by 0.0008 ===
+  holdout=0.7371
+=== [44] 47a1813 | keep | max_cat_threshold 10; new best by 0.0002 ===
+  holdout=0.7370
+=== [45] 35ef366 | discard | max_cat_threshold 8 on updated model; below best by 0.0002 ===
+  SKIP: status discard
+=== [46] 97d63cd | discard | max_cat_threshold 9; tied best but did not exceed threshold 10 ===
+  SKIP: status discard
+=== [47] daea9c0 | keep | reg_alpha 0.5 with reg_lambda 4; new best by 0.0004 ===
+  holdout=0.7371
+=== [48] 4132aae | keep | reg_alpha 0.7 with reg_lambda 4; new best by 0.0009 ===
+  holdout=0.7382
+=== [49] 7060ea4 | discard | reg_alpha 0.9; tied best but did not exceed 0.7 ===
+  SKIP: status discard
+=== [50] e1f07c4 | keep | reg_alpha 1.1 with reg_lambda 4; new best by 0.0008 ===
+  holdout=0.7389
+=== [51] db85efd | discard | reg_alpha 1.3; below best by 0.0003 ===
+  SKIP: status discard
+=== [52] 8ed7281 | keep | 750 trees at learning rate 0.05; new best by 0.0017 ===
+  holdout=0.7409
+=== [53] e5484fa | keep | 900 trees at learning rate 0.05; new best by 0.0011 ===
+  holdout=0.7423
+=== [54] a4f13c4 | keep | 1050 trees at learning rate 0.05; new best by 0.0002 ===
+  holdout=0.7428
+=== [55] ead8b2d | keep | 1200 trees at learning rate 0.05; new best by 0.0002 ===
+  holdout=0.7430
+=== [56] 3f63a98 | discard | 1350 trees at learning rate 0.05; below best by 0.0005 ===
+  SKIP: status discard
+=== [57] 30e0bc4 | discard | 1275 trees at learning rate 0.05; below best by 0.0003 ===
+  SKIP: status discard
+=== [58] af9b4d9 | keep | max_depth 6 with 31-leaf cap; new best by 0.0005 ===
+  holdout=0.7437
+=== [59] ca69bfd | discard | max_depth 7 with 31-leaf cap; below best by 0.0003 ===
+  SKIP: status discard
+=== [60] 3317681 | discard | max_leaves 63; below best by 0.0012 ===
+  SKIP: status discard
+=== [61] b0fc0e8 | discard | max_leaves 47; below best by 0.0004 ===
+  SKIP: status discard
+=== [62] 82fb485 | discard | gamma 0.05; tied best but did not improve ===
+  SKIP: status discard
+=== [63] 1c57272 | discard | gamma 0.02; tied best but did not improve ===
+  SKIP: status discard
+=== [64] 4a64b18 | discard | max_bin 256; below best by 0.0007 ===
+  SKIP: status discard
+=== [65] be305a9 | discard | max_bin 192; below best by 0.0003 ===
+  SKIP: status discard
+=== [66] 76bd1f5 | discard | max_bin 160; below best by 0.0010 ===
+  SKIP: status discard
+=== [67] 2a834bf | discard | max_cat_threshold 12 on updated model; below best by 0.0019 ===
+  SKIP: status discard
+=== [68] c06327b | discard | reg_alpha 1.0; below best by 0.0006 ===
+  SKIP: status discard
+=== [69] 7d2ebc2 | discard | reg_lambda 2 on updated model; below best by 0.0005 ===
+  SKIP: status discard
+=== [70] ec4f989 | discard | min_child_weight 2; below best by 0.0002 ===
+  SKIP: status discard
+=== [71] cbeb1a9 | discard | reg_alpha 1.2; tied best but did not improve ===
+  SKIP: status discard
+=== [72] 380e4f2 | discard | reg_alpha 1.15; below best by 0.0008 ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===
