@@ -1,0 +1,136 @@
+=== [2] 92e43e6 | keep | baseline: 30 trees depth 6 learning rate 0.1 ===
+  holdout=0.7155
+=== [3] 8498a51 | keep | 300 trees at depth 6 and learning rate 0.1 ===
+  holdout=0.7315
+=== [4] 7819b07 | discard | 900 trees with unchanged original features ===
+  SKIP: status discard
+=== [5] 92dde03 | keep | remove redundant categorical membership filtering ===
+  holdout=0.7315
+=== [6] b2a9a7e | keep | add ordinal day of year alongside original calendar categories ===
+  holdout=0.7346
+=== [7] a0babd2 | keep | add native categorical flight date beside ordinal day of year ===
+  holdout=0.7450
+=== [8] 6dc3119 | keep | cache category indexes and use explicit missing codes ===
+  holdout=0.7450
+=== [9] b4324a4 | keep | add scheduled departure hour and minute components ===
+  holdout=0.7457
+=== [10] 3c68ca1 | discard | add native origin-destination route category ===
+  SKIP: status discard
+=== [11] 2256c88 | discard | limit categorical split threshold to 16 ===
+  SKIP: status discard
+=== [12] 9535d70 | keep | raise minimum child Hessian weight to 20 ===
+  holdout=0.7461
+=== [13] fb076c5 | keep | reduce tree depth from 6 to 4 ===
+  holdout=0.7490
+=== [14] e8189d9 | keep | 600 depth-4 trees with learning rate 0.05 ===
+  holdout=0.7483
+=== [15] 9b60da6 | keep | remove separate month day-of-month and weekday categories ===
+  holdout=0.7487
+=== [16] 23487a4 | discard | subsample 80 percent of rows per tree ===
+  SKIP: status discard
+=== [17] 9274568 | discard | force one-versus-rest splits for all current categorical features ===
+  SKIP: status discard
+=== [18] 8d139a9 | discard | 2400 depth-6 trees with one-versus-rest categorical splits ===
+  SKIP: status discard
+=== [19] 5a96fa7 | keep | add carrier-month categorical interaction ===
+  holdout=0.7523
+=== [20] baa9226 | discard | add carrier-weekday interaction alongside carrier-month ===
+  SKIP: status discard
+=== [21] 01df91b | discard | add origin-quarter and destination-quarter categories ===
+  SKIP: status discard
+=== [22] d612648 | discard | add airport coordinates inferred from training route distances ===
+  SKIP: status discard
+=== [23] 4110e4c | discard | overlapping interaction groups separating the two airport fields ===
+  SKIP: status discard
+=== [24] 63a0395 | discard | train on pairwise ranking loss with random query groups ===
+  SKIP: status discard
+=== [25] 787334d | discard | early stop on stratified 10 percent training-only split ===
+  SKIP: status discard
+=== [26] 8641a38 | discard | add route median departure time and schedule-relative departure ===
+  SKIP: status discard
+=== [27] 533953e | discard | loss-guided growth with at most 16 leaves ===
+  SKIP: status discard
+=== [28] ff52642 | discard | sample 80 percent of feature columns per tree ===
+  SKIP: status discard
+=== [29] 7bc9f1e | discard | independent half-training airport-date target encodings ===
+  SKIP: status discard
+=== [30] fa32973 | keep | row-invariant ordered airport-date target statistics using two input-hash orderings ===
+  holdout=0.7531
+=== [31] 821efff | discard | add ordered carrier-date target statistics ===
+  SKIP: status discard
+=== [32] 372184b | keep | average four ordered airport-date encodings ===
+  holdout=0.7543
+=== [33] 35ea020 | keep | increase L2 leaf regularization to 20 ===
+  holdout=0.7549
+=== [34] 9c71431 | keep | fit equivalent prefix lookups with grouped array sorting and reuse hash input frame ===
+  holdout=0.7549
+=== [35] f8ab17e | keep | four feature-randomized trees per boosting round with full row coverage ===
+  holdout=0.7567
+=== [36] 193cea8 | discard | add ordered origin destination and date main-effect rates ===
+  SKIP: status discard
+=== [37] 44084f9 | discard | reduce ordered-rate smoothing from 20 to 5 ===
+  SKIP: status discard
+=== [38] ca7fab4 | keep | ordered region-date rates using 12 distance-derived airport regions ===
+  holdout=0.7580
+=== [39] 2de9d78 | discard | add ordered origin-region/date/six-hour departure-block rate ===
+  SKIP: status discard
+=== [40] fa40e78 | keep | remove separate departure hour/minute features and setup-only diagnostics ===
+  holdout=0.7585
+=== [41] 85dc0fb | keep | dropout boosting with 300 rounds and forest normalization ===
+  holdout=0.7591
+=== [42] 3528c97 | keep | use supported tree booster with dropout parameters ===
+  holdout=0.7591
+=== [43] b1fa2f2 | discard | ordinary boosting with depth six and four parallel trees ===
+  SKIP: status discard
+=== [44] 8264d91 | discard | increase numeric histogram resolution to 1024 bins ===
+  SKIP: status discard
+=== [45] e906e0e | discard | gradient-based row sampling at 60 percent with dropout ===
+  SKIP: status discard
+=== [46] cad60d4 | crash | equal soft-voting ensemble of fresh dropout and ordinary boosted models ===
+  SKIP: status crash
+=== [47] a3e1e77 | keep | soft-voting ensemble with correctly disabled dropout in ordinary member ===
+  holdout=0.7600
+=== [48] c813bc0 | discard | single ordinary 300-round model without dropout or ensemble ===
+  SKIP: status discard
+=== [49] cb16b38 | keep | vectorized frozen-table queries with exactly equivalent row features ===
+  holdout=0.7600
+=== [50] 09b3174 | discard | eight input-hash permutations for ordered daily rates ===
+  SKIP: status discard
+=== [51] 144d443 | discard | 24 airport regions for more localized ordered daily rates ===
+  SKIP: status discard
+=== [52] c1e763d | keep | remove numeric day-of-year while retaining categorical date ===
+  holdout=0.7598
+=== [53] 63770b9 | discard | monotonic increasing constraints on four ordered daily rates ===
+  SKIP: status discard
+=== [54] d9091e7 | discard | replace categorical flight date with ordered global DateRate ===
+  SKIP: status discard
+=== [55] 1edb4c1 | discard | shrink airport-day rates toward same-order regional daily priors ===
+  SKIP: status discard
+=== [56] cce1b56 | discard | add native CarrierOrigin categorical cross ===
+  SKIP: status discard
+=== [57] 7cd625b | discard | reduce both ensemble members to depth three ===
+  SKIP: status discard
+=== [58] 1eee476 | discard | weight-proportional dropout tree selection ===
+  SKIP: status discard
+=== [59] 67db199 | discard | six broad geographic regions for ordered daily rates ===
+  SKIP: status discard
+=== [60] 25b19ea | discard | increase categorical partition search threshold to 256 ===
+  SKIP: status discard
+=== [61] 15eb2ba | discard | gamma ten to prune weak residual splits ===
+  SKIP: status discard
+=== [62] b8583fe | discard | add origin and destination region identity categories ===
+  SKIP: status discard
+=== [63] 3c442d3 | discard | tree rather than forest dropout normalization ===
+  SKIP: status discard
+=== [64] 1c304fc | discard | increase ordered-rate smoothing prior weight from 20 to 50 ===
+  SKIP: status discard
+=== [65] f74f043 | discard | remove raw Distance predictor while retaining geography and hash inputs ===
+  SKIP: status discard
+=== [66] 204378f | keep | compact exact prefix totals with uint32 storage ===
+  holdout=0.7598
+=== [67] 4f50437 | discard | remove raw carrier category while retaining CarrierMonth ===
+  SKIP: status discard
+=== [68] fc7a31f | discard | L1 leaf-weight regularization at alpha ten ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

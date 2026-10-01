@@ -1,0 +1,5 @@
+Completed 67 runs and stopped the clock.
+
+**Eval AUC improved from 0.7203 to 0.7652** (+0.0449). Kept commit `204378f` on `oct1`; the saved model and preprocessing checks passed.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md)

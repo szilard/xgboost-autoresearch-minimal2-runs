@@ -1,0 +1,8 @@
+Setup complete on branch `oct1`, created from `92e43e6`.
+
+- Required data files and dependencies verified.
+- `results.tsv` initialized with only its header.
+- `research-log.md` initialized.
+- Baseline code unchanged.
+
+The clock **hasn’t started**. Per [program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md), say **go** to begin the baseline and two-hour experiment.

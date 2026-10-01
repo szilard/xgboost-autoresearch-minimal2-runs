@@ -1,0 +1,234 @@
+commit 204378fba6dfadf540f029608dfdd4eef0d43ed3
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 19:33:11 2026 +0000
+
+    Store exact binary-label prefix totals as compact integers
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit c1e763d07b3759030d692788b5861733da61d670
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 19:02:04 2026 +0000
+
+    Ablate redundant numeric day-of-year feature
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit cb16b38c27d32cffd5027816ace01a95898f1744
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:54:30 2026 +0000
+
+    Vectorize queries against fixed ordered-statistic tables
+
+ train.py | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+commit a3e1e779f52e2f977f4f9c86955c12fbe67c16ef
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:50:01 2026 +0000
+
+    Keep ordinary ensemble member free of dropout bookkeeping
+
+ train.py | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 3528c9709fdb5b7228597d5df69b6adc7c88bd8d
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:35:57 2026 +0000
+
+    Use supported tree-booster dropout parameters without the legacy alias
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 85dc0fb2cae172083fd176578e518bd8ec34bfea
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:33:18 2026 +0000
+
+    Explore dropout boosting within the training-time budget
+
+ train.py | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+commit fa40e78873ea5fb0af51a451ebe9aa67c4d583c1
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:31:06 2026 +0000
+
+    Ablate marginal departure components and remove setup diagnostics
+
+ train.py | 5 -----
+ 1 file changed, 5 deletions(-)
+
+commit ca7fab406827dad6257e6a57accd58678010ecd4
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:26:19 2026 +0000
+
+    Explore train-derived regional daily disruption rates
+
+ train.py | 34 ++++++++++++++++++++++++++++++++--
+ 1 file changed, 32 insertions(+), 2 deletions(-)
+
+commit f8ab17ef864491f52495a845539488cffff734fb
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:20:23 2026 +0000
+
+    Test feature-randomized parallel trees inside boosting
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 9c714316b3111f4ea8e3bfb55eab2dd621302c4f
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:18:29 2026 +0000
+
+    Speed up equivalent ordered lookup fitting with grouped array sorting
+
+ train.py | 17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
+
+commit 35ea020ca49033ab92e71bda7ffc2b9edb2262bc
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:16:18 2026 +0000
+
+    Test stronger leaf regularization with ordered rate features
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 372184b81ee0754cac25bc84969710368cee5ad7
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:14:09 2026 +0000
+
+    Average four ordered encodings to reduce prefix variance
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fa329731263b1bb01dd4391acb10962305c61ac2
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 18:10:46 2026 +0000
+
+    Explore row-invariant ordered airport-date encodings
+
+ train.py | 37 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+
+commit 5a96fa71f51f5dc3d294133258695a2e3c94ad2f
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:56:30 2026 +0000
+
+    Explore low-cardinality carrier-month interaction
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 9b60da63b76c1e5677dcfe5fdba38ddfe7d212bf
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:53:07 2026 +0000
+
+    Ablate separate calendar categories already represented by flight date
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e8189d97175e9535fe3328d47ccf96acd5437a7d
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:52:18 2026 +0000
+
+    Test finer boosting steps with 600 shallow trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit fb076c584aba07161f2dbae51ee2b3d2e5adc804
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:51:20 2026 +0000
+
+    Test shallower trees for airport and date interactions
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9535d70947f94da1cf3d6f9a8c0156624f9e4313
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:50:05 2026 +0000
+
+    Test larger minimum leaf Hessian for more stable interactions
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b4324a4ec0b701f39a1b7586f9a3086c3110318f
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:47:25 2026 +0000
+
+    Expose scheduled departure hour and minute components
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 6dc3119117059d1c1d8fb4859abeb83b4d49b079
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:46:31 2026 +0000
+
+    Reuse category indexes and map unknown levels directly to missing
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit a0babd27a1968b1509a811b5dba3270bbd9c99dd
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:45:31 2026 +0000
+
+    Test categorical flight date for irregular daily effects
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b2a9a7e6b0ca0b5020551f88f0992b30ad5cb996
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:44:28 2026 +0000
+
+    Add row-independent ordinal day of year
+
+ train.py | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 92dde0372c2954512f8f2ac715c8b5f3f516deff
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:43:07 2026 +0000
+
+    Simplify fixed categorical conversion without changing feature values
+
+ train.py | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 8498a51ad345b3bd8aa811e3e45926602c017877
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 17:40:14 2026 +0000
+
+    Test increased boosting capacity at 300 trees
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)
