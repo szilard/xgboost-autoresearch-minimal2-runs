@@ -1,0 +1,82 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline starter settings
+d48b955	0.7325	keep	200 trees, learning rate 0.05
+6c0a070	0.7320	discard	400 trees, learning rate 0.025
+2027640	0.7276	discard	200 trees with subsample 0.8
+847d706	0.7331	keep	200 trees, max depth 8
+65835c1	0.7328	discard	200 trees, max depth 10
+f36e0b2	0.7339	keep	200 trees, depth 8, min child weight 5
+ae6d598	0.7327	discard	200 trees, depth 8, min child weight 10
+aa7461b	0.7332	discard	200 trees, depth 8, min child weight 3
+5293aa8	0.7067	discard	add directed route category
+9e003e4	0.7328	discard	add scheduled departure hour category
+94d5531	0.7338	discard	cyclic scheduled departure time features
+8d4b94e	0.7397	keep	colsample_bytree 0.8
+d9cccc0	0.7455	keep	colsample_bytree 0.6
+39a4655	0.7436	discard	colsample_bytree 0.4
+995de51	0.7455	discard	colsample_bytree 0.5
+592f946	0.7433	discard	colsample_bytree 0.6 and colsample_bylevel 0.8
+8a2a75c	0.7368	discard	depth 6 with colsample_bytree 0.6
+9afe938	0.7502	keep	depth 10, colsample_bytree 0.6
+f9ead0a	0.7372	discard	max_cat_to_onehot 32
+ce480a2	0.7490	discard	max_cat_to_onehot 8
+bda4942	0.7502	discard	loss-guided tree growth
+5d2aa82	0.7488	discard	max_cat_threshold 32
+2620876	0.7515	keep	reg_lambda 5
+ec6116e	0.7514	discard	reg_lambda 10
+ae1c329	0.7508	discard	reg_lambda 3
+36fd132	0.7513	discard	gamma 1.0
+3c1fb4b	0.7510	discard	gradient-based subsample 0.8
+d42ae87	0.7506	discard	max_bin 512
+9f046c6	0.0000	crash	DART training timeout
+3e9851b	0.7526	keep	300 trees on best configuration
+c8bc6c6	0.7518	discard	400 trees on best configuration
+bfa10cf	0.7522	discard	350 trees on best configuration
+f736154	0.7521	discard	300 trees, learning rate 0.04
+1f5f745	0.7532	keep	reg_alpha 0.5
+1feb2c2	0.7547	keep	reg_alpha 1.0
+522e867	0.7566	keep	reg_alpha 2.0
+605c0bc	0.7574	keep	reg_alpha 4.0
+7d9617b	0.7563	discard	reg_alpha 8.0
+14137a5	0.7573	discard	reg_alpha 6.0
+1311766	0.7583	keep	400 trees with reg_alpha 4
+772c653	0.7587	keep	500 trees with reg_alpha 4
+53d9248	0.7589	keep	600 trees with reg_alpha 4
+07196b7	0.7589	discard	700 trees with reg_alpha 4
+167eb22	0.7601	keep	colsample_bynode 0.8
+770643c	0.7589	discard	colsample_bynode 1.0
+d2bb30f	0.7582	discard	colsample_bynode 0.6
+fb716d2	0.7601	discard	colsample_bynode 0.9
+9dc74e7	0.7582	discard	colsample_bylevel 0.9 with bynode 0.8
+249985e	0.7598	discard	700 trees with per-node sampling
+dc8b602	0.7578	discard	reg_alpha 3.0 with per-node sampling
+b91ac78	0.7601	discard	scale_pos_weight full class ratio
+25b08ca	0.7601	discard	square-root class-ratio weighting
+4f791fe	0.7595	discard	max_delta_step 1
+6f4909e	0.7589	discard	max_bin 128
+77fa81a	0.7605	keep	colsample_bytree 0.7 with bynode 0.8
+605fe44	0.7601	discard	colsample_bytree 0.8 with bynode 0.8
+33a9d3a	0.7598	discard	colsample_bytree 0.7 with bynode 0.7
+cdf9af9	0.7605	discard	colsample_bytree 0.7 with bynode 0.9
+c3b0c6d	0.7603	discard	min_child_weight 3 with current sampling
+baae952	0.7602	discard	min_child_weight 7 with current sampling
+1cb818b	0.7593	discard	subsample 0.9
+7b53029	0.7598	discard	subsample 0.95
+b0d3ef5	0.7609	keep	subsample 0.99
+e751c61	0.7603	discard	subsample 0.995
+4af9e04	0.7605	discard	subsample 0.985
+56857e0	0.7607	discard	subsample 0.9925
+f8f00d0	0.7608	discard	650 trees with subsample 0.99
+560ad07	0.7608	discard	625 trees with subsample 0.99
+86ca7bc	0.7608	discard	575 trees with subsample 0.99
+0002708	0.7613	keep	max_depth 11 with subsample 0.99
+b26515a	0.7611	discard	max_depth 12 with subsample 0.99
+8668b93	0.7603	discard	gamma 0.5 with depth 11
+eda4cc1	0.7609	discard	reg_lambda 4 at depth 11
+7f05ae9	0.7604	discard	reg_lambda 6 at depth 11
+9ab0eb1	0.7603	discard	reg_lambda 4.5 at depth 11
+bb8814c	0.7619	keep	reg_alpha 4.5 with depth 11 and subsample 0.99
+26de1ad	0.7628	keep	reg_alpha 5.0 with depth 11 and subsample 0.99
+7bd8288	0.7622	discard	reg_alpha 5.5 at depth 11
+a1486b8	0.7618	discard	reg_alpha 5.25 at depth 11
+0013c96	0.7620	discard	reg_alpha 4.75 at depth 11

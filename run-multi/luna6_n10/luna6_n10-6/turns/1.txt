@@ -1,0 +1,8 @@
+Setup is ready apart from choosing the run tag:
+
+- `data/train.csv` and `data/eval.csv` are present.
+- The current branch is `main`; no `oct1` branch exists.
+- I created `results.tsv` with the required header.
+- The experiment clock is not running.
+
+I proposed **`oct1`** based on today’s date and am waiting for your choice. Once the tag is agreed, I’ll create the branch and report the completed setup before starting the clock, as `program.md` instructs.

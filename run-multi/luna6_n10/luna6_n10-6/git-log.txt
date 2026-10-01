@@ -1,0 +1,207 @@
+commit 26de1adb66e064a520f7a3cd8ebc30810cf199ae
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 05:53:04 2026 +0000
+
+    Test L1 penalty at five
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bb8814cd6318c299626e524b0ff8494e83d59db5
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 05:51:30 2026 +0000
+
+    Test slightly stronger L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 00027082c1996087a22dad1bfff61ec18d2506da
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 05:42:41 2026 +0000
+
+    Test deeper trees with row sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b0d3ef572d19ae5b5332df2309572ef9242f1a6f
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 05:32:35 2026 +0000
+
+    Test near-full row sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 77fa81a037cc8d611ac130504247d8542af4a4b2
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 05:19:51 2026 +0000
+
+    Retune tree-level feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 167eb22a47709c3a1bd55bd0ac058bc15ab0d6be
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 05:03:37 2026 +0000
+
+    Test per-node feature sampling
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 53d92481f8f2cc0d4ebe2f17c61b528f85fca83b
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:59:17 2026 +0000
+
+    Test 600 rounds with L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 772c6533beeea510f87a4a31866a3f031068e553
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:58:00 2026 +0000
+
+    Test 500 rounds with L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1311766de89634f5b4720621c4e9bcdc697c62f4
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:56:48 2026 +0000
+
+    Retest 400 rounds with L1
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 605c0bc0998595179c50e07d5229d147a2a25501
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:53:21 2026 +0000
+
+    Increase L1 penalty to four
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 522e8679e9451d4725a3627c292654c7c63c4867
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:52:18 2026 +0000
+
+    Test stronger L1 penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1feb2c26f8cf735bf27fe000f9c9a66ea8bf9b79
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:51:15 2026 +0000
+
+    Increase L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1f5f7455460a0c9678e21bbc4e9c1e7b0629f201
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:50:06 2026 +0000
+
+    Add L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3e9851b2eec059dd8842184d05336186eebd0908
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:44:38 2026 +0000
+
+    Increase rounds on best configuration
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 262087643d3c3293207f9e4b6e55b936e0960802
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:34:25 2026 +0000
+
+    Increase L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 9afe9382e205172b1b4d8995336818608c465e68
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:25:59 2026 +0000
+
+    Test depth 10 with feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d9cccc0d6dc9a3499477ff931031fd92ea238fc8
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:20:16 2026 +0000
+
+    Increase feature subsampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8d4b94e84a71ddd4d7d0031cbe4deb988c26d986
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:19:00 2026 +0000
+
+    Try per-tree feature sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f36e0b2bd5c90e54fb206430340c824e1b6ec50d
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:07:48 2026 +0000
+
+    Regularize child nodes
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 847d706cae49182231a8256666df91a765fa6b35
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:05:34 2026 +0000
+
+    Try deeper trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d48b955b17452736a45b505e753f59af5b23a881
+Author: agent <agent@localhost>
+Date:   Thu Oct 1 04:01:59 2026 +0000
+
+    Try lower-rate boosted trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

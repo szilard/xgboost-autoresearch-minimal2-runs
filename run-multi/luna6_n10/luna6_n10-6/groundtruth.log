@@ -1,0 +1,164 @@
+=== [2] 92e43e6 | keep | baseline starter settings ===
+  holdout=0.7155
+=== [3] d48b955 | keep | 200 trees, learning rate 0.05 ===
+  holdout=0.7282
+=== [4] 6c0a070 | discard | 400 trees, learning rate 0.025 ===
+  SKIP: status discard
+=== [5] 2027640 | discard | 200 trees with subsample 0.8 ===
+  SKIP: status discard
+=== [6] 847d706 | keep | 200 trees, max depth 8 ===
+  holdout=0.7297
+=== [7] 65835c1 | discard | 200 trees, max depth 10 ===
+  SKIP: status discard
+=== [8] f36e0b2 | keep | 200 trees, depth 8, min child weight 5 ===
+  holdout=0.7295
+=== [9] ae6d598 | discard | 200 trees, depth 8, min child weight 10 ===
+  SKIP: status discard
+=== [10] aa7461b | discard | 200 trees, depth 8, min child weight 3 ===
+  SKIP: status discard
+=== [11] 5293aa8 | discard | add directed route category ===
+  SKIP: status discard
+=== [12] 9e003e4 | discard | add scheduled departure hour category ===
+  SKIP: status discard
+=== [13] 94d5531 | discard | cyclic scheduled departure time features ===
+  SKIP: status discard
+=== [14] 8d4b94e | keep | colsample_bytree 0.8 ===
+  holdout=0.7371
+=== [15] d9cccc0 | keep | colsample_bytree 0.6 ===
+  holdout=0.7416
+=== [16] 39a4655 | discard | colsample_bytree 0.4 ===
+  SKIP: status discard
+=== [17] 995de51 | discard | colsample_bytree 0.5 ===
+  SKIP: status discard
+=== [18] 592f946 | discard | colsample_bytree 0.6 and colsample_bylevel 0.8 ===
+  SKIP: status discard
+=== [19] 8a2a75c | discard | depth 6 with colsample_bytree 0.6 ===
+  SKIP: status discard
+=== [20] 9afe938 | keep | depth 10, colsample_bytree 0.6 ===
+  holdout=0.7466
+=== [21] f9ead0a | discard | max_cat_to_onehot 32 ===
+  SKIP: status discard
+=== [22] ce480a2 | discard | max_cat_to_onehot 8 ===
+  SKIP: status discard
+=== [23] bda4942 | discard | loss-guided tree growth ===
+  SKIP: status discard
+=== [24] 5d2aa82 | discard | max_cat_threshold 32 ===
+  SKIP: status discard
+=== [25] 2620876 | keep | reg_lambda 5 ===
+  holdout=0.7470
+=== [26] ec6116e | discard | reg_lambda 10 ===
+  SKIP: status discard
+=== [27] ae1c329 | discard | reg_lambda 3 ===
+  SKIP: status discard
+=== [28] 36fd132 | discard | gamma 1.0 ===
+  SKIP: status discard
+=== [29] 3c1fb4b | discard | gradient-based subsample 0.8 ===
+  SKIP: status discard
+=== [30] d42ae87 | discard | max_bin 512 ===
+  SKIP: status discard
+=== [31] 9f046c6 | crash | DART training timeout ===
+  SKIP: status crash
+=== [32] 3e9851b | keep | 300 trees on best configuration ===
+  holdout=0.7475
+=== [33] c8bc6c6 | discard | 400 trees on best configuration ===
+  SKIP: status discard
+=== [34] bfa10cf | discard | 350 trees on best configuration ===
+  SKIP: status discard
+=== [35] f736154 | discard | 300 trees, learning rate 0.04 ===
+  SKIP: status discard
+=== [36] 1f5f745 | keep | reg_alpha 0.5 ===
+  holdout=0.7498
+=== [37] 1feb2c2 | keep | reg_alpha 1.0 ===
+  holdout=0.7505
+=== [38] 522e867 | keep | reg_alpha 2.0 ===
+  holdout=0.7522
+=== [39] 605c0bc | keep | reg_alpha 4.0 ===
+  holdout=0.7536
+=== [40] 7d9617b | discard | reg_alpha 8.0 ===
+  SKIP: status discard
+=== [41] 14137a5 | discard | reg_alpha 6.0 ===
+  SKIP: status discard
+=== [42] 1311766 | keep | 400 trees with reg_alpha 4 ===
+  holdout=0.7550
+=== [43] 772c653 | keep | 500 trees with reg_alpha 4 ===
+  holdout=0.7556
+=== [44] 53d9248 | keep | 600 trees with reg_alpha 4 ===
+  holdout=0.7558
+=== [45] 07196b7 | discard | 700 trees with reg_alpha 4 ===
+  SKIP: status discard
+=== [46] 167eb22 | keep | colsample_bynode 0.8 ===
+  holdout=0.7559
+=== [47] 770643c | discard | colsample_bynode 1.0 ===
+  SKIP: status discard
+=== [48] d2bb30f | discard | colsample_bynode 0.6 ===
+  SKIP: status discard
+=== [49] fb716d2 | discard | colsample_bynode 0.9 ===
+  SKIP: status discard
+=== [50] 9dc74e7 | discard | colsample_bylevel 0.9 with bynode 0.8 ===
+  SKIP: status discard
+=== [51] 249985e | discard | 700 trees with per-node sampling ===
+  SKIP: status discard
+=== [52] dc8b602 | discard | reg_alpha 3.0 with per-node sampling ===
+  SKIP: status discard
+=== [53] b91ac78 | discard | scale_pos_weight full class ratio ===
+  SKIP: status discard
+=== [54] 25b08ca | discard | square-root class-ratio weighting ===
+  SKIP: status discard
+=== [55] 4f791fe | discard | max_delta_step 1 ===
+  SKIP: status discard
+=== [56] 6f4909e | discard | max_bin 128 ===
+  SKIP: status discard
+=== [57] 77fa81a | keep | colsample_bytree 0.7 with bynode 0.8 ===
+  holdout=0.7564
+=== [58] 605fe44 | discard | colsample_bytree 0.8 with bynode 0.8 ===
+  SKIP: status discard
+=== [59] 33a9d3a | discard | colsample_bytree 0.7 with bynode 0.7 ===
+  SKIP: status discard
+=== [60] cdf9af9 | discard | colsample_bytree 0.7 with bynode 0.9 ===
+  SKIP: status discard
+=== [61] c3b0c6d | discard | min_child_weight 3 with current sampling ===
+  SKIP: status discard
+=== [62] baae952 | discard | min_child_weight 7 with current sampling ===
+  SKIP: status discard
+=== [63] 1cb818b | discard | subsample 0.9 ===
+  SKIP: status discard
+=== [64] 7b53029 | discard | subsample 0.95 ===
+  SKIP: status discard
+=== [65] b0d3ef5 | keep | subsample 0.99 ===
+  holdout=0.7563
+=== [66] e751c61 | discard | subsample 0.995 ===
+  SKIP: status discard
+=== [67] 4af9e04 | discard | subsample 0.985 ===
+  SKIP: status discard
+=== [68] 56857e0 | discard | subsample 0.9925 ===
+  SKIP: status discard
+=== [69] f8f00d0 | discard | 650 trees with subsample 0.99 ===
+  SKIP: status discard
+=== [70] 560ad07 | discard | 625 trees with subsample 0.99 ===
+  SKIP: status discard
+=== [71] 86ca7bc | discard | 575 trees with subsample 0.99 ===
+  SKIP: status discard
+=== [72] 0002708 | keep | max_depth 11 with subsample 0.99 ===
+  holdout=0.7571
+=== [73] b26515a | discard | max_depth 12 with subsample 0.99 ===
+  SKIP: status discard
+=== [74] 8668b93 | discard | gamma 0.5 with depth 11 ===
+  SKIP: status discard
+=== [75] eda4cc1 | discard | reg_lambda 4 at depth 11 ===
+  SKIP: status discard
+=== [76] 7f05ae9 | discard | reg_lambda 6 at depth 11 ===
+  SKIP: status discard
+=== [77] 9ab0eb1 | discard | reg_lambda 4.5 at depth 11 ===
+  SKIP: status discard
+=== [78] bb8814c | keep | reg_alpha 4.5 with depth 11 and subsample 0.99 ===
+  holdout=0.7567
+=== [79] 26de1ad | keep | reg_alpha 5.0 with depth 11 and subsample 0.99 ===
+  holdout=0.7572
+=== [80] 7bd8288 | discard | reg_alpha 5.5 at depth 11 ===
+  SKIP: status discard
+=== [81] a1486b8 | discard | reg_alpha 5.25 at depth 11 ===
+  SKIP: status discard
+=== [82] 0013c96 | discard | reg_alpha 4.75 at depth 11 ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

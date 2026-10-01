@@ -1,0 +1,4 @@
+2026-10-01T05:14:57.845563Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/train.py:
+    scale_pos_weight=(y_train == 0).sum() / (y_train == 1).sum(),
+2026-10-01T05:30:57.139408Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal2/train.py:
+    subsample=0.9,

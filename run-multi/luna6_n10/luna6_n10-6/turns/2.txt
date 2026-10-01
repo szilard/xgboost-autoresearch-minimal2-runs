@@ -1,0 +1,5 @@
+The experiment is set up and the timed session is closed. Branch `oct1` is restored to the best checkpoint, commit `26de1ad`.
+
+**Best Eval AUC: 0.7628**, up from the 0.7203 baseline. The winning settings are 600 trees, depth 11, L1 5.0, L2 5, `subsample=0.99`, and feature sampling 0.7 per tree / 0.8 per node.
+
+The run history and synthesis are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md). The harness stopped after 1h59m39s.

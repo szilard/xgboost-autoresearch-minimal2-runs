@@ -7,3 +7,4 @@
 | luna6_n10-3 | gpt-6-luna | max | 80 | 0.7621 (adccf54) | 0.7557 | -0.0064 | 2h00m09s | 53.4% | valid |
 | luna6_n10-4 | gpt-6-luna | max | 56 | 0.7382 (31ee1bc) | 0.7348 | -0.0034 | 2h00m10s | 71.0% | valid |
 | luna6_n10-5 | gpt-6-luna | max | 58 | 0.7540 (4e521f0) | 0.7496 | -0.0044 | 2h00m13s | 59.0% | valid |
+| luna6_n10-6 | gpt-6-luna | max | 80 | 0.7628 (26de1ad) | 0.7572 | -0.0056 | 1h59m39s | 56.9% | valid |
