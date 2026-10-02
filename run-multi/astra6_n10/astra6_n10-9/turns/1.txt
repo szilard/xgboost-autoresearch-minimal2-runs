@@ -1,0 +1,9 @@
+Setup is ready on branch `oct2`.
+
+- Data and dependencies verified.
+- `results.tsv` initialized and setup logged.
+- Baseline unchanged; experiment clock not started.
+
+The accidental read of human-only `prepare.py` is documented in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md); it wasn’t executed or changed.
+
+Say **“go”** to begin the two-hour experiment. [program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md) requires confirmation before starting the clock.

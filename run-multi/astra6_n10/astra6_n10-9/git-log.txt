@@ -1,0 +1,279 @@
+commit 36519436039a3714ffe79faeb4a4cfd5f53c2ea1
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:37:23 2026 +0000
+
+    Test modest label smoothing in the base ensemble
+
+ train.py | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+
+commit b1fc100745c9ad062456e8c370ad92b7df76d3a8
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:33:59 2026 +0000
+
+    Increase interaction depth under strong L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f06ab477812999dd78aa1e6a29b264adcfa161a5
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:32:17 2026 +0000
+
+    Ablate the low-rank stage after strengthening the trees
+
+ train.py | 6 ------
+ 1 file changed, 6 deletions(-)
+
+commit da6498a34c7ae46244c8a34628e5b30620c0aa6a
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:31:10 2026 +0000
+
+    Extend the strongly regularized ensemble to 1200 rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a194ace0f7b6f20482d59ada771c4ae1ae846ca1
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:30:08 2026 +0000
+
+    Extend successful L1 regularization to all ensemble members
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 7ff912e3740b49a3217531516fb6d0df1fa37b87
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:28:48 2026 +0000
+
+    Apply sparse leaf regularization to the deepest member
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5196f07dba26f7b121ea0844c6a4d73c82d94bff
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:23:29 2026 +0000
+
+    Build prepared features once from fixed category codes
+
+ train.py | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 03f73abc2775045dcd728a24af38a408ffd5dc1f
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:21:33 2026 +0000
+
+    Replace alternating factor fitting with a direct low-rank projection
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 387f6539e2f43fd8385e01f74b0bf7b7fdc0320e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:16:59 2026 +0000
+
+    Remove the rarely used departure-minute feature
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit c9f7693713dabfd1c977b7ced6c1024e040ff843
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:15:48 2026 +0000
+
+    Add a deeper member to the structural ensemble
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 06812b334273ab418bd77f6fb1eda04264057d14
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:14:44 2026 +0000
+
+    Add carrier-date six-hour residual effects
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 4d3ca2f7783e53a364afd1d606f4ea5d73c0ffbf
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:10:19 2026 +0000
+
+    Encode correction groups with fixed numeric identifiers
+
+ train.py | 19 ++++++++-----------
+ 1 file changed, 8 insertions(+), 11 deletions(-)
+
+commit 2fed12ebdbba0ee077b66d3955bae16fc5d30e29
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:02:15 2026 +0000
+
+    Add sparse origin-date time-block effects
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 7dddf5acf78956c21fb02c591c1bdb4dddda5708
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 20:00:23 2026 +0000
+
+    Use a gentler sparse daily-correction penalty
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 6c176a163d4477cc21da2a026a49334cefaf8733
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 19:53:29 2026 +0000
+
+    Average depthwise and loss-guided model margins
+
+ train.py | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+commit 27e2063f25bdec50548666e3aa06bd1bb2910cb0
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 19:43:40 2026 +0000
+
+    Use loss-guided trees with a fixed leaf budget
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit d534fa890eca0a1cb6db6c55a5598b0b3e8ed992
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 19:37:17 2026 +0000
+
+    Remove calendar columns unused by the base trees
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 6b4171b483aa5238d0e5ed24f3fd2435294bf766
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 19:29:57 2026 +0000
+
+    Add carrier-date residual effects
+
+ train.py | 16 ++++++++++++----
+ 1 file changed, 12 insertions(+), 4 deletions(-)
+
+commit eb483366064760f083a8954ab52ee6050c14cb88
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 19:26:35 2026 +0000
+
+    Use full regularized airport-date correction steps
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 231b407911db6254de1b63640afbf9ccde940ed1
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 19:25:08 2026 +0000
+
+    Fit regularized airport-date residual corrections
+
+ train.py | 32 +++++++++++++++++++++++++++++++-
+ 1 file changed, 31 insertions(+), 1 deletion(-)
+
+commit 6b49aa3d245f5c89c576ad05955a899cbecbdf59
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 19:09:20 2026 +0000
+
+    Allow broader categorical partition search
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3c912ac4a27172eb68e5b458a470ffdee7e8ccda
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 19:00:52 2026 +0000
+
+    Regularize small leaves and leaf weights
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 1f49f4f54be4008855f8c85fce07c483db20ee2d
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:57:50 2026 +0000
+
+    Expose scheduled departure hour and minute
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit fe7ff171af7ae74054ce940c5de9940d36df37ea
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:56:50 2026 +0000
+
+    Use smaller boosting steps for date features
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit fb947a7a873c051441550568a480b9d92acd4ad8
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:55:25 2026 +0000
+
+    Remove redundant categorical membership masking
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7fecc6a0c9b6d816514e98c32083f8bb793f02d8
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:52:34 2026 +0000
+
+    Add categorical date for shared daily delay effects
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3e548cca078436cdd7f46fc75e64e7f9338a47e3
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:51:16 2026 +0000
+
+    Add ordered day-of-year calendar feature
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 08ba18e2ac96a5e90300560484007e84bdfeeb29
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:49:35 2026 +0000
+
+    Test shallower trees to reduce overfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4e1514813a769ecb186f9bba2638a44d01f0d598
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:47:13 2026 +0000
+
+    Test 300 boosting rounds for baseline features
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

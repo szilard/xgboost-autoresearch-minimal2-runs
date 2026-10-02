@@ -10,3 +10,4 @@
 | astra6_n10-6 | gpt-6-astra | max | 74 | 0.7712 (22dfab8) | 0.7656 | -0.0056 | 2h01m54s | 65.3% | valid |
 | astra6_n10-7 | gpt-6-astra | max | 70 | 0.7644 (10d2bfa) | 0.7592 | -0.0052 | 2h00m41s | 61.4% | valid |
 | astra6_n10-8 | gpt-6-astra | max | 66 | 0.7667 (bdfa919) | 0.7614 | -0.0053 | 2h02m04s | 69.5% | valid |
+| astra6_n10-9 | gpt-6-astra | max | 76 | 0.7674 (3651943) | 0.7623 | -0.0051 | 2h01m59s | 58.9% | valid with caveat: agent read prepare.py during setup (disclosed it), no further access (leak check: 26 content hits) |

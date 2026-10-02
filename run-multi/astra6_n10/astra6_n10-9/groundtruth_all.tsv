@@ -1,0 +1,78 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline: 30 trees depth 6 learning rate 0.1	0.7203	0.7155
+4e15148	keep	300 trees with unchanged baseline features	0.7342	0.7315
+619950d	discard	800 trees at depth 6; longer horizon overfits	0.7273	N/A
+08ba18e	keep	depth 4 at 300 rounds; similar AUC with smaller trees	0.7343	0.7303
+3e548cc	keep	add ordinal day of year	0.7382	0.7350
+7fecc6a	keep	add categorical day of year alongside ordinal date	0.7521	0.7478
+95d3f4e	discard	depth 6 with date features; extra interactions overfit	0.7500	N/A
+fb947a7	keep	remove redundant categorical mask; same AUC and faster preparation	0.7521	0.7478
+fe7ff17	keep	600 rounds at learning rate 0.05 with date features	0.7530	0.7485
+1f49f4f	keep	add categorical departure hour and numeric minute	0.7534	0.7489
+97f6dd3	discard	route category overfits; 4290 levels and much larger model	0.7351	N/A
+3c912ac	keep	min_child_weight 20 and L2 regularization 10	0.7552	0.7495
+fa064ca	discard	depth 6 with regularization still trails depth 4	0.7548	N/A
+06ab417	discard	0.8 row and feature sampling harms AUC	0.7497	N/A
+fd91846	discard	training-only early stopping selects 678 trees but loses AUC	0.7522	N/A
+bdb5f31	discard	two-dimensional airport distance embedding adds cost without gain	0.7546	N/A
+bd8578f	discard	drop day-of-month category; slight AUC loss	0.7550	N/A
+7720389	discard	max_cat_threshold 16 removes useful categorical flexibility	0.7489	N/A
+6b49aa3	keep	max_cat_threshold 256 modestly improves categorical search	0.7557	0.7502
+e27f90a	discard	one-hot splits for low-cardinality fields harm AUC	0.7491	N/A
+05cabb5	discard	disjoint airport-date target lookups lose too much fitting data	0.7516	N/A
+661efd7	discard	relative route departure time does not improve AUC	0.7543	N/A
+a3b5637	discard	weekly calendar group ties AUC but adds a feature	0.7557	N/A
+2e4b2a6	discard	1200 rounds slightly overfit the regularized date model	0.7549	N/A
+5a4b85c	discard	pairwise ranking objective underperforms classification loss	0.7347	N/A
+de8067c	discard	three-tree boosted forest ties best but costs more	0.7557	N/A
+b6b8d4f	discard	depth 3 with more rounds loses useful interactions	0.7529	N/A
+231b407	keep	regularized origin-date and destination-date residual model	0.7575	0.7520
+eb48336	keep	full Newton steps for airport-date corrections	0.7583	0.7529
+47e2903	discard	weaker L2 3 on residual corrections overfits	0.7560	N/A
+6b4171b	keep	add carrier-date additive residual stage	0.7588	0.7536
+7cb0ec1	discard	destination-date ablation loses AUC	0.7580	N/A
+21e0736	discard	three joint correction passes tie one-pass AUC	0.7588	N/A
+f05201f	discard	route residual stage slightly harms AUC	0.7583	N/A
+d534fa8	keep	remove four unused calendar inputs; same AUC and faster evaluation	0.7588	0.7536
+4f6ca29	discard	global date-time-block correction does not help	0.7585	N/A
+0e7623a	discard	carrier-origin residual correction ties AUC	0.7588	N/A
+55ad229	discard	separating date from other tree features reduces AUC	0.7561	N/A
+27e2063	keep	loss-guided 16-leaf trees slightly improve AUC	0.7590	0.7539
+97b305f	discard	32 loss-guided leaves overfit relative to 16	0.7573	N/A
+626648f	discard	row-only sampling also harms categorical model	0.7555	N/A
+2427b05	discard	1500 small-step rounds add size without an AUC gain	0.7589	N/A
+1ae2ff2	discard	min_child_weight 100 removes useful small-group structure	0.7582	N/A
+dc133d4	discard	1024 numeric histogram bins do not improve ranking	0.7588	N/A
+329a415	discard	DART dropout is slower and has lower AUC	0.7577	N/A
+6c176a1	keep	equal blend of depthwise and loss-guided margins plus daily corrections	0.7602	0.7551
+e34336d	discard	gamma 2 trims model but does not improve AUC	0.7601	N/A
+c203fa3	discard	base reg_lambda 100 slightly hurts AUC	0.7597	N/A
+7dfbf0e	discard	L1 1 removes most correction coefficients with tiny AUC loss	0.7601	N/A
+7dddf5a	keep	L1 0.5 sparsifies daily corrections and improves AUC	0.7604	0.7550
+2fed12e	keep	sparse origin-date six-hour effects add a small gain	0.7608	0.7555
+f13b07e	discard	probability averaging ties simpler logit average	0.7608	N/A
+4d3ca2f	keep	numeric correction keys preserve AUC and speed evaluation	0.7608	0.7555
+a60dd4a	discard	three-hour origin-date blocks slightly underperform six-hour blocks	0.7607	N/A
+6b3e0cb	discard	adjacent-date smoothing ties independent sparse daily effects	0.7608	N/A
+06812b3	keep	carrier-date six-hour effects improve AUC with one table declaration	0.7610	0.7557
+c9f7693	keep	depth-six ensemble member improves AUC to 0.7613	0.7613	0.7557
+387f653	keep	remove departure minute for better AUC and simpler features	0.7617	0.7561
+c3138a2	discard	removing loss-guided ensemble member hurts AUC	0.7604	N/A
+4300681	discard	weighted low-rank airport-date stage gives tiny gain at added complexity	0.7618	N/A
+03f73ab	keep	direct rank-eight projection matches 0.7618 with six added lines	0.7618	0.7562
+5196f07	keep	single DataFrame construction halves evaluation time at identical AUC	0.7618	0.7562
+b16864b	discard	32-leaf cap reduces artifact size but lowers AUC	0.7616	N/A
+35fc52d	discard	coarse carrier-date correction still adds a small gain	0.7617	N/A
+0f57f57	discard	fitted daily initial margins do not improve the ensemble	0.7616	N/A
+7ff912e	keep	L1 regularization on deepest member raises AUC to 0.7645	0.7645	0.7594
+a194ace	keep	shared L1 penalty improves ensemble AUC to 0.7657	0.7657	0.7607
+da6498a	keep	1200 L1-regularized rounds improve AUC to 0.7661	0.7661	0.7612
+f06ab47	keep	remove low-rank stage for simpler code and AUC 0.7662	0.7662	0.7612
+b1fc100	keep	depth-eight regularized member raises AUC to 0.7673	0.7673	0.7622
+0f89c59	discard	L1 20 over-regularizes the larger ensemble	0.7656	N/A
+3651943	keep	modest label smoothing improves AUC to 0.7674	0.7674	0.7623
+5b9d62b	discard	single deep model is close but loses the ensemble gain	0.7671	N/A
+d83d73d	discard	fourth ensemble member adds cost without improving AUC	0.7673	N/A
+d739e8e	discard	hour-only time features lose useful schedule detail	0.7668	N/A
+9280c50	discard	removing all residual corrections lowers AUC by 0.0010	0.7664	N/A
+3651943	keep	unchanged best model reproduces 0.7674 in final confirmation	0.7674	0.7623

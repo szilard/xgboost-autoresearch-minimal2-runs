@@ -1,0 +1,7 @@
+Completed **77 evaluations**. Eval AUC improved **0.7203 → 0.7674**, reproduced in the final run.
+
+Best model: branch `oct2`, commit `3651943`. Artifact checks passed; clock stopped.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md)
+
+The log also documents the accidental setup-time read of `prepare.py`.

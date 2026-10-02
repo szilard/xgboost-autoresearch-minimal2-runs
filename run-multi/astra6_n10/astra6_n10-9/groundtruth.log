@@ -1,0 +1,156 @@
+=== [2] 92e43e6 | keep | baseline: 30 trees depth 6 learning rate 0.1 ===
+  holdout=0.7155
+=== [3] 4e15148 | keep | 300 trees with unchanged baseline features ===
+  holdout=0.7315
+=== [4] 619950d | discard | 800 trees at depth 6; longer horizon overfits ===
+  SKIP: status discard
+=== [5] 08ba18e | keep | depth 4 at 300 rounds; similar AUC with smaller trees ===
+  holdout=0.7303
+=== [6] 3e548cc | keep | add ordinal day of year ===
+  holdout=0.7350
+=== [7] 7fecc6a | keep | add categorical day of year alongside ordinal date ===
+  holdout=0.7478
+=== [8] 95d3f4e | discard | depth 6 with date features; extra interactions overfit ===
+  SKIP: status discard
+=== [9] fb947a7 | keep | remove redundant categorical mask; same AUC and faster preparation ===
+  holdout=0.7478
+=== [10] fe7ff17 | keep | 600 rounds at learning rate 0.05 with date features ===
+  holdout=0.7485
+=== [11] 1f49f4f | keep | add categorical departure hour and numeric minute ===
+  holdout=0.7489
+=== [12] 97f6dd3 | discard | route category overfits; 4290 levels and much larger model ===
+  SKIP: status discard
+=== [13] 3c912ac | keep | min_child_weight 20 and L2 regularization 10 ===
+  holdout=0.7495
+=== [14] fa064ca | discard | depth 6 with regularization still trails depth 4 ===
+  SKIP: status discard
+=== [15] 06ab417 | discard | 0.8 row and feature sampling harms AUC ===
+  SKIP: status discard
+=== [16] fd91846 | discard | training-only early stopping selects 678 trees but loses AUC ===
+  SKIP: status discard
+=== [17] bdb5f31 | discard | two-dimensional airport distance embedding adds cost without gain ===
+  SKIP: status discard
+=== [18] bd8578f | discard | drop day-of-month category; slight AUC loss ===
+  SKIP: status discard
+=== [19] 7720389 | discard | max_cat_threshold 16 removes useful categorical flexibility ===
+  SKIP: status discard
+=== [20] 6b49aa3 | keep | max_cat_threshold 256 modestly improves categorical search ===
+  holdout=0.7502
+=== [21] e27f90a | discard | one-hot splits for low-cardinality fields harm AUC ===
+  SKIP: status discard
+=== [22] 05cabb5 | discard | disjoint airport-date target lookups lose too much fitting data ===
+  SKIP: status discard
+=== [23] 661efd7 | discard | relative route departure time does not improve AUC ===
+  SKIP: status discard
+=== [24] a3b5637 | discard | weekly calendar group ties AUC but adds a feature ===
+  SKIP: status discard
+=== [25] 2e4b2a6 | discard | 1200 rounds slightly overfit the regularized date model ===
+  SKIP: status discard
+=== [26] 5a4b85c | discard | pairwise ranking objective underperforms classification loss ===
+  SKIP: status discard
+=== [27] de8067c | discard | three-tree boosted forest ties best but costs more ===
+  SKIP: status discard
+=== [28] b6b8d4f | discard | depth 3 with more rounds loses useful interactions ===
+  SKIP: status discard
+=== [29] 231b407 | keep | regularized origin-date and destination-date residual model ===
+  holdout=0.7520
+=== [30] eb48336 | keep | full Newton steps for airport-date corrections ===
+  holdout=0.7529
+=== [31] 47e2903 | discard | weaker L2 3 on residual corrections overfits ===
+  SKIP: status discard
+=== [32] 6b4171b | keep | add carrier-date additive residual stage ===
+  holdout=0.7536
+=== [33] 7cb0ec1 | discard | destination-date ablation loses AUC ===
+  SKIP: status discard
+=== [34] 21e0736 | discard | three joint correction passes tie one-pass AUC ===
+  SKIP: status discard
+=== [35] f05201f | discard | route residual stage slightly harms AUC ===
+  SKIP: status discard
+=== [36] d534fa8 | keep | remove four unused calendar inputs; same AUC and faster evaluation ===
+  holdout=0.7536
+=== [37] 4f6ca29 | discard | global date-time-block correction does not help ===
+  SKIP: status discard
+=== [38] 0e7623a | discard | carrier-origin residual correction ties AUC ===
+  SKIP: status discard
+=== [39] 55ad229 | discard | separating date from other tree features reduces AUC ===
+  SKIP: status discard
+=== [40] 27e2063 | keep | loss-guided 16-leaf trees slightly improve AUC ===
+  holdout=0.7539
+=== [41] 97b305f | discard | 32 loss-guided leaves overfit relative to 16 ===
+  SKIP: status discard
+=== [42] 626648f | discard | row-only sampling also harms categorical model ===
+  SKIP: status discard
+=== [43] 2427b05 | discard | 1500 small-step rounds add size without an AUC gain ===
+  SKIP: status discard
+=== [44] 1ae2ff2 | discard | min_child_weight 100 removes useful small-group structure ===
+  SKIP: status discard
+=== [45] dc133d4 | discard | 1024 numeric histogram bins do not improve ranking ===
+  SKIP: status discard
+=== [46] 329a415 | discard | DART dropout is slower and has lower AUC ===
+  SKIP: status discard
+=== [47] 6c176a1 | keep | equal blend of depthwise and loss-guided margins plus daily corrections ===
+  holdout=0.7551
+=== [48] e34336d | discard | gamma 2 trims model but does not improve AUC ===
+  SKIP: status discard
+=== [49] c203fa3 | discard | base reg_lambda 100 slightly hurts AUC ===
+  SKIP: status discard
+=== [50] 7dfbf0e | discard | L1 1 removes most correction coefficients with tiny AUC loss ===
+  SKIP: status discard
+=== [51] 7dddf5a | keep | L1 0.5 sparsifies daily corrections and improves AUC ===
+  holdout=0.7550
+=== [52] 2fed12e | keep | sparse origin-date six-hour effects add a small gain ===
+  holdout=0.7555
+=== [53] f13b07e | discard | probability averaging ties simpler logit average ===
+  SKIP: status discard
+=== [54] 4d3ca2f | keep | numeric correction keys preserve AUC and speed evaluation ===
+  holdout=0.7555
+=== [55] a60dd4a | discard | three-hour origin-date blocks slightly underperform six-hour blocks ===
+  SKIP: status discard
+=== [56] 6b3e0cb | discard | adjacent-date smoothing ties independent sparse daily effects ===
+  SKIP: status discard
+=== [57] 06812b3 | keep | carrier-date six-hour effects improve AUC with one table declaration ===
+  holdout=0.7557
+=== [58] c9f7693 | keep | depth-six ensemble member improves AUC to 0.7613 ===
+  holdout=0.7557
+=== [59] 387f653 | keep | remove departure minute for better AUC and simpler features ===
+  holdout=0.7561
+=== [60] c3138a2 | discard | removing loss-guided ensemble member hurts AUC ===
+  SKIP: status discard
+=== [61] 4300681 | discard | weighted low-rank airport-date stage gives tiny gain at added complexity ===
+  SKIP: status discard
+=== [62] 03f73ab | keep | direct rank-eight projection matches 0.7618 with six added lines ===
+  holdout=0.7562
+=== [63] 5196f07 | keep | single DataFrame construction halves evaluation time at identical AUC ===
+  holdout=0.7562
+=== [64] b16864b | discard | 32-leaf cap reduces artifact size but lowers AUC ===
+  SKIP: status discard
+=== [65] 35fc52d | discard | coarse carrier-date correction still adds a small gain ===
+  SKIP: status discard
+=== [66] 0f57f57 | discard | fitted daily initial margins do not improve the ensemble ===
+  SKIP: status discard
+=== [67] 7ff912e | keep | L1 regularization on deepest member raises AUC to 0.7645 ===
+  holdout=0.7594
+=== [68] a194ace | keep | shared L1 penalty improves ensemble AUC to 0.7657 ===
+  holdout=0.7607
+=== [69] da6498a | keep | 1200 L1-regularized rounds improve AUC to 0.7661 ===
+  holdout=0.7612
+=== [70] f06ab47 | keep | remove low-rank stage for simpler code and AUC 0.7662 ===
+  holdout=0.7612
+=== [71] b1fc100 | keep | depth-eight regularized member raises AUC to 0.7673 ===
+  holdout=0.7622
+=== [72] 0f89c59 | discard | L1 20 over-regularizes the larger ensemble ===
+  SKIP: status discard
+=== [73] 3651943 | keep | modest label smoothing improves AUC to 0.7674 ===
+  holdout=0.7623
+=== [74] 5b9d62b | discard | single deep model is close but loses the ensemble gain ===
+  SKIP: status discard
+=== [75] d83d73d | discard | fourth ensemble member adds cost without improving AUC ===
+  SKIP: status discard
+=== [76] d739e8e | discard | hour-only time features lose useful schedule detail ===
+  SKIP: status discard
+=== [77] 9280c50 | discard | removing all residual corrections lowers AUC by 0.0010 ===
+  SKIP: status discard
+=== [78] 3651943 | keep | unchanged best model reproduces 0.7674 in final confirmation ===
+  holdout=0.7623
+
+=== DONE: results written to groundtruth_all.tsv ===
