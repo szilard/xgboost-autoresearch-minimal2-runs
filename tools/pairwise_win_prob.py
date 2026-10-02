@@ -31,7 +31,8 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.lines import Line2D
-from matplotlib.offsetbox import AnnotationBbox, HPacker, TextArea
+from matplotlib.offsetbox import AnnotationBbox, DrawingArea, HPacker, TextArea
+from matplotlib.patches import Circle
 
 from plot_holdout_auc import GRID, INK, INK2, RANGE, RUN_MULTI, SURFACE, model_colours, save, style
 
@@ -80,19 +81,23 @@ def plot(rows, runs):
         ax.plot([lo, hi], [y, y], color=RANGE, lw=6, solid_capstyle="round", zorder=2)
         ax.scatter(p, y, s=46, color=INK, zorder=3)
         ax.text(p, y + 0.2, f"{p:.2f}", color=INK, fontsize=9, ha="center", va="bottom")
-    # y labels: each model name in its colour (as in the other plots), bold for legibility
+    # y labels: a dot in the model's colour (as in the other plots) before each name, text in ink
     colour = model_colours(runs)
     ax.set_yticks(range(len(rows)))
     ax.set_yticklabels([])
 
-    def text(t, c=INK, weight="normal"):
-        return TextArea(t, textprops=dict(color=c, fontsize=10, fontweight=weight))
+    def chip(m):
+        da = DrawingArea(10, 10)
+        da.add_artist(Circle((5, 5), 4, color=colour[m]))
+        return da
+
+    def text(t, c=INK):
+        return TextArea(t, textprops=dict(color=c, fontsize=10))
 
     for i, (m1, m2, *_) in enumerate(rows):
-        label = HPacker(children=[text(m1, colour[m1], "bold"), text(f"(n={len(runs[m1])})", INK2),
-                                  text("vs", INK2),
-                                  text(m2, colour[m2], "bold"), text(f"(n={len(runs[m2])})", INK2)],
-                        pad=0, sep=4, align="baseline")
+        label = HPacker(children=[chip(m1), text(f"{m1} (n={len(runs[m1])})"), text("vs", INK2),
+                                  chip(m2), text(f"{m2} (n={len(runs[m2])})")],
+                        pad=0, sep=4, align="center")
         ax.add_artist(AnnotationBbox(label, (0, len(rows) - 1 - i), xycoords=("axes fraction", "data"),
                                      xybox=(-8, 0), boxcoords="offset points", box_alignment=(1, 0.5),
                                      frameon=False, annotation_clip=False))
