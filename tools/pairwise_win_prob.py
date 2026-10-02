@@ -79,7 +79,7 @@ def plot(rows, runs):
     """
     h = 1.6 + 0.5 * len(rows)
     fig, ax = plt.subplots(figsize=(9, h), facecolor=SURFACE)
-    fig.subplots_adjust(bottom=1.05 / h, left=0.22, right=0.78)
+    fig.subplots_adjust(bottom=0.9 / h, left=0.22, right=0.78)
     ax.axvline(0.5, color=INK2, lw=1, ls=(0, (3, 3)), zorder=1)
     ax.text(0.5, len(rows) - 0.45, "coin flip", color=INK2, fontsize=8, ha="center", va="bottom")
     for i, (m1, m2, p, lo, hi) in enumerate(rows):
@@ -109,10 +109,7 @@ def plot(rows, runs):
     ax.set_ylim(-0.6, len(rows) - 0.1)
     ax.set_xlim(-0.02, 1.02)  # room for the round caps of intervals reaching 0 or 1
     ax.set_xticks(np.linspace(0, 1, 5))
-    ax.set_xlabel("P(the right-hand model's run has the higher holdout AUC), ties count half", color=INK2, labelpad=16)
-    for x, t, ha in ((0, "\u2190 left model wins", "left"), (1, "right model wins \u2192", "right")):
-        ax.annotate(t, (x, 0), xycoords=("data", "axes fraction"), xytext=(0, -20), textcoords="offset points",
-                    ha=ha, va="top", color=INK2, fontsize=8)
+    ax.set_xlabel("P(right-hand model wins)", color=INK2)
     ax.grid(axis="x", color=GRID, lw=0.8)
     style(ax, "Head to head: one run of each model")
     legend = [
