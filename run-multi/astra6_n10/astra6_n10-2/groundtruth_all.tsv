@@ -1,0 +1,83 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline	0.7203	0.7155
+550ea08	keep	increase boosting rounds from 30 to 300	0.7342	0.7315
+6132d72	keep	cache categorical dtypes and remove redundant membership filtering	0.7342	0.7315
+acc22f7	keep	add exact flight-date categorical feature	0.7500	0.7445
+00362a0	discard	deepen trees from 6 to 8 with exact-date features	0.7454	N/A
+628bb1a	keep	regularize date interactions with min_child_weight 20	0.7517	0.7450
+1770616	discard	add ordered month-day calendar coordinate	0.7499	N/A
+1c6a72d	discard	add carrier-origin and carrier-destination categories	0.7336	N/A
+917dd98	discard	limit categorical partition threshold to 16	0.7510	N/A
+1b88103	discard	use one-category splits for all categorical features	0.7352	N/A
+eb81d79	discard	give single-category splits 1500 boosting rounds	0.7466	N/A
+744054d	keep	increase leaf L2 regularization to 20	0.7539	0.7479
+d22c516	keep	use 1000 rounds at learning rate 0.03	0.7565	0.7508
+de0a1e3	discard	train-only early stopping with up to 4000 rounds	0.7542	N/A
+4c93b72	discard	add departure time relative to the route median	0.7555	N/A
+ab90cc1	discard	add scheduled minute within the hour	0.7557	N/A
+d2dc81c	discard	derive two-dimensional airport positions from training route distances	0.7568	N/A
+a836fa7	discard	add date-by-geographic-region categories from distance-derived clusters	0.7456	N/A
+82b7098	discard	reduce tree depth from 6 to 4	0.7549	N/A
+c8663d8	keep	increase L2 regularization from 20 to 100	0.7583	0.7515
+de3e90c	discard	sample 80 percent of rows per boosting step	0.7558	N/A
+265d4a7	keep	sample 80 percent of features at each split	0.7594	0.7533
+3e8815e	keep	average four feature-randomized trees per boosting round	0.7602	0.7541
+09ccc6c	discard	increase histogram resolution to 1024 bins	0.7598	N/A
+b25bad5	keep	remove separate month and day-of-month predictors	0.7603	0.7545
+6c0f1a6	discard	grow loss-guided trees with a 32-leaf budget	0.7594	N/A
+1e6349f	keep	increase L2 penalty from 100 to 500	0.7604	0.7552
+bf4bb1e	discard	extend the strongly regularized forest to 2000 rounds	0.7602	N/A
+9e25343	discard	train a pairwise-ranking XGBoost model on all training labels	0.7567	N/A
+c8f8f83	keep	raise minimum child weight from 20 to 100	0.7612	0.7555
+4929993	keep	construct categoricals from fitted category codes	0.7612	0.7555
+ddd32c1	keep	retest depth 8 with strong regularization and averaged trees	0.7613	0.7561
+f181a60	keep	remove day-of-week as a redundant date predictor	0.7617	0.7565
+a3f24ae	discard	restrict interactions to disjoint daily-context and carrier-distance groups	0.7550	N/A
+991bea3	discard	revisit a carrier-origin category under strong regularization	0.7584	N/A
+f6f8252	discard	add sine and cosine calendar-season features	0.7611	N/A
+20a93eb	keep	sample half of the predictors at each split	0.7631	0.7577
+ebdb707	keep	halve the trees per boosting round from four to two	0.7632	0.7575
+a6f92e1	discard	sample features per tree instead of per node	0.7618	N/A
+048604a	discard	average two independent boosting trajectories at the same total tree count	0.7631	N/A
+aada6e3	crash	test occasional tree dropout with 300 larger boosting steps	0.0000	N/A
+c90d69f	discard	require split gain of at least one	0.7582	N/A
+2098c70	discard	use adaptive Hessian-weighted quantile sketches	0.7633	N/A
+8164256	keep	restrict each split to two sampled predictors	0.7645	0.7589
+01abec6	discard	increase depth to 10 under two-feature split sampling	0.7645	N/A
+dc1b8be	discard	learn date risk from a separate training-only encoding partition	0.7590	N/A
+291c4a2	discard	add an L1 leaf-weight penalty of five	0.7636	N/A
+d460c6d	discard	sample half the rows using gradient-based probabilities	0.7624	N/A
+0cd3daa	discard	reduce L2 to 100 under the stronger feature-sampling regime	0.7639	N/A
+6d8ff67	discard	add a clock-plus-distance proxy for trip completion time	0.7642	N/A
+b84f389	discard	remove route distance from the six-feature model	0.7640	N/A
+6431386	discard	soften binary targets by ten percent in the training objective	0.7641	N/A
+d50f4f6	discard	cap categorical partition search at sixteen categories under strong regularization	0.7549	N/A
+f7f6659	discard	expand categorical partition search from sixty-four to 256	0.7622	N/A
+010fcbe	discard	offer only one sampled feature at each split	0.7611	N/A
+4b54c98	discard	linearly decay the learning rate across one thousand rounds	0.7638	N/A
+bf78fa5	discard	require five times more Hessian mass per leaf	0.7634	N/A
+0aba6b1	discard	reduce departure-time sampling weight relative to other features	0.7638	N/A
+14381aa	discard	add an explicit origin-destination route category	0.7591	N/A
+4ae4e94	discard	simplify to one tree per boosting step	0.7643	N/A
+7fb921d	keep	use sequential trees at matched total tree count and shrinkage	0.7646	0.7592
+a68f940	discard	replace raw departure time with a categorical departure hour	0.7634	N/A
+17ba230	discard	halve the sequential learning rate and double boosting rounds	0.7646	N/A
+13255a7	discard	train with squared probability error and positive curvature approximation	0.7642	N/A
+ecdf37f	discard	average depth-six and depth-ten sequential boosters	0.7643	N/A
+4384dfe	discard	cap unshrunk leaf updates at 0.2 log-odds units	0.7632	N/A
+9a5a69e	discard	revisit distance-derived airport coordinates with the regularized sequential model	0.7652	N/A
+32c7375	keep	use direct training-route distances to LAX and ATL as airport coordinates	0.7655	0.7597
+10f926b	discard	simplify landmark geography to ATL alone	0.7650	N/A
+1570933	keep	grow best-first trees with a sixty-four-leaf budget	0.7656	0.7599
+8b0a75f	discard	remove direct route distance after adding landmark geography	0.7649	N/A
+5851c0c	keep	reduce numeric histogram resolution to sixty-four bins	0.7657	0.7604
+0ad99f1	discard	use four training threads to reduce small-tree scheduling overhead	0.7657	N/A
+29d0917	discard	extend the geographic model to three thousand boosting rounds	0.7653	N/A
+135fd08	discard	remove destination identity while retaining destination geography	0.7650	N/A
+c9a784e	discard	constrain daytime departure risk to increase while leaving overnight time flexible	0.7620	N/A
+20f1f80	discard	apply a light split-gain penalty to best-first trees	0.7655	N/A
+4994b5d	discard	increase L2 leaf shrinkage from 500 to two thousand	0.7618	N/A
+ee6f84f	discard	reduce aggregate sampling weight of the four geographic lookups	0.7646	N/A
+3033612	discard	fill landmark distances through shortest paths in the training route graph	0.7656	N/A
+a2000d7	discard	shorten the geographic model to fifteen hundred rounds	0.7643	N/A
+68e96db	discard	test two split candidates in the ten-feature geographic model	0.7651	N/A

@@ -1,0 +1,7 @@
+Setup complete on fresh branch `oct1`.
+
+- Training and evaluation files are present; dependencies load successfully.
+- [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) contains only the required header.
+- Baseline code is unchanged; the clock hasn’t started.
+
+Per [program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md), say **go** to start the two-hour experiment with the baseline run.
