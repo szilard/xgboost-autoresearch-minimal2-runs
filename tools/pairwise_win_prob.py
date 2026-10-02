@@ -97,7 +97,7 @@ def plot(rows, runs):
     def label(m, dot_first):
         da = DrawingArea(10, 10)
         da.add_artist(Circle((5, 5), 4, color=colour[m]))
-        t = TextArea(f"{m} (n={len(runs[m])})", textprops=dict(color=INK, fontsize=10))
+        t = TextArea(m, textprops=dict(color=INK, fontsize=10))
         return HPacker(children=[da, t] if dot_first else [t, da], pad=0, sep=4, align="center")
 
     for i, (m1, m2, *_) in enumerate(rows):
