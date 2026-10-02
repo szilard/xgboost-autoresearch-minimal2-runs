@@ -15,7 +15,7 @@ plot_holdout_auc.py. Runs with valid = "no" are left out; caveat runs are
 included unless --no-caveat is given.
 
 run-multi/SUMMARY/holdout_auc_pairwise.png - one row per pair of models, the
-  better one by mean holdout AUC labelled on the left, the other on the right:
+  better one by mean holdout AUC labelled on the right, the other on the left:
   a dot at P(the right-hand model wins), so it leans toward the usual winner,
   its 90% bootstrap interval and a reference line at 0.5 (coin flip).
   Not written with --no-caveat.
@@ -73,8 +73,8 @@ def compare(a, b, rng):
 def plot(rows, runs):
     """rows: (better model, worse model, P, lo, hi), drawn top to bottom.
 
-    The better model (by mean) is labelled on the left of its row, the other on the
-    right; x is P(the right-hand model wins), so each dot leans toward the model
+    The better model (by mean) is labelled on the right of its row, the other on the
+    left; x is P(the right-hand model wins), so each dot leans toward the model
     that usually wins.
     """
     h = 1.6 + 0.5 * len(rows)
@@ -84,13 +84,12 @@ def plot(rows, runs):
     ax.text(0.5, len(rows) - 0.45, "coin flip", color=INK2, fontsize=8, ha="center", va="bottom")
     for i, (m1, m2, p, lo, hi) in enumerate(rows):
         y = len(rows) - 1 - i
-        q, qlo, qhi = 1 - p, 1 - hi, 1 - lo  # P(right-hand model wins)
-        ax.plot([qlo, qhi], [y, y], color=RANGE, lw=6, solid_capstyle="round", zorder=2)
-        ax.scatter(q, y, s=46, color=INK, zorder=3)
-        ax.text(q, y + 0.2, f"{q:.2f}", color=INK, fontsize=9, ha="center", va="bottom")
+        ax.plot([lo, hi], [y, y], color=RANGE, lw=6, solid_capstyle="round", zorder=2)
+        ax.scatter(p, y, s=46, color=INK, zorder=3)
+        ax.text(p, y + 0.2, f"{p:.2f}", color=INK, fontsize=9, ha="center", va="bottom")
 
     # model labels: a dot in the model's colour (as in the other plots) and the name in ink,
-    # model 1 outside the left edge, model 2 outside the right edge
+    # model 2 outside the left edge, model 1 (the better one) outside the right edge
     colour = model_colours(runs)
     ax.set_yticks(range(len(rows)))
     ax.set_yticklabels([])
@@ -103,7 +102,7 @@ def plot(rows, runs):
 
     for i, (m1, m2, *_) in enumerate(rows):
         y = len(rows) - 1 - i
-        for m, x, dx, align, dot_first in ((m1, 0, -8, (1, 0.5), False), (m2, 1, 8, (0, 0.5), True)):
+        for m, x, dx, align, dot_first in ((m2, 0, -8, (1, 0.5), False), (m1, 1, 8, (0, 0.5), True)):
             ax.add_artist(AnnotationBbox(label(m, dot_first), (x, y), xycoords=("axes fraction", "data"),
                                          xybox=(dx, 0), boxcoords="offset points", box_alignment=align,
                                          frameon=False, annotation_clip=False))
