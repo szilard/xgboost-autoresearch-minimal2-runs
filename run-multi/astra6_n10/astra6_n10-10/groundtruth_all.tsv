@@ -1,0 +1,75 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline: 30 trees depth 6 eta 0.1	0.7203	0.7155
+417d86a	keep	300 trees at unchanged depth and eta	0.7342	0.7315
+5ab6349	keep	simplify categorical masking; identical AUC and faster evaluation	0.7342	0.7315
+2ec49f1	keep	add month-day calendar category	0.7503	0.7458
+18e3edb	keep	min_child_weight 20	0.7507	0.7460
+a11cbdb	discard	max_depth 8	0.7465	N/A
+13794b1	keep	remove month/day/weekday; retain date	0.7505	0.7460
+57c1201	keep	max_depth 4	0.7529	0.7479
+40f4253	keep	600 trees learning_rate 0.05	0.7538	0.7479
+4dfc0ce	discard	add carrier-origin category	0.7458	N/A
+f1c0483	discard	max_cat_threshold 16	0.7463	N/A
+684fa10	keep	max_cat_threshold 256	0.7556	0.7496
+3769a89	discard	add departure minute within hour	0.7547	N/A
+0b3b7c8	discard	add numeric calendar order	0.7556	N/A
+63ea704	discard	subsample 0.8	0.7533	N/A
+b91302e	discard	airport geometry from training route distances	0.7556	N/A
+ec594d2	discard	training-only early stopping with 10 percent validation	0.7533	N/A
+185c83d	discard	reg_lambda 30	0.7551	N/A
+28143c8	discard	route median departure time and schedule offset	0.7529	N/A
+33efee6	discard	pairwise ranking objective with sampled global pairs	0.7210	N/A
+93bce25	discard	one-hot categorical splits at 600 rounds	0.7139	N/A
+cfb5ac6	discard	one-hot categorical splits at 3000 rounds	0.7354	N/A
+396e388	keep	four subsampled trees per boosting step	0.7557	0.7523
+6e7c8fe	discard	1200 rounds with four subsampled trees per step	0.7522	N/A
+6668b69	keep	loss-guided growth with 16 leaves	0.7558	0.7532
+fa64975	keep	max_bin 64	0.7560	0.7526
+6d0a6ad	keep	direct categorical codes with reusable indexes	0.7560	0.7526
+5737031	discard	remove subsampling and parallel-tree averaging	0.7532	N/A
+f038a4f	discard	categorical departure hour	0.7557	N/A
+e8a1c17	discard	smoothed logistic targets 0.05 and 0.95	0.7560	N/A
+25ba33e	discard	gamma 20	0.7560	N/A
+ff25add	discard	gamma 60 active split penalty	0.7406	N/A
+24be976	discard	DART dropout with bounded training	0.7524	N/A
+115054e	crash	independent airport-date encoding; canceled slow transformer	0.0000	N/A
+ad2d9c6	discard	fast independent airport-date posterior lookups; 25 percent encoder split	0.7530	N/A
+de71ad2	discard	independent airport-date means with 10 percent encoder split	0.7551	N/A
+53c6a9c	discard	max_leaves 8	0.7508	N/A
+4eedd90	discard	max_leaves 32	0.7549	N/A
+56bee7d	keep	1200 rounds at learning_rate 0.025	0.7563	0.7529
+bb021a0	discard	origin-region date category from training distance profiles	0.7442	N/A
+2b28215	keep	colsample_bynode 0.8	0.7578	0.7536
+001819d	discard	Gradient-based row sampling at half the rows	0.7542	N/A
+69432c6	discard	Linear learning-rate decay 0.045 to 0.005	0.7572	N/A
+e8fd76c	discard	Two parallel trees with node feature sampling	0.7568	N/A
+05aab0c	discard	Use three of six features per split	0.7575	N/A
+540c5d9	discard	Remove Distance input	0.7573	N/A
+0851c8b	discard	Monotonic daytime time effect plus unrestricted nights	0.7563	N/A
+237dc64	discard	Sample four features once per tree instead of per node	0.7578	N/A
+dbaf9b2	discard	Increase minimum child Hessian from 20 to 100	0.7576	N/A
+dfd5fab	discard	Make Date additive using disjoint interaction groups	0.7325	N/A
+b358af6	discard	600 additive warm-up rounds before full interaction boosting	0.7524	N/A
+3a77ba5	keep	Soft-vote independent node- and tree-sampled models 2 to 1	0.7586	0.7544
+f22a597	discard	Use four CPU workers per ensemble member	0.7586	N/A
+367ab5d	discard	Single booster with eight parallel trees instead of two-model vote	0.7578	N/A
+a65b3f1	discard	Use Brier-style objective for the second ensemble member	0.7587	N/A
+a004c80	keep	Use default equal ensemble weights	0.7587	0.7545
+6be1e88	discard	L1 penalty of 20 in both ensemble members	0.7450	N/A
+d28be07	discard	Add sine and cosine departure-clock coordinates	0.7582	N/A
+ff6c959	discard	Refresh smaller ensemble member with leaf-only L1 penalty	0.7580	N/A
+12237ac	keep	Mild L1 penalty of 1 during ordinary ensemble fitting	0.7593	0.7552
+dc1fa8c	discard	Remove default L2 while retaining mild L1	0.7593	N/A
+7dd78fc	discard	Use one-hot-style splits only for UniqueCarrier	0.7576	N/A
+3fda6a7	discard	Remove row subsampling from both ensemble members	0.7582	N/A
+810a559	keep	Use default 256 numeric histogram bins	0.7593	0.7555
+c47723c	discard	Double departure-time feature sampling weight	0.7590	N/A
+f165a32	discard	Replace loss-guided trees with standard depth-four trees	0.7584	N/A
+83404be	keep	Give only the complementary member 32 leaves	0.7609	0.7572
+298d665	keep	Use only the tree-sampled 32-leaf member	0.7616	0.7579
+49e8d6c	keep	1200 smaller updates in the single 32-leaf model	0.7619	0.7580
+4feff08	discard	Eight parallel trees with half as many updates at fixed tree budget	0.7619	N/A
+60d82da	keep	64-leaf trees with 600 rounds at fixed maximum total leaves	0.7621	0.7579
+306c158	discard	Remove mild L1 from the 64-leaf model	0.7606	N/A
+9295421	crash	Use Hessian-weighted approximate tree construction	0.0000	N/A
+8096331	keep	Reduce the 64-leaf model to 400 boosting rounds	0.7633	0.7591

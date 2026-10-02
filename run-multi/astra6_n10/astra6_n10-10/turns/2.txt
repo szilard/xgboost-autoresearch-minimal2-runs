@@ -1,0 +1,5 @@
+Completed 74 experiments. Best **Eval AUC: 0.7633**, up from **0.7203** (+0.0430).
+
+Kept commit `8096331` on `oct2`; training took 17.6 seconds. Verification passed and the clock is stopped.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md)

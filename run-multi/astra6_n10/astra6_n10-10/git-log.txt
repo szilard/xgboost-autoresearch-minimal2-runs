@@ -1,0 +1,225 @@
+commit 809633166898f4e2a1d6fd5cbf3b7b2f640c5cdb
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 23:07:14 2026 +0000
+
+    Test fewer rounds with the larger-tree model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 60d82da3a7e9ee0e1fca45ef1a92806fc5ee36be
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 23:02:16 2026 +0000
+
+    Allocate the same leaf budget to larger trees and fewer rounds
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 49e8d6c4bae88bce9d5594fdb35298493f32b2d0
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 22:58:42 2026 +0000
+
+    Use finer boosting steps in the single-model winner
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 298d6657cd37cbd9a90378e5b8857bd6ae6a8571
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 22:56:51 2026 +0000
+
+    Test whether the larger complementary member can replace the ensemble
+
+ train.py | 19 ++++---------------
+ 1 file changed, 4 insertions(+), 15 deletions(-)
+
+commit 83404be516a21272273b7c46ff4a2df08daf4962
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 22:54:22 2026 +0000
+
+    Test a larger complementary model within the equal-weight ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 810a559c5a4bab942f4cc761f46d036112f89b3b
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 22:49:31 2026 +0000
+
+    Test default numeric histogram resolution in the regularized ensemble
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 12237ac1dd91427dc6de639f3fc143c01059874e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 22:43:04 2026 +0000
+
+    Test mild L1 regularization at the category statistic scale
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a004c800950ce342db153132467de0b28f373418
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 22:35:34 2026 +0000
+
+    Simplify voting ensemble to equal weights
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3a77ba5981ebe6bdf965e6cb5cc4c3b5aa0d741f
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 22:28:19 2026 +0000
+
+    Average independent node-sampled and tree-sampled boosting models
+
+ train.py | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 2b282154a1490e24bc36a3938865a12654405c22
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 22:09:11 2026 +0000
+
+    Diversify averaged trees with per-node feature subsampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 56bee7de1f62c650fb1d3aa2bdbbed2457ec6368
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 22:04:08 2026 +0000
+
+    Use finer updates at the same cumulative shrinkage
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 6d0a6adadbda7268a4ac896790559d905f3e0a75
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:41:35 2026 +0000
+
+    Build categorical features from reusable indexes and codes
+
+ train.py | 19 ++++++++++---------
+ 1 file changed, 10 insertions(+), 9 deletions(-)
+
+commit fa6497527026e906efd631d08ac6cfffa08cf87b
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:39:59 2026 +0000
+
+    Coarsen numeric histograms to reduce schedule noise
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 6668b69aebdb62cdf273f5998ece90a97c68806c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:39:02 2026 +0000
+
+    Allocate a fixed leaf budget with loss-guided growth
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 396e38877b141c6d6196a6797a45ab4788f32163
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:35:48 2026 +0000
+
+    Average four subsampled trees per boosting round
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 684fa10c59d9699e126ea06de067c236bf7f26df
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:20:33 2026 +0000
+
+    Test broader date and airport partitions
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 40f4253f25be1444d836ac8295e1aa98f16e5219
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:17:47 2026 +0000
+
+    Use smaller boosting steps with 600 trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 57c1201581a0db944e1fe68d897cf9c319d68e56
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:16:58 2026 +0000
+
+    Test shallower trees after deeper-tree overfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 13794b164aecdd387b93bf8245acc1bb6daebe51
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:15:54 2026 +0000
+
+    Ablate separate calendar fields after adding date
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 18e3edb6338d699e910877245ff852f9910799c5
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:13:53 2026 +0000
+
+    Regularize sparse leaves with minimum child weight 20
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2ec49f169e20815d3e7ddca41c77761afa19ddfc
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:12:14 2026 +0000
+
+    Add calendar-date categorical feature
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 5ab63496348dfd17920d033038b97b3b3c9dc70f
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:11:05 2026 +0000
+
+    Remove redundant unknown-category masking
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 417d86a73fc7b5f7dc2667feaf22fd8af72c3122
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 21:09:54 2026 +0000
+
+    Increase boosting rounds from 30 to 300
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

@@ -1,0 +1,7 @@
+Setup complete on `oct2`, branched from `92e43e6`.
+
+- Both data files exist; required imports work.
+- Initialized [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).
+- Baseline code is unchanged; no experiments have run.
+
+The two-hour clock hasn’t started. Per [program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md), I’ll wait for your “go” before starting it and running the baseline.

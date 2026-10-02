@@ -1,0 +1,150 @@
+=== [2] 92e43e6 | keep | baseline: 30 trees depth 6 eta 0.1 ===
+  holdout=0.7155
+=== [3] 417d86a | keep | 300 trees at unchanged depth and eta ===
+  holdout=0.7315
+=== [4] 5ab6349 | keep | simplify categorical masking; identical AUC and faster evaluation ===
+  holdout=0.7315
+=== [5] 2ec49f1 | keep | add month-day calendar category ===
+  holdout=0.7458
+=== [6] 18e3edb | keep | min_child_weight 20 ===
+  holdout=0.7460
+=== [7] a11cbdb | discard | max_depth 8 ===
+  SKIP: status discard
+=== [8] 13794b1 | keep | remove month/day/weekday; retain date ===
+  holdout=0.7460
+=== [9] 57c1201 | keep | max_depth 4 ===
+  holdout=0.7479
+=== [10] 40f4253 | keep | 600 trees learning_rate 0.05 ===
+  holdout=0.7479
+=== [11] 4dfc0ce | discard | add carrier-origin category ===
+  SKIP: status discard
+=== [12] f1c0483 | discard | max_cat_threshold 16 ===
+  SKIP: status discard
+=== [13] 684fa10 | keep | max_cat_threshold 256 ===
+  holdout=0.7496
+=== [14] 3769a89 | discard | add departure minute within hour ===
+  SKIP: status discard
+=== [15] 0b3b7c8 | discard | add numeric calendar order ===
+  SKIP: status discard
+=== [16] 63ea704 | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [17] b91302e | discard | airport geometry from training route distances ===
+  SKIP: status discard
+=== [18] ec594d2 | discard | training-only early stopping with 10 percent validation ===
+  SKIP: status discard
+=== [19] 185c83d | discard | reg_lambda 30 ===
+  SKIP: status discard
+=== [20] 28143c8 | discard | route median departure time and schedule offset ===
+  SKIP: status discard
+=== [21] 33efee6 | discard | pairwise ranking objective with sampled global pairs ===
+  SKIP: status discard
+=== [22] 93bce25 | discard | one-hot categorical splits at 600 rounds ===
+  SKIP: status discard
+=== [23] cfb5ac6 | discard | one-hot categorical splits at 3000 rounds ===
+  SKIP: status discard
+=== [24] 396e388 | keep | four subsampled trees per boosting step ===
+  holdout=0.7523
+=== [25] 6e7c8fe | discard | 1200 rounds with four subsampled trees per step ===
+  SKIP: status discard
+=== [26] 6668b69 | keep | loss-guided growth with 16 leaves ===
+  holdout=0.7532
+=== [27] fa64975 | keep | max_bin 64 ===
+  holdout=0.7526
+=== [28] 6d0a6ad | keep | direct categorical codes with reusable indexes ===
+  holdout=0.7526
+=== [29] 5737031 | discard | remove subsampling and parallel-tree averaging ===
+  SKIP: status discard
+=== [30] f038a4f | discard | categorical departure hour ===
+  SKIP: status discard
+=== [31] e8a1c17 | discard | smoothed logistic targets 0.05 and 0.95 ===
+  SKIP: status discard
+=== [32] 25ba33e | discard | gamma 20 ===
+  SKIP: status discard
+=== [33] ff25add | discard | gamma 60 active split penalty ===
+  SKIP: status discard
+=== [34] 24be976 | discard | DART dropout with bounded training ===
+  SKIP: status discard
+=== [35] 115054e | crash | independent airport-date encoding; canceled slow transformer ===
+  SKIP: status crash
+=== [36] ad2d9c6 | discard | fast independent airport-date posterior lookups; 25 percent encoder split ===
+  SKIP: status discard
+=== [37] de71ad2 | discard | independent airport-date means with 10 percent encoder split ===
+  SKIP: status discard
+=== [38] 53c6a9c | discard | max_leaves 8 ===
+  SKIP: status discard
+=== [39] 4eedd90 | discard | max_leaves 32 ===
+  SKIP: status discard
+=== [40] 56bee7d | keep | 1200 rounds at learning_rate 0.025 ===
+  holdout=0.7529
+=== [41] bb021a0 | discard | origin-region date category from training distance profiles ===
+  SKIP: status discard
+=== [42] 2b28215 | keep | colsample_bynode 0.8 ===
+  holdout=0.7536
+=== [43] 001819d | discard | Gradient-based row sampling at half the rows ===
+  SKIP: status discard
+=== [44] 69432c6 | discard | Linear learning-rate decay 0.045 to 0.005 ===
+  SKIP: status discard
+=== [45] e8fd76c | discard | Two parallel trees with node feature sampling ===
+  SKIP: status discard
+=== [46] 05aab0c | discard | Use three of six features per split ===
+  SKIP: status discard
+=== [47] 540c5d9 | discard | Remove Distance input ===
+  SKIP: status discard
+=== [48] 0851c8b | discard | Monotonic daytime time effect plus unrestricted nights ===
+  SKIP: status discard
+=== [49] 237dc64 | discard | Sample four features once per tree instead of per node ===
+  SKIP: status discard
+=== [50] dbaf9b2 | discard | Increase minimum child Hessian from 20 to 100 ===
+  SKIP: status discard
+=== [51] dfd5fab | discard | Make Date additive using disjoint interaction groups ===
+  SKIP: status discard
+=== [52] b358af6 | discard | 600 additive warm-up rounds before full interaction boosting ===
+  SKIP: status discard
+=== [53] 3a77ba5 | keep | Soft-vote independent node- and tree-sampled models 2 to 1 ===
+  holdout=0.7544
+=== [54] f22a597 | discard | Use four CPU workers per ensemble member ===
+  SKIP: status discard
+=== [55] 367ab5d | discard | Single booster with eight parallel trees instead of two-model vote ===
+  SKIP: status discard
+=== [56] a65b3f1 | discard | Use Brier-style objective for the second ensemble member ===
+  SKIP: status discard
+=== [57] a004c80 | keep | Use default equal ensemble weights ===
+  holdout=0.7545
+=== [58] 6be1e88 | discard | L1 penalty of 20 in both ensemble members ===
+  SKIP: status discard
+=== [59] d28be07 | discard | Add sine and cosine departure-clock coordinates ===
+  SKIP: status discard
+=== [60] ff6c959 | discard | Refresh smaller ensemble member with leaf-only L1 penalty ===
+  SKIP: status discard
+=== [61] 12237ac | keep | Mild L1 penalty of 1 during ordinary ensemble fitting ===
+  holdout=0.7552
+=== [62] dc1fa8c | discard | Remove default L2 while retaining mild L1 ===
+  SKIP: status discard
+=== [63] 7dd78fc | discard | Use one-hot-style splits only for UniqueCarrier ===
+  SKIP: status discard
+=== [64] 3fda6a7 | discard | Remove row subsampling from both ensemble members ===
+  SKIP: status discard
+=== [65] 810a559 | keep | Use default 256 numeric histogram bins ===
+  holdout=0.7555
+=== [66] c47723c | discard | Double departure-time feature sampling weight ===
+  SKIP: status discard
+=== [67] f165a32 | discard | Replace loss-guided trees with standard depth-four trees ===
+  SKIP: status discard
+=== [68] 83404be | keep | Give only the complementary member 32 leaves ===
+  holdout=0.7572
+=== [69] 298d665 | keep | Use only the tree-sampled 32-leaf member ===
+  holdout=0.7579
+=== [70] 49e8d6c | keep | 1200 smaller updates in the single 32-leaf model ===
+  holdout=0.7580
+=== [71] 4feff08 | discard | Eight parallel trees with half as many updates at fixed tree budget ===
+  SKIP: status discard
+=== [72] 60d82da | keep | 64-leaf trees with 600 rounds at fixed maximum total leaves ===
+  holdout=0.7579
+=== [73] 306c158 | discard | Remove mild L1 from the 64-leaf model ===
+  SKIP: status discard
+=== [74] 9295421 | crash | Use Hessian-weighted approximate tree construction ===
+  SKIP: status crash
+=== [75] 8096331 | keep | Reduce the 64-leaf model to 400 boosting rounds ===
+  holdout=0.7591
+
+=== DONE: results written to groundtruth_all.tsv ===
