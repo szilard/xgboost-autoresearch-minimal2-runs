@@ -69,6 +69,19 @@ def keep_path(run_dir):
     return path
 
 
+def model_colours(models):
+    """{model: colour}: the fixed MODEL_SLOT colour, else the next free slot (with a warning)."""
+    models = sorted(models)
+    colour = {m: SERIES[MODEL_SLOT[m]] for m in models if m in MODEL_SLOT}
+    free = [c for i, c in enumerate(SERIES) if i not in MODEL_SLOT.values()]
+    for m in (m for m in models if m not in MODEL_SLOT):
+        if not free:
+            sys.exit(f"too many models; the palette has {len(SERIES)} colours")
+        colour[m] = free.pop(0)
+        print(f"warning: {m} has no fixed colour; add it to MODEL_SLOT", file=sys.stderr)
+    return colour
+
+
 def style(ax, title):
     ax.set_facecolor(SURFACE)
     ax.set_axisbelow(True)
@@ -173,15 +186,7 @@ def main():
     if not runs:
         sys.exit(f"no valid runs in {RUN_MULTI}")
 
-    models = sorted({r["model"] for r in runs})
-    colour = {m: SERIES[MODEL_SLOT[m]] for m in models if m in MODEL_SLOT}
-    free = [c for i, c in enumerate(SERIES) if i not in MODEL_SLOT.values()]
-    for m in (m for m in models if m not in MODEL_SLOT):
-        if not free:
-            sys.exit(f"too many models; the palette has {len(SERIES)} colours")
-        colour[m] = free.pop(0)
-        print(f"warning: {m} has no fixed colour; add it to MODEL_SLOT", file=sys.stderr)
-
+    colour = model_colours({r["model"] for r in runs})
     strip_plot(runs, colour)
     path_plot(runs, colour)
 

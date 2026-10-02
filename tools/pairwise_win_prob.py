@@ -31,8 +31,9 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.lines import Line2D
+from matplotlib.offsetbox import AnnotationBbox, HPacker, TextArea
 
-from plot_holdout_auc import GRID, INK, INK2, RANGE, RUN_MULTI, SURFACE, save, style
+from plot_holdout_auc import GRID, INK, INK2, RANGE, RUN_MULTI, SURFACE, model_colours, save, style
 
 N_BOOT = 10000
 SEED = 1
@@ -79,9 +80,22 @@ def plot(rows, runs):
         ax.plot([lo, hi], [y, y], color=RANGE, lw=6, solid_capstyle="round", zorder=2)
         ax.scatter(p, y, s=46, color=INK, zorder=3)
         ax.text(p, y + 0.2, f"{p:.2f}", color=INK, fontsize=9, ha="center", va="bottom")
+    # y labels: each model name in its colour (as in the other plots), bold for legibility
+    colour = model_colours(runs)
     ax.set_yticks(range(len(rows)))
-    ax.set_yticklabels([f"{m1} (n={len(runs[m1])}) vs {m2} (n={len(runs[m2])})"
-                        for m1, m2, *_ in reversed(rows)], color=INK)
+    ax.set_yticklabels([])
+
+    def text(t, c=INK, weight="normal"):
+        return TextArea(t, textprops=dict(color=c, fontsize=10, fontweight=weight))
+
+    for i, (m1, m2, *_) in enumerate(rows):
+        label = HPacker(children=[text(m1, colour[m1], "bold"), text(f"(n={len(runs[m1])})", INK2),
+                                  text("vs", INK2),
+                                  text(m2, colour[m2], "bold"), text(f"(n={len(runs[m2])})", INK2)],
+                        pad=0, sep=4, align="baseline")
+        ax.add_artist(AnnotationBbox(label, (0, len(rows) - 1 - i), xycoords=("axes fraction", "data"),
+                                     xybox=(-8, 0), boxcoords="offset points", box_alignment=(1, 0.5),
+                                     frameon=False, annotation_clip=False))
     ax.set_ylim(-0.6, len(rows) - 0.1)
     ax.set_xlim(-0.02, 1.02)  # room for the round caps of intervals reaching 0 or 1
     ax.set_xticks(np.linspace(0, 1, 5))
