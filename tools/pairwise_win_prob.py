@@ -14,8 +14,9 @@ driver-summary.json; groups with the same model are pooled, as in
 plot_holdout_auc.py. Runs with valid = "no" are left out; caveat runs are
 included unless --no-caveat is given.
 
-run-multi/SUMMARY/holdout_auc_pairwise.png - one row per pair of models,
-  oriented "better vs worse" by mean holdout AUC: a dot at P(better one wins),
+run-multi/SUMMARY/holdout_auc_pairwise.png - one row per pair of models, the
+  better one by mean holdout AUC labelled on the left, the other on the right:
+  a dot at P(the right-hand model wins), so it leans toward the usual winner,
   its 90% bootstrap interval and a reference line at 0.5 (coin flip).
   Not written with --no-caveat.
 
@@ -70,41 +71,49 @@ def compare(a, b, rng):
 
 
 def plot(rows, runs):
-    """rows: (better model, worse model, P, lo, hi), drawn top to bottom."""
-    h = 1.5 + 0.5 * len(rows)
+    """rows: (better model, worse model, P, lo, hi), drawn top to bottom.
+
+    The better model (by mean) is labelled on the left of its row, the other on the
+    right; x is P(the right-hand model wins), so each dot leans toward the model
+    that usually wins.
+    """
+    h = 1.6 + 0.5 * len(rows)
     fig, ax = plt.subplots(figsize=(9, h), facecolor=SURFACE)
-    fig.subplots_adjust(bottom=0.8 / h, right=0.97)
+    fig.subplots_adjust(bottom=1.05 / h, left=0.22, right=0.78)
     ax.axvline(0.5, color=INK2, lw=1, ls=(0, (3, 3)), zorder=1)
     ax.text(0.5, len(rows) - 0.45, "coin flip", color=INK2, fontsize=8, ha="center", va="bottom")
     for i, (m1, m2, p, lo, hi) in enumerate(rows):
         y = len(rows) - 1 - i
-        ax.plot([lo, hi], [y, y], color=RANGE, lw=6, solid_capstyle="round", zorder=2)
-        ax.scatter(p, y, s=46, color=INK, zorder=3)
-        ax.text(p, y + 0.2, f"{p:.2f}", color=INK, fontsize=9, ha="center", va="bottom")
-    # y labels: a dot in the model's colour (as in the other plots) before each name, text in ink
+        q, qlo, qhi = 1 - p, 1 - hi, 1 - lo  # P(right-hand model wins)
+        ax.plot([qlo, qhi], [y, y], color=RANGE, lw=6, solid_capstyle="round", zorder=2)
+        ax.scatter(q, y, s=46, color=INK, zorder=3)
+        ax.text(q, y + 0.2, f"{q:.2f}", color=INK, fontsize=9, ha="center", va="bottom")
+
+    # model labels: a dot in the model's colour (as in the other plots) and the name in ink,
+    # model 1 outside the left edge, model 2 outside the right edge
     colour = model_colours(runs)
     ax.set_yticks(range(len(rows)))
     ax.set_yticklabels([])
 
-    def chip(m):
+    def label(m, dot_first):
         da = DrawingArea(10, 10)
         da.add_artist(Circle((5, 5), 4, color=colour[m]))
-        return da
-
-    def text(t, c=INK):
-        return TextArea(t, textprops=dict(color=c, fontsize=10))
+        t = TextArea(f"{m} (n={len(runs[m])})", textprops=dict(color=INK, fontsize=10))
+        return HPacker(children=[da, t] if dot_first else [t, da], pad=0, sep=4, align="center")
 
     for i, (m1, m2, *_) in enumerate(rows):
-        label = HPacker(children=[chip(m1), text(f"{m1} (n={len(runs[m1])})"), text("vs", INK2),
-                                  chip(m2), text(f"{m2} (n={len(runs[m2])})")],
-                        pad=0, sep=4, align="center")
-        ax.add_artist(AnnotationBbox(label, (0, len(rows) - 1 - i), xycoords=("axes fraction", "data"),
-                                     xybox=(-8, 0), boxcoords="offset points", box_alignment=(1, 0.5),
-                                     frameon=False, annotation_clip=False))
+        y = len(rows) - 1 - i
+        for m, x, dx, align, dot_first in ((m1, 0, -8, (1, 0.5), False), (m2, 1, 8, (0, 0.5), True)):
+            ax.add_artist(AnnotationBbox(label(m, dot_first), (x, y), xycoords=("axes fraction", "data"),
+                                         xybox=(dx, 0), boxcoords="offset points", box_alignment=align,
+                                         frameon=False, annotation_clip=False))
     ax.set_ylim(-0.6, len(rows) - 0.1)
     ax.set_xlim(-0.02, 1.02)  # room for the round caps of intervals reaching 0 or 1
     ax.set_xticks(np.linspace(0, 1, 5))
-    ax.set_xlabel("P(first model's run has the higher holdout AUC), ties count half", color=INK2)
+    ax.set_xlabel("P(the right-hand model's run has the higher holdout AUC), ties count half", color=INK2, labelpad=16)
+    for x, t, ha in ((0, "\u2190 left model wins", "left"), (1, "right model wins \u2192", "right")):
+        ax.annotate(t, (x, 0), xycoords=("data", "axes fraction"), xytext=(0, -20), textcoords="offset points",
+                    ha=ha, va="top", color=INK2, fontsize=8)
     ax.grid(axis="x", color=GRID, lw=0.8)
     style(ax, "Head to head: one run of each model")
     legend = [
