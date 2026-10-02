@@ -1,0 +1,76 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline: 30 trees depth 6 learning rate 0.1
+9570071	0.7342	keep	300 trees at learning rate 0.1
+ad16273	0.7342	keep	remove redundant categorical masks; same AUC and faster evaluation
+06b6661	0.7500	keep	add categorical calendar date
+f2ac5a7	0.7526	keep	min_child_weight 20 and L2 regularization 10
+7ed68ce	0.7552	keep	max_cat_threshold 16
+af4ce47	0.7571	keep	depth 8 with categorical and leaf regularization
+67dc356	0.7590	keep	600 trees at learning rate 0.05
+bb545f9	0.7460	discard	add categorical origin-destination route
+7925b46	0.7577	discard	add departure hour and minute numeric features
+0b8cb6c	0.7586	discard	add ordered day-of-year feature
+b7eda79	0.7590	discard	three airport geometry coordinates per endpoint from training distances
+85b73d3	0.7395	discard	force one-hot categorical splits
+effe647	0.7569	discard	1200 trees at learning rate 0.05
+cf762ee	0.7511	discard	max_cat_threshold 4
+4bc29e4	0.7540	discard	subsample 0.8
+7c6f0ae	0.7582	discard	lossguide growth with 128 leaves
+41b7f0c	0.7568	discard	early stopping on 10 percent of train; selected 597 rounds
+03b87d8	0.7556	discard	airport-date rates fitted on 25 percent of train; model on remaining 75 percent
+c4f89d4	0.7590	keep	reuse category indexes and build feature frame once; same AUC
+11e0d0d	0.7588	discard	depth 10
+3b844c9	0.7511	discard	pairwise ranking objective with two mean-sampled pairs per row
+2d53ef5	0.7562	discard	ordered airport-date rates using fixed input hashes
+7cfae02	0.7566	discard	four parallel trees per round with subsample 0.8
+c7a4611	0.7598	keep	remove standalone DayofMonth; retain FlightDate
+b31b9d4	0.7601	keep	remove standalone DayOfWeek; retain FlightDate
+43388fb	0.7589	discard	remove standalone Month
+efd73ae	0.7600	discard	1500 trees at learning rate 0.02; same total step length
+781a911	0.7597	discard	colsample_bytree 0.9 with all rows
+2f840a0	0.7592	discard	departure minutes relative to training route median
+ed3d8bc	0.7594	discard	max_bin 1024
+1644697	0.7673	keep	reg_alpha 5
+0b45af6	0.7492	discard	reg_alpha 20
+6f06464	0.7644	discard	reg_alpha 2
+9f7c2be	0.7671	discard	remove min_child_weight 20 after adding L1
+cfa04e7	0.7669	discard	remove reg_lambda 10 with L1 retained
+1b1408a	0.7576	discard	gamma 2 with L1 regularization
+ac149df	0.7686	keep	1200 rounds at learning rate 0.05 with L1 5
+c22e27f	0.7687	keep	depth 10 with L1 5 and 1200 rounds
+ecc3312	0.7679	discard	date by six-hour departure-block category
+3ecb385	0.7676	discard	carrier-origin categorical interaction with L1
+392a968	0.0000	crash	DART 300 rounds at 0.2 exceeded training limit
+b4c1d4e	0.7656	discard	160 dropout rounds at learning rate 0.2
+d2e10fe	0.7698	keep	3:1 soft-voting blend of best booster and 160-round dropout
+87b5d18	0.7696	discard	equal-weight standard/dropout blend
+d621679	0.7684	discard	single-model tree_method approx
+d01ca36	0.7694	discard	equal blend of hist and approx models
+a6167e7	0.7678	discard	2400-round main booster in the 3:1 dropout blend
+54bc4f9	0.7697	keep	equal blend of depth-8 and depth-10 boosters; faster near-tie
+8ba4da2	0.7686	discard	native feature-sampled tree groups using all rows
+fcfa068	0.7703	keep	3:3:2 blend of depth-10, depth-8 and dropout boosters
+8a68d69	0.7694	discard	remove distance from the three-model feature set
+ad1bc55	0.7700	discard	exponential learning-rate decay for both ordinary boosters
+7598565	0.7699	discard	replace categorical month with ordered numeric month
+a1af349	0.7690	discard	increase max_cat_threshold to 32 across the ensemble
+e949585	0.7699	discard	mild label smoothing on the depth-10 ordinary member
+54866e8	0.7701	keep	replace dropout member with ordinary 160-round fast boosting
+5e5bb77	0.7698	discard	loss-guided 128-leaf main member with L1 regularization
+aca8c2a	0.7700	discard	equal weighting of all three ordinary boosters
+55fc779	0.7701	discard	average logistic margins instead of probabilities
+77297f0	0.7704	keep	add a row-local Saturday/Sunday weekend indicator
+f4305aa	0.7702	discard	restore full weekday category alongside weekend flag
+c0c117c	0.7698	discard	coarsen numeric histograms to max_bin 64
+96d190a	0.7693	discard	add categorical seven-day calendar blocks
+c8d7879	0.7698	discard	cap unshrunk leaf updates with max_delta_step 1
+c66730c	0.7707	keep	320 rounds at learning rate 0.1 for the short-path member
+5063e2a	0.7703	discard	2400 rounds at 0.025 for both long-path members
+cb467a9	0.7697	discard	increase min_child_weight from 20 to 50
+22dfab8	0.7712	keep	disjoint interaction groups on the short-path member only
+b14f550	0.7578	discard	apply disjoint interaction groups to every member
+e13bf42	0.7711	discard	double constrained member to 640 rounds at 0.1
+fd98cd0	0.7713	discard	add depth-12 member at 20% weight to the three-member blend
+f537619	0.7710	discard	replace depth-10 long member with depth 12
+44cf647	0.7705	discard	selective one-hot splitting for the month category
+1b3dd0c	0.7707	discard	remove depth-8 member while keeping 25 percent constrained weight

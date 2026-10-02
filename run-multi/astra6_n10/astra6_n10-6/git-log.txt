@@ -1,0 +1,198 @@
+commit 22dfab894fa80f6acde385716da2bf0835544737
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 13:44:47 2026 +0000
+
+    Test a short-path member with disjoint interaction groups
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit c66730c4a33c5a129558d1d08e52b6cdb61657dd
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 13:40:25 2026 +0000
+
+    Refine steps on the shorter boosting path without extending it
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 77297f019dbb0d720405e642d1eb93af49205e35
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 13:32:30 2026 +0000
+
+    Pool weekend days into a compact calendar feature
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 54866e81bd5bd2ccb8ec64773d22a90301a6a2f2
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 13:25:20 2026 +0000
+
+    Ablate dropout while retaining the fast-learning ensemble member
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit fcfa068e409bf154d7d9f561cb8a99a4bfa2fcdf
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 13:13:23 2026 +0000
+
+    Combine depth and dropout diversity in one probability blend
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 54bc4f98ccbe63eb0abd2781a21efece931d63aa
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 13:05:07 2026 +0000
+
+    Blend depth-eight and depth-ten regularized boosters
+
+ train.py | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit d2e10fe4737fae0e65da695e9e41da75ce0af1ea
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:54:45 2026 +0000
+
+    Blend strong boosting with a complementary dropout model
+
+ train.py | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit c22e27fabe1bbbccca6f1a40daeb61cbb818f023
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:45:39 2026 +0000
+
+    Test deeper interactions with L1 and longer boosting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ac149df85b84b7e4aa84a310fb510cf55484f13a
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:44:37 2026 +0000
+
+    Test longer boosting under successful L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1644697099cdc0f0683deac945b7182f1b31011c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:39:31 2026 +0000
+
+    Test L1 shrinkage of weak leaf updates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b31b9d4ac7bb3d7dde4635f12ab6a06aa1e34729
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:33:02 2026 +0000
+
+    Ablate standalone weekday after date-feature simplification
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c7a4611e78212fd396383496d398bf2795e6e2ca
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:31:15 2026 +0000
+
+    Ablate redundant day-of-month feature
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c4f89d4eff94d55e94a7196a06abfd7bf2ae34eb
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:20:44 2026 +0000
+
+    Reuse fitted category indexes and construct features once
+
+ train.py | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+commit 67dc356ed7f96a3db861f69d02d79d0cb14640f5
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:03:33 2026 +0000
+
+    Use smaller boosting steps with matched path length
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit af4ce479bad5b26ade0254fc636b791606bb23ac
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:02:34 2026 +0000
+
+    Test deeper interactions with regularized categorical splits
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7ed68ce3bca7949aa5f9b166f848df58df7c8448
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:01:45 2026 +0000
+
+    Limit categorical partition search to reduce variance
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f2ac5a7aef1530ebe1113063a01f0a78faf9c868
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 12:00:46 2026 +0000
+
+    Regularize categorical partitions with larger leaf support
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 06b66615772ea3e9b1b4db05538897662852ae98
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 11:59:33 2026 +0000
+
+    Add explicit month-day categorical interaction
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit ad162730246e31bdb46952011b3e5721e1af7e22
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 11:58:26 2026 +0000
+
+    Simplify categorical preparation with fixed levels
+
+ train.py | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 957007111c1c7bf2ca72199602db2dbed7925add
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 11:57:19 2026 +0000
+
+    Test 300 boosting rounds against starter baseline
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

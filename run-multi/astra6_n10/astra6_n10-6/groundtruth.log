@@ -1,0 +1,152 @@
+=== [2] 92e43e6 | keep | baseline: 30 trees depth 6 learning rate 0.1 ===
+  holdout=0.7155
+=== [3] 9570071 | keep | 300 trees at learning rate 0.1 ===
+  holdout=0.7315
+=== [4] ad16273 | keep | remove redundant categorical masks; same AUC and faster evaluation ===
+  holdout=0.7315
+=== [5] 06b6661 | keep | add categorical calendar date ===
+  holdout=0.7445
+=== [6] f2ac5a7 | keep | min_child_weight 20 and L2 regularization 10 ===
+  holdout=0.7475
+=== [7] 7ed68ce | keep | max_cat_threshold 16 ===
+  holdout=0.7501
+=== [8] af4ce47 | keep | depth 8 with categorical and leaf regularization ===
+  holdout=0.7529
+=== [9] 67dc356 | keep | 600 trees at learning rate 0.05 ===
+  holdout=0.7531
+=== [10] bb545f9 | discard | add categorical origin-destination route ===
+  SKIP: status discard
+=== [11] 7925b46 | discard | add departure hour and minute numeric features ===
+  SKIP: status discard
+=== [12] 0b8cb6c | discard | add ordered day-of-year feature ===
+  SKIP: status discard
+=== [13] b7eda79 | discard | three airport geometry coordinates per endpoint from training distances ===
+  SKIP: status discard
+=== [14] 85b73d3 | discard | force one-hot categorical splits ===
+  SKIP: status discard
+=== [15] effe647 | discard | 1200 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [16] cf762ee | discard | max_cat_threshold 4 ===
+  SKIP: status discard
+=== [17] 4bc29e4 | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [18] 7c6f0ae | discard | lossguide growth with 128 leaves ===
+  SKIP: status discard
+=== [19] 41b7f0c | discard | early stopping on 10 percent of train; selected 597 rounds ===
+  SKIP: status discard
+=== [20] 03b87d8 | discard | airport-date rates fitted on 25 percent of train; model on remaining 75 percent ===
+  SKIP: status discard
+=== [21] c4f89d4 | keep | reuse category indexes and build feature frame once; same AUC ===
+  holdout=0.7531
+=== [22] 11e0d0d | discard | depth 10 ===
+  SKIP: status discard
+=== [23] 3b844c9 | discard | pairwise ranking objective with two mean-sampled pairs per row ===
+  SKIP: status discard
+=== [24] 2d53ef5 | discard | ordered airport-date rates using fixed input hashes ===
+  SKIP: status discard
+=== [25] 7cfae02 | discard | four parallel trees per round with subsample 0.8 ===
+  SKIP: status discard
+=== [26] c7a4611 | keep | remove standalone DayofMonth; retain FlightDate ===
+  holdout=0.7542
+=== [27] b31b9d4 | keep | remove standalone DayOfWeek; retain FlightDate ===
+  holdout=0.7542
+=== [28] 43388fb | discard | remove standalone Month ===
+  SKIP: status discard
+=== [29] efd73ae | discard | 1500 trees at learning rate 0.02; same total step length ===
+  SKIP: status discard
+=== [30] 781a911 | discard | colsample_bytree 0.9 with all rows ===
+  SKIP: status discard
+=== [31] 2f840a0 | discard | departure minutes relative to training route median ===
+  SKIP: status discard
+=== [32] ed3d8bc | discard | max_bin 1024 ===
+  SKIP: status discard
+=== [33] 1644697 | keep | reg_alpha 5 ===
+  holdout=0.7610
+=== [34] 0b45af6 | discard | reg_alpha 20 ===
+  SKIP: status discard
+=== [35] 6f06464 | discard | reg_alpha 2 ===
+  SKIP: status discard
+=== [36] 9f7c2be | discard | remove min_child_weight 20 after adding L1 ===
+  SKIP: status discard
+=== [37] cfa04e7 | discard | remove reg_lambda 10 with L1 retained ===
+  SKIP: status discard
+=== [38] 1b1408a | discard | gamma 2 with L1 regularization ===
+  SKIP: status discard
+=== [39] ac149df | keep | 1200 rounds at learning rate 0.05 with L1 5 ===
+  holdout=0.7630
+=== [40] c22e27f | keep | depth 10 with L1 5 and 1200 rounds ===
+  holdout=0.7630
+=== [41] ecc3312 | discard | date by six-hour departure-block category ===
+  SKIP: status discard
+=== [42] 3ecb385 | discard | carrier-origin categorical interaction with L1 ===
+  SKIP: status discard
+=== [43] 392a968 | crash | DART 300 rounds at 0.2 exceeded training limit ===
+  SKIP: status crash
+=== [44] b4c1d4e | discard | 160 dropout rounds at learning rate 0.2 ===
+  SKIP: status discard
+=== [45] d2e10fe | keep | 3:1 soft-voting blend of best booster and 160-round dropout ===
+  holdout=0.7639
+=== [46] 87b5d18 | discard | equal-weight standard/dropout blend ===
+  SKIP: status discard
+=== [47] d621679 | discard | single-model tree_method approx ===
+  SKIP: status discard
+=== [48] d01ca36 | discard | equal blend of hist and approx models ===
+  SKIP: status discard
+=== [49] a6167e7 | discard | 2400-round main booster in the 3:1 dropout blend ===
+  SKIP: status discard
+=== [50] 54bc4f9 | keep | equal blend of depth-8 and depth-10 boosters; faster near-tie ===
+  holdout=0.7640
+=== [51] 8ba4da2 | discard | native feature-sampled tree groups using all rows ===
+  SKIP: status discard
+=== [52] fcfa068 | keep | 3:3:2 blend of depth-10, depth-8 and dropout boosters ===
+  holdout=0.7645
+=== [53] 8a68d69 | discard | remove distance from the three-model feature set ===
+  SKIP: status discard
+=== [54] ad1bc55 | discard | exponential learning-rate decay for both ordinary boosters ===
+  SKIP: status discard
+=== [55] 7598565 | discard | replace categorical month with ordered numeric month ===
+  SKIP: status discard
+=== [56] a1af349 | discard | increase max_cat_threshold to 32 across the ensemble ===
+  SKIP: status discard
+=== [57] e949585 | discard | mild label smoothing on the depth-10 ordinary member ===
+  SKIP: status discard
+=== [58] 54866e8 | keep | replace dropout member with ordinary 160-round fast boosting ===
+  holdout=0.7647
+=== [59] 5e5bb77 | discard | loss-guided 128-leaf main member with L1 regularization ===
+  SKIP: status discard
+=== [60] aca8c2a | discard | equal weighting of all three ordinary boosters ===
+  SKIP: status discard
+=== [61] 55fc779 | discard | average logistic margins instead of probabilities ===
+  SKIP: status discard
+=== [62] 77297f0 | keep | add a row-local Saturday/Sunday weekend indicator ===
+  holdout=0.7648
+=== [63] f4305aa | discard | restore full weekday category alongside weekend flag ===
+  SKIP: status discard
+=== [64] c0c117c | discard | coarsen numeric histograms to max_bin 64 ===
+  SKIP: status discard
+=== [65] 96d190a | discard | add categorical seven-day calendar blocks ===
+  SKIP: status discard
+=== [66] c8d7879 | discard | cap unshrunk leaf updates with max_delta_step 1 ===
+  SKIP: status discard
+=== [67] c66730c | keep | 320 rounds at learning rate 0.1 for the short-path member ===
+  holdout=0.7648
+=== [68] 5063e2a | discard | 2400 rounds at 0.025 for both long-path members ===
+  SKIP: status discard
+=== [69] cb467a9 | discard | increase min_child_weight from 20 to 50 ===
+  SKIP: status discard
+=== [70] 22dfab8 | keep | disjoint interaction groups on the short-path member only ===
+  holdout=0.7656
+=== [71] b14f550 | discard | apply disjoint interaction groups to every member ===
+  SKIP: status discard
+=== [72] e13bf42 | discard | double constrained member to 640 rounds at 0.1 ===
+  SKIP: status discard
+=== [73] fd98cd0 | discard | add depth-12 member at 20% weight to the three-member blend ===
+  SKIP: status discard
+=== [74] f537619 | discard | replace depth-10 long member with depth 12 ===
+  SKIP: status discard
+=== [75] 44cf647 | discard | selective one-hot splitting for the month category ===
+  SKIP: status discard
+=== [76] 1b3dd0c | discard | remove depth-8 member while keeping 25 percent constrained weight ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===

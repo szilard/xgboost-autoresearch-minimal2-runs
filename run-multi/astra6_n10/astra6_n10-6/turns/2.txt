@@ -1,0 +1,5 @@
+Completed 75 experiments on `oct2`.
+
+Kept `22dfab8`: **Eval AUC 0.7712**, up from **0.7203**. The peak was 0.7713, but the retained model is substantially faster. Final artifact and preprocessing checks passed.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md)

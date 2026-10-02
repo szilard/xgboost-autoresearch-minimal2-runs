@@ -1,0 +1,7 @@
+Setup complete on new branch `oct2`, from `92e43e6`.
+
+- Required data and dependencies verified.
+- Initialized [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md).
+- Baseline code unchanged; no experiments run.
+
+The two-hour clock hasn’t started. As [program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md) requires confirmation before starting, say **go** when ready.
