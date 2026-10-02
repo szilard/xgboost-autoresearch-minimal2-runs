@@ -1,0 +1,72 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline: unchanged starter, 30 trees depth 6 eta 0.1	0.7203	0.7155
+86f06f2	keep	300 trees, depth 6, eta 0.1	0.7342	0.7315
+9a08261	keep	600 trees depth 6 eta 0.05	0.7359	0.7320
+0610ff7	keep	Calendar date category with 600 trees eta 0.05	0.7525	0.7471
+da019c7	discard	Date model with min_child_weight 20	0.7525	N/A
+aefd472	discard	Depth 8 with min_child_weight 20	0.7495	N/A
+4e7c32a	keep	Simplify categorical preprocessing; identical features	0.7525	0.7471
+a84fa01	keep	Add numeric day-of-year alongside categorical date	0.7527	0.7474
+33f2906	discard	One-category categorical splits with threshold 512	0.7427	N/A
+122407c	discard	Restrict max_cat_threshold to 16	0.7513	N/A
+0e413ca	discard	Explicit origin-destination route category	0.7322	N/A
+6fe547a	discard	Add departure hour and minute-of-hour	0.7518	N/A
+1f91ad2	keep	1200 trees depth 4 eta 0.05	0.7535	0.7496
+4b6e930	keep	Shallow ensemble with reg_lambda 20	0.7561	0.7507
+b40ab90	discard	Depth 6 with 1200 rounds and L2 20	0.7507	N/A
+a33523a	keep	Remove separate month/day/weekday categories	0.7562	0.7508
+0cee784	keep	Remove numeric day-of-year; six-feature model	0.7567	0.7512
+d0474bb	discard	Row subsampling 0.8	0.7500	N/A
+6ac8e4a	discard	Four-tree boosted forest with row/node sampling	0.7537	N/A
+3670bc6	discard	Early stopping: 95/5 train split, eta 0.03, 1422 selected rounds	0.7549	N/A
+439ab7a	discard	Disallow joint origin-destination tree paths	0.7559	N/A
+a45d447	discard	Add carrier-month category	0.7565	N/A
+b7b50f7	keep	Increase reg_lambda from 20 to 100	0.7578	0.7520
+5f1fa86	keep	2400 trees eta 0.025 with L2 100	0.7587	0.7524
+9e72671	discard	Add route-relative departure time median offset	0.7576	N/A
+b955514	discard	Pairwise RankNet objective with one global query	0.7507	N/A
+7cf8d45	discard	Coarser numeric histograms with max_bin 64	0.7579	N/A
+1786ca1	discard	Disjoint 25% reference for airport-date mean delay features	0.7518	N/A
+50c58d5	discard	Matched 75% fit-data control without delay-rate features	0.7507	N/A
+32f0067	discard	Two-dimensional airport embedding from training distances	0.7585	N/A
+4195995	discard	Increase max_cat_threshold to 256	0.7566	N/A
+f24ef3b	discard	Leaf-wise growth with max_leaves 16	0.7566	N/A
+c8954f4	discard	Add reg_alpha 10 to L2-regularized model	0.7547	N/A
+2e934ca	discard	Shorten regularized boosting to 1200 rounds at eta 0.025	0.7559	N/A
+c63c034	discard	Lengthen regularized boosting to 4800 rounds	0.7533	N/A
+33a6f00	keep	Soft-voting ensemble of 256-bin and 64-bin models	0.7596	0.7539
+057723a	keep	Three-model histogram ensemble: 64, 256, 1024 bins	0.7599	0.7539
+eaf5184	keep	Add depth-5, 1200-round ensemble member	0.7602	0.7542
+07d68f9	keep	Add depth-3, 3600-round ensemble member	0.7604	0.7544
+f339c7a	keep	Remove 1024-bin member from depth-diverse ensemble	0.7604	0.7545
+a700dab	keep	Weighted per-node feature sampling with all training rows	0.7614	0.7554
+8010ef6	discard	One-category carrier splits; grouped airport/date splits	0.7562	N/A
+5af517c	discard	Reduce ensemble L2 from 100 to 20	0.7602	N/A
+31cee35	discard	Increase ensemble L2 from 100 to 300	0.7611	N/A
+029d654	discard	Remove Distance and its sampling weight	0.7608	N/A
+db29fc0	discard	Five-percent label-smoothed logistic objective	0.7611	N/A
+7bef006	discard	Uniform column sampling without feature weights	0.7610	N/A
+c839b06	keep	Weighted node sampling of three of six features	0.7620	0.7562
+b1de4b3	discard	Move weighted sampling from nodes to whole trees	0.7604	N/A
+c0da13c	discard	Replace standard member with 256-round DART model	0.7619	N/A
+635acd6	discard	Average ensemble logits instead of probabilities	0.7620	N/A
+da2bdaf	keep	Replace standard member with fast 256-round ordinary booster	0.7621	0.7563
+d53b484	discard	Add native carrier-origin categorical interaction	0.7592	N/A
+2680143	discard	Minimum split gain gamma=5 across ensemble	0.7477	N/A
+77c7dda	discard	Light minimum split gain gamma=0.1	0.7621	N/A
+3da5e30	keep	Minimum child Hessian mass of 100	0.7622	0.7569
+fe49e99	keep	Weighted node sampling of two of six features	0.7629	0.7575
+40ea133	discard	Weighted node sampling of one of six features	0.7578	N/A
+2cbf05f	keep	Remove depth-3 ensemble member	0.7631	0.7576
+a31ccbd	keep	Remove fast-learning ensemble member	0.7631	0.7572
+24d9b80	discard	Add regularized depth-6, 600-round member	0.7625	N/A
+72cda73	discard	Categorical partition threshold 16 in the two-model ensemble	0.7500	N/A
+1700078	discard	Halve learning rate and double both tree counts	0.7625	N/A
+450bfc4	discard	Double time/date feature-sampling weights	0.7615	N/A
+96e3b8c	discard	Single depth-5 learner; remove voting and coarse member	0.7618	N/A
+dfd8b70	discard	Single coarse depth-4 learner; remove voting and deeper member	0.7624	N/A
+ca6101c	discard	Increase minimum child Hessian mass from 100 to 500	0.7630	N/A
+91d250d	keep	Reduce coarse member max_bin from 64 to 16	0.7632	0.7577
+dabd8f4	keep	Reduce coarse member max_bin from 16 to 4	0.7632	0.7577
+99da25c	keep	Add standard 256-bin depth-4 ensemble member	0.7638	0.7584
+10d2bfa	keep	Increase all ensemble boosting horizons by 50 percent	0.7644	0.7592

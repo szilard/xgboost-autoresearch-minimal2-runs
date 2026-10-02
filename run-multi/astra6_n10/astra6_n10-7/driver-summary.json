@@ -1,0 +1,25 @@
+{
+  "container": "astra6_n10-7",
+  "status": "ok",
+  "reason": "",
+  "model": "gpt-6-astra",
+  "effort": "max",
+  "codex_version": "codex-cli 0.159.0",
+  "turn_context": "[('gpt-6-astra', 'max', 'never', 'danger-full-access')]",
+  "session_id": "01a0fcef-3e62-7940-bc39-ea2e73c95713",
+  "turns": [
+    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",
+    "go"
+  ],
+  "clock_stopped_by": "agent",
+  "branch": "oct2",
+  "first_commit": "92e43e63a900eb0cb75c7de1995dc01e7b8e136f",
+  "upstream": "xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89",
+  "results_rows": 71,
+  "best_commit": "10d2bfa",
+  "best_eval_auc": "0.7644",
+  "best_holdout_auc": "0.7592",
+  "memory_limit_bytes": "25769803776",
+  "memory_peak_bytes": "8966447104",
+  "oom_kills": "0"
+}

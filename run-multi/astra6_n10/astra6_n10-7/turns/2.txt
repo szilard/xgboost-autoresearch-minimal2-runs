@@ -1,0 +1,5 @@
+Completed **71 experiments**. Eval AUC improved **0.7203 → 0.7644**.
+
+Best configuration: `10d2bfa` on branch `oct2`, using a three-model XGBoost ensemble. Training took **34 seconds**. Final checks passed, and the clock is stopped.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md)

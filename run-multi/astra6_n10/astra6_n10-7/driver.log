@@ -1,0 +1,42 @@
+2026-10-02T14:04:58Z run astra6_n10-7: model=gpt-6-astra effort=max out=/home/ubuntu/xgboost-autoresearch-minimal2-runs/run-multi/astra6_n10/astra6_n10-7
+2026-10-02T14:04:58Z container started
+2026-10-02T14:04:58Z memory limit: 25769803776 bytes (24g requested, no swap)
+total 8
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep 29 10:28 .
+drwxr-x--- 1 ubuntu ubuntu 4096 Sep 29 10:29 ..
+lrwxrwxrwx 1 ubuntu ubuntu   34 Sep 29 10:28 auth.json -> /home/ubuntu/.codex-auth/auth.json
+## main
+92e43e6 xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+README-autoresearch.md
+README.md
+check_groundtruth.py
+data
+harness.py
+plot_auc_history.py
+prepare.py
+program.md
+run_groundtruth_all.sh
+train.py
+2026-10-02T14:04:59Z setup check: python3 train.py
+2026-10-02T14:05:30Z setup check: Eval AUC: 0.7203
+Logged in using ChatGPT
+2026-10-02T14:05:32Z reasoning levels for gpt-6-astra: low medium high xhigh max ultra
+2026-10-02T14:05:32Z turn 1 send: Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.
+2026-10-02T14:08:34Z session id: 01a0fcef-3e62-7940-bc39-ea2e73c95713
+2026-10-02T14:08:34Z turn 1 done (exit 0): Setup is complete on branch `oct2`, created from `92e43e6`.  - Required data files and dependencies verified. - `results.tsv` initialized with the header; `research-log.md` created. - Baseline code unchanged; no experiments run and clock not started.  [program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md) calls for confirmation after setup. Say **go** to start the two-hour run, beginn
+2026-10-02T14:08:34Z turn_context: [('gpt-6-astra', 'max', 'never', 'danger-full-access')]
+2026-10-02T14:08:35Z clock: Clock not started 
+2026-10-02T14:08:35Z turn 2 send: go
+2026-10-02T16:10:34Z turn 2 done (exit 0): Completed **71 experiments**. Eval AUC improved **0.7203 → 0.7644**.  Best configuration: `10d2bfa` on branch `oct2`, using a three-model XGBoost ensemble. Training took **34 seconds**. Final checks passed, and the clock is stopped.  [Results](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md)
+2026-10-02T16:10:35Z clock: Elapsed: 2h00m41s, remaining: 0h00m00s Clock stopped 
+2026-10-02T16:10:37Z final clock: Elapsed: 2h00m41s, remaining: 0h00m00s Clock stopped 
+2026-10-02T16:10:37Z memory: peak=8966447104 bytes, oom_kills=0
+2026-10-02T16:10:38Z report: Clock:        2026-10-02 14:08:42 -> 2026-10-02 16:09:24 Total:        2h00m41s XGBoost runs: 0h46m36s  38.6%   (71 runs: 71 ok, 0 crash, 0 training timeout, 0 eval timeout)   training:   0h19m07s  15.8%   (train.py up to evaluation: startup, data, features, fit)   evaluation: 0h27m30s  22.8%   (saving the artifact + row-by-row scoring of eval.csv) AI:           1h14m05s  61.4%   (everything else: token generation, tool calls, web research, API latency) 
+2026-10-02T16:10:38Z run_groundtruth_all.sh
+eval_auc: max=0.7644 at n=71
+holdout_auc: max=0.7592 at n=71
+2026-10-02T16:21:54Z branch=oct2 first=92e43e63a900eb0cb75c7de1995dc01e7b8e136f best=10d2bfa upstream: xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+2026-10-02T16:21:54Z .codex-session-raw.jsonl: 3.9 MB -> codex-session.jsonl.gz: 0.47 MB (1754 lines, 2 account id(s) redacted)
+2026-10-02T16:21:54Z redacted 2 account id(s) in .codex-session-raw.jsonl
+2026-10-02T16:21:54Z summary: {  "container": "astra6_n10-7",  "status": "ok",  "reason": "",  "model": "gpt-6-astra",  "effort": "max",  "codex_version": "codex-cli 0.159.0",  "turn_context": "[('gpt-6-astra', 'max', 'never', 'danger-full-access')]",  "session_id": "01a0fcef-3e62-7940-bc39-ea2e73c95713",  "turns": [    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",    "go"  ],  "clock_stopped_by": "agent",  "branch": "oct2",  "first_commit": "92e43e63a900eb0cb75c7de1995dc01e7b8e136f",  "upstream": "xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89",  "results_rows": 71,  "best_commit": "10d2bfa",  "best_eval_auc": "0.7644",  "best_holdout_auc": "0.7592",  "memory_limit_bytes": "25769803776",  "memory_peak_bytes": "8966447104",  "oom_kills": "0"}
+2026-10-02T16:22:05Z container deleted

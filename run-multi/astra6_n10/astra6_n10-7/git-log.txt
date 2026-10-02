@@ -1,0 +1,261 @@
+commit 10d2bfaff139701c109b48669ca14d644c5e1529
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:07:25 2026 +0000
+
+    Test a longer boosting horizon with strong feature sampling
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 99da25c4075fb4fb79fae1422b2d8bb5682e4e4e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:05:50 2026 +0000
+
+    Test a fine-resolution depth-four ensemble member
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit dabd8f43df1772d9b6d4400930a39749b0aa3643
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:03:52 2026 +0000
+
+    Bracket numeric smoothing with four histogram bins
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 91d250d9356fb090bd38e6280ed0631d290defe3
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:01:29 2026 +0000
+
+    Test coarser numeric smoothing in the histogram ensemble
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a31ccbd1471d245e75622045d681f9baaa77068c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:50:09 2026 +0000
+
+    Ablate the fast-learning member of the smaller ensemble
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2cbf05fe16d06bb1bb7dde643fcee6c75c2c286e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:48:47 2026 +0000
+
+    Ablate the shallowest member after stronger feature sampling
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit fe49e9980b486b710fbc6a364174d6449322010e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:45:54 2026 +0000
+
+    Test two feature candidates per node
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3da5e30d9334218ba469a2caa35c1ba6e1266daf
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:44:13 2026 +0000
+
+    Test stronger minimum leaf support in the ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit da2bdaffe33aa93582ee99f7ff99e3cb746e404e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:37:39 2026 +0000
+
+    Separate learning-rate diversity from tree dropout
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c839b062259f6924e7741b0acccf59ea5be2701d
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:29:43 2026 +0000
+
+    Test stronger weighted feature sampling at each split
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a700dab5700da1d6b8f7b2200dfb2f1458dbb57d
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:13:19 2026 +0000
+
+    Test weighted feature sampling with full training rows
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit f339c7abc5f69acb6c10abf80aec9a5294b5a7bc
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:11:04 2026 +0000
+
+    Ablate the most expensive ensemble member
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 07d68f98095fad4fe5d98a924d37b7bc1c201f23
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:09:26 2026 +0000
+
+    Test a shallower complement in the voting ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit eaf5184eacd8a7b91a5d3a6d730a3a0e3f1fa45f
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:07:32 2026 +0000
+
+    Test depth diversity in the histogram ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 057723a9b802f90931c67d2ff864c6745428f04e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:06:13 2026 +0000
+
+    Add a finer-resolution member to the histogram ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 33a6f00b342e054ce04e8c0df988a98efbe76a6c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 15:04:41 2026 +0000
+
+    Explore soft voting across histogram resolutions
+
+ train.py | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 5f1fa86065a48272990c628b0e901d7cab3161cf
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:42:36 2026 +0000
+
+    Refine regularized boosting with smaller learning steps
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b7b50f74f42f93b2f57bea660ec75b6d6fb5d37b
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:41:18 2026 +0000
+
+    Bracket the benefit of stronger L2 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0cee78461a5fa6ad09b29e005f4be2b84432fba2
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:32:56 2026 +0000
+
+    Ablate redundant numeric day-of-year feature
+
+ train.py | 6 ------
+ 1 file changed, 6 deletions(-)
+
+commit a33523afe62f64635d3f6f68377fe681fbad6cb8
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:31:14 2026 +0000
+
+    Ablate redundant calendar categories
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4b6e930fbd36a86a746c41041eb0b4c655739dd6
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:28:20 2026 +0000
+
+    Test stronger L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1f91ad202da894ae11f607aa91d01e8fdeb44d70
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:27:05 2026 +0000
+
+    Test a longer ensemble of shallower trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a84fa01fb0a8dfd65f0b4b784366036398e260cb
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:19:54 2026 +0000
+
+    Add ordered day-of-year feature alongside date category
+
+ train.py | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+commit 4e7c32a2f8f916f3f2572f1dab232b7eaa857a7e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:18:28 2026 +0000
+
+    Simplify categorical preparation without changing features
+
+ train.py | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 0610ff76ded91584efc52ae9e7740759e9315f52
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:13:58 2026 +0000
+
+    Add train-fitted calendar date category
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 9a0826158e6801a60543cf2002847642a50e1202
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:12:16 2026 +0000
+
+    Test smaller boosting steps with 600 trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 86f06f257bfffe31ce33632aa78e408bb91cdecd
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 14:10:53 2026 +0000
+
+    Test 300 boosting rounds against starter baseline
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

@@ -1,0 +1,144 @@
+=== [2] 92e43e6 | keep | baseline: unchanged starter, 30 trees depth 6 eta 0.1 ===
+  holdout=0.7155
+=== [3] 86f06f2 | keep | 300 trees, depth 6, eta 0.1 ===
+  holdout=0.7315
+=== [4] 9a08261 | keep | 600 trees depth 6 eta 0.05 ===
+  holdout=0.7320
+=== [5] 0610ff7 | keep | Calendar date category with 600 trees eta 0.05 ===
+  holdout=0.7471
+=== [6] da019c7 | discard | Date model with min_child_weight 20 ===
+  SKIP: status discard
+=== [7] aefd472 | discard | Depth 8 with min_child_weight 20 ===
+  SKIP: status discard
+=== [8] 4e7c32a | keep | Simplify categorical preprocessing; identical features ===
+  holdout=0.7471
+=== [9] a84fa01 | keep | Add numeric day-of-year alongside categorical date ===
+  holdout=0.7474
+=== [10] 33f2906 | discard | One-category categorical splits with threshold 512 ===
+  SKIP: status discard
+=== [11] 122407c | discard | Restrict max_cat_threshold to 16 ===
+  SKIP: status discard
+=== [12] 0e413ca | discard | Explicit origin-destination route category ===
+  SKIP: status discard
+=== [13] 6fe547a | discard | Add departure hour and minute-of-hour ===
+  SKIP: status discard
+=== [14] 1f91ad2 | keep | 1200 trees depth 4 eta 0.05 ===
+  holdout=0.7496
+=== [15] 4b6e930 | keep | Shallow ensemble with reg_lambda 20 ===
+  holdout=0.7507
+=== [16] b40ab90 | discard | Depth 6 with 1200 rounds and L2 20 ===
+  SKIP: status discard
+=== [17] a33523a | keep | Remove separate month/day/weekday categories ===
+  holdout=0.7508
+=== [18] 0cee784 | keep | Remove numeric day-of-year; six-feature model ===
+  holdout=0.7512
+=== [19] d0474bb | discard | Row subsampling 0.8 ===
+  SKIP: status discard
+=== [20] 6ac8e4a | discard | Four-tree boosted forest with row/node sampling ===
+  SKIP: status discard
+=== [21] 3670bc6 | discard | Early stopping: 95/5 train split, eta 0.03, 1422 selected rounds ===
+  SKIP: status discard
+=== [22] 439ab7a | discard | Disallow joint origin-destination tree paths ===
+  SKIP: status discard
+=== [23] a45d447 | discard | Add carrier-month category ===
+  SKIP: status discard
+=== [24] b7b50f7 | keep | Increase reg_lambda from 20 to 100 ===
+  holdout=0.7520
+=== [25] 5f1fa86 | keep | 2400 trees eta 0.025 with L2 100 ===
+  holdout=0.7524
+=== [26] 9e72671 | discard | Add route-relative departure time median offset ===
+  SKIP: status discard
+=== [27] b955514 | discard | Pairwise RankNet objective with one global query ===
+  SKIP: status discard
+=== [28] 7cf8d45 | discard | Coarser numeric histograms with max_bin 64 ===
+  SKIP: status discard
+=== [29] 1786ca1 | discard | Disjoint 25% reference for airport-date mean delay features ===
+  SKIP: status discard
+=== [30] 50c58d5 | discard | Matched 75% fit-data control without delay-rate features ===
+  SKIP: status discard
+=== [31] 32f0067 | discard | Two-dimensional airport embedding from training distances ===
+  SKIP: status discard
+=== [32] 4195995 | discard | Increase max_cat_threshold to 256 ===
+  SKIP: status discard
+=== [33] f24ef3b | discard | Leaf-wise growth with max_leaves 16 ===
+  SKIP: status discard
+=== [34] c8954f4 | discard | Add reg_alpha 10 to L2-regularized model ===
+  SKIP: status discard
+=== [35] 2e934ca | discard | Shorten regularized boosting to 1200 rounds at eta 0.025 ===
+  SKIP: status discard
+=== [36] c63c034 | discard | Lengthen regularized boosting to 4800 rounds ===
+  SKIP: status discard
+=== [37] 33a6f00 | keep | Soft-voting ensemble of 256-bin and 64-bin models ===
+  holdout=0.7539
+=== [38] 057723a | keep | Three-model histogram ensemble: 64, 256, 1024 bins ===
+  holdout=0.7539
+=== [39] eaf5184 | keep | Add depth-5, 1200-round ensemble member ===
+  holdout=0.7542
+=== [40] 07d68f9 | keep | Add depth-3, 3600-round ensemble member ===
+  holdout=0.7544
+=== [41] f339c7a | keep | Remove 1024-bin member from depth-diverse ensemble ===
+  holdout=0.7545
+=== [42] a700dab | keep | Weighted per-node feature sampling with all training rows ===
+  holdout=0.7554
+=== [43] 8010ef6 | discard | One-category carrier splits; grouped airport/date splits ===
+  SKIP: status discard
+=== [44] 5af517c | discard | Reduce ensemble L2 from 100 to 20 ===
+  SKIP: status discard
+=== [45] 31cee35 | discard | Increase ensemble L2 from 100 to 300 ===
+  SKIP: status discard
+=== [46] 029d654 | discard | Remove Distance and its sampling weight ===
+  SKIP: status discard
+=== [47] db29fc0 | discard | Five-percent label-smoothed logistic objective ===
+  SKIP: status discard
+=== [48] 7bef006 | discard | Uniform column sampling without feature weights ===
+  SKIP: status discard
+=== [49] c839b06 | keep | Weighted node sampling of three of six features ===
+  holdout=0.7562
+=== [50] b1de4b3 | discard | Move weighted sampling from nodes to whole trees ===
+  SKIP: status discard
+=== [51] c0da13c | discard | Replace standard member with 256-round DART model ===
+  SKIP: status discard
+=== [52] 635acd6 | discard | Average ensemble logits instead of probabilities ===
+  SKIP: status discard
+=== [53] da2bdaf | keep | Replace standard member with fast 256-round ordinary booster ===
+  holdout=0.7563
+=== [54] d53b484 | discard | Add native carrier-origin categorical interaction ===
+  SKIP: status discard
+=== [55] 2680143 | discard | Minimum split gain gamma=5 across ensemble ===
+  SKIP: status discard
+=== [56] 77c7dda | discard | Light minimum split gain gamma=0.1 ===
+  SKIP: status discard
+=== [57] 3da5e30 | keep | Minimum child Hessian mass of 100 ===
+  holdout=0.7569
+=== [58] fe49e99 | keep | Weighted node sampling of two of six features ===
+  holdout=0.7575
+=== [59] 40ea133 | discard | Weighted node sampling of one of six features ===
+  SKIP: status discard
+=== [60] 2cbf05f | keep | Remove depth-3 ensemble member ===
+  holdout=0.7576
+=== [61] a31ccbd | keep | Remove fast-learning ensemble member ===
+  holdout=0.7572
+=== [62] 24d9b80 | discard | Add regularized depth-6, 600-round member ===
+  SKIP: status discard
+=== [63] 72cda73 | discard | Categorical partition threshold 16 in the two-model ensemble ===
+  SKIP: status discard
+=== [64] 1700078 | discard | Halve learning rate and double both tree counts ===
+  SKIP: status discard
+=== [65] 450bfc4 | discard | Double time/date feature-sampling weights ===
+  SKIP: status discard
+=== [66] 96e3b8c | discard | Single depth-5 learner; remove voting and coarse member ===
+  SKIP: status discard
+=== [67] dfd8b70 | discard | Single coarse depth-4 learner; remove voting and deeper member ===
+  SKIP: status discard
+=== [68] ca6101c | discard | Increase minimum child Hessian mass from 100 to 500 ===
+  SKIP: status discard
+=== [69] 91d250d | keep | Reduce coarse member max_bin from 64 to 16 ===
+  holdout=0.7577
+=== [70] dabd8f4 | keep | Reduce coarse member max_bin from 16 to 4 ===
+  holdout=0.7577
+=== [71] 99da25c | keep | Add standard 256-bin depth-4 ensemble member ===
+  holdout=0.7584
+=== [72] 10d2bfa | keep | Increase all ensemble boosting horizons by 50 percent ===
+  holdout=0.7592
+
+=== DONE: results written to groundtruth_all.tsv ===
