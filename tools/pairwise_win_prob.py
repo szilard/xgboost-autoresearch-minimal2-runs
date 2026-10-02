@@ -71,7 +71,7 @@ def compare(a, b, rng):
 
 
 def plot(rows, runs):
-    """rows: (better model, worse model, P, lo, hi), drawn top to bottom.
+    """rows: (better model, worse model, P, lo, hi), drawn top to bottom in the given order.
 
     The better model (by mean) is labelled on the right of its row, the other on the
     left; x is P(the right-hand model wins), so each dot leans toward the model
@@ -141,7 +141,7 @@ def main():
         rows.append((m1, m2, p, lo, hi))
         print(f"{m1:14s} {m2:14s} {win:12.3f} {lose:12.3f} {tie:8.3f} {p:10.3f}   {lo:.3f}-{hi:.3f}")
     if not no_caveat:
-        plot(rows, runs)
+        plot(sorted(rows, key=lambda r: -r[2]), runs)  # highest win probability on top
 
 
 if __name__ == "__main__":
