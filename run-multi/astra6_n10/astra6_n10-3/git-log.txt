@@ -1,0 +1,216 @@
+commit 812d7efffca7fa321e482908d484f3668079324a
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 06:53:32 2026 +0000
+
+    Remove destination coordinate features
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 0f6bd05717053c133ec16e0d670db395e2e5655f
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 06:42:25 2026 +0000
+
+    Sample candidate features independently at each tree node
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ca8769063849dc33c9e6eed942f845aeb3728866
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 06:39:16 2026 +0000
+
+    Revisit two-view averaging with the improved base learner
+
+ train.py | 24 ++++++++++++++++++++++--
+ 1 file changed, 22 insertions(+), 2 deletions(-)
+
+commit f68f28ec74411bb0389a6afe1ec86a6a37f27cea
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 06:31:33 2026 +0000
+
+    Retest coarse calendar structure in the L1 regime
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit abb5dbc37f0b4cd2554cb1614cc55dba42a55984
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 06:14:19 2026 +0000
+
+    Extend boosting duration with L1 control
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a9cb7493e915dc0ff4e64f0af4e73f67d91897dd
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 06:12:56 2026 +0000
+
+    Keep only the original airport coordinate axes under L1
+
+ train.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 90f645e45b968f2e3e6faf2134a3bb9c364716a7
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 06:07:26 2026 +0000
+
+    Test a single geometry model with L1 regularization
+
+ train.py | 21 +--------------------
+ 1 file changed, 1 insertion(+), 20 deletions(-)
+
+commit 43a9ff4b690b2303083abc03dc8b68870539e88c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 06:03:19 2026 +0000
+
+    Apply L1 shrinkage to weak leaf updates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit bf27c5480c621fec04eeea63b8122387b294e6e1
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:57:08 2026 +0000
+
+    Average original and rotated geometry models
+
+ train.py | 24 ++++++++++++++++++++++--
+ 1 file changed, 22 insertions(+), 2 deletions(-)
+
+commit 16b4f35515f755bc734feb629eec740b3d5bb1c9
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:51:12 2026 +0000
+
+    Increase histogram resolution for numerical features
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 6828f895363d989cc10141bda5daf25c32cc1ee9
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:49:58 2026 +0000
+
+    Encode categories explicitly with fixed training indexes
+
+ train.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit fcddab230640cf60aae325275a6aab4efc3def61
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:46:56 2026 +0000
+
+    Revisit depth eight with geometry and restricted category groups
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a2530454bde4228cd6ffd27c2990afe1d128f7b5
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:30:20 2026 +0000
+
+    Test two-dimensional airport geometry
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit ac2f9c548c7de20b4d1930f42a4b97131adb5fb3
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:29:08 2026 +0000
+
+    Derive airport geometry from observed route distances
+
+ train.py | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+commit 53bffff82bb2cab886ff618d917b7641f6735c8a
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:21:11 2026 +0000
+
+    Remove redundant calendar features
+
+ train.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit a2dbfd90277d657e830d48d348fd5f96e71cebe4
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:16:25 2026 +0000
+
+    Cache fixed categorical dtypes and simplify preparation
+
+ train.py | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
+
+commit f5ac9561a070a4bf3ee797dd21529312d28a226e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:12:31 2026 +0000
+
+    Use smaller boosting steps at matched total strength
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit bee64a1712abcc21a4560ac0424c74324917d726
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:11:36 2026 +0000
+
+    Limit categorical split groups to reduce overfitting
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 89bd73cf234f90d51e32d42a67a64ec04a85c8f0
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:09:21 2026 +0000
+
+    Expose day of year and categorical flight date
+
+ train.py | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit b97ddae3d170a8498b94454c41d1c6f195b5812d
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:08:11 2026 +0000
+
+    Regularize leaves with child weight 20 and lambda 10
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 3e55c5b6ca0ade3961f1101b1decd55f03aa5da9
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:07:18 2026 +0000
+
+    Simplify categorical preparation using fixed levels
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 99ae626be27ec0542364e742e83385ba3ae3ea10
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 05:04:21 2026 +0000
+
+    Test 300 boosting rounds for baseline features
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

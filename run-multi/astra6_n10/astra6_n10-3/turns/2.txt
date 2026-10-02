@@ -1,0 +1,7 @@
+Completed **87 experiments** and stopped the harness.
+
+- Selected Eval AUC: **0.7711**, up from **0.7203**.
+- Peak: **0.7713**; selected model uses fewer features and evaluates six seconds faster.
+- Branch: `oct2`, commit: `812d7ef`. Artifact checks passed.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md)

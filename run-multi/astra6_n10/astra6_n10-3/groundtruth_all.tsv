@@ -1,0 +1,88 @@
+commit	status	description	eval_auc	holdout_auc
+92e43e6	keep	baseline: 30 trees; depth 6; learning rate 0.1	0.7203	0.7155
+99ae626	keep	300 trees; depth 6; learning rate 0.1	0.7342	0.7315
+d18f731	discard	900 trees at learning rate 0.1; overfits	0.7264	N/A
+3e55c5b	keep	simplify categorical conversion; same AUC; faster evaluation	0.7342	0.7315
+b97ddae	keep	min_child_weight 20 and reg_lambda 10	0.7357	0.7321
+89bd73c	keep	numeric day of year and categorical flight date	0.7526	0.7475
+562008d	discard	depth 8 with date features; excess complexity	0.7495	N/A
+bee64a1	keep	max_cat_threshold 16; smaller category groups	0.7565	0.7500
+f5ac956	keep	600 trees at learning rate 0.05	0.7568	0.7508
+e0fb9cf	discard	categorical departure hour and minute within hour	0.7555	N/A
+e4bab9f	discard	high-cardinality route category	0.7424	N/A
+a2dbfd9	keep	cache category dtypes; simpler and faster preparation	0.7568	0.7508
+a7becee	discard	one-hot airport and carrier splits; grouped dates	0.7539	N/A
+0763cc2	discard	depth 4 and 1000 rounds	0.7540	N/A
+b14fe4f	discard	row and column subsampling 0.8	0.7511	N/A
+53bffff	keep	remove redundant calendar inputs; similar AUC; faster	0.7564	0.7510
+8ca3c97	discard	training-only early stopping; negligible gain for complexity	0.7565	N/A
+420593e	discard	max_cat_threshold 4; underfits date groups	0.7411	N/A
+4fda463	discard	disjoint 35% airport-date target statistics	0.7530	N/A
+c44f59c	discard	ordered airport-date statistics with stable row hashes	0.7556	N/A
+43ae874	discard	lossguide growth with 31 leaves	0.7547	N/A
+ac2f9c5	keep	three-dimensional airport geometry from train route distances	0.7580	0.7520
+a253045	keep	two-dimensional airport geometry; fewer inputs	0.7581	0.7524
+de2fb56	discard	add learned route displacement features	0.7577	N/A
+ef886b6	discard	child weight 60 and lambda 30 with geometry	0.7565	N/A
+88183f2	discard	gamma 2 split pruning	0.7504	N/A
+dd54658	discard	eight geographic regions crossed with date	0.7545	N/A
+c6d93cd	discard	four randomized trees per boosting round	0.7517	N/A
+ed46edb	discard	departure minutes relative to fixed route median	0.7576	N/A
+0f4ef8f	discard	pairwise ranking with one sampled pair per row	0.7290	N/A
+fe7ea46	discard	ranker with four pairs and score normalization disabled	0.7456	N/A
+b3d7cd0	discard	restore numeric day of year alongside geometry	0.7577	N/A
+b75f328	discard	800 additive stumps followed by 400 depth-6 trees	0.7517	N/A
+a334308	discard	3000 rounds at learning rate 0.01; same AUC	0.7581	N/A
+fcddab2	keep	depth 8 with geometry and category threshold 16	0.7601	0.7549
+1eda83d	discard	depth 10 with geometry	0.7596	N/A
+6828f89	keep	explicit category codes; same AUC; faster and no warnings	0.7601	0.7549
+16b4f35	keep	max_bin 1024; slightly finer numeric boundaries	0.7602	0.7540
+7ec80d6	discard	max_bin 64 coarse numeric cuts	0.7591	N/A
+a87e0d2	discard	restore month and weekday categories	0.7598	N/A
+cd0cd0c	discard	45-degree rotation of geometry axes	0.7596	N/A
+bf27c54	keep	equal average of original and rotated geometry models	0.7611	0.7552
+2ce6298	discard	single classifier with both geometry orientations	0.7599	N/A
+66936dd	discard	four geometry orientations; same AUC at higher cost	0.7611	N/A
+38e6fc3	discard	native carrier-origin category	0.7552	N/A
+43a9ff4	keep	L1 leaf regularization alpha 5	0.7678	0.7616
+2f07758	discard	gradient-based half-row sampling with L1 regularization	0.7625	N/A
+19903c8	discard	L1 alpha 20; excessive shrinkage	0.7511	N/A
+90f645e	keep	single L1 model with both geometry orientations	0.7675	0.7607
+992bae4	discard	minimum child weight 5 under L1 shrinkage	0.7670	N/A
+75b94fe	discard	category threshold 64 with L1 regularization	0.7667	N/A
+b8c3fd5	discard	remove all airport geometry under L1	0.7661	N/A
+a9cb749	keep	original geometry only under L1; similar AUC and faster	0.7673	0.7609
+abb5dbc	keep	1200 rounds with L1 alpha 5	0.7697	0.7634
+e1bea75	discard	2400 rounds under L1; begins overfitting	0.7688	N/A
+2c77ae4	discard	1800-round midpoint; no gain	0.7694	N/A
+7b9f9f0	discard	depth ten under L1 at 1200 rounds	0.7694	N/A
+af1dfd6	crash	DART 400 rounds exceeded 60-second training limit	0.0000	N/A
+bdbf3ec	discard	linear learning-rate decay at equal total shrinkage	0.7692	N/A
+98561d0	discard	alpha two loses much of the L1 benefit	0.7630	N/A
+8faa7a9	discard	alpha ten is too strong at 1200 rounds	0.7655	N/A
+fe21070	discard	alpha 7.5 confirms moderate L1 optimum near five	0.7678	N/A
+232df74	discard	disjoint regional and route interaction groups underfit	0.7551	N/A
+3fd58d9	discard	categorical threshold eight under L1	0.7676	N/A
+fa6b546	discard	lambda one after L1 is slightly weaker	0.7694	N/A
+f68f28e	keep	month and weekday help with L1 regularization	0.7706	0.7645
+c3c0f26	discard	weekday without month loses calendar gain	0.7693	N/A
+01f46a0	discard	month without weekday also loses calendar gain	0.7693	N/A
+85eb0b5	discard	three-dimensional spherical-chord geometry	0.7704	N/A
+6ce9e07	discard	two-dimensional spherical-chord geometry	0.7695	N/A
+f2db3ff	discard	ordered carrier-date rate hurts despite valid row-level semantics	0.7644	N/A
+ca87690	keep	two-view ensemble with longer boosting and calendar features	0.7712	0.7657
+e3a804b	discard	rotated member alone cannot match two-view ensemble	0.7698	N/A
+0f6bd05	keep	node-level column sampling gives a small ensemble gain	0.7713	0.7663
+82728c9	discard	uniform row sampling with scaled penalties still hurts	0.7674	N/A
+1dac5a0	discard	1800-round ensemble overfits relative to 1200 rounds	0.7707	N/A
+b5bbc29	discard	single model with both views loses 0.0011 AUC	0.7702	N/A
+ee84567	discard	day-of-month grouping adds harmful redundancy	0.7696	N/A
+354c650	discard	75/25 original-view blend loses to equal averaging	0.7709	N/A
+cc970a7	discard	circular departure-time features add cost without gain	0.7708	N/A
+812d7ef	keep	remove destination geometry with near-equal AUC and faster evaluation	0.7711	0.7655
+f5583b9	discard	removing raw distance gives little speed benefit and loses AUC	0.7709	N/A
+e6dcbda	discard	half learning rate gives negligible gain while doubling trees	0.7712	N/A
+cd88426	discard	coarser bins give no useful efficiency improvement	0.7710	N/A
+5c041c4	discard	depth seven loses useful interactions	0.7704	N/A
+e368e7e	discard	small split-gain threshold still removes useful detail	0.7700	N/A
+35d93ad	discard	600 larger-step rounds lose too much AUC despite smaller model	0.7701	N/A

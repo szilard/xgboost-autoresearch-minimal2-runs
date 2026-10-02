@@ -1,3 +1,4 @@
 run	best_commit	eval_auc	holdout_auc	gap	experiments	valid
 astra6_n10-1	c1e763d	0.7652	0.7598	-0.0054	66	yes
 astra6_n10-2	5851c0c	0.7657	0.7604	-0.0053	81	yes
+astra6_n10-3	0f6bd05	0.7713	0.7663	-0.0050	86	yes

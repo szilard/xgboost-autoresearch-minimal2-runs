@@ -1,0 +1,176 @@
+=== [2] 92e43e6 | keep | baseline: 30 trees; depth 6; learning rate 0.1 ===
+  holdout=0.7155
+=== [3] 99ae626 | keep | 300 trees; depth 6; learning rate 0.1 ===
+  holdout=0.7315
+=== [4] d18f731 | discard | 900 trees at learning rate 0.1; overfits ===
+  SKIP: status discard
+=== [5] 3e55c5b | keep | simplify categorical conversion; same AUC; faster evaluation ===
+  holdout=0.7315
+=== [6] b97ddae | keep | min_child_weight 20 and reg_lambda 10 ===
+  holdout=0.7321
+=== [7] 89bd73c | keep | numeric day of year and categorical flight date ===
+  holdout=0.7475
+=== [8] 562008d | discard | depth 8 with date features; excess complexity ===
+  SKIP: status discard
+=== [9] bee64a1 | keep | max_cat_threshold 16; smaller category groups ===
+  holdout=0.7500
+=== [10] f5ac956 | keep | 600 trees at learning rate 0.05 ===
+  holdout=0.7508
+=== [11] e0fb9cf | discard | categorical departure hour and minute within hour ===
+  SKIP: status discard
+=== [12] e4bab9f | discard | high-cardinality route category ===
+  SKIP: status discard
+=== [13] a2dbfd9 | keep | cache category dtypes; simpler and faster preparation ===
+  holdout=0.7508
+=== [14] a7becee | discard | one-hot airport and carrier splits; grouped dates ===
+  SKIP: status discard
+=== [15] 0763cc2 | discard | depth 4 and 1000 rounds ===
+  SKIP: status discard
+=== [16] b14fe4f | discard | row and column subsampling 0.8 ===
+  SKIP: status discard
+=== [17] 53bffff | keep | remove redundant calendar inputs; similar AUC; faster ===
+  holdout=0.7510
+=== [18] 8ca3c97 | discard | training-only early stopping; negligible gain for complexity ===
+  SKIP: status discard
+=== [19] 420593e | discard | max_cat_threshold 4; underfits date groups ===
+  SKIP: status discard
+=== [20] 4fda463 | discard | disjoint 35% airport-date target statistics ===
+  SKIP: status discard
+=== [21] c44f59c | discard | ordered airport-date statistics with stable row hashes ===
+  SKIP: status discard
+=== [22] 43ae874 | discard | lossguide growth with 31 leaves ===
+  SKIP: status discard
+=== [23] ac2f9c5 | keep | three-dimensional airport geometry from train route distances ===
+  holdout=0.7520
+=== [24] a253045 | keep | two-dimensional airport geometry; fewer inputs ===
+  holdout=0.7524
+=== [25] de2fb56 | discard | add learned route displacement features ===
+  SKIP: status discard
+=== [26] ef886b6 | discard | child weight 60 and lambda 30 with geometry ===
+  SKIP: status discard
+=== [27] 88183f2 | discard | gamma 2 split pruning ===
+  SKIP: status discard
+=== [28] dd54658 | discard | eight geographic regions crossed with date ===
+  SKIP: status discard
+=== [29] c6d93cd | discard | four randomized trees per boosting round ===
+  SKIP: status discard
+=== [30] ed46edb | discard | departure minutes relative to fixed route median ===
+  SKIP: status discard
+=== [31] 0f4ef8f | discard | pairwise ranking with one sampled pair per row ===
+  SKIP: status discard
+=== [32] fe7ea46 | discard | ranker with four pairs and score normalization disabled ===
+  SKIP: status discard
+=== [33] b3d7cd0 | discard | restore numeric day of year alongside geometry ===
+  SKIP: status discard
+=== [34] b75f328 | discard | 800 additive stumps followed by 400 depth-6 trees ===
+  SKIP: status discard
+=== [35] a334308 | discard | 3000 rounds at learning rate 0.01; same AUC ===
+  SKIP: status discard
+=== [36] fcddab2 | keep | depth 8 with geometry and category threshold 16 ===
+  holdout=0.7549
+=== [37] 1eda83d | discard | depth 10 with geometry ===
+  SKIP: status discard
+=== [38] 6828f89 | keep | explicit category codes; same AUC; faster and no warnings ===
+  holdout=0.7549
+=== [39] 16b4f35 | keep | max_bin 1024; slightly finer numeric boundaries ===
+  holdout=0.7540
+=== [40] 7ec80d6 | discard | max_bin 64 coarse numeric cuts ===
+  SKIP: status discard
+=== [41] a87e0d2 | discard | restore month and weekday categories ===
+  SKIP: status discard
+=== [42] cd0cd0c | discard | 45-degree rotation of geometry axes ===
+  SKIP: status discard
+=== [43] bf27c54 | keep | equal average of original and rotated geometry models ===
+  holdout=0.7552
+=== [44] 2ce6298 | discard | single classifier with both geometry orientations ===
+  SKIP: status discard
+=== [45] 66936dd | discard | four geometry orientations; same AUC at higher cost ===
+  SKIP: status discard
+=== [46] 38e6fc3 | discard | native carrier-origin category ===
+  SKIP: status discard
+=== [47] 43a9ff4 | keep | L1 leaf regularization alpha 5 ===
+  holdout=0.7616
+=== [48] 2f07758 | discard | gradient-based half-row sampling with L1 regularization ===
+  SKIP: status discard
+=== [49] 19903c8 | discard | L1 alpha 20; excessive shrinkage ===
+  SKIP: status discard
+=== [50] 90f645e | keep | single L1 model with both geometry orientations ===
+  holdout=0.7607
+=== [51] 992bae4 | discard | minimum child weight 5 under L1 shrinkage ===
+  SKIP: status discard
+=== [52] 75b94fe | discard | category threshold 64 with L1 regularization ===
+  SKIP: status discard
+=== [53] b8c3fd5 | discard | remove all airport geometry under L1 ===
+  SKIP: status discard
+=== [54] a9cb749 | keep | original geometry only under L1; similar AUC and faster ===
+  holdout=0.7609
+=== [55] abb5dbc | keep | 1200 rounds with L1 alpha 5 ===
+  holdout=0.7634
+=== [56] e1bea75 | discard | 2400 rounds under L1; begins overfitting ===
+  SKIP: status discard
+=== [57] 2c77ae4 | discard | 1800-round midpoint; no gain ===
+  SKIP: status discard
+=== [58] 7b9f9f0 | discard | depth ten under L1 at 1200 rounds ===
+  SKIP: status discard
+=== [59] af1dfd6 | crash | DART 400 rounds exceeded 60-second training limit ===
+  SKIP: status crash
+=== [60] bdbf3ec | discard | linear learning-rate decay at equal total shrinkage ===
+  SKIP: status discard
+=== [61] 98561d0 | discard | alpha two loses much of the L1 benefit ===
+  SKIP: status discard
+=== [62] 8faa7a9 | discard | alpha ten is too strong at 1200 rounds ===
+  SKIP: status discard
+=== [63] fe21070 | discard | alpha 7.5 confirms moderate L1 optimum near five ===
+  SKIP: status discard
+=== [64] 232df74 | discard | disjoint regional and route interaction groups underfit ===
+  SKIP: status discard
+=== [65] 3fd58d9 | discard | categorical threshold eight under L1 ===
+  SKIP: status discard
+=== [66] fa6b546 | discard | lambda one after L1 is slightly weaker ===
+  SKIP: status discard
+=== [67] f68f28e | keep | month and weekday help with L1 regularization ===
+  holdout=0.7645
+=== [68] c3c0f26 | discard | weekday without month loses calendar gain ===
+  SKIP: status discard
+=== [69] 01f46a0 | discard | month without weekday also loses calendar gain ===
+  SKIP: status discard
+=== [70] 85eb0b5 | discard | three-dimensional spherical-chord geometry ===
+  SKIP: status discard
+=== [71] 6ce9e07 | discard | two-dimensional spherical-chord geometry ===
+  SKIP: status discard
+=== [72] f2db3ff | discard | ordered carrier-date rate hurts despite valid row-level semantics ===
+  SKIP: status discard
+=== [73] ca87690 | keep | two-view ensemble with longer boosting and calendar features ===
+  holdout=0.7657
+=== [74] e3a804b | discard | rotated member alone cannot match two-view ensemble ===
+  SKIP: status discard
+=== [75] 0f6bd05 | keep | node-level column sampling gives a small ensemble gain ===
+  holdout=0.7663
+=== [76] 82728c9 | discard | uniform row sampling with scaled penalties still hurts ===
+  SKIP: status discard
+=== [77] 1dac5a0 | discard | 1800-round ensemble overfits relative to 1200 rounds ===
+  SKIP: status discard
+=== [78] b5bbc29 | discard | single model with both views loses 0.0011 AUC ===
+  SKIP: status discard
+=== [79] ee84567 | discard | day-of-month grouping adds harmful redundancy ===
+  SKIP: status discard
+=== [80] 354c650 | discard | 75/25 original-view blend loses to equal averaging ===
+  SKIP: status discard
+=== [81] cc970a7 | discard | circular departure-time features add cost without gain ===
+  SKIP: status discard
+=== [82] 812d7ef | keep | remove destination geometry with near-equal AUC and faster evaluation ===
+  holdout=0.7655
+=== [83] f5583b9 | discard | removing raw distance gives little speed benefit and loses AUC ===
+  SKIP: status discard
+=== [84] e6dcbda | discard | half learning rate gives negligible gain while doubling trees ===
+  SKIP: status discard
+=== [85] cd88426 | discard | coarser bins give no useful efficiency improvement ===
+  SKIP: status discard
+=== [86] 5c041c4 | discard | depth seven loses useful interactions ===
+  SKIP: status discard
+=== [87] e368e7e | discard | small split-gain threshold still removes useful detail ===
+  SKIP: status discard
+=== [88] 35d93ad | discard | 600 larger-step rounds lose too much AUC despite smaller model ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===
