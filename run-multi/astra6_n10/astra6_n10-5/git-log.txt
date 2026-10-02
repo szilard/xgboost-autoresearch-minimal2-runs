@@ -1,0 +1,216 @@
+commit a8dea7406c3042a7bb41f1cc597fa8729488ed0e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 11:28:17 2026 +0000
+
+    Test histogram capacity above all numeric feature cardinalities
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c9441255398f9a7414134c601f24b8107071dbcf
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 11:26:05 2026 +0000
+
+    Test an additional interaction level under strong averaging
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4ba079907d61009572280c0d5087c9863209e69a
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 11:22:11 2026 +0000
+
+    Test decreasing learning rates at matched total boosting strength
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 0cf64a1f8ea9ea60b66b6689ea4ba2b66454b098
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 11:15:57 2026 +0000
+
+    Test recurring weekday interactions alongside individual dates
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fe1b7ec34e2d874c681199d4bcf32c5c86a66259
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 11:07:20 2026 +0000
+
+    Test finer regional interactions under stronger tree averaging
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e770ebd030b2e4b3c06a17721237a4a572c6c28c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 11:05:36 2026 +0000
+
+    Test stronger within-round averaging at matched total tree budget
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit c987e4311a025fce3abaedf3393b54403b29496c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 10:59:08 2026 +0000
+
+    Add local spectral airport geometry learned from training distances
+
+ train.py | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit ce60acd98ee3fcfd1bb7bcd66843a9fcd547750a
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 10:34:19 2026 +0000
+
+    Reallocate fixed tree budget toward stronger within-round averaging
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 49eae26b5045271fa0d80e58d4ab2165ae546a63
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 10:28:20 2026 +0000
+
+    Use smaller boosting updates for the averaged geographic model
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 018f3a0126741f58057f3566094f9457dad9e550
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 10:25:38 2026 +0000
+
+    Add diagonal geographic projections for regional splits
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 6b63ebf6969b7c10b271a2e2ac7ab168e4b299a4
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 10:23:50 2026 +0000
+
+    Increase numeric histogram resolution for time and geography
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 45209f972c2490750c0bd8ffdef26dd3897b087e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 10:09:09 2026 +0000
+
+    Average sampled trees within each boosting round
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit c41d81751ae417425a9c873e3051508732863f18
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 10:03:37 2026 +0000
+
+    Require stronger support for geographic calendar leaves
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c51fccbccb3137b6e57d6a03e6b9351a177226a1
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 10:02:49 2026 +0000
+
+    Ablate the third airport embedding coordinate
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit cb509acd55e5cf3f5a520435cebf5c461f66cb7a
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 10:01:39 2026 +0000
+
+    Shrink geographic and calendar leaf predictions with L2 penalty
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit dc58fd7db0646910f979bd3150d7a1a840e97143
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 09:58:39 2026 +0000
+
+    Test geographic airport representation without airport categories
+
+ train.py | 27 ++++++++++++++++++++++++++-
+ 1 file changed, 26 insertions(+), 1 deletion(-)
+
+commit ad433ddcb78dfca938576b1cd9f9a8ede7233507
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 09:52:59 2026 +0000
+
+    Ablate calendar components already represented by flight date
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 91078a9b9cf4b4694ace1d3eec2f2e867f866cff
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 09:44:07 2026 +0000
+
+    Use smaller boosting steps at matched total boosting strength
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit d2a5ebd03530bcac6a65487fa116d6b072f02799
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 09:42:13 2026 +0000
+
+    Regularize date interactions with larger minimum leaf weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1367ab9c2397bf452d4d014e46f62e6482b03715
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 09:41:13 2026 +0000
+
+    Add calendar date category for shared daily disruptions
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 83aa804ecb9966ae96dedc9a782aa54e4cb5786a
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 09:40:03 2026 +0000
+
+    Remove redundant categorical membership filtering
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d5db16a0a6fda74663b943c54c1f9c7dfa5f8602
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 09:37:32 2026 +0000
+
+    Increase boosting rounds to test baseline underfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

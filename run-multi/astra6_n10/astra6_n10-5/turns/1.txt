@@ -1,0 +1,9 @@
+Setup is ready on fresh branch `oct2`.
+
+- Required data files exist and dependencies import successfully.
+- `results.tsv` contains the required header; `research-log.md` records setup.
+- Baseline code is unchanged; the clock hasn’t started.
+
+I accidentally read `prepare.py` before seeing its restriction. It wasn’t executed, and no held-out data was accessed.
+
+[program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md) requires confirmation before starting. Say **go** to begin the two-hour run with the baseline.

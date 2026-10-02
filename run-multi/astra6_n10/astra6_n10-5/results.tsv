@@ -1,0 +1,68 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline
+d5db16a	0.7342	keep	Increase trees from 30 to 300
+1bc04f9	0.7253	discard	Increase trees from 300 to 1000
+83aa804	0.7342	keep	Simplify category conversion; remove redundant filtering
+1367ab9	0.7500	keep	Add categorical calendar date
+d2a5ebd	0.7517	keep	Set min_child_weight=20 with date feature
+86f3f5d	0.7460	discard	Increase regularized tree depth from 6 to 8
+91078a9	0.7525	keep	Use 600 trees at learning_rate=0.05
+08b3321	0.7525	discard	Add numeric day-of-year alongside date category
+e834e0a	0.7522	discard	Limit categorical split threshold to 16
+f943154	0.7342	discard	Add route categorical interaction
+fd28d69	0.7479	discard	Use subsample=0.8 for stochastic boosting
+f81b566	0.7356	discard	Use one-hot categorical split strategy for all features
+8ab7c16	0.7498	discard	One-hot splits with 2000 trees and depth 10
+ad433dd	0.7526	keep	Remove redundant month/day/weekday categorical inputs
+a647682	0.7518	discard	Add departure hour and minute features
+b4a2ce2	0.7499	discard	Training-only 10 percent validation with early stopping
+1685830	0.7518	discard	Add airport distance-graph embedding coordinates
+dc58fd7	0.7561	keep	Replace airport categories with learned distance coordinates
+9cf889f	0.7550	discard	Increase depth to 8 with numeric airport geography
+cb509ac	0.7576	keep	Set reg_lambda=20 for geographic model
+c51fccb	0.7579	keep	Use two airport embedding dimensions instead of three
+c41d817	0.7591	keep	Increase minimum child weight to 100
+2c25a2a	0.7534	discard	Add gamma=5 split-gain penalty
+a0b0d22	0.7591	discard	Add learned origin and destination region categories
+bfd4afd	0.7471	discard	Add origin-region by calendar-date category
+45209f9	0.7617	keep	Boost four sampled trees per round
+3ac54d3	0.7610	discard	Remove within-round averaging but retain row/column sampling
+9a1eda4	0.7616	discard	Add route-relative departure-time median lookup
+21c3810	0.7587	discard	Use sampled pairwise logistic ranking objective
+c4abe21	0.7617	discard	Use loss-guided growth with 31 leaves
+a6a20c3	0.7617	discard	Refine geographic embedding using observed-route stress
+17ad95d	0.7612	discard	Constrain trees to additive origin/destination feature groups
+6b63ebf	0.7618	keep	Increase histogram max_bin from 256 to 1024
+018f3a0	0.7635	keep	Add sum/difference geographic projections
+f28748e	0.7631	discard	Expand category partition threshold to 512
+49eae26	0.7638	keep	Use 1200 averaged rounds at learning_rate=0.025
+e0392e7	0.7635	discard	Add sine/cosine annual seasonality features
+9c46136	0.7632	discard	Use gradient-based sampling with subsample=0.5
+ce60acd	0.7640	keep	Use eight trees per round at matched total tree budget
+8a99d53	0.7633	discard	Add continuous route-direction features from airport geometry
+0a79e59	0.7633	discard	Add fixed numeric airport identity codes alongside geography
+2b15c0c	0.7637	discard	Average two independently boosted models at fixed total tree budget
+ab6096e	0.7597	discard	Use singleton carrier splits while retaining grouped FlightDate splits
+599ccec	0.7638	discard	Add intermediate geographic projection directions
+401c67e	0.7632	discard	Increase leaf-weight L2 regularization from 20 to 100
+f385c1a	0.7621	discard	Reduce tree depth from six to five
+9071072	0.7639	discard	Add sine and cosine features for departure minute of day
+d8db291	0.7620	discard	Remove per-node column sampling while retaining row sampling
+ec5a136	0.7632	discard	Warm-start with 200 shallow rounds before 600 depth-six rounds
+c987e43	0.7642	keep	Add four local spectral airport coordinates from training distances
+f7a3f3e	0.7635	discard	Replace combined airport geometry with spectral-only coordinates
+3254722	0.7606	discard	Fit airport and date target means on a disjoint 20 percent training partition
+e770ebd	0.7643	keep	Use sixteen trees per round at matched total tree budget
+fe1b7ec	0.7647	keep	Reduce minimum child weight to 50 under sixteen-tree averaging
+5eedfb5	0.7646	discard	Add typical unique-route distance lookups for each airport
+b4d75f0	0.7615	discard	Add L1 leaf-weight regularization with alpha=10
+461f747	0.7641	discard	Increase boosting rounds from 300 to 400 at fixed learning rate
+0cf64a1	0.7648	keep	Restore weekday as a categorical feature beside FlightDate
+30ace33	0.7640	discard	Remove local spectral geometry after the averaging and support improvements
+e175e6b	0.7638	discard	Downweight geographic columns during feature sampling
+4ba0799	0.7649	keep	Use decreasing learning rates with the same total rate sum and tree count
+3b22ae5	0.7632	discard	Use all training rows in each tree while preserving column sampling
+c944125	0.7650	keep	Increase tree depth to seven under the averaged scheduled-rate model
+a8dea74	0.7651	keep	Increase histogram capacity to 2048 bins
+b4347d2	0.7628	discard	Add a grouped categorical departure-hour feature
+bee1f30	0.7649	discard	Use thirty-two trees per round at matched total tree count and rate sum
