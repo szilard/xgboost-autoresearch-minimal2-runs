@@ -1,0 +1,10 @@
+Setup is ready on branch `oct2`.
+
+- Data files and required dependencies verified.
+- `results.tsv` initialized with its header; `research-log.md` created.
+- Baseline code unchanged; no experiments run.
+- Two-hour clock remains stopped, as [program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md) requires until your confirmation.
+
+Say **go** to begin.
+
+Setup note: I accidentally read `prepare.py` before seeing its restriction. This is documented in the research log; it was not executed, and no held-out data was accessed.

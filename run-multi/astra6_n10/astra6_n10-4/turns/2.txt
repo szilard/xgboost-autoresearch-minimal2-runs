@@ -1,0 +1,5 @@
+Completed **78 experiments**. Best Eval AUC: **0.7684**, up from **0.7203** (+0.0481).
+
+Best model retained at `a43b44b` on branch `oct2`. Saved artifact checks passed; clock stopped.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal2/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal2/research-log.md)

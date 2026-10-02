@@ -1,0 +1,79 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline: 30 trees, depth 6, eta 0.1
+ecfd411	0.7342	keep	300 trees; remaining baseline settings unchanged
+b04619f	0.7264	discard	900 trees; overfits relative to 300
+ae7eba3	0.7503	keep	add native categorical date (month-day)
+4fada7c	0.7503	keep	remove redundant category membership masks
+c61d10f	0.7507	keep	min_child_weight=20 with categorical date
+8c82606	0.7524	keep	max_cat_threshold=16
+a6858b3	0.7471	discard	depth 4 with regularized categorical date
+6489270	0.7522	discard	depth 8 with regularized categorical date
+4127a7d	0.7511	discard	add numeric day-of-year alongside categorical date
+74f90b0	0.7537	keep	600 trees at learning_rate=0.05
+1c2a071	0.7436	discard	subsample=0.8
+3d78f98	0.7457	discard	add high-cardinality route category
+0a1ba39	0.7356	discard	one-hot categorical splits at 600 trees
+4403174	0.7461	discard	one-hot categorical splits at 3000 trees
+0172af5	0.7537	keep	cache category dtypes and construct feature DataFrame once
+306b089	0.7458	discard	smoothed origin/date and destination/date rates excluding exact predictor matches
+9e36cc6	0.7546	discard	airport/date rates with deterministic jitter
+f18c0f9	0.7547	discard	200 trees with jittered airport/date rates
+aefbef7	0.7527	discard	add scheduled departure hour and minute
+ca4ff3e	0.7564	keep	reg_lambda=20
+27c64b2	0.7503	discard	gamma=2 with reg_lambda=20
+93835a7	0.7451	discard	max_cat_threshold=4
+02f2961	0.7601	keep	lossguide growth with 64 leaves and no depth cap
+9436b21	0.7598	discard	lossguide max_leaves=128
+57101d3	0.7593	discard	remove Month, DayofMonth, and DayOfWeek; retain Date
+f805877	0.7627	keep	reg_lambda=100 in 64-leaf lossguide model
+3102d59	0.7668	keep	reg_alpha=5 with reg_lambda=100
+0a03db6	0.7668	discard	1200 rounds with strong L1/L2 regularization
+9f27e06	0.7668	discard	add carrier-origin category
+5c247bb	0.7623	discard	global rank:pairwise objective with mean sampling
+566bfbd	0.0000	crash	DART 250 trees eta 0.1; training timeout
+13ff9b0	0.7611	discard	120-tree dropout model at learning_rate=0.2
+4c5648e	0.7650	discard	10% training-only early stopping; selected 602 rounds
+6a6bb48	0.7657	discard	separate Origin and Dest interaction groups
+5f8497d	0.7672	keep	colsample_bynode=0.8
+1c25951	0.7675	keep	num_parallel_tree=3 with node-level feature sampling
+1b17c27	0.7677	keep	max_bin=1024
+7dadc44	0.7560	discard	reg_alpha=20
+e091077	0.7672	discard	departure minutes relative to training route median
+8852ad9	0.7679	discard	two-dimensional train-route airport coordinates
+10e2531	0.7677	discard	12 train-derived airport regions
+1ec94ff	0.7677	discard	soft vote of three independently trained 600-tree boosters
+6369ae2	0.7671	discard	learning rate decays from 0.1 to 0.02 over 600 rounds
+bdd8c2c	0.7663	discard	reg_lambda=300
+edd1d0f	0.7676	discard	label-smoothed logistic objective with targets 0.05/0.95
+b82421b	0.7682	keep	add Monday-aligned categorical WeekBlock
+ab12ee0	0.7675	discard	remove WeekBlock and raise colsample_bynode to 0.9
+71cf02a	0.7670	discard	max_cat_threshold=64 under strong regularization
+b576710	0.7628	discard	max_leaves=32
+0471adc	0.7677	discard	remove min_child_weight=20; use default 1
+7702866	0.0000	crash	tree_method=approx at full 600-round three-tree capacity; timeout
+3470a0e	0.7664	discard	Approx split search with 300 rounds, one tree per round and eta 0.1
+3075326	0.7654	discard	reg_alpha=10 instead of 5
+7a9594c	0.7676	discard	Append sine and cosine of scheduled departure minutes
+4dbc523	0.7653	discard	Origin-Month and Dest-Month native categorical crosses
+8c51f25	0.7680	discard	1200 rounds at eta 0.025; same nominal shrinkage as 600 at 0.05
+3cc2c3c	0.7683	keep	Remove raw Month and DayofMonth; retain Date, WeekBlock and DayOfWeek
+8eaa05f	0.7675	discard	Single tree per round after calendar simplification
+f8c9bde	0.7683	keep	Remove DayOfWeek; use only Date and WeekBlock for calendar inputs
+b80ecce	0.7676	discard	Custom exponential margin loss with logistic-consistent scaling
+6e0aed7	0.7684	keep	colsample_bytree=0.8 instead of colsample_bynode=0.8
+968af2b	0.7662	discard	Gradient-based CPU row sampling at subsample 0.5
+73180cc	0.7679	discard	Double sampling weights for Date and WeekBlock
+a43b44b	0.7684	keep	Cap adaptive trees at depth 16 while retaining 64 leaves
+45036eb	0.7683	discard	Six parallel trees per boosting round with tree-level sampling
+6626ada	0.7681	discard	Use categorical integer day-of-year and share calculation with week
+20051b2	0.7684	discard	Add categorical three-hour departure blocks
+8aba144	0.7679	discard	300 boosting rounds at eta 0.1
+2216704	0.7681	discard	Further cap adaptive trees to max_depth 12
+e380802	0.0000	crash	Post-training gamma=1 pruning; fitted estimator update-state handoff failed
+20a3b8c	0.0000	crash	Pruning through fresh sklearn estimator failed on QuantileDMatrix
+21adecb	0.0000	crash	Native DMatrix post-training gamma=1 pruning exceeded training limit
+0300b31	0.7664	discard	One-hot splits only for carrier via max_cat_to_onehot 32
+221e410	0.7684	discard	max_bin 4096 for near-exhaustive numeric resolution
+fb936e0	0.7681	discard	Remove Distance from model inputs
+4a14c82	0.7679	discard	Uniform subsample 0.9 with penalties/Hessian threshold scaled by 0.9
+4bbaadb	0.7682	discard	Increase min_child_weight from 20 to 50

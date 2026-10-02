@@ -1,0 +1,189 @@
+commit a43b44bd01457e80bf5d9bb6e068d6f0326b3575
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 09:00:32 2026 +0000
+
+    Test depth cap on adaptive categorical trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6e0aed76cf08bfbe74779756016d7644735745f3
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 08:56:29 2026 +0000
+
+    Test feature randomization per tree
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f8c9bde613e43dabfc95273312e6093a67469112
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 08:52:50 2026 +0000
+
+    Test date and week as the only calendar inputs
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3cc2c3ca6d94aa6541c0d8e0af27c05a4a390b23
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 08:50:26 2026 +0000
+
+    Test removing calendar columns subsumed by date and week
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b82421b57ac7f4be356a095393eeec7d0f1fa8c1
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 08:30:27 2026 +0000
+
+    Test categorical calendar-week pooling
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 1b17c27f07b29783fbcceb11bff8b330daca8e61
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 08:11:40 2026 +0000
+
+    Test finer histogram bins for time and distance
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1c2595166d24586f8cbb9d882cc1d8af97452cef
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 08:10:27 2026 +0000
+
+    Test three randomized trees per boosting round
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5f8497dfa21488d91f8512553f64fa8503098a56
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 08:09:03 2026 +0000
+
+    Test random feature candidates at each split
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3102d5949fb22f190c1bac2d624a9d337a2ad73e
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:56:54 2026 +0000
+
+    Test L1 regularization alongside strong L2
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f805877f287803a041ff6d52da9d030dc48c2880
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:55:47 2026 +0000
+
+    Test stronger shrinkage in adaptive trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 02f296140dba838c96bb298a982be6c3722e24fb
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:52:25 2026 +0000
+
+    Test adaptive growth with a 64-leaf budget
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit ca4ff3ea31e351846895f1ac6213d5cadbb4adf5
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:49:46 2026 +0000
+
+    Test stronger L2 regularization of leaf weights
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0172af5e21d9f898d6656aebdf1a29d7ff180ec0
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:40:36 2026 +0000
+
+    Cache categorical dtypes and assemble feature frame once
+
+ train.py | 21 ++++++++++++---------
+ 1 file changed, 12 insertions(+), 9 deletions(-)
+
+commit 74f90b06634a08e7326f0775a82d7ce494eb58e7
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:34:23 2026 +0000
+
+    Test smaller boosting steps at matched total shrinkage
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 8c8260698f3a4188e35c18bfb3fce0c0f743acca
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:30:01 2026 +0000
+
+    Test smaller categorical partitions
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c61d10ff94fa4f42f7535d1b1c711dd80715f105
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:29:04 2026 +0000
+
+    Test stronger minimum child weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4fada7c57e59dd252fb30fd222d914dec4432d8c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:27:38 2026 +0000
+
+    Simplify fixed-level categorical conversion
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ae7eba32d9da1a1ca9d421e2d7a7c118c8db7d9c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:26:20 2026 +0000
+
+    Add categorical month-day interaction
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit ecfd411590d1f1683e07acec79a562e19ab0e18b
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 07:23:32 2026 +0000
+
+    Test 300 boosting rounds against starter baseline
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)

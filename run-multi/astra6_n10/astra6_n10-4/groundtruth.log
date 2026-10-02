@@ -1,0 +1,158 @@
+=== [2] 92e43e6 | keep | baseline: 30 trees, depth 6, eta 0.1 ===
+  holdout=0.7155
+=== [3] ecfd411 | keep | 300 trees; remaining baseline settings unchanged ===
+  holdout=0.7315
+=== [4] b04619f | discard | 900 trees; overfits relative to 300 ===
+  SKIP: status discard
+=== [5] ae7eba3 | keep | add native categorical date (month-day) ===
+  holdout=0.7458
+=== [6] 4fada7c | keep | remove redundant category membership masks ===
+  holdout=0.7458
+=== [7] c61d10f | keep | min_child_weight=20 with categorical date ===
+  holdout=0.7460
+=== [8] 8c82606 | keep | max_cat_threshold=16 ===
+  holdout=0.7468
+=== [9] a6858b3 | discard | depth 4 with regularized categorical date ===
+  SKIP: status discard
+=== [10] 6489270 | discard | depth 8 with regularized categorical date ===
+  SKIP: status discard
+=== [11] 4127a7d | discard | add numeric day-of-year alongside categorical date ===
+  SKIP: status discard
+=== [12] 74f90b0 | keep | 600 trees at learning_rate=0.05 ===
+  holdout=0.7486
+=== [13] 1c2a071 | discard | subsample=0.8 ===
+  SKIP: status discard
+=== [14] 3d78f98 | discard | add high-cardinality route category ===
+  SKIP: status discard
+=== [15] 0a1ba39 | discard | one-hot categorical splits at 600 trees ===
+  SKIP: status discard
+=== [16] 4403174 | discard | one-hot categorical splits at 3000 trees ===
+  SKIP: status discard
+=== [17] 0172af5 | keep | cache category dtypes and construct feature DataFrame once ===
+  holdout=0.7486
+=== [18] 306b089 | discard | smoothed origin/date and destination/date rates excluding exact predictor matches ===
+  SKIP: status discard
+=== [19] 9e36cc6 | discard | airport/date rates with deterministic jitter ===
+  SKIP: status discard
+=== [20] f18c0f9 | discard | 200 trees with jittered airport/date rates ===
+  SKIP: status discard
+=== [21] aefbef7 | discard | add scheduled departure hour and minute ===
+  SKIP: status discard
+=== [22] ca4ff3e | keep | reg_lambda=20 ===
+  holdout=0.7509
+=== [23] 27c64b2 | discard | gamma=2 with reg_lambda=20 ===
+  SKIP: status discard
+=== [24] 93835a7 | discard | max_cat_threshold=4 ===
+  SKIP: status discard
+=== [25] 02f2961 | keep | lossguide growth with 64 leaves and no depth cap ===
+  holdout=0.7552
+=== [26] 9436b21 | discard | lossguide max_leaves=128 ===
+  SKIP: status discard
+=== [27] 57101d3 | discard | remove Month, DayofMonth, and DayOfWeek; retain Date ===
+  SKIP: status discard
+=== [28] f805877 | keep | reg_lambda=100 in 64-leaf lossguide model ===
+  holdout=0.7566
+=== [29] 3102d59 | keep | reg_alpha=5 with reg_lambda=100 ===
+  holdout=0.7611
+=== [30] 0a03db6 | discard | 1200 rounds with strong L1/L2 regularization ===
+  SKIP: status discard
+=== [31] 9f27e06 | discard | add carrier-origin category ===
+  SKIP: status discard
+=== [32] 5c247bb | discard | global rank:pairwise objective with mean sampling ===
+  SKIP: status discard
+=== [33] 566bfbd | crash | DART 250 trees eta 0.1; training timeout ===
+  SKIP: status crash
+=== [34] 13ff9b0 | discard | 120-tree dropout model at learning_rate=0.2 ===
+  SKIP: status discard
+=== [35] 4c5648e | discard | 10% training-only early stopping; selected 602 rounds ===
+  SKIP: status discard
+=== [36] 6a6bb48 | discard | separate Origin and Dest interaction groups ===
+  SKIP: status discard
+=== [37] 5f8497d | keep | colsample_bynode=0.8 ===
+  holdout=0.7611
+=== [38] 1c25951 | keep | num_parallel_tree=3 with node-level feature sampling ===
+  holdout=0.7616
+=== [39] 1b17c27 | keep | max_bin=1024 ===
+  holdout=0.7615
+=== [40] 7dadc44 | discard | reg_alpha=20 ===
+  SKIP: status discard
+=== [41] e091077 | discard | departure minutes relative to training route median ===
+  SKIP: status discard
+=== [42] 8852ad9 | discard | two-dimensional train-route airport coordinates ===
+  SKIP: status discard
+=== [43] 10e2531 | discard | 12 train-derived airport regions ===
+  SKIP: status discard
+=== [44] 1ec94ff | discard | soft vote of three independently trained 600-tree boosters ===
+  SKIP: status discard
+=== [45] 6369ae2 | discard | learning rate decays from 0.1 to 0.02 over 600 rounds ===
+  SKIP: status discard
+=== [46] bdd8c2c | discard | reg_lambda=300 ===
+  SKIP: status discard
+=== [47] edd1d0f | discard | label-smoothed logistic objective with targets 0.05/0.95 ===
+  SKIP: status discard
+=== [48] b82421b | keep | add Monday-aligned categorical WeekBlock ===
+  holdout=0.7630
+=== [49] ab12ee0 | discard | remove WeekBlock and raise colsample_bynode to 0.9 ===
+  SKIP: status discard
+=== [50] 71cf02a | discard | max_cat_threshold=64 under strong regularization ===
+  SKIP: status discard
+=== [51] b576710 | discard | max_leaves=32 ===
+  SKIP: status discard
+=== [52] 0471adc | discard | remove min_child_weight=20; use default 1 ===
+  SKIP: status discard
+=== [53] 7702866 | crash | tree_method=approx at full 600-round three-tree capacity; timeout ===
+  SKIP: status crash
+=== [54] 3470a0e | discard | Approx split search with 300 rounds, one tree per round and eta 0.1 ===
+  SKIP: status discard
+=== [55] 3075326 | discard | reg_alpha=10 instead of 5 ===
+  SKIP: status discard
+=== [56] 7a9594c | discard | Append sine and cosine of scheduled departure minutes ===
+  SKIP: status discard
+=== [57] 4dbc523 | discard | Origin-Month and Dest-Month native categorical crosses ===
+  SKIP: status discard
+=== [58] 8c51f25 | discard | 1200 rounds at eta 0.025; same nominal shrinkage as 600 at 0.05 ===
+  SKIP: status discard
+=== [59] 3cc2c3c | keep | Remove raw Month and DayofMonth; retain Date, WeekBlock and DayOfWeek ===
+  holdout=0.7633
+=== [60] 8eaa05f | discard | Single tree per round after calendar simplification ===
+  SKIP: status discard
+=== [61] f8c9bde | keep | Remove DayOfWeek; use only Date and WeekBlock for calendar inputs ===
+  holdout=0.7632
+=== [62] b80ecce | discard | Custom exponential margin loss with logistic-consistent scaling ===
+  SKIP: status discard
+=== [63] 6e0aed7 | keep | colsample_bytree=0.8 instead of colsample_bynode=0.8 ===
+  holdout=0.7631
+=== [64] 968af2b | discard | Gradient-based CPU row sampling at subsample 0.5 ===
+  SKIP: status discard
+=== [65] 73180cc | discard | Double sampling weights for Date and WeekBlock ===
+  SKIP: status discard
+=== [66] a43b44b | keep | Cap adaptive trees at depth 16 while retaining 64 leaves ===
+  holdout=0.7629
+=== [67] 45036eb | discard | Six parallel trees per boosting round with tree-level sampling ===
+  SKIP: status discard
+=== [68] 6626ada | discard | Use categorical integer day-of-year and share calculation with week ===
+  SKIP: status discard
+=== [69] 20051b2 | discard | Add categorical three-hour departure blocks ===
+  SKIP: status discard
+=== [70] 8aba144 | discard | 300 boosting rounds at eta 0.1 ===
+  SKIP: status discard
+=== [71] 2216704 | discard | Further cap adaptive trees to max_depth 12 ===
+  SKIP: status discard
+=== [72] e380802 | crash | Post-training gamma=1 pruning; fitted estimator update-state handoff failed ===
+  SKIP: status crash
+=== [73] 20a3b8c | crash | Pruning through fresh sklearn estimator failed on QuantileDMatrix ===
+  SKIP: status crash
+=== [74] 21adecb | crash | Native DMatrix post-training gamma=1 pruning exceeded training limit ===
+  SKIP: status crash
+=== [75] 0300b31 | discard | One-hot splits only for carrier via max_cat_to_onehot 32 ===
+  SKIP: status discard
+=== [76] 221e410 | discard | max_bin 4096 for near-exhaustive numeric resolution ===
+  SKIP: status discard
+=== [77] fb936e0 | discard | Remove Distance from model inputs ===
+  SKIP: status discard
+=== [78] 4a14c82 | discard | Uniform subsample 0.9 with penalties/Hessian threshold scaled by 0.9 ===
+  SKIP: status discard
+=== [79] 4bbaadb | discard | Increase min_child_weight from 20 to 50 ===
+  SKIP: status discard
+
+=== DONE: results written to groundtruth_all.tsv ===
