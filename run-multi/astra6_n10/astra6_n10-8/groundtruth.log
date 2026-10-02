@@ -1,0 +1,136 @@
+=== [2] 92e43e6 | keep | baseline: 30 trees depth 6 learning rate 0.1 ===
+  holdout=0.7155
+=== [3] 2173302 | keep | 300 trees; unchanged depth 6 and learning rate 0.1 ===
+  holdout=0.7315
+=== [4] 81d7588 | keep | remove redundant unknown-category masking; equivalent features ===
+  holdout=0.7315
+=== [5] 657bbfc | keep | add numeric day-of-year and categorical flight date ===
+  holdout=0.7450
+=== [6] c9843e8 | discard | increase depth 6 to 8 with calendar features ===
+  SKIP: status discard
+=== [7] 89ac008 | keep | min_child_weight 20 at depth 6 with calendar features ===
+  holdout=0.7460
+=== [8] 9acdaf9 | discard | add OriginDate categorical cross; cache category indexes ===
+  SKIP: status discard
+=== [9] b661458 | keep | max_cat_threshold 16 to regularize categorical partitions ===
+  holdout=0.7474
+=== [10] b141cb3 | discard | 600 trees at learning rate 0.05; matched boosting strength ===
+  SKIP: status discard
+=== [11] dab4d24 | discard | remove categorical FlightDate; retain numeric day-of-year ===
+  SKIP: status discard
+=== [12] f9e0b10 | keep | add 2D airport coordinates inferred from training route distances ===
+  holdout=0.7500
+=== [13] 76be65b | keep | depth 8 with geographic features and stronger categorical regularization ===
+  holdout=0.7515
+=== [14] 1aa08cb | discard | add OriginRegionDate using 12 unsupervised airport regions ===
+  SKIP: status discard
+=== [15] 775c03b | discard | add departure hour and minute-of-hour numeric features ===
+  SKIP: status discard
+=== [16] 46f4d0a | discard | subsample 0.8 and colsample_bytree 0.8 ===
+  SKIP: status discard
+=== [17] 8c20eb0 | discard | pairwise ranking objective with global group and two sampled pairs per row ===
+  SKIP: status discard
+=== [18] 7463074 | discard | early stopping on 10 percent training split; learning rate 0.05 ===
+  SKIP: status discard
+=== [19] 6bcd483 | discard | retain three rather than two airport geometry coordinates ===
+  SKIP: status discard
+=== [20] b1f7634 | discard | honest date target lookups on reserved 25 percent; trees on disjoint 75 percent ===
+  SKIP: status discard
+=== [21] 36bab5e | keep | reg_lambda 20 for stronger L2 leaf-weight shrinkage ===
+  holdout=0.7542
+=== [22] b308ee8 | discard | three parallel trees per round; row and per-node feature sampling 0.8 ===
+  SKIP: status discard
+=== [23] 3892c89 | keep | cache category dtypes and construct feature frame once; identical features ===
+  holdout=0.7542
+=== [24] 055e0f2 | keep | increase reg_lambda from 20 to 100 ===
+  holdout=0.7561
+=== [25] 5451bf3 | keep | upper regularization bracket reg_lambda 500 ===
+  holdout=0.7559
+=== [26] fd37798 | discard | force native one-hot categorical splits with threshold 512 ===
+  SKIP: status discard
+=== [27] 1a8990e | discard | one-hot categories with 1000 trees and lambda 20 to test underfitting ===
+  SKIP: status discard
+=== [28] 328588b | discard | add training-fitted CarrierOrigin and CarrierDest categorical crosses ===
+  SKIP: status discard
+=== [29] 354acd1 | discard | max_bin 512 for finer time calendar and geography thresholds ===
+  SKIP: status discard
+=== [30] 4106729 | discard | constrain UniqueCarrier to an additive effect separate from other inputs ===
+  SKIP: status discard
+=== [31] 0f416c9 | keep | lossguide growth with 64 leaves and unrestricted depth ===
+  holdout=0.7579
+=== [32] 5c0e2c0 | keep | increase lossguide max_leaves from 64 to 128 ===
+  holdout=0.7577
+=== [33] 602f1fa | discard | refine two-dimensional airport geometry with metric MDS ===
+  SKIP: status discard
+=== [34] 2a9ce00 | crash | OriginDate categorical cross under lambda 500 and category threshold 16 ===
+  SKIP: status crash
+=== [35] b63c618 | discard | 900 boosting rounds with lambda 500 and 128 loss-guided leaves ===
+  SKIP: status discard
+=== [36] 78a6370 | keep | min_child_weight 100 with 300 regularized loss-guided rounds ===
+  holdout=0.7593
+=== [37] 04863ec | discard | gamma 1 to reject weak loss-guided splits ===
+  SKIP: status discard
+=== [38] 506d2d2 | keep | add sine and cosine of scheduled departure minutes ===
+  holdout=0.7595
+=== [39] acd917d | keep | add departure-clock plus distance travel-time proxy ===
+  holdout=0.7598
+=== [40] 18c7a8a | discard | remove standalone DayofMonth while retaining full date features ===
+  SKIP: status discard
+=== [41] 13f8f44 | discard | reg_alpha 10 alongside strong L2 shrinkage ===
+  SKIP: status discard
+=== [42] ca43bb3 | keep | 500 rounds with learning rate 0.12 decayed by 0.997 per round ===
+  holdout=0.7596
+=== [43] ed6c26d | discard | gradient-based CPU sampling with subsample 0.5 ===
+  SKIP: status discard
+=== [44] 3d4d94e | keep | add two route-direction features from airport coordinate differences ===
+  holdout=0.7596
+=== [45] 061c8ab | discard | add sine and cosine of day-of-year for annual seasonality ===
+  SKIP: status discard
+=== [46] e447284 | discard | tighten max_cat_threshold from 16 to 4 ===
+  SKIP: status discard
+=== [47] ed2890d | discard | broaden max_cat_threshold from 16 to 64 under strong regularization ===
+  SKIP: status discard
+=== [48] d33dacb | crash | bounded DART dropout with 300 rounds and 64 leaves ===
+  SKIP: status crash
+=== [49] 2d88eec | discard | add departure minutes relative to a train-fitted route median ===
+  SKIP: status discard
+=== [50] da43460 | discard | add diagonal airport coordinate projections for both endpoints ===
+  SKIP: status discard
+=== [51] 4b00eff | keep | soft average loss-guided and depth-wise XGBoost models ===
+  holdout=0.7601
+=== [52] 5cdae40 | discard | replace two-model ensemble with its depth-wise member alone ===
+  SKIP: status discard
+=== [53] dd1544c | discard | add distance to nearest rule-generated US federal holiday ===
+  SKIP: status discard
+=== [54] af68f30 | discard | replace ensemble with one loss-guided model capped at 64 leaves ===
+  SKIP: status discard
+=== [55] c439789 | keep | weight loss-guided and depth-wise ensemble members 3 to 1 ===
+  holdout=0.7605
+=== [56] 781cd9f | discard | add a native category for each date and morning or afternoon ===
+  SKIP: status discard
+=== [57] cf9be5d | discard | cap the loss-guided ensemble member at depth 16 ===
+  SKIP: status discard
+=== [58] 8d56c2d | discard | remove numeric DayOfYear while retaining categorical dates ===
+  SKIP: status discard
+=== [59] fef6ca5 | discard | simplify both ensemble members to 300 rounds at fixed learning rate 0.1 ===
+  SKIP: status discard
+=== [60] 1eb67d2 | discard | one-hot splits for month and weekday only; partition other categories ===
+  SKIP: status discard
+=== [61] b601683 | discard | reduce ensemble L2 regularization from 500 to 100 ===
+  SKIP: status discard
+=== [62] 7df720f | discard | remove destination coordinates while keeping origin and route geometry ===
+  SKIP: status discard
+=== [63] e84a01a | discard | sample 80 percent of columns while prioritizing date and airport predictors ===
+  SKIP: status discard
+=== [64] a66ced5 | discard | remove midnight wrapping from the travel-adjusted time feature ===
+  SKIP: status discard
+=== [65] 35b2aef | discard | add route distance relative to each airport's training median ===
+  SKIP: status discard
+=== [66] f69c18b | discard | increase ensemble L2 regularization from 500 to 2000 ===
+  SKIP: status discard
+=== [67] 16bbebe | keep | represent day-of-month numerically instead of categorically ===
+  holdout=0.7610
+=== [68] bdfa919 | keep | double loss-guided leaf budget to 256 under final regularization ===
+  holdout=0.7614
+
+=== DONE: results written to groundtruth_all.tsv ===

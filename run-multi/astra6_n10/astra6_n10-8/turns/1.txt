@@ -1,0 +1,7 @@
+Setup is complete on branch `oct2`, created from `92e43e6`.
+
+- Read the instructions, training code, and harness.
+- Verified both data files and required dependencies.
+- Initialized `results.tsv` with only its header, left uncommitted.
+
+The clock has not started. Per [program.md](/home/ubuntu/xgboost-autoresearch-minimal2/program.md), say **go** to begin the two-hour experiment, starting with the unchanged baseline.

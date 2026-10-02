@@ -1,0 +1,68 @@
+commit	Eval_AUC	status	description
+92e43e6	0.7203	keep	baseline: 30 trees depth 6 learning rate 0.1
+2173302	0.7342	keep	300 trees; unchanged depth 6 and learning rate 0.1
+81d7588	0.7342	keep	remove redundant unknown-category masking; equivalent features
+657bbfc	0.7500	keep	add numeric day-of-year and categorical flight date
+c9843e8	0.7459	discard	increase depth 6 to 8 with calendar features
+89ac008	0.7505	keep	min_child_weight 20 at depth 6 with calendar features
+9acdaf9	0.7343	discard	add OriginDate categorical cross; cache category indexes
+b661458	0.7533	keep	max_cat_threshold 16 to regularize categorical partitions
+b141cb3	0.7528	discard	600 trees at learning rate 0.05; matched boosting strength
+dab4d24	0.7423	discard	remove categorical FlightDate; retain numeric day-of-year
+f9e0b10	0.7560	keep	add 2D airport coordinates inferred from training route distances
+76be65b	0.7564	keep	depth 8 with geographic features and stronger categorical regularization
+1aa08cb	0.7548	discard	add OriginRegionDate using 12 unsupervised airport regions
+775c03b	0.7550	discard	add departure hour and minute-of-hour numeric features
+46f4d0a	0.7503	discard	subsample 0.8 and colsample_bytree 0.8
+8c20eb0	0.7123	discard	pairwise ranking objective with global group and two sampled pairs per row
+7463074	0.7554	discard	early stopping on 10 percent training split; learning rate 0.05
+6bcd483	0.7556	discard	retain three rather than two airport geometry coordinates
+b1f7634	0.7528	discard	honest date target lookups on reserved 25 percent; trees on disjoint 75 percent
+36bab5e	0.7593	keep	reg_lambda 20 for stronger L2 leaf-weight shrinkage
+b308ee8	0.7566	discard	three parallel trees per round; row and per-node feature sampling 0.8
+3892c89	0.7593	keep	cache category dtypes and construct feature frame once; identical features
+055e0f2	0.7614	keep	increase reg_lambda from 20 to 100
+5451bf3	0.7619	keep	upper regularization bracket reg_lambda 500
+fd37798	0.7417	discard	force native one-hot categorical splits with threshold 512
+1a8990e	0.7586	discard	one-hot categories with 1000 trees and lambda 20 to test underfitting
+328588b	0.7485	discard	add training-fitted CarrierOrigin and CarrierDest categorical crosses
+354acd1	0.7614	discard	max_bin 512 for finer time calendar and geography thresholds
+4106729	0.7520	discard	constrain UniqueCarrier to an additive effect separate from other inputs
+0f416c9	0.7630	keep	lossguide growth with 64 leaves and unrestricted depth
+5c0e2c0	0.7634	keep	increase lossguide max_leaves from 64 to 128
+602f1fa	0.7634	discard	refine two-dimensional airport geometry with metric MDS
+2a9ce00	0.0000	crash	OriginDate categorical cross under lambda 500 and category threshold 16
+b63c618	0.7564	discard	900 boosting rounds with lambda 500 and 128 loss-guided leaves
+78a6370	0.7640	keep	min_child_weight 100 with 300 regularized loss-guided rounds
+04863ec	0.7631	discard	gamma 1 to reject weak loss-guided splits
+506d2d2	0.7647	keep	add sine and cosine of scheduled departure minutes
+acd917d	0.7651	keep	add departure-clock plus distance travel-time proxy
+18c7a8a	0.7647	discard	remove standalone DayofMonth while retaining full date features
+13f8f44	0.7631	discard	reg_alpha 10 alongside strong L2 shrinkage
+ca43bb3	0.7652	keep	500 rounds with learning rate 0.12 decayed by 0.997 per round
+ed6c26d	0.7610	discard	gradient-based CPU sampling with subsample 0.5
+3d4d94e	0.7658	keep	add two route-direction features from airport coordinate differences
+061c8ab	0.7653	discard	add sine and cosine of day-of-year for annual seasonality
+e447284	0.7623	discard	tighten max_cat_threshold from 16 to 4
+ed2890d	0.7572	discard	broaden max_cat_threshold from 16 to 64 under strong regularization
+d33dacb	0.0000	crash	bounded DART dropout with 300 rounds and 64 leaves
+2d88eec	0.7651	discard	add departure minutes relative to a train-fitted route median
+da43460	0.7652	discard	add diagonal airport coordinate projections for both endpoints
+4b00eff	0.7661	keep	soft average loss-guided and depth-wise XGBoost models
+5cdae40	0.7607	discard	replace two-model ensemble with its depth-wise member alone
+dd1544c	0.7660	discard	add distance to nearest rule-generated US federal holiday
+af68f30	0.7651	discard	replace ensemble with one loss-guided model capped at 64 leaves
+c439789	0.7666	keep	weight loss-guided and depth-wise ensemble members 3 to 1
+781cd9f	0.7655	discard	add a native category for each date and morning or afternoon
+cf9be5d	0.7657	discard	cap the loss-guided ensemble member at depth 16
+8d56c2d	0.7659	discard	remove numeric DayOfYear while retaining categorical dates
+fef6ca5	0.7662	discard	simplify both ensemble members to 300 rounds at fixed learning rate 0.1
+1eb67d2	0.7659	discard	one-hot splits for month and weekday only; partition other categories
+b601683	0.7631	discard	reduce ensemble L2 regularization from 500 to 100
+7df720f	0.7661	discard	remove destination coordinates while keeping origin and route geometry
+e84a01a	0.7661	discard	sample 80 percent of columns while prioritizing date and airport predictors
+a66ced5	0.7662	discard	remove midnight wrapping from the travel-adjusted time feature
+35b2aef	0.7661	discard	add route distance relative to each airport's training median
+f69c18b	0.7632	discard	increase ensemble L2 regularization from 500 to 2000
+16bbebe	0.7666	keep	represent day-of-month numerically instead of categorically
+bdfa919	0.7667	keep	double loss-guided leaf budget to 256 under final regularization

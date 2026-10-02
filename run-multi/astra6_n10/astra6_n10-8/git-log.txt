@@ -1,0 +1,216 @@
+commit bdfa919c5fa2d904a5d433e15167d7db024ac0cc
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:26:07 2026 +0000
+
+    Test a larger leaf budget with the regularized ensemble
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 16bbebeb6635349213ca9396d50325c07e545e40
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:24:36 2026 +0000
+
+    Represent day-of-month with its calendar ordering
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit c4397893b356852525e723841ef9fbe782cab457
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:08:04 2026 +0000
+
+    Favor the stronger model in the two-member ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4b00effea697b265b7d15eee1a847134cb8f331f
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 18:02:54 2026 +0000
+
+    Average loss-guided and depth-wise XGBoost predictions
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 3d4d94e1ec15cf6be23f91c2a4a81ee9492a3fd2
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:48:58 2026 +0000
+
+    Expose relative origin to destination geometry
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit ca43bb3005550bdabb3af1e24979dc5a823db55f
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:44:34 2026 +0000
+
+    Decay the learning rate while matching total boosting strength
+
+ train.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit acd917d1d358fdc81e5f1924dac9b98f4caa0366
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:38:59 2026 +0000
+
+    Test a travel-adjusted clock interaction
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 506d2d24dc1f7852d9127a1a3e4543b1dada3dc3
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:37:01 2026 +0000
+
+    Add cyclic departure-time features
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 78a6370beb061093485bafdde3c7256f64125866
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:33:27 2026 +0000
+
+    Require stronger support for loss-guided leaves
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5c0e2c049a83defd1d9dc7dbc851365d34c69641
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:23:10 2026 +0000
+
+    Test a larger loss-guided leaf budget
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0f416c9bf7cc90883841ad5dbd5dd8e4317ca28c
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:21:22 2026 +0000
+
+    Allocate tree capacity with loss-guided 64-leaf growth
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 5451bf32c9439639f68a642ac9928c3fe8d0892a
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:10:54 2026 +0000
+
+    Bracket the high-regularization regime with lambda 500
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 055e0f213210de564aaa67facc8127e211a377cf
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:09:13 2026 +0000
+
+    Test stronger leaf shrinkage after the L2 gain
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3892c89baf8956dc86f6c8a406ad1d8f3cd9cc93
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:08:12 2026 +0000
+
+    Reuse fitted dtypes and build prepared frames once
+
+ train.py | 23 ++++++++++++-----------
+ 1 file changed, 12 insertions(+), 11 deletions(-)
+
+commit 36bab5e41443ca5fae5d5a36070dff233b306ac3
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 17:04:18 2026 +0000
+
+    Shrink leaf weights with stronger L2 regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 76be65befa42ae1df20de8241be7c0afcc7bbfc3
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:45:10 2026 +0000
+
+    Test deeper interactions with geographic features and regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f9e0b10c04d3eb3caebcb800f9fb2073f8d06971
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:43:28 2026 +0000
+
+    Infer airport coordinates from training route distances
+
+ train.py | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+commit b6614580703dcdeaa5f68d36fe881f6baaa3a1cc
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:39:18 2026 +0000
+
+    Limit categorical partition search to reduce overfitting
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 89ac008aaddd08abf186c5d2a44d9e60f44b7891
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:35:39 2026 +0000
+
+    Regularize small leaves with minimum child weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 657bbfc9d127ce813399cd01bb2b4cd8b39a8f68
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:33:12 2026 +0000
+
+    Expose flight date as numeric and categorical features
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 81d75886effbd0421452842a03fa790df461c793
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:30:56 2026 +0000
+
+    Simplify categorical preparation without changing features
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 21733021deeafa80dab52d1eb1b06d1745cb19ff
+Author: agent <agent@localhost>
+Date:   Fri Oct 2 16:29:18 2026 +0000
+
+    Increase boosting rounds to test baseline underfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92e43e63a900eb0cb75c7de1995dc01e7b8e136f
+Author: agent <agent@localhost>
+Date:   Tue Sep 29 10:29:14 2026 +0000
+
+    xgboost-autoresearch-minimal2 @ 4f5e5e94b29c2b8b9ed9947d56cb622a8fa6cd89
+
+ .gitignore             |  30 ++++++
+ README-autoresearch.md |  77 ++++++++++++++
+ README.md              |  19 ++++
+ check_groundtruth.py   |  15 +++
+ data/.gitkeep          |   0
+ harness.py             | 265 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plot_auc_history.py    |  34 +++++++
+ prepare.py             |  48 +++++++++
+ program.md             | 216 ++++++++++++++++++++++++++++++++++++++++
+ run_groundtruth_all.sh |  76 ++++++++++++++
+ train.py               |  47 +++++++++
+ 11 files changed, 827 insertions(+)
