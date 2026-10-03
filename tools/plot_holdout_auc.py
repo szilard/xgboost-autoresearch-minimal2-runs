@@ -139,8 +139,9 @@ def swarm_offsets(xs, ax, y, diameter_pt):
 def strip_plot(runs, colour):
     # rows top to bottom by mean holdout AUC, best on top
     rows = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
-    fig, ax = plt.subplots(figsize=(9, 1.6 + 0.55 * len(rows)), facecolor=SURFACE)
-    fig.subplots_adjust(bottom=0.85 / (1.6 + 0.55 * len(rows)), right=0.97)
+    h = 1.6 + 0.75 * len(rows)  # height per row leaves room for the beeswarm below each row
+    fig, ax = plt.subplots(figsize=(9, h), facecolor=SURFACE)
+    fig.subplots_adjust(bottom=0.85 / h, right=0.97)
     lo, hi = min(r["holdout"] for r in runs), max(r["holdout"] for r in runs)
     if XLIM:
         if lo < XLIM[0] or hi > XLIM[1]:
