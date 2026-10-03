@@ -55,6 +55,7 @@ SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a
 # models not listed get the remaining slots in sorted order (and a warning)
 MODEL_SLOT = {"gpt-6-astra": 0, "gpt-6-sol": 1, "gpt-6-luna": 2, "gpt-5.6-luna": 3}
 SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#d9d8d3"
+OTHER_RUNS = "#bebdb7"  # the other models' runs behind each panel of the panels path plot
 MIN_N_STATS = 5  # interval and percentiles only from this many runs up
 MIN_N_PATH = 5  # median / percentile paths only where at least this many runs are still going
 XLIM = None  # fixed holdout AUC range of the strip plot, e.g. (0.74, 0.77); None: the runs' range
@@ -277,7 +278,7 @@ def path_panels(runs, colour):
     axes = np.atleast_1d(axes)
     fig.subplots_adjust(bottom=0.24, top=0.82, left=0.07, right=0.98, wspace=0.08)
     for ax, m in zip(axes, models):
-        draw_runs(ax, [r for r in runs if r["model"] != m], lambda r: RANGE, lw=0.6, alpha=0.6, dots=False)
+        draw_runs(ax, [r for r in runs if r["model"] != m], lambda r: OTHER_RUNS, lw=0.6, alpha=0.8, dots=False)
         draw_runs(ax, [r for r in runs if r["model"] == m], lambda r: colour[m], lw=0.9, alpha=0.8)
         draw_median(ax, runs, m, colour[m])
         ax.grid(color=GRID, lw=0.8)
@@ -291,7 +292,7 @@ def path_panels(runs, colour):
         Line2D([], [], color=INK2, lw=0.9, label="run"),
         Line2D([], [], color=INK2, lw=0.9, ls=(0, (4, 2)), label="run with caveat"),
         Line2D([], [], color=INK2, lw=2.4, label="median of the runs"),
-        Line2D([], [], color=RANGE, lw=1.2, label="other models' runs"),
+        Line2D([], [], color=OTHER_RUNS, alpha=0.8, lw=1.2, label="other models' runs"),
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, 0.0),
                ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handletextpad=0.4, columnspacing=1.2)
