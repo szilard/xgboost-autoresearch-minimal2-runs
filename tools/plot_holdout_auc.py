@@ -12,14 +12,12 @@ run-multi/SUMMARY/holdout_auc.png - one row per model, one dot per run
   90% interval (t) and the 10th/90th percentiles (nearest run) when the row has
   >= 5 runs.
 
-run-multi/SUMMARY/holdout_auc_path.png - one line per run: the holdout AUC of
-  the kept model after each experiment (x: experiment number n as in the runs'
-  auc_history.png, the baseline is n = 1; y: holdout AUC of each kept commit,
-  held until the next keep).
-
-Three alternative views of the same paths (the median and percentiles at
-experiment n are over all of a model's runs, a run that has ended counting with
-its final value; they stop when fewer than MIN_N_PATH runs are still going):
+Three views of the holdout AUC path of each run, i.e. the holdout AUC of the
+kept model after each experiment (x: experiment number n as in the runs'
+auc_history.png, the baseline is n = 1; y: holdout AUC of each kept commit, held
+until the next keep). The median and percentiles at experiment n are over all
+of a model's runs, a run that has ended counting with its final value; they
+stop when fewer than MIN_N_PATH runs are still going.
 
 run-multi/SUMMARY/holdout_auc_path_panels.png - small multiples, one panel per
   model on shared axes: its runs as thin lines, their median path in bold, the
@@ -192,36 +190,6 @@ def strip_plot(runs, colour):
     save(fig, "holdout_auc.png")
 
 
-def path_plot(runs, colour):
-    fig, ax = plt.subplots(figsize=(9, 5.2), facecolor=SURFACE)
-    fig.subplots_adjust(bottom=0.2, right=0.97)
-    for r in runs:
-        path = keep_path(r["dir"])
-        if not path:
-            continue
-        n, auc = zip(*path)
-        # hold each kept model's holdout AUC until the next keep, and to the run's last experiment
-        with open(r["dir"] / "groundtruth_all.tsv") as f:
-            n_last = sum(1 for _ in f) - 1
-        ax.step(list(n) + [n_last], list(auc) + [auc[-1]], where="post", color=colour[r["model"]],
-                lw=0.8, alpha=0.85, ls="-" if r["valid"] == "yes" else (0, (4, 2)), zorder=2)
-        ax.scatter(n_last, auc[-1], s=14, zorder=3, color=colour[r["model"]])
-    ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
-    ax.set_ylabel("holdout AUC", color=INK2)
-    ax.grid(color=GRID, lw=0.8)
-    ax.set_xlim(left=0)
-    style(ax, "Holdout AUC path per run")
-    models = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
-    legend = [Line2D([], [], color=colour[m], lw=2, label=m) for m in models] + [
-        Line2D([], [], color=INK2, lw=0.8, label="run"),
-        Line2D([], [], color=INK2, lw=0.8, ls=(0, (4, 2)), label="run with caveat"),
-        Line2D([], [], marker="o", ls="", color=INK2, markersize=5, label="end of run"),
-    ]
-    fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
-               ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handletextpad=0.4, columnspacing=1.2)
-    save(fig, "holdout_auc_path.png")
-
-
 def step_series(run_dir):
     """Holdout AUC of the kept model at every experiment n = 1..n_last (held until the next keep)."""
     path = keep_path(run_dir)
@@ -351,7 +319,6 @@ def main():
 
     colour = model_colours({r["model"] for r in runs})
     strip_plot(runs, colour)
-    path_plot(runs, colour)
     path_panels(runs, colour)
     path_bands(runs, colour)
     path_median(runs, colour)
