@@ -17,6 +17,20 @@ run-multi/SUMMARY/holdout_auc_path.png - one line per run: the holdout AUC of
   auc_history.png, the baseline is n = 1; y: holdout AUC of each kept commit,
   held until the next keep).
 
+Three alternative views of the same paths (the median and percentiles at
+experiment n are over all of a model's runs, a run that has ended counting with
+its final value; they stop when fewer than MIN_N_PATH runs are still going):
+
+run-multi/SUMMARY/holdout_auc_path_panels.png - small multiples, one panel per
+  model on shared axes: its runs as thin lines, their median path in bold, the
+  other models' runs faint grey behind.
+
+run-multi/SUMMARY/holdout_auc_path_bands.png - one panel: per model the median
+  path and a shaded 10th-90th percentile band, no individual runs.
+
+run-multi/SUMMARY/holdout_auc_path_focus.png - one panel: all runs faded, the
+  median path per model in bold, y axis cropped to the part where runs differ.
+
 Usage:
     tools/plot_holdout_auc.py
 """
@@ -32,6 +46,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
 from scipy import stats
 
 # categorical slots in fixed order (reference palette, light mode)
@@ -41,6 +56,8 @@ SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a
 MODEL_SLOT = {"gpt-6-astra": 0, "gpt-6-sol": 1, "gpt-6-luna": 2, "gpt-5.6-luna": 3}
 SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#d9d8d3"
 MIN_N_STATS = 5  # interval and percentiles only from this many runs up
+MIN_N_PATH = 5  # median / percentile paths only where at least this many runs are still going
+FOCUS_YMIN = 0.735  # bottom of the y axis of the focus path plot
 XLIM = None  # fixed holdout AUC range of the strip plot, e.g. (0.74, 0.77); None: the runs' range
 RUN_MULTI = Path(__file__).resolve().parent.parent / "run-multi"
 OUT_DIR = RUN_MULTI / "SUMMARY"
@@ -205,6 +222,128 @@ def path_plot(runs, colour):
     save(fig, "holdout_auc_path.png")
 
 
+def step_series(run_dir):
+    """Holdout AUC of the kept model at every experiment n = 1..n_last (held until the next keep)."""
+    path = keep_path(run_dir)
+    with open(run_dir / "groundtruth_all.tsv") as f:
+        n_last = sum(1 for _ in f) - 1
+    values = np.full(n_last, np.nan)
+    for n, auc in path:
+        values[n - 1:] = auc
+    return values
+
+
+def path_quantiles(runs, model, qs):
+    """(n, {q: values}) of the per-n quantiles over all the model's runs.
+
+    A run that has ended keeps its final value (the model it ended with), so a run
+    finishing early doesn't make the quantiles jump; the paths stop where fewer than
+    MIN_N_PATH runs are still going.
+    """
+    series = [step_series(r["dir"]) for r in runs if r["model"] == model]
+    n_max = max(len(v) for v in series)
+    grid = np.empty((len(series), n_max))
+    for i, v in enumerate(series):
+        grid[i, :len(v)] = v
+        grid[i, len(v):] = v[-1]
+    going = np.array([sum(len(v) > j for v in series) for j in range(n_max)])
+    keep = going >= MIN_N_PATH
+    return np.arange(1, n_max + 1)[keep], {q: np.quantile(grid[:, keep], q, axis=0) for q in qs}
+
+
+def draw_runs(ax, runs, colour_of, lw, alpha, dots=True):
+    for r in runs:
+        path = keep_path(r["dir"])
+        if not path:
+            continue
+        n, auc = zip(*path)
+        with open(r["dir"] / "groundtruth_all.tsv") as f:
+            n_last = sum(1 for _ in f) - 1
+        c = colour_of(r)
+        ax.step(list(n) + [n_last], list(auc) + [auc[-1]], where="post", color=c,
+                lw=lw, alpha=alpha, ls="-" if r["valid"] == "yes" else (0, (4, 2)), zorder=2)
+        if dots:
+            ax.scatter(n_last, auc[-1], s=12, zorder=3, color=c, alpha=min(1, alpha + 0.2))
+
+
+def draw_median(ax, runs, m, colour, lw=2.4):
+    n, q = path_quantiles(runs, m, [0.5])
+    ax.step(n, q[0.5], where="post", color=colour, lw=lw, zorder=4, solid_capstyle="round")
+
+
+def path_panels(runs, colour):
+    models = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
+    fig, axes = plt.subplots(1, len(models), figsize=(4 * len(models), 4.4), sharex=True, sharey=True,
+                             facecolor=SURFACE)
+    axes = np.atleast_1d(axes)
+    fig.subplots_adjust(bottom=0.24, top=0.82, left=0.07, right=0.98, wspace=0.08)
+    for ax, m in zip(axes, models):
+        draw_runs(ax, [r for r in runs if r["model"] != m], lambda r: RANGE, lw=0.6, alpha=0.6, dots=False)
+        draw_runs(ax, [r for r in runs if r["model"] == m], lambda r: colour[m], lw=0.9, alpha=0.8)
+        draw_median(ax, runs, m, colour[m])
+        ax.grid(color=GRID, lw=0.8)
+        ax.set_xlim(left=0)
+        style(ax, "")
+        ax.set_title(m, color=INK, fontsize=10, loc="left", pad=6)
+        ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
+    axes[0].set_ylabel("holdout AUC", color=INK2)
+    fig.suptitle("Holdout AUC path per run, by model", x=0.07, ha="left", color=INK, fontsize=11)
+    legend = [
+        Line2D([], [], color=INK2, lw=0.9, label="run"),
+        Line2D([], [], color=INK2, lw=0.9, ls=(0, (4, 2)), label="run with caveat"),
+        Line2D([], [], color=INK2, lw=2.4, label="median of the runs"),
+        Line2D([], [], color=RANGE, lw=1.2, label="other models' runs"),
+    ]
+    fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, 0.0),
+               ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handletextpad=0.4, columnspacing=1.2)
+    save(fig, "holdout_auc_path_panels.png")
+
+
+def path_bands(runs, colour):
+    models = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
+    fig, ax = plt.subplots(figsize=(9, 5.2), facecolor=SURFACE)
+    fig.subplots_adjust(bottom=0.2, right=0.97)
+    for m in models:
+        n, q = path_quantiles(runs, m, [0.1, 0.5, 0.9])
+        ax.fill_between(n, q[0.1], q[0.9], step="post", color=colour[m], alpha=0.18, lw=0, zorder=2)
+        ax.step(n, q[0.5], where="post", color=colour[m], lw=2.2, zorder=4)
+    ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
+    ax.set_ylabel("holdout AUC", color=INK2)
+    ax.grid(color=GRID, lw=0.8)
+    ax.set_xlim(left=0)
+    style(ax, "Holdout AUC path: median and 10th-90th percentile of the runs")
+    legend = [Line2D([], [], color=colour[m], lw=2.2, label=m) for m in models] + [
+        Patch(facecolor=INK2, alpha=0.18, label="10th-90th percentile"),
+        Line2D([], [], color=INK2, lw=2.2, label="median of the runs"),
+    ]
+    fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
+               ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handletextpad=0.4, columnspacing=1.2)
+    save(fig, "holdout_auc_path_bands.png")
+
+
+def path_focus(runs, colour):
+    models = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
+    fig, ax = plt.subplots(figsize=(9, 5.2), facecolor=SURFACE)
+    fig.subplots_adjust(bottom=0.2, right=0.97)
+    draw_runs(ax, runs, lambda r: colour[r["model"]], lw=0.6, alpha=0.35)
+    for m in models:
+        draw_median(ax, runs, m, colour[m], lw=2.6)
+    ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
+    ax.set_ylabel("holdout AUC", color=INK2)
+    ax.grid(color=GRID, lw=0.8)
+    ax.set_xlim(left=0)
+    ax.set_ylim(bottom=FOCUS_YMIN)
+    style(ax, f"Holdout AUC path per run, median in bold (y from {FOCUS_YMIN})")
+    legend = [Line2D([], [], color=colour[m], lw=2.6, label=m) for m in models] + [
+        Line2D([], [], color=INK2, lw=0.6, alpha=0.6, label="run"),
+        Line2D([], [], color=INK2, lw=0.6, alpha=0.6, ls=(0, (4, 2)), label="run with caveat"),
+        Line2D([], [], color=INK2, lw=2.6, label="median of the runs"),
+    ]
+    fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
+               ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handletextpad=0.4, columnspacing=1.2)
+    save(fig, "holdout_auc_path_focus.png")
+
+
 def main():
     groups = sorted(d for d in RUN_MULTI.iterdir() if (d / "holdout_auc.tsv").is_file())
     runs = [r for g in groups for r in load_group(g)]
@@ -214,6 +353,9 @@ def main():
     colour = model_colours({r["model"] for r in runs})
     strip_plot(runs, colour)
     path_plot(runs, colour)
+    path_panels(runs, colour)
+    path_bands(runs, colour)
+    path_focus(runs, colour)
 
 
 if __name__ == "__main__":
