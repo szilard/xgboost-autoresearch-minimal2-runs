@@ -256,7 +256,7 @@ def path_panels(runs, colour):
         ax.set_title(m, color=INK, fontsize=10, loc="left", pad=6)
         ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
     axes[0].set_ylabel("holdout AUC", color=INK2)
-    fig.suptitle("Holdout AUC path per run, by model", x=0.07, ha="left", color=INK, fontsize=11)
+    fig.suptitle("Holdout AUC path per run, one panel per model", x=0.07, ha="left", color=INK, fontsize=11)
     legend = [
         Line2D([], [], color=INK2, lw=0.9, label="run"),
         Line2D([], [], color=INK2, lw=0.9, ls=(0, (4, 2)), label="run with caveat"),
