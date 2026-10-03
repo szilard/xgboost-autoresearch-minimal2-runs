@@ -6,7 +6,7 @@ run's driver-summary.json and the per-experiment scores from its
 groundtruth_all.tsv. Groups with the same model are pooled (all runs are effort
 max). Runs with valid = "no" are left out; caveat runs are drawn hollow/dashed.
 
-run-multi/SUMMARY/holdout_auc.png - one row per model, one dot per run
+run-multi/SUMMARY/holdout_auc_beeswarm.png - one row per model, one dot per run
   (modelled on Fig. 1 of arXiv:2609.33812): a filled dot per valid run and a
   hollow dot per caveat run, a grey bar over the full range, the mean with its
   90% interval (t) and the 10th/90th percentiles (nearest run) when the row has
@@ -188,7 +188,7 @@ def strip_plot(runs, colour):
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
                ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handletextpad=0.4, columnspacing=1.2)
-    save(fig, "holdout_auc.png")
+    save(fig, "holdout_auc_beeswarm.png")
 
 
 def step_series(run_dir):
