@@ -99,6 +99,28 @@ def save(fig, name):
     print(out)
 
 
+def swarm_offsets(xs, ax, y, diameter_pt):
+    """Vertical offsets (data units) so that dots at xs on row y don't overlap (a simple beeswarm).
+
+    Dots are placed left to right; each takes the first free slot of 0, -1, -2, ... dot
+    diameters below the row's centre line (never above: the mean and its interval sit there),
+    so a dot only leaves the centre line when it would touch another.
+    """
+    fig = ax.figure
+    d = diameter_pt * fig.dpi / 72  # pixels
+    px = ax.transData.transform(np.column_stack([xs, np.full(len(xs), y)]))[:, 0]
+    dy_per_px = 1 / (ax.transData.transform((0, 1))[1] - ax.transData.transform((0, 0))[1])
+    placed, offsets = [], np.zeros(len(xs))
+    for i in np.argsort(px):
+        for k in range(len(xs)):
+            slot = -k * d  # 0, -d, -2d, ... (pixels grow upward in display coordinates)
+            if all((px[i] - pj) ** 2 + (slot - sj) ** 2 >= d ** 2 for pj, sj in placed):
+                break
+        placed.append((px[i], slot))
+        offsets[i] = slot * dy_per_px
+    return offsets
+
+
 def strip_plot(runs, colour):
     # rows top to bottom by mean holdout AUC, best on top
     rows = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
@@ -113,15 +135,19 @@ def strip_plot(runs, colour):
         pad = (hi - lo) * 0.05 or 0.001
         ax.set_xlim(lo - pad, hi + pad)
 
+    ax.set_ylim(-0.6, len(rows) - 0.4)  # before the swarm: it needs the final data -> pixel scale
     for i, m in enumerate(rows):
         y = len(rows) - 1 - i
         rr = [r for r in runs if r["model"] == m]
         x = np.array([r["holdout"] for r in rr])
         n = len(x)
         ax.plot([x.min(), x.max()], [y, y], color=RANGE, lw=6, solid_capstyle="round", zorder=1)
-        for r in rr:
+        # dots that would overlap are spread vertically (beeswarm); x stays exact
+        # diameter: marker size 46 pt^2 -> ~6.8 pt, plus the 1.4 pt edge, plus 0.6 pt of air
+        dys = swarm_offsets(x, ax, y, np.sqrt(46) + 1.4 + 0.6)
+        for r, dy in zip(rr, dys):
             filled = r["valid"] == "yes"
-            ax.scatter(r["holdout"], y, s=46, zorder=3, linewidths=1.4,
+            ax.scatter(r["holdout"], y + dy, s=46, zorder=3, linewidths=1.4,
                        facecolors=colour[m] if filled else SURFACE, edgecolors=colour[m])
         mean = x.mean()
         if n >= MIN_N_STATS:
@@ -134,7 +160,6 @@ def strip_plot(runs, colour):
 
     ax.set_yticks(range(len(rows)))
     ax.set_yticklabels(list(reversed(rows)), color=INK)
-    ax.set_ylim(-0.6, len(rows) - 0.4)
     ax.set_xlabel("holdout AUC", color=INK2)
     ax.grid(axis="x", color=GRID, lw=0.8)
     style(ax, "Holdout AUC per run")
