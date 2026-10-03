@@ -324,7 +324,7 @@ def path_median(runs, colour):
     models = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
     fig, ax = plt.subplots(figsize=(9, 5.2), facecolor=SURFACE)
     fig.subplots_adjust(bottom=0.2, right=0.97)
-    draw_runs(ax, runs, lambda r: colour[r["model"]], lw=0.6, alpha=0.35)
+    draw_runs(ax, runs, lambda r: colour[r["model"]], lw=0.9, alpha=0.4)
     for m in models:
         draw_median(ax, runs, m, colour[m], lw=2.6)
     ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
@@ -333,8 +333,8 @@ def path_median(runs, colour):
     ax.set_xlim(left=0)
     style(ax, "Holdout AUC path per run, median in bold")
     legend = [Line2D([], [], color=colour[m], lw=2.6, label=m) for m in models] + [
-        Line2D([], [], color=INK2, lw=0.6, alpha=0.6, label="run"),
-        Line2D([], [], color=INK2, lw=0.6, alpha=0.6, ls=(0, (4, 2)), label="run with caveat"),
+        Line2D([], [], color=INK2, lw=0.9, alpha=0.6, label="run"),
+        Line2D([], [], color=INK2, lw=0.9, alpha=0.6, ls=(0, (4, 2)), label="run with caveat"),
         Line2D([], [], color=INK2, lw=2.6, label="median of the runs"),
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
