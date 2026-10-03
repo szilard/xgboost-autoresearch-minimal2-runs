@@ -29,7 +29,8 @@ run-multi/SUMMARY/holdout_auc_path_bands.png - one panel: per model the median
   path and a shaded 10th-90th percentile band, no individual runs.
 
 run-multi/SUMMARY/holdout_auc_path_focus.png - one panel: all runs faded, the
-  median path per model in bold, y axis cropped to the part where runs differ.
+  median path per model in bold, y axis compressed (FOCUS_YSQUEEZE x) below
+  FOCUS_YBREAK so the part where runs differ gets most of the height.
 
 Usage:
     tools/plot_holdout_auc.py
@@ -57,7 +58,8 @@ MODEL_SLOT = {"gpt-6-astra": 0, "gpt-6-sol": 1, "gpt-6-luna": 2, "gpt-5.6-luna":
 SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#d9d8d3"
 MIN_N_STATS = 5  # interval and percentiles only from this many runs up
 MIN_N_PATH = 5  # median / percentile paths only where at least this many runs are still going
-FOCUS_YMIN = 0.735  # bottom of the y axis of the focus path plot
+FOCUS_YBREAK = 0.735  # focus path plot: below this the y axis is compressed ...
+FOCUS_YSQUEEZE = 4  # ... by this factor
 XLIM = None  # fixed holdout AUC range of the strip plot, e.g. (0.74, 0.77); None: the runs' range
 RUN_MULTI = Path(__file__).resolve().parent.parent / "run-multi"
 OUT_DIR = RUN_MULTI / "SUMMARY"
@@ -332,8 +334,20 @@ def path_focus(runs, colour):
     ax.set_ylabel("holdout AUC", color=INK2)
     ax.grid(color=GRID, lw=0.8)
     ax.set_xlim(left=0)
-    ax.set_ylim(bottom=FOCUS_YMIN)
-    style(ax, f"Holdout AUC path per run, median in bold (y from {FOCUS_YMIN})")
+    # piecewise-linear y scale: full resolution above FOCUS_YBREAK, squeezed below it
+    b, k = FOCUS_YBREAK, FOCUS_YSQUEEZE
+    ax.set_yscale("function", functions=(
+        lambda y: np.where(y >= b, y, b + (y - b) / k),
+        lambda u: np.where(u >= b, u, b + (u - b) * k)))
+    lo = min(min(step_series(r["dir"])[~np.isnan(step_series(r["dir"]))]) for r in runs)
+    ax.set_ylim(bottom=lo - 0.001)
+    ticks = [t for t in np.arange(0.70, 0.80, 0.005) if t >= lo - 0.001 and t <= ax.get_ylim()[1]]
+    # below the break only every 0.01, and none right under it (labels would collide)
+    ax.set_yticks([t for t in ticks if t >= b - 1e-9 or (round(t * 1000) % 10 == 0 and b - t > 0.008)])
+    ax.yaxis.set_major_formatter(plt.FormatStrFormatter("%.3f"))
+    ax.axhline(b, color=INK2, lw=0.8, ls=(0, (3, 3)), zorder=1)
+    ax.text(ax.get_xlim()[1], b, f"scale \u00d71/{k} below ", color=INK2, fontsize=8, ha="right", va="top")
+    style(ax, "Holdout AUC path per run, median in bold")
     legend = [Line2D([], [], color=colour[m], lw=2.6, label=m) for m in models] + [
         Line2D([], [], color=INK2, lw=0.6, alpha=0.6, label="run"),
         Line2D([], [], color=INK2, lw=0.6, alpha=0.6, ls=(0, (4, 2)), label="run with caveat"),
